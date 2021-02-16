@@ -22,7 +22,8 @@ namespace TheMansion
         [SerializeField] float waitTime;
         float startWaitTime;
 
-
+        public GameObject spamInput;
+        public GameObject canvas;
         GameObject player;
         
 
@@ -99,8 +100,16 @@ namespace TheMansion
         {
             Debug.Log("Mode Grab");
             //playerController.canMove = false;
-            //input apparait
-            //si le J réussi alors le mob est désactiver + 
+            
+            Instantiate(spamInput, canvas.transform);
+            
+        }
+
+        public void Stunned()
+        {
+            //désactive le input
+            //libère joueur
+            //bloque le mob pendant X secondes
         }
 
     }
