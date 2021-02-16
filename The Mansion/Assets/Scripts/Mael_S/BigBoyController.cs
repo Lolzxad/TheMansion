@@ -50,7 +50,7 @@ namespace TheMansion
             }
         }
 
-        public void OnCollision2D(Collision2D other)
+        public void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.name == "PlayerTrigger" && isRunning)
             {
@@ -90,12 +90,17 @@ namespace TheMansion
             Debug.Log("Pursuit of happiness");
 
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speedPO * Time.deltaTime);
+
+            //si le joueur sort de son champ de vision/distance alors il va à sa dernière position
         }
 
 
         public void BBMG()
         {
             Debug.Log("Mode Grab");
+            //playerController.canMove = false;
+            //input apparait
+            //si le J réussi alors le mob est désactiver + 
         }
 
     }
