@@ -10,25 +10,27 @@ namespace TheMansion
     public class BigBoyController : MonoBehaviour
     {
         public float bigBoySpeed;
+        public float speedPO;
 
         public Transform[] moveSpots;
         private int randomSpot;
 
         public bool isPatrolling;
         public bool isRunning;
-
-
-        [SerializeField] Transform target;
+        public bool isGrabbing;
 
         [SerializeField] float waitTime;
         float startWaitTime;
 
 
         GameObject player;
+        
 
         private void Start()
         {
             isPatrolling = true;
+
+            player = GameObject.FindGameObjectWithTag("Player");
 
 
             waitTime = startWaitTime;
@@ -41,19 +43,32 @@ namespace TheMansion
             {
                 BBMPA();
             }
-        }
 
-        public void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.tag == "Player" && isPatrolling)
+            if (isRunning)
             {
                 BBMPO();
             }
         }
 
+        public void OnCollision2D(Collision2D other)
+        {
+            if (other.gameObject.name == "PlayerTrigger" && isRunning)
+            {
+                BBMG();
+            }
+        }
+
+        public void OnBecameVisible()
+        {
+            isRunning = true;
+            isPatrolling = false;
+        }
+
 
         public void BBMPA()
         {
+            Debug.Log("Big Boy is patrolling");
+
             transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
@@ -70,18 +85,17 @@ namespace TheMansion
             }
         }
 
-        public void BBMPO()
+        void BBMPO()
         {
-            isPatrolling = false;
-            isRunning = true;
+            Debug.Log("Pursuit of happiness");
 
-
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speedPO * Time.deltaTime);
         }
 
-        private void OnDrawGizmosSelected()
+
+        public void BBMG()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, target.position);
+            Debug.Log("Mode Grab");
         }
 
     }
