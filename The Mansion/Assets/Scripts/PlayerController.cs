@@ -6,17 +6,19 @@ namespace TheMansion
 {
 public class PlayerController : MonoBehaviour
     {
-        private float stamina = 100f;
+        private int stamina = 100;
+        private bool canInteract;
         public Transform BasePosition;
         public Transform WalkRight;
         public Transform WalkLeft;
         public Transform RunRight;
         public Transform RunLeft;
+       
 
         // Start is called before the first frame update
         void Start()
         {
-            
+
         }
 
         // Update is called once per frame
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Run Right");
                     transform.Translate((Vector3.right * Time.deltaTime) * 5f);
                     Camera.main.transform.Translate((Vector3.right * Time.deltaTime) * 5f);
-                    stamina = stamina - 1 * Time.deltaTime;
+                    StartCoroutine(StaminaLoss());
                 }
 
                 if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x)
@@ -56,9 +58,37 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Run Left");
                     transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                     Camera.main.transform.Translate((Vector3.left * Time.deltaTime) * 5f);
-                    stamina = stamina - 1 * Time.deltaTime;
+                    StartCoroutine(StaminaLoss());                   
+                }   
+                
+                if (canInteract)
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+                    RaycastHit2D Hit;
+                    if (Physics2D.Raycast(ray.origin, ray.direction))
+                    {
+                        if (Hit.transform.tag == "Hard Hiding Spot")
+                        {
+                            Debug.Log("Is Hiding");
+                        }
+                    }
                 }
             }
+        }
+
+        void OnTriggerStay2D(Collider2D InteractableObject)
+        {
+            if (InteractableObject.tag == "Hard Hiding Spot")
+            {
+                Debug.Log("Can hide");
+                canInteract = true;
+            }
+        }
+
+        IEnumerator StaminaLoss()
+        {
+            stamina--;
+            yield return new WaitForSeconds(1f);
         }
     }
 }
