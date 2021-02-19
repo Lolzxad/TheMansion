@@ -6,7 +6,7 @@ namespace TheMansion
 {
 public class PlayerController : MonoBehaviour
     {
-        private int stamina = 500;
+        private int stamina = 1000;
 
         private bool isMoving;
         private bool canInteract;

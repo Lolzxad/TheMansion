@@ -55,7 +55,7 @@ namespace TheMansion
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.name == "PlayerTrigger" && isRunning)
+            if (other.gameObject.tag == "Player" && isRunning)
             {
                 BBMG();
             }
