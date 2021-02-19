@@ -112,7 +112,7 @@ namespace TheMansion
         {
             Debug.Log("BB is stunned");
 
-            Destroy(spamInput);
+            spamInput.SetActive(false);
             //playerController.canMove = true;
             StartCoroutine(MobCantMove());   
         }
