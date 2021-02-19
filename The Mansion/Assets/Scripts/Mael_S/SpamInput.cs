@@ -52,11 +52,13 @@ namespace TheMansion
             if(spamLeft == 2)
             {
                 spamLeftDone = true;
+                Debug.Log(spamLeftDone);
             }
 
             if(spamRight == 2)
             {
                 spamRightDone = true;
+                Debug.Log(spamRightDone);
             }
 
 
@@ -65,6 +67,9 @@ namespace TheMansion
                 Debug.Log("YOU FREE TO GO");
 
                 bbController.Stunned();
+                spamLeft = 0;
+                spamRight = 0;
+                gameObject.SetActive(false);
             }
 
         }

@@ -10,7 +10,7 @@ namespace TheMansion
     {
         BigBoyController bbController;
 
-        //[SerializeField] GameObject warningMonster;
+        [SerializeField] GameObject warningMonster;
 
         private void Start()
         {
@@ -21,7 +21,7 @@ namespace TheMansion
         {
             if (other.gameObject.name == "PlayerTrigger" && bbController.isPatrolling)
             {
-                //warning baby
+                warningMonster.SetActive(true);
                 Debug.Log("WARNING");
             }
         }

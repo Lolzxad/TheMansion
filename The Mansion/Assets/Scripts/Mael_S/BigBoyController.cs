@@ -18,18 +18,20 @@ namespace TheMansion
         public bool isPatrolling;
         public bool isRunning;
         public bool isGrabbing;
+        public bool bBcanMove;
 
         [SerializeField] float waitTime;
         float startWaitTime;
 
         public GameObject spamInput;
-        public GameObject canvas;
         GameObject player;
+        [SerializeField] GameObject warning;
         
 
         private void Start()
         {
             isPatrolling = true;
+            bBcanMove = true;
 
             player = GameObject.FindGameObjectWithTag("Player");
 
@@ -40,7 +42,7 @@ namespace TheMansion
 
         private void Update()
         {
-            if (isPatrolling)
+            if (isPatrolling && bBcanMove)
             {
                 BBMPA();
             }
@@ -100,16 +102,27 @@ namespace TheMansion
         {
             Debug.Log("Mode Grab");
             //playerController.canMove = false;
-            
-            Instantiate(spamInput, canvas.transform);
+            isRunning = false;
+            warning.SetActive(false);
+            spamInput.SetActive(true);
             
         }
 
         public void Stunned()
         {
-            //désactive le input
-            //libère joueur
-            //bloque le mob pendant X secondes
+            Debug.Log("BB is stunned");
+
+            Destroy(spamInput);
+            //playerController.canMove = true;
+            StartCoroutine(MobCantMove());   
+        }
+
+        IEnumerator MobCantMove()
+        {
+            bBcanMove = false;
+            yield return new WaitForSeconds(5f);
+            bBcanMove = true;
+            isPatrolling = true;
         }
 
     }
