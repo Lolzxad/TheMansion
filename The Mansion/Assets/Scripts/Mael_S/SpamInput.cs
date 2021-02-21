@@ -11,6 +11,7 @@ namespace TheMansion
     {
         [SerializeField] int spamRight;
         [SerializeField] int spamLeft;
+        [SerializeField] int playerLives = 4;
 
         [SerializeField] float timeLimit;
 
@@ -69,7 +70,15 @@ namespace TheMansion
                 bbController.Stunned();
                 spamLeft = 0;
                 spamRight = 0;
+                spamLeftDone = false;
+                spamRightDone = false;
                 gameObject.SetActive(false);
+                playerLives--;
+            }
+
+            if (playerLives == 0)
+            {
+                GameOver();
             }
 
         }

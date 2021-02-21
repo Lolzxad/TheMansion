@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 16252298}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Salle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 215761450}
   - component: {fileID: 215761452}
   - component: {fileID: 215761451}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 247493201}
   - component: {fileID: 247493202}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 305344428}
   - component: {fileID: 305344429}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 372261641}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Salle 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 455198120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Salle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 495521268}
   - component: {fileID: 495521270}
   - component: {fileID: 495521269}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 532498977}
   - component: {fileID: 532498978}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568200190}
   - component: {fileID: 568200191}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612348314}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enviro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &741258037
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &768084148
 Transform:
   m_ObjectHideFlags: 0
@@ -1376,7 +1376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 866465671}
   - component: {fileID: 866465672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,6 +1529,11 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.030585289
       objectReference: {fileID: 0}
+    - target: {fileID: 6460874284170634652, guid: fb3baa86988e3ff408ed5ce312544706,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6460874284170634653, guid: fb3baa86988e3ff408ed5ce312544706,
         type: 3}
       propertyPath: m_Name
@@ -1553,7 +1558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871405679}
   - component: {fileID: 871405680}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1721,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1775,7 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952542211}
   - component: {fileID: 952542212}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1862,7 @@ GameObject:
   - component: {fileID: 1063728638}
   - component: {fileID: 1063728640}
   - component: {fileID: 1063728639}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,6 +1969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069540420}
   - component: {fileID: 1069540421}
+  - component: {fileID: 1069540422}
   m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
@@ -2023,7 +2029,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d9089f62a034a7e4981cf13a67b16f15, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -2035,6 +2041,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1069540422
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069540419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.9}
+    newSize: {x: 0.5, y: 0.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.9}
+  m_EdgeRadius: 0
 --- !u!1 &1099829473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2078,7 @@ GameObject:
   - component: {fileID: 1099829474}
   - component: {fileID: 1099829476}
   - component: {fileID: 1099829475}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2153,7 +2185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117102231}
   - component: {fileID: 1117102232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,7 +2390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345997757}
   - component: {fileID: 1345997758}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2607,7 +2639,7 @@ GameObject:
   - component: {fileID: 1454734200}
   - component: {fileID: 1454734203}
   - component: {fileID: 1454734204}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BigBoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2739,8 +2771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d834939cbcddaa41bdc4a58fe45edb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigBoySpeed: 5
-  speedPO: 10
+  bigBoySpeed: 2
+  speedPO: 5
   moveSpots:
   - {fileID: 587120414}
   - {fileID: 94695949}
@@ -2760,7 +2792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655468347}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Salle 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2795,7 +2827,7 @@ GameObject:
   - component: {fileID: 1682332565}
   - component: {fileID: 1682332567}
   - component: {fileID: 1682332566}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2984,7 +3016,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3010,7 +3042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000013197}
   - component: {fileID: 2000013198}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3090,7 +3122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055559888}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Salle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

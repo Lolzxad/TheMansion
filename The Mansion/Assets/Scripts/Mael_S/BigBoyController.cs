@@ -20,13 +20,19 @@ namespace TheMansion
         public bool isGrabbing;
         public bool bBcanMove;
 
+        PlayerController playerScript;
+
         [SerializeField] float waitTime;
         float startWaitTime;
 
         public GameObject spamInput;
         GameObject player;
         [SerializeField] GameObject warning;
-        
+
+        private void Awake()
+        {
+            playerScript = FindObjectOfType<PlayerController>();
+        }
 
         private void Start()
         {
@@ -42,6 +48,14 @@ namespace TheMansion
 
         private void Update()
         {
+            Debug.Log(isRunning);
+
+            if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed)
+            {
+                isRunning = true;
+                isPatrolling = false;
+            }
+
             if (isPatrolling && bBcanMove)
             {
                 BBMPA();
@@ -59,12 +73,25 @@ namespace TheMansion
             {
                 BBMG();
             }
+
+            if (other.gameObject.tag == "Hard Hiding Spot" && isRunning && playerScript.isHiding)
+            {
+                isPatrolling = true;
+                bBcanMove = true;
+                isRunning = false;
+            }
         }
 
         public void OnBecameVisible()
         {
             isRunning = true;
             isPatrolling = false;
+        }
+
+        public void OnBecameInvisible()
+        {
+            isRunning = false;
+            isPatrolling = true;
         }
 
 
@@ -101,11 +128,10 @@ namespace TheMansion
         public void BBMG()
         {
             Debug.Log("Mode Grab");
-            //playerController.canMove = false;
+            playerScript.isGrabbed = true;
             isRunning = false;
             warning.SetActive(false);
-            spamInput.SetActive(true);
-            
+            spamInput.SetActive(true);            
         }
 
         public void Stunned()
@@ -113,7 +139,7 @@ namespace TheMansion
             Debug.Log("BB is stunned");
 
             spamInput.SetActive(false);
-            //playerController.canMove = true;
+            playerScript.isGrabbed = false;
             StartCoroutine(MobCantMove());   
         }
 
@@ -124,6 +150,5 @@ namespace TheMansion
             bBcanMove = true;
             isPatrolling = true;
         }
-
     }
 }

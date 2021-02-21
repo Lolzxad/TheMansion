@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
 
         private bool isMoving;
         private bool canInteract;
-        private bool isHiding;
+        public bool isHiding;
+        public bool isGrabbed;
 
         public Transform BasePosition;
         public Transform WalkRight;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
                         }
                         else
                         {
-                            if (touchedObject.tag == "Hard Hiding Spot" && canInteract)
+                            if (touchedObject.tag == "Hard Hiding Spot" && canInteract && !isGrabbed)
                             {
                                 isHiding = true;
                                 Debug.Log("Is Hiding");
@@ -63,33 +64,33 @@ public class PlayerController : MonoBehaviour
                     }
                 }
 
-                if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && !isHiding)
+                if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && !isHiding && !isGrabbed)
                 {
                     Debug.Log("Walk Right");
                     isMoving = true;
-                    transform.Translate((Vector3.right * Time.deltaTime) * 1f);
+                    transform.Translate((Vector3.right * Time.deltaTime) * 5f);
                 }
 
-                if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && !isHiding)
+                if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && !isHiding && !isGrabbed)
                 {
                     Debug.Log("Walk Left");
                     isMoving = true;
-                    transform.Translate((Vector3.left * Time.deltaTime) * 1f);
+                    transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                 }
 
-                if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && !isHiding) 
+                if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && !isHiding && !isGrabbed) 
                 {
                     Debug.Log("Run Right");
                     isMoving = true;
-                    transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                    transform.Translate((Vector3.right * Time.deltaTime) * 10f);
                     StartCoroutine(StaminaLoss());
                 }
 
-                if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && !isHiding)
+                if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && !isHiding && !isGrabbed)
                 {
                     Debug.Log("Run Left");
                     isMoving = true;
-                    transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                    transform.Translate((Vector3.left * Time.deltaTime) * 10f);
                     StartCoroutine(StaminaLoss());                   
                 }
             }
