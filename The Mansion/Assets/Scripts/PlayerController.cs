@@ -6,13 +6,14 @@ namespace TheMansion
 {
 public class PlayerController : MonoBehaviour
     {
-        private int stamina = 1000;
+        public int stamina = 1000;
+        public float heartBeat = 100f;
 
         private bool isMoving;
         private bool canInteract;
         public bool isHiding;
         public bool isGrabbed;
-
+        
         public Transform BasePosition;
         public Transform WalkRight;
         public Transform WalkLeft;
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
         IEnumerator StaminaLoss()
         {
             stamina--;
+            heartBeat++;
             yield return new WaitForSeconds(1f);
         }
 
