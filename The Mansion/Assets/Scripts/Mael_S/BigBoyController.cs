@@ -76,9 +76,18 @@ namespace TheMansion
 
             if (other.gameObject.tag == "Hard Hiding Spot" && isRunning && playerScript.isHiding)
             {
-                isPatrolling = true;
-                bBcanMove = true;
-                isRunning = false;
+                if (playerScript.heartBeat >= 1500)
+                {
+                    playerScript.isHiding = false;
+                    playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
+                    BBMG();
+                }
+                else
+                {
+                    isPatrolling = true;
+                    bBcanMove = true;
+                    isRunning = false;                  
+                }                
             }
         }
 
