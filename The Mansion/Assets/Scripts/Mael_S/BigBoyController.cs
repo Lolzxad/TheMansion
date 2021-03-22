@@ -19,6 +19,7 @@ namespace TheMansion
         public bool isRunning;
         public bool isGrabbing;
         public bool bBcanMove;
+        public bool playerInVision;
 
         PlayerController playerScript;
 
@@ -50,7 +51,7 @@ namespace TheMansion
         {
             Debug.Log(isRunning);
 
-            if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed)
+            if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
             {
                 isRunning = true;
                 isPatrolling = false;
@@ -65,6 +66,11 @@ namespace TheMansion
             {
                 BBMPO();
             }
+
+            if (playerInVision)
+            {
+                playerScript.heartBeat = playerScript.heartBeat + 1 * Time.deltaTime;
+            }
         }
 
         public void OnTriggerEnter2D(Collider2D other)
@@ -76,10 +82,15 @@ namespace TheMansion
 
             if (other.gameObject.tag == "Hard Hiding Spot" && isRunning && playerScript.isHiding)
             {
-                if (playerScript.heartBeat >= 1500)
+
+                Debug.Log("Touching hiding spot");
+                Debug.Log(isRunning);
+                if (playerScript.heartBeat >= 150)
                 {
                     playerScript.isHiding = false;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
+                    playerScript.transform.position = playerScript.basePosition;
+                    playerScript.playerSprite.transform.position = playerScript.baseSpritePosition;
                     BBMG();
                 }
                 else
@@ -95,12 +106,14 @@ namespace TheMansion
         {
             isRunning = true;
             isPatrolling = false;
+            playerInVision = true;
         }
 
         public void OnBecameInvisible()
         {
             isRunning = false;
             isPatrolling = true;
+            playerInVision = false;
         }
 
 
@@ -149,6 +162,7 @@ namespace TheMansion
 
             spamInput.SetActive(false);
             playerScript.isGrabbed = false;
+            playerScript.heartBeat = playerScript.heartBeat + 20f;
             StartCoroutine(MobCantMove());   
         }
 
