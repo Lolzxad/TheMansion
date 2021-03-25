@@ -137,6 +137,8 @@ namespace TheMansion
         public void BBMG()
         {
             Debug.Log("Mode Grab");
+            //canClimb = false;
+
             playerScript.isGrabbed = true;
             isRunning = false;
             warning.SetActive(false);

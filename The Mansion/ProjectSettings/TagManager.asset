@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hard Hiding Spot
   - Soft Hiding Spot
+  - Limit Runner
   layers:
   - Default
   - TransparentFX
