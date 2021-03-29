@@ -11,6 +11,7 @@ namespace TheMansion
     {
         public float bigBoySpeed;
         public float speedPO;
+        public float continueRunning = 5;
 
         public Transform[] moveSpots;
         private int randomSpot;
@@ -99,6 +100,16 @@ namespace TheMansion
 
         public void OnBecameInvisible()
         {
+            if (isRunning)
+            {
+                StartCoroutine(ContinueRunning());
+            }
+        }
+
+        IEnumerator ContinueRunning()
+        {
+            yield return new WaitForSeconds(continueRunning);
+
             isRunning = false;
             isPatrolling = true;
         }

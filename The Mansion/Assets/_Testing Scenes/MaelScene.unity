@@ -4721,6 +4721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigBoySpeed: 2
   speedPO: 5
+  continueRunning: 5
   moveSpots:
   - {fileID: 2028400843}
   - {fileID: 1499718849}
@@ -5601,7 +5602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1435607354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5737,7 +5738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1454734200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5865,6 +5866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigBoySpeed: 5
   speedPO: 10
+  continueRunning: 5
   moveSpots:
   - {fileID: 587120414}
   - {fileID: 94695949}
