@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 public class Test_PlayerMovement : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class Test_PlayerMovement : MonoBehaviour
 
 
     private enum State { climb}
-    
+
+    private float cameraSize = 19.44f;
 
     //Ladder Variable
     public bool botLadder = false;
@@ -31,6 +33,8 @@ public class Test_PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         defaultGravity = rb.gravityScale;
+
+        
     }
 
     private void Update()
@@ -50,6 +54,8 @@ public class Test_PlayerMovement : MonoBehaviour
 
             Physics2D.IgnoreLayerCollision(9, 10, false);
         }
+
+        ProCamera2D.Instance.UpdateScreenSize(cameraSize, 0f);
     }
 
 
