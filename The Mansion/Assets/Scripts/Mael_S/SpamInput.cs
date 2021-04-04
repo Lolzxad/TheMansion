@@ -20,6 +20,7 @@ namespace TheMansion
         bool timeIsRunning;
 
         BigBoyController bbController;
+        RunnerController runnerController;
 
         private void Start()
         {
@@ -29,6 +30,7 @@ namespace TheMansion
             timeIsRunning = true;
 
             bbController = FindObjectOfType<BigBoyController>();
+            runnerController = FindObjectOfType<RunnerController>();
         }
 
         private void Update()
@@ -67,13 +69,29 @@ namespace TheMansion
             {
                 Debug.Log("YOU FREE TO GO");
 
-                bbController.Stunned();
-                spamLeft = 0;
-                spamRight = 0;
-                spamLeftDone = false;
-                spamRightDone = false;
-                gameObject.SetActive(false);
-                playerLives--;
+                if (bbController.isGrabbing)
+                {
+                    bbController.Stunned();
+                    spamLeft = 0;
+                    spamRight = 0;
+                    spamLeftDone = false;
+                    spamRightDone = false;
+                    gameObject.SetActive(false);
+                    playerLives--;
+                }
+
+                if (runnerController.isGrabbing)
+                {
+                    runnerController.isTired = true;
+                    spamLeft = 0;
+                    spamRight = 0;
+                    spamLeftDone = false;
+                    spamRightDone = false;
+                    gameObject.SetActive(false);
+                    playerLives--;
+                }
+
+
             }
 
             if (playerLives == 0)
