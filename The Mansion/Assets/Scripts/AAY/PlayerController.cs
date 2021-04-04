@@ -8,6 +8,7 @@ namespace TheMansion
     {
         public float stamina = 100f;
         public float heartBeat = 100f;
+        public float hidingFactor = 1f;
 
         private bool isMoving;
         private bool canInteract;
@@ -113,13 +114,27 @@ namespace TheMansion
                 playerMouse();
             }
 
-            
-
+          
             if (!transform.hasChanged)
             {
                 StartCoroutine(StandingRegen());                         
             }
             transform.hasChanged = false;
+
+            if (heartBeat < 100f)
+            {
+                heartBeat = 100f;
+            }
+
+            if (stamina < 0f)
+            {
+                stamina = 0f;
+            }
+
+            if (hidingFactor < 1)
+            {
+                hidingFactor = 1;
+            }
 
 
         }
@@ -213,11 +228,21 @@ namespace TheMansion
             }
         }
 
+        public void CalmingHeart()
+        {
+            if (stamina > 0)
+            {
+                stamina = stamina - 10f;
+                heartBeat = heartBeat - 5f;
+                hidingFactor = hidingFactor - 5;
+            }           
+        }
 
         IEnumerator StaminaLoss()
         {
             stamina = stamina - 0.1f;
             heartBeat = heartBeat + 1 * Time.deltaTime;
+            hidingFactor = hidingFactor + 1 * Time.deltaTime;
             yield return new WaitForSeconds(1f);
         }
 
@@ -240,6 +265,7 @@ namespace TheMansion
             if (heartBeat > 100f)
             {
                 heartBeat = heartBeat - 0.5f * Time.deltaTime;
+                hidingFactor = hidingFactor - 0.5f * Time.deltaTime;
             }
         }
     }
