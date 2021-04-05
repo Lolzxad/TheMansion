@@ -71,6 +71,7 @@ namespace TheMansion
 
                 if (bbController.isGrabbing)
                 {
+                    Debug.Log("IsStunned");
                     bbController.Stunned();
                     spamLeft = 0;
                     spamRight = 0;
@@ -80,7 +81,7 @@ namespace TheMansion
                     playerLives--;
                 }
 
-                if (runnerController.isGrabbing)
+                /*if (runnerController.isGrabbing)
                 {
                     runnerController.isTired = true;
                     spamLeft = 0;
@@ -89,7 +90,7 @@ namespace TheMansion
                     spamRightDone = false;
                     gameObject.SetActive(false);
                     playerLives--;
-                }
+                }*/
 
 
             }

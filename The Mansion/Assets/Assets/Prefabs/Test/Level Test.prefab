@@ -158,9 +158,14 @@ MonoBehaviour:
   bBcanMove: 0
   playerInVision: 0
   hideFail: 0
+  movingRight: 1
+  distance: 0
+  detectZonePatrol: 0
+  target1: {fileID: 0}
+  target2: {fileID: 0}
   waitTime: 3
   spamInput: {fileID: 0}
-  warning: {fileID: 2493156568230980324}
+  triggerBB: {fileID: 0}
 --- !u!1 &2493156568230980324
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,8 +385,8 @@ Transform:
   m_LocalPosition: {x: -88.63, y: 9.009, z: 1}
   m_LocalScale: {x: 2, y: 2.9229836, z: 1}
   m_Children:
-  - {fileID: 2493156569262357781}
   - {fileID: 2493156568953049851}
+  - {fileID: 2493156569262357781}
   m_Father: {fileID: 2493156568657837583}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -504,7 +509,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2493156569605205384}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2493156568458330359
 BoxCollider2D:
@@ -1246,7 +1251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.7771678, z: 1}
   m_Children: []
   m_Father: {fileID: 2493156568355735232}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2493156568953049845
 BoxCollider2D:
@@ -2112,7 +2117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.7771678, z: 1}
   m_Children: []
   m_Father: {fileID: 2493156568355735232}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2493156569262357783
 BoxCollider2D:
@@ -2499,8 +2504,8 @@ Transform:
   m_LocalPosition: {x: -56.2, y: 5.252, z: 0}
   m_LocalScale: {x: 2, y: 2.3264241, z: 1}
   m_Children:
-  - {fileID: 2493156568458330357}
   - {fileID: 2493156569619081158}
+  - {fileID: 2493156568458330357}
   m_Father: {fileID: 2493156568657837583}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2623,7 +2628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2493156569605205384}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2493156569619081152
 BoxCollider2D:

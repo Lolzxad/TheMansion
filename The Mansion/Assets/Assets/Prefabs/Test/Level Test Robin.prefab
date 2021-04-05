@@ -665,8 +665,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2555590086311203197}
   - component: {fileID: 4159719351462235787}
-  - component: {fileID: 2083658027129836598}
-  - component: {fileID: 8643272950083458903}
   m_Layer: 8
   m_Name: Ladders (2)
   m_TagString: Untagged
@@ -685,8 +683,8 @@ Transform:
   m_LocalPosition: {x: -80.9, y: 5.8, z: 0}
   m_LocalScale: {x: 2, y: 2.3264241, z: 1}
   m_Children:
-  - {fileID: 4373592166673279753}
   - {fileID: 5425644621836807337}
+  - {fileID: 4373592166673279753}
   m_Father: {fileID: 6702015747726954205}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -740,45 +738,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2083658027129836598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238876323577126118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf3d112beb13d488a0faa7407f60d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part: 0
---- !u!61 &8643272950083458903
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238876323577126118}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.044117928, y: 0.387959}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.21, y: 9.66}
-    newSize: {x: 9, y: 10}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.7946873, y: 9.224082}
-  m_EdgeRadius: 0
 --- !u!1 &2341739857020826302
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2403725296324742894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.44, y: -0.1, z: 0}
+  m_LocalPosition: {x: -38.44, y: 0.1, z: 0}
   m_LocalScale: {x: 37.26485, y: 11.797266, z: 1}
   m_Children: []
   m_Father: {fileID: 3807772370488262003}
@@ -978,10 +937,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5425644621836807337}
   - component: {fileID: 3625484687530046853}
-  - component: {fileID: 5701106727888169266}
   m_Layer: 8
   m_Name: BotLadder
-  m_TagString: Untagged
+  m_TagString: LadderUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -998,7 +956,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2555590086311203197}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3625484687530046853
 BoxCollider2D:
@@ -1013,7 +971,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.63409996, y: -1.3276765}
+  m_Offset: {x: 0.47149944, y: 0.9001746}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1024,21 +982,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2254333, y: 0.20727634}
+  m_Size: {x: 1.9002323, y: 4.662978}
   m_EdgeRadius: 0
---- !u!114 &5701106727888169266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229808517389122654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf3d112beb13d488a0faa7407f60d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part: 1
 --- !u!1 &3250977920831279122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,8 +2375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6702015746792299866}
   - component: {fileID: 6702015746792299864}
-  - component: {fileID: 6702015746792299862}
-  - component: {fileID: 6702015746792299863}
   m_Layer: 8
   m_Name: Ladders
   m_TagString: Untagged
@@ -2450,8 +2393,8 @@ Transform:
   m_LocalPosition: {x: 12.8, y: -6.7, z: 0}
   m_LocalScale: {x: 2, y: 2.3264241, z: 1}
   m_Children:
-  - {fileID: 6702015747930648615}
   - {fileID: 6702015746807781140}
+  - {fileID: 6702015747930648615}
   m_Father: {fileID: 6702015747726954205}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2505,45 +2448,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6702015746792299862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6702015746792299867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf3d112beb13d488a0faa7407f60d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part: 0
---- !u!61 &6702015746792299863
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6702015746792299867}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.044117928, y: 0.387959}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.21, y: 9.66}
-    newSize: {x: 9, y: 10}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.7946873, y: 9.224082}
-  m_EdgeRadius: 0
 --- !u!1 &6702015746807781141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,7 +2461,7 @@ GameObject:
   - component: {fileID: 6702015746807781139}
   m_Layer: 8
   m_Name: BotLadder
-  m_TagString: Untagged
+  m_TagString: LadderUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2574,7 +2478,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6702015746792299866}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6702015746807781138
 BoxCollider2D:
@@ -2589,7 +2493,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.63409996, y: -1.3276765}
+  m_Offset: {x: 0.63409996, y: 0.90017223}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2600,7 +2504,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2254333, y: 0.20727634}
+  m_Size: {x: 2.2254333, y: 4.6629734}
   m_EdgeRadius: 0
 --- !u!114 &6702015746807781139
 MonoBehaviour:
@@ -4201,7 +4105,7 @@ GameObject:
   - component: {fileID: 6702015747930648614}
   m_Layer: 8
   m_Name: TopLadder
-  m_TagString: Untagged
+  m_TagString: LadderDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4218,7 +4122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6702015746792299866}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6702015747930648613
 BoxCollider2D:
@@ -4233,7 +4137,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27261353, y: 0.6389897}
+  m_Offset: {x: 0.27261353, y: -0.5928817}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4244,7 +4148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7499924, y: 1.6846297}
+  m_Size: {x: 1.7499924, y: 4.1483727}
   m_EdgeRadius: 0
 --- !u!114 &6702015747930648614
 MonoBehaviour:
@@ -4998,10 +4902,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4373592166673279753}
   - component: {fileID: 1506881431209237380}
-  - component: {fileID: 2716419885847984994}
   m_Layer: 8
   m_Name: TopLadder
-  m_TagString: Untagged
+  m_TagString: LadderDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5018,7 +4921,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2555590086311203197}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1506881431209237380
 BoxCollider2D:
@@ -5033,7 +4936,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27261353, y: 0.6389897}
+  m_Offset: {x: 0.27261353, y: -0.6580351}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5044,21 +4947,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7499924, y: 1.6846297}
+  m_Size: {x: 1.7499924, y: 4.278679}
   m_EdgeRadius: 0
---- !u!114 &2716419885847984994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8596173967557513942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf3d112beb13d488a0faa7407f60d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part: 2
 --- !u!1 &8972180130183608472
 GameObject:
   m_ObjectHideFlags: 0

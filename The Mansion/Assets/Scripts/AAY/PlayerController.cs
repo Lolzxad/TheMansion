@@ -152,7 +152,7 @@ namespace TheMansion
         }
         void OnTriggerEnter2D(Collider2D InteractableObject)
         {
-            if (InteractableObject.tag == "Hard Hiding Spot" || InteractableObject.tag == "Ladder")
+            if (InteractableObject.tag == "Hard Hiding Spot" || InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
             {
                 canInteract = true;
             }
@@ -205,17 +205,17 @@ namespace TheMansion
                             }
                         }
 
-                        if (touchedObject.tag == "LadderDown")
+                        if (touchedObject.tag == "LadderDown" && canInteract)
                         {
-                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;                           
+                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;                                                     
                             StartCoroutine(DownLadder());                          
                         }
 
-                        if (touchedObject.tag == "LadderUp")
+                        if (touchedObject.tag == "LadderUp" && canInteract)
                         {
-                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
                             ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;                            
                             StartCoroutine(UpLadder());
                         }
                     }

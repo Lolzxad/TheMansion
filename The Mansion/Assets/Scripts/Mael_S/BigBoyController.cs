@@ -228,7 +228,9 @@ namespace TheMansion
         public void BBMG()
         {
             Debug.Log("Mode Grab");
+            isGrabbing = true;
             //canClimb = false;
+
 
             playerScript.isGrabbed = true;
             isRunning = false;
@@ -260,6 +262,7 @@ namespace TheMansion
             bBcanMove = false;
             yield return new WaitForSeconds(5f);
             bBcanMove = true;
+            isGrabbing = false;
             isPatrolling = true;
         }
 
