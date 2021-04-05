@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace TheMansion
 {
@@ -9,6 +11,7 @@ namespace TheMansion
         public float stamina = 100f;
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
+        private float defaultGravity;
 
         private bool isMoving;
         private bool canInteract;
@@ -23,10 +26,19 @@ namespace TheMansion
         public Transform RunLeft;
 
         public GameObject playerSprite;
+        public Rigidbody2D playerRb;
         public Vector3 baseSpritePosition;
         public Vector3 basePosition;
+        public Vector3 ladderTop;
+        public Vector3 ladderBottom;
 
         TouchPhase touchPhase = TouchPhase.Ended;
+
+        private void Awake()
+        {
+            playerRb = GetComponent<Rigidbody2D>();
+            defaultGravity = playerRb.gravityScale;
+        }
 
         // Update is called once per frame
         void Update()
@@ -140,9 +152,8 @@ namespace TheMansion
         }
         void OnTriggerEnter2D(Collider2D InteractableObject)
         {
-            if (InteractableObject.tag == "Hard Hiding Spot")
+            if (InteractableObject.tag == "Hard Hiding Spot" || InteractableObject.tag == "Ladder")
             {
-                Debug.Log("Can hide");
                 canInteract = true;
             }
         }
@@ -193,6 +204,20 @@ namespace TheMansion
                                 StartCoroutine(Hiding());
                             }
                         }
+
+                        if (touchedObject.tag == "LadderDown")
+                        {
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
+                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;                           
+                            StartCoroutine(DownLadder());                          
+                        }
+
+                        if (touchedObject.tag == "LadderUp")
+                        {
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
+                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
+                            StartCoroutine(UpLadder());
+                        }
                     }
                 }
 
@@ -230,7 +255,7 @@ namespace TheMansion
 
         public void CalmingHeart()
         {
-            if (stamina > 0)
+            if (stamina > 0 && isHiding)
             {
                 stamina = stamina - 10f;
                 heartBeat = heartBeat - 5f;
@@ -238,11 +263,11 @@ namespace TheMansion
             }           
         }
 
-        IEnumerator StaminaLoss()
+        public IEnumerator StaminaLoss()
         {
             stamina = stamina - 0.1f;
-            heartBeat = heartBeat + 1 * Time.deltaTime;
-            hidingFactor = hidingFactor + 1 * Time.deltaTime;
+            heartBeat = heartBeat + 2 * Time.deltaTime;
+            hidingFactor = hidingFactor + 2 * Time.deltaTime;
             yield return new WaitForSeconds(1f);
         }
 
@@ -264,9 +289,38 @@ namespace TheMansion
 
             if (heartBeat > 100f)
             {
-                heartBeat = heartBeat - 0.5f * Time.deltaTime;
-                hidingFactor = hidingFactor - 0.5f * Time.deltaTime;
+                heartBeat = heartBeat - 0.25f * Time.deltaTime;
+                hidingFactor = hidingFactor - 0.25f * Time.deltaTime;
             }
+        }
+
+        IEnumerator DownLadder()
+        {
+            playerRb.gravityScale = 0;
+            Physics2D.IgnoreLayerCollision(2, 9, true);
+
+            while (transform.position.y > ladderBottom.y)
+            {
+                transform.Translate((Vector3.down * Time.deltaTime) * 1f);
+            }
+
+            playerRb.gravityScale = defaultGravity;
+            Physics2D.IgnoreLayerCollision(2, 9, false);
+            yield return null;
+        }
+        IEnumerator UpLadder()
+        {
+            playerRb.gravityScale = 0;
+            Physics2D.IgnoreLayerCollision(2, 9, true);
+
+            while (transform.position.y < ladderTop.y)
+            {
+                transform.Translate((Vector3.up * Time.deltaTime) * 1f);
+            }
+
+            playerRb.gravityScale = defaultGravity;
+            Physics2D.IgnoreLayerCollision(2, 9, false);
+            yield return null;
         }
     }
 }

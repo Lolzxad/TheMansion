@@ -7,6 +7,8 @@ TagManager:
   - Hard Hiding Spot
   - Soft Hiding Spot
   - Limit Runner
+  - LadderDown
+  - LadderUp
   layers:
   - Default
   - TransparentFX
