@@ -9,6 +9,7 @@ TagManager:
   - Limit Runner
   - LadderDown
   - LadderUp
+  - Patrol Point
   layers:
   - Default
   - TransparentFX

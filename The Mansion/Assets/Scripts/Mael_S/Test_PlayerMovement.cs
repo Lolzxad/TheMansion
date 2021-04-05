@@ -16,7 +16,7 @@ public class Test_PlayerMovement : MonoBehaviour
 
     private enum State { climb}
 
-    private float cameraSize = 19.44f;
+    //private float cameraSize = 19.44f;
 
     //Ladder Variable
     public bool botLadder = false;
@@ -55,7 +55,7 @@ public class Test_PlayerMovement : MonoBehaviour
             Physics2D.IgnoreLayerCollision(9, 10, false);
         }
 
-        ProCamera2D.Instance.UpdateScreenSize(cameraSize, 0f);
+        //ProCamera2D.Instance.UpdateScreenSize(cameraSize, 0f);
     }
 
 
