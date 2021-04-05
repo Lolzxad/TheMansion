@@ -329,11 +329,6 @@ PrefabInstance:
       objectReference: {fileID: 89799966}
     - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
-      propertyPath: spamInput
-      value: 
-      objectReference: {fileID: 1120485152}
-    - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
-        type: 3}
       propertyPath: target1
       value: 
       objectReference: {fileID: 89799966}
@@ -344,14 +339,9 @@ PrefabInstance:
       objectReference: {fileID: 1022857500}
     - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
-      propertyPath: detectZonePatrol
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
-        type: 3}
-      propertyPath: triggerBB
+      propertyPath: spamInput
       value: 
-      objectReference: {fileID: 1891011146}
+      objectReference: {fileID: 1120485152}
     - target: {fileID: 1951075757185934885, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -411,21 +401,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BigBoy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611125587321855586, guid: 578ee73d0a3548c4b83cff65721a996a,
-        type: 3}
-      propertyPath: detectRadius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111280485842733181, guid: 578ee73d0a3548c4b83cff65721a996a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111280485842733181, guid: 578ee73d0a3548c4b83cff65721a996a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 578ee73d0a3548c4b83cff65721a996a, type: 3}
@@ -1053,12 +1028,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1891011146 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7133650944751025784, guid: 578ee73d0a3548c4b83cff65721a996a,
-    type: 3}
-  m_PrefabInstance: {fileID: 533899946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1952158145
 PrefabInstance:
   m_ObjectHideFlags: 0

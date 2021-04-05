@@ -294,6 +294,7 @@ MonoBehaviour:
   moveSpots:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   baseChance: 1
   isPatrolling: 0
   isRunning: 0
@@ -303,12 +304,12 @@ MonoBehaviour:
   hideFail: 0
   movingRight: 1
   distance: 2
-  detectZonePatrol: 3
+  detectZonePatrol: 5
   target1: {fileID: 0}
   target2: {fileID: 0}
   waitTime: 1
   spamInput: {fileID: 0}
-  triggerBB: {fileID: 0}
+  triggerBB: {fileID: 7133650944751025784}
 --- !u!1 &7133650944751025784
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7133650944751025784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.58, y: 0, z: 0}
+  m_LocalPosition: {x: -5.85, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1951075757185934885}
@@ -353,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7516f59b2772c418eecbad7e74f60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRadius: 5
+  detectRadius: 8
 --- !u!61 &4819285911356190389
 BoxCollider2D:
   m_ObjectHideFlags: 0
