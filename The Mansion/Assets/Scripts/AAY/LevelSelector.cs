@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSelector : MonoBehaviour
+namespace TheMansion
 {
-    public void ChangeLevel(string levelName)
+    public class LevelSelector : MonoBehaviour
     {
-        SceneManager.LoadScene(levelName);
+        public void ChangeLevel(string levelName)
+        {
+            SceneManager.LoadScene(levelName);
+        }
     }
 }
+

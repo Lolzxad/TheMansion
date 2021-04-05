@@ -185,7 +185,7 @@ namespace TheMansion
             playerScript.hidingFactor = playerScript.hidingFactor + 20f;
             StartCoroutine(MobCantMove());   
         }
-        public void HideCheck()
+        public void HideCheck() 
         {
             //Formule pour calculer la probabilité de se faire chopper
             if (playerScript.hidingFactor * Random.Range(1, 6) >= 100)
