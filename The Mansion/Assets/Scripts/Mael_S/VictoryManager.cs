@@ -16,6 +16,8 @@ namespace TheMansion
         public bool sideObj1;
         public bool sideObj2;
 
+        public bool isCDV;
+
         #region Levels
         public bool isLevel1;
         public bool isLevel2;
@@ -41,11 +43,13 @@ namespace TheMansion
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.name == "Player")
+            if (other.gameObject.tag == "Player")
             {
+                Debug.Log("TOuche baby");
+
                 if (isLevel1)
                 {
-                    if (canWin && sideObj1)
+                    if (canWin && sideObj1 && isCDV)
                     {
                         Debug.Log("Level complete!");
                     }

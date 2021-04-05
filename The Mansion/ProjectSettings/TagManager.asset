@@ -7,6 +7,7 @@ TagManager:
   - Hard Hiding Spot
   - Soft Hiding Spot
   - Limit Runner
+  - Patrol Point
   layers:
   - Default
   - TransparentFX
