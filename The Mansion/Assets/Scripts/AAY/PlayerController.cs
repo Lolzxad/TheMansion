@@ -14,7 +14,8 @@ namespace TheMansion
         private float defaultGravity;
 
         private bool isMoving;
-        private bool canInteract;
+        private bool canHide;
+        private bool canUseLadder;
         public bool isMouse;
         public bool isHiding;
         public bool isGrabbed;
@@ -77,7 +78,7 @@ namespace TheMansion
                             }
                             else
                             {
-                                if (touchedObject.tag == "Hard Hiding Spot" && canInteract && !isGrabbed)
+                                if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed)
                                 {
                                     isHiding = true;
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
@@ -152,16 +153,31 @@ namespace TheMansion
         }
         void OnTriggerEnter2D(Collider2D InteractableObject)
         {
-            if (InteractableObject.tag == "Hard Hiding Spot" || InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
+            if (InteractableObject.tag == "Hard Hiding Spot")
             {
-                canInteract = true;
+                canHide = true;
                 InteractableObject.GetComponent<OutlineActivator>().EnableOutline();
+            }
+
+            if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
+            {
+                canUseLadder = true;
+                InteractableObject.transform.parent.GetComponent<OutlineActivator>().EnableOutline();
             }
         }
         void OnTriggerExit2D(Collider2D InteractableObject)
         {
-            canInteract = false;
-            InteractableObject.GetComponent<OutlineActivator>().DisableOutline();
+            if (InteractableObject.tag == "Hard Hiding Spot")
+            {
+                canHide = false;
+                InteractableObject.GetComponent<OutlineActivator>().DisableOutline();
+            }
+
+            if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
+            {
+                canUseLadder = false;
+                InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
+            }
         }
 
         void playerMouse()
@@ -194,7 +210,7 @@ namespace TheMansion
                         }
                         else
                         {
-                            if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.tag != "LadderDown" && touchedObject.tag != "LadderUp" && canInteract && !isGrabbed)
+                            if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed)
                             {
                                 isHiding = true;
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
@@ -207,14 +223,14 @@ namespace TheMansion
                             }
                         }
 
-                        if (touchedObject.tag == "LadderDown" && touchedObject.tag != "LadderUp" && touchedObject.tag != "Hard Hiding Spot" && canInteract)
+                        if (touchedObject.tag == "LadderDown" && canUseLadder)
                         {
                             ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
                             ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;                                                     
                             StartCoroutine(DownLadder());                          
                         }
 
-                        if (touchedObject.tag == "LadderUp" && touchedObject.tag != "LadderDown" && touchedObject.tag != "Hard Hiding Spot" && canInteract)
+                        if (touchedObject.tag == "LadderUp" && canUseLadder)
                         {
                             ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
                             ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;                            
