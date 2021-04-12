@@ -17,6 +17,7 @@ namespace TheMansion
         public bool sideObj2;
 
         public bool isCDV;
+        public static bool bigWin;
 
         #region Levels
         public bool isLevel1;
@@ -29,6 +30,12 @@ namespace TheMansion
 
         #endregion
 
+        public GameObject obj;
+        public GameObject menuWin;
+        public GameObject keyTMP;
+        public GameObject keyUI;
+        public GameObject doorLockedTMP;
+
         private void Start()
         {
             //provisoire
@@ -37,8 +44,6 @@ namespace TheMansion
             player = GameObject.FindGameObjectWithTag("Player");
             canWin = false;
 
-            sideObj1 = false;
-            sideObj2 = false;
         }
 
         public void OnTriggerEnter2D(Collider2D other)
@@ -49,28 +54,58 @@ namespace TheMansion
 
                 if (isLevel1)
                 {
-                    if (canWin && sideObj1 && isCDV)
+
+                    if(!canWin && !isCDV)
                     {
-                        Debug.Log("Level complete!");
-                        //apparait un menu (same scene) lui félicitant d'avoir terminé le niveau 
-                            //il peut passer au menu ou sélection de niveau
+                        Debug.Log("T'as trouvé la clé, bien ouej");
+
+                        bigWin = true;
+                        Destroy(obj);
+                        //supp la clé dans la map (fx)
+                        keyUI.SetActive(true);                   
+                        StartCoroutine(TextKeyLooted());
                     }
 
-                    if (!canWin)
-                    {
-                        Debug.Log("Quest item done");
-                        sideObj1 = true;
-                        canWin = true;
-                        //supp le clé tavu
-                        //supp la clé dans la map (fx)
-                        //frère c'est bon tu peux ouvrir la porte et finir ce niveau
-                        //clé qui apparait au coin de l'écran tavu #feedback
 
+
+                    if (!bigWin && isCDV)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+                  
+
+
+                    if(bigWin && isCDV)
+                    {
+                        Debug.Log("C'est bon t'as win");
+
+                        //anim (on va utiliser une ptite coroutine
+                        menuWin.SetActive(true);                      
                     }
                 }
                 
 
             }
+        }
+
+        IEnumerator TextDoorLocked()
+        {
+            doorLockedTMP.SetActive(true);
+
+            yield return new WaitForSeconds(5f);
+
+            doorLockedTMP.SetActive(false);
+        }
+
+        IEnumerator TextKeyLooted()
+        {
+            keyTMP.SetActive(true);
+
+            yield return new WaitForSeconds(5f);
+
+            keyTMP.SetActive(false);
         }
     }
 }
