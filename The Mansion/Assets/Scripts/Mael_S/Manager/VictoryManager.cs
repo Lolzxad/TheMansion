@@ -52,6 +52,8 @@ namespace TheMansion
                     if (canWin && sideObj1 && isCDV)
                     {
                         Debug.Log("Level complete!");
+                        //apparait un menu (same scene) lui félicitant d'avoir terminé le niveau 
+                            //il peut passer au menu ou sélection de niveau
                     }
 
                     if (!canWin)
@@ -59,6 +61,11 @@ namespace TheMansion
                         Debug.Log("Quest item done");
                         sideObj1 = true;
                         canWin = true;
+                        //supp le clé tavu
+                        //supp la clé dans la map (fx)
+                        //frère c'est bon tu peux ouvrir la porte et finir ce niveau
+                        //clé qui apparait au coin de l'écran tavu #feedback
+
                     }
                 }
                 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 
 namespace TheMansion
@@ -55,6 +56,9 @@ namespace TheMansion
 
             waitTime = startWaitTime;
             randomSpot = Random.Range(0, moveSpots.Length);
+
+
+
         }
 
         private void Update()
@@ -231,10 +235,11 @@ namespace TheMansion
             isGrabbing = true;
             //canClimb = false;
 
+            ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
 
             playerScript.isGrabbed = true;
             isRunning = false;
-            //warning.SetActive(false);
+            
             spamInput.SetActive(true);            
         }
 
@@ -242,7 +247,10 @@ namespace TheMansion
         {
             Debug.Log("BB is stunned");
 
+            ProCamera2DShake.Instance.StopConstantShaking();
+
             spamInput.SetActive(false);
+            ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
             playerScript.heartBeat = playerScript.heartBeat + 20f;
             playerScript.hidingFactor = playerScript.hidingFactor + 20f;
