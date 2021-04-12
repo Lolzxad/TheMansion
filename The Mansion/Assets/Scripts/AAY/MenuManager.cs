@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 namespace TheMansion
 {
-    public class LevelSelector : MonoBehaviour
+    public class MenuManager : MonoBehaviour
     {
         public void ChangeLevel(string levelName)
         {
             SceneManager.LoadScene(levelName);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
     }
 }

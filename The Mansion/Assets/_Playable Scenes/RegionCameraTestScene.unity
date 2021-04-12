@@ -1213,6 +1213,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &947394824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5786064345055158378, guid: 3d042bab5790c9947b21a51b539bd11a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4349716798002073600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &947394826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947394824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65e3c4a85f67cc46bab79f6df9d083d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1003525857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2482,6 +2500,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4943281956584767517, guid: 0993f5f128e0ab542847a37b7c088ac5,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4943281956584767519, guid: 0993f5f128e0ab542847a37b7c088ac5,
         type: 3}
       propertyPath: m_Name
@@ -3024,6 +3047,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369300522171297489, guid: 3d042bab5790c9947b21a51b539bd11a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0482769
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369300522171297489, guid: 3d042bab5790c9947b21a51b539bd11a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0040860176
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369300522171297489, guid: 3d042bab5790c9947b21a51b539bd11a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.602131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369300522171297489, guid: 3d042bab5790c9947b21a51b539bd11a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8.458619
       objectReference: {fileID: 0}
     - target: {fileID: 9202115962354667880, guid: 3d042bab5790c9947b21a51b539bd11a,
         type: 3}
