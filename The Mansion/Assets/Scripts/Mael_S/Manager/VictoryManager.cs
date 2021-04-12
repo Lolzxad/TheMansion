@@ -60,7 +60,9 @@ namespace TheMansion
                         Debug.Log("T'as trouvé la clé, bien ouej");
 
                         bigWin = true;
-                        Destroy(obj);
+                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+                        
                         //supp la clé dans la map (fx)
                         keyUI.SetActive(true);                   
                         StartCoroutine(TextKeyLooted());
@@ -106,6 +108,7 @@ namespace TheMansion
             yield return new WaitForSeconds(5f);
 
             keyTMP.SetActive(false);
+            Destroy(obj);
         }
     }
 }
