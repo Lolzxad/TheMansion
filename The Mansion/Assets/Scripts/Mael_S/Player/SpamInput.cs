@@ -9,14 +9,15 @@ namespace TheMansion
 
     public class SpamInput : MonoBehaviour
     {
-        [SerializeField] int spamRight;
-        [SerializeField] int spamLeft;
+        [SerializeField] int spam;
+
         [SerializeField] int playerLives = 4;
+        [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
 
-        bool spamLeftDone;
-        bool spamRightDone;
+
+        bool spamDone;
         bool timeIsRunning;
 
         BigBoyController bbController;
@@ -24,8 +25,8 @@ namespace TheMansion
 
         private void Start()
         {
-            spamLeft = 0;
-            spamRight = 0;
+
+            spam = 0;
 
             timeIsRunning = true;
 
@@ -52,20 +53,14 @@ namespace TheMansion
             }
 
 
-            if(spamLeft == 2)
+            if(spam == spamNeeded)
             {
-                spamLeftDone = true;
-                Debug.Log(spamLeftDone);
-            }
-
-            if(spamRight == 2)
-            {
-                spamRightDone = true;
-                Debug.Log(spamRightDone);
+                spamDone = true;
+                Debug.Log(spamDone);
             }
 
 
-            if(spamRightDone && spamLeftDone)
+            if(spamDone)
             {
                 Debug.Log("YOU FREE TO GO");
 
@@ -73,10 +68,10 @@ namespace TheMansion
                 {
                     Debug.Log("IsStunned");
                     bbController.Stunned();
-                    spamLeft = 0;
-                    spamRight = 0;
-                    spamLeftDone = false;
-                    spamRightDone = false;
+
+                    spam = 0;
+  
+                    spamDone = false;
                     gameObject.SetActive(false);
                     playerLives--;
                 }
@@ -102,14 +97,10 @@ namespace TheMansion
 
         }
 
-        public void AddSpamLeft()
-        {
-            spamLeft += 1;
-        }
 
-        public void AddSpamRight()
+        public void AddSpam()
         {
-            spamRight += 1;
+            spam += 1;
         }
 
         public void GameOver()
