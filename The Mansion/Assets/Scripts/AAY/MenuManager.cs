@@ -12,6 +12,11 @@ namespace TheMansion
             SceneManager.LoadScene(levelName);
         }
 
+        public void LoadLevel1()
+        {
+            SceneManager.LoadScene("Niveau_1_TUTO");
+        }
+
         public void QuitGame()
         {
             Application.Quit();

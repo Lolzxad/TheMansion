@@ -12,7 +12,10 @@ namespace TheMansion
     {
         public float bigBoySpeed;
         public float speedPO;
-        public float continueRunning = 5;
+        public float continueRunning = 8;
+
+        float defaultSpeed;
+        float defaultSpeedPO;
 
         public Transform[] moveSpots;
         private int randomSpot;
@@ -24,6 +27,7 @@ namespace TheMansion
         public bool bBcanMove;
         public bool playerInVision;
         public bool hideFail;
+        public float rechercheTime;
 
         public bool movingRight = true;
         public float distance;
@@ -57,7 +61,8 @@ namespace TheMansion
             waitTime = startWaitTime;
             randomSpot = Random.Range(0, moveSpots.Length);
 
-
+            defaultSpeed = bigBoySpeed;
+            defaultSpeedPO = speedPO;
 
         }
 
@@ -96,15 +101,19 @@ namespace TheMansion
                 BBMG();
             }
 
-            if (other.gameObject.tag == "Hard Hiding Spot" && isRunning && playerScript.isHiding)
+            if (other.gameObject.tag == "Hard Hiding Spot" && playerScript.isHiding)
             {
 
-                Debug.Log("Touching hiding spot");
+                Debug.Log("Big boy Touching hiding spot");
                 Debug.Log(isRunning);
+                bBcanMove = false;
                 HideCheck();
+                //StartCoroutine(ModeRecherche());
 
                 if (hideFail)
                 {
+                    Debug.Log("hide failed");
+
                     playerScript.isHiding = false;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                     playerScript.transform.position = playerScript.basePosition;
@@ -114,11 +123,27 @@ namespace TheMansion
                 }
                 else
                 {
+                    Debug.Log("hide passed");
+
                     isPatrolling = true;
                     bBcanMove = true;
                     isRunning = false;
                 }                
             }
+        }
+
+        IEnumerator ModeRecherche()
+        {
+            bBcanMove = false;
+           
+            //lance anim recherche
+            Debug.Log("Mode recherche en cours");
+            yield return new WaitForSeconds(rechercheTime);
+
+            Debug.Log("Mode recherche terminé");
+
+            //arête anim recherche
+            
         }
 
         public void TriggerPoursuite()
@@ -164,58 +189,62 @@ namespace TheMansion
 
         public void BBMPA()
         {
-            Debug.Log("Big Boy is patrolling");
-           // triggerBB.SetActive(true);
 
-          /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
+           
+                Debug.Log("Big Boy is patrolling");
+                // triggerBB.SetActive(true);
 
-            if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
-            {
-                if (waitTime <= 0)
+                /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
+
+                  if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+                  {
+                      if (waitTime <= 0)
+                      {
+                          randomSpot = Random.Range(0, moveSpots.Length);
+                          waitTime = startWaitTime;
+                      }
+                      else
+                      {
+                          waitTime -= Time.deltaTime;
+                      }
+                  }*/
+
+                // distance = Vector3.Distance(target.position, transform.position);
+                float distance1 = Vector3.Distance(target1.position, transform.position);
+                float distance2 = Vector3.Distance(target2.position, transform.position);
+                //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
+
+                if (movingRight && bBcanMove)
                 {
-                    randomSpot = Random.Range(0, moveSpots.Length);
-                    waitTime = startWaitTime;
-                }
-                else
-                {
-                    waitTime -= Time.deltaTime;
-                }
-            }*/
-
-            // distance = Vector3.Distance(target.position, transform.position);
-            float distance1 = Vector3.Distance(target1.position, transform.position);
-            float distance2 = Vector3.Distance(target2.position, transform.position);
-            //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
-
-            if (movingRight)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
-            }
-
-            if (!movingRight)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
-            }
-
-            if (distance1 <= detectZonePatrol)
-            {
-                if(movingRight == true)
-                {
-                    Debug.Log("Target 1 detected");
-                    transform.eulerAngles = new Vector3(0, -180, 0);
-                    movingRight = false;
+                    transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
                 }
 
-            }
-            if(distance2 <= detectZonePatrol)
-            {
-                if (movingRight == false)
+                if (!movingRight && bBcanMove)
                 {
-                    Debug.Log("Target 2 detected");
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    movingRight = true;
+                    transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
                 }
-            }
+
+                if (distance1 <= detectZonePatrol)
+                {
+                    if (movingRight == true)
+                    {
+                        Debug.Log("Target 1 detected");
+                        transform.eulerAngles = new Vector3(0, -180, 0);
+                        movingRight = false;
+                    }
+
+                }
+                if (distance2 <= detectZonePatrol)
+                {
+                    if (movingRight == false)
+                    {
+                        Debug.Log("Target 2 detected");
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        movingRight = true;
+                    }
+                }
+            
+           
            
         }
 
@@ -233,7 +262,7 @@ namespace TheMansion
         {
             Debug.Log("Mode Grab");
             isGrabbing = true;
-            //canClimb = false;
+            bBcanMove = false;
 
             ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
 
@@ -258,16 +287,19 @@ namespace TheMansion
         }
         public void HideCheck() 
         {
+            Debug.Log("Hide check wip");
+
             //Formule pour calculer la probabilité de se faire chopper
             if (playerScript.hidingFactor * Random.Range(1, 6) >= 100)
             {
                 hideFail = true;
+                Debug.Log("AAAAAAAAAAAH");
             }
         }
 
         IEnumerator MobCantMove()
         {
-            bBcanMove = false;
+            
             yield return new WaitForSeconds(5f);
             bBcanMove = true;
             isGrabbing = false;
