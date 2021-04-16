@@ -36,6 +36,7 @@ namespace TheMansion
         [SerializeField] Transform target2;
 
         PlayerController playerScript;
+        TutoManager tuto;
 
         [SerializeField] float waitTime;
         float startWaitTime;
@@ -48,6 +49,7 @@ namespace TheMansion
         private void Awake()
         {
             playerScript = FindObjectOfType<PlayerController>();
+            tuto = FindObjectOfType<TutoManager>();
         }
 
         private void Start()

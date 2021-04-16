@@ -22,6 +22,7 @@ namespace TheMansion
 
         BigBoyController bbController;
         RunnerController runnerController;
+        TutoManager tuto;
 
         private void Start()
         {
@@ -32,6 +33,7 @@ namespace TheMansion
 
             bbController = FindObjectOfType<BigBoyController>();
             runnerController = FindObjectOfType<RunnerController>();
+            tuto = FindObjectOfType<TutoManager>();
         }
 
         private void Update()
@@ -44,11 +46,19 @@ namespace TheMansion
                 }
                 else
                 {
-                    Debug.Log("TIME OUT");
-                    GameOver();
+                    if (!tuto.isTuto)
+                    {
+                        Debug.Log("TIME OUT");
+                        GameOver();
 
-                    timeLimit = 0;
-                    timeIsRunning = false;
+                        timeLimit = 0;
+                        timeIsRunning = false;
+                    }
+                    else
+                    {
+                        spamDone = true;
+                    }
+                    
                 }
             }
 
@@ -75,6 +85,8 @@ namespace TheMansion
                     gameObject.SetActive(false);
                     playerLives--;
                 }
+
+                tuto.stunTexte.SetActive(true);
 
                 /*if (runnerController.isGrabbing)
                 {

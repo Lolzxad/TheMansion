@@ -5,6 +5,12 @@ using Com.LuisPedroFonseca.ProCamera2D;
 
 public class CameraManagerBB : MonoBehaviour
 {
+    private void Start()
+    {
+        Physics2D.IgnoreLayerCollision(11, 9, false);
+        Physics2D.IgnoreLayerCollision(11, 2, false);
+    }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Player")
