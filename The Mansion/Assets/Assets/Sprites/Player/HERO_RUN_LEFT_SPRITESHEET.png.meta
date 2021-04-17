@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: c8a7bc17ea0a10c4d9830851c7510dec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6980676206546836182
+    second: HERO_RUN_LEFT_SPRITESHEET_0
+  - first:
+      213: -3304285627166651830
+    second: HERO_RUN_LEFT_SPRITESHEET_1
+  - first:
+      213: -8902017861839415797
+    second: HERO_RUN_LEFT_SPRITESHEET_2
+  - first:
+      213: 8190737961799605395
+    second: HERO_RUN_LEFT_SPRITESHEET_3
+  - first:
+      213: 4690468022054469995
+    second: HERO_RUN_LEFT_SPRITESHEET_4
+  - first:
+      213: -6629101914783993167
+    second: HERO_RUN_LEFT_SPRITESHEET_5
+  - first:
+      213: -6426237862993597383
+    second: HERO_RUN_LEFT_SPRITESHEET_6
+  - first:
+      213: 7618925381129649289
+    second: HERO_RUN_LEFT_SPRITESHEET_7
+  - first:
+      213: 4521529226468405636
+    second: HERO_RUN_LEFT_SPRITESHEET_8
+  - first:
+      213: -7191072618818513447
+    second: HERO_RUN_LEFT_SPRITESHEET_9
+  - first:
+      213: -750715144720554690
+    second: HERO_RUN_LEFT_SPRITESHEET_10
+  - first:
+      213: -8875398127330240694
+    second: HERO_RUN_LEFT_SPRITESHEET_11
+  - first:
+      213: 3238249595585217678
+    second: HERO_RUN_LEFT_SPRITESHEET_12
+  - first:
+      213: 1123373578520912707
+    second: HERO_RUN_LEFT_SPRITESHEET_13
+  - first:
+      213: 3413464768264790070
+    second: HERO_RUN_LEFT_SPRITESHEET_14
+  - first:
+      213: 6008303660680091304
+    second: HERO_RUN_LEFT_SPRITESHEET_15
+  - first:
+      213: -3093943086861073598
+    second: HERO_RUN_LEFT_SPRITESHEET_0
+  - first:
+      213: -7203033446146072299
+    second: HERO_RUN_LEFT_SPRITESHEET_1
+  - first:
+      213: 6501749017612679542
+    second: HERO_RUN_LEFT_SPRITESHEET_2
+  - first:
+      213: -8689951803392617646
+    second: HERO_RUN_LEFT_SPRITESHEET_3
+  - first:
+      213: -2526039726609759144
+    second: HERO_RUN_LEFT_SPRITESHEET_4
+  - first:
+      213: -3088404201845278828
+    second: HERO_RUN_LEFT_SPRITESHEET_5
+  - first:
+      213: 1506647697837502555
+    second: HERO_RUN_LEFT_SPRITESHEET_6
+  - first:
+      213: 2323494275005416519
+    second: HERO_RUN_LEFT_SPRITESHEET_7
+  - first:
+      213: -5159181316013417878
+    second: HERO_RUN_LEFT_SPRITESHEET_8
+  - first:
+      213: 2478348227435524551
+    second: HERO_RUN_LEFT_SPRITESHEET_9
+  - first:
+      213: 5421340123045533009
+    second: HERO_RUN_LEFT_SPRITESHEET_10
+  - first:
+      213: 1445987218273516034
+    second: HERO_RUN_LEFT_SPRITESHEET_11
+  - first:
+      213: -6775432443839202163
+    second: HERO_RUN_LEFT_SPRITESHEET_12
+  - first:
+      213: -2031267999587566737
+    second: HERO_RUN_LEFT_SPRITESHEET_13
+  - first:
+      213: -3625621619574264006
+    second: HERO_RUN_LEFT_SPRITESHEET_14
+  - first:
+      213: -5006959509782900200
+    second: HERO_RUN_LEFT_SPRITESHEET_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 101
+        width: 370
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243ce58a72b1015d0800000000000000
+      internalID: -3093943086861073598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_1
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 99
+        width: 229
+        height: 634
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511a4397e3fa90c90800000000000000
+      internalID: -7203033446146072299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_2
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 95
+        width: 282
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6797c85a84ada3a50800000000000000
+      internalID: 6501749017612679542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_3
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 97
+        width: 483
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253948b40e6176780800000000000000
+      internalID: -8689951803392617646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_4
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 103
+        width: 528
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85486ee8044b1fcd0800000000000000
+      internalID: -2526039726609759144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 4106
+        y: 101
+        width: 524
+        height: 636
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4973032ddb8c325d0800000000000000
+      internalID: -3088404201845278828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 4953
+        y: 99
+        width: 361
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b50b34f3910b8e410800000000000000
+      internalID: 1506647697837502555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_8
+      rect:
+        serializedVersion: 2
+        x: 5820
+        y: 97
+        width: 215
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a10377de7e668b0800000000000000
+      internalID: -5159181316013417878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_9
+      rect:
+        serializedVersion: 2
+        x: 6633
+        y: 99
+        width: 246
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1730ef49cd46220800000000000000
+      internalID: 2478348227435524551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_10
+      rect:
+        serializedVersion: 2
+        x: 7363
+        y: 97
+        width: 373
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15593b05e187c3b40800000000000000
+      internalID: 5421340123045533009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_11
+      rect:
+        serializedVersion: 2
+        x: 8069
+        y: 103
+        width: 457
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ab2feb6bd211410800000000000000
+      internalID: 1445987218273516034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_RUN_LEFT_SPRITESHEET_12
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 597
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cbe411714d8f1a0800000000000000
+      internalID: -6775432443839202163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
