@@ -2136,6 +2136,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa00dd28c4de844299a9e4a398f17a9, type: 3}
+--- !u!114 &1153051087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4083986822241546064, guid: cfa00dd28c4de844299a9e4a398f17a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153051086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad509239b9e60da43bbf81a043fbe1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1177350926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5234,7 +5246,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1153051087}
         m_MethodName: CalmingHeart
         m_Mode: 1
         m_Arguments:

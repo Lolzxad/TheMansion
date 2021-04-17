@@ -88,6 +88,7 @@ namespace TheMansion
 
                 tuto.stunTexte.SetActive(true);
 
+
                 /*if (runnerController.isGrabbing)
                 {
                     runnerController.isTired = true;

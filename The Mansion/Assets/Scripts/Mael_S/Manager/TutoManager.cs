@@ -39,6 +39,7 @@ namespace TheMansion
         [Header("Inputs")]
         public GameObject movementInput;
         public GameObject hideInput;
+        public GameObject hideInput2;
         public GameObject heartInput;
 
         [Space]
@@ -85,6 +86,8 @@ namespace TheMansion
 
                 bigBoy.GetComponent<BigBoyController>().enabled = false;
                 //stunTexte.SetActive(true);
+                player.GetComponent<PlayerController>().enabled = false;
+                StartCoroutine(WaitForMove());
             }
 
             if(readyToHide == true)
@@ -127,20 +130,24 @@ namespace TheMansion
 
             yield return new WaitForSeconds(5);
             hideInput.SetActive(true);
+            hideInput2.SetActive(true);
             Debug.Log("Show input hide");
 
 
             StartCoroutine(WaitToRemoveInputHide());
             Debug.Log("Remove input hide");
             
-            player.GetComponent<PlayerController>().enabled = true;
+            
         }
 
         IEnumerator WaitToRemoveInputHide()
         {
             yield return new WaitForSeconds(5);
             hideInput.SetActive(false);
+            hideInput2.SetActive(false);
 
+            Debug.Log("IL PEUT BOUGER");
+            player.GetComponent<PlayerController>().enabled = true;
         }
 
         IEnumerator WaitForHeart()
@@ -151,7 +158,7 @@ namespace TheMansion
             heartTexte.SetActive(true);
             heart.SetActive(true);
             heart.GetComponent<HeartAnimation>().enabled = false;
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(8);
 
             heartInput.SetActive(true);
 
@@ -203,6 +210,8 @@ namespace TheMansion
             timeToHideTexte.SetActive(true);
             readyToHide = false;
             player.GetComponent<PlayerController>().enabled = false;
+            Debug.Log("PEUT PAS BOUGER");
+
             bigBoy.SetActive(true);
             bigBoy.GetComponent<BigBoyController>().enabled = false;
             

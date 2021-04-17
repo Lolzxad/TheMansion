@@ -8,6 +8,8 @@ namespace TheMansion
     {
         [SerializeField] bool isDoor;
 
+        
+
         TutoManager tuto;
 
         private void Start()
@@ -25,6 +27,7 @@ namespace TheMansion
             else
             {
                 Debug.Log("Trigger hide ready");
+                //tuto.player.GetComponent<PlayerController>().enabled = false;
                 tuto.ReadyToHide();
             }
         }
