@@ -63,7 +63,7 @@ namespace TheMansion
             bigBoy.GetComponent<SpriteRenderer>().enabled = false;
             frontBbTrigger.SetActive(false);
             backBbTrigger.SetActive(false);
-            bBCameraHandlerTrigger.SetActive(false);
+            
 
 
 

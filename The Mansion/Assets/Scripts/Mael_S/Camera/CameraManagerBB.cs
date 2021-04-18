@@ -7,8 +7,13 @@ public class CameraManagerBB : MonoBehaviour
 {
     private void Start()
     {
-        Physics2D.IgnoreLayerCollision(11, 9, false);
-        Physics2D.IgnoreLayerCollision(11, 2, false);
+        
+    }
+
+    private void Update()
+    {
+        Physics2D.IgnoreLayerCollision(11, 9, true);
+        //Physics2D.IgnoreLayerCollision(11, 2, true);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -16,6 +21,7 @@ public class CameraManagerBB : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             ProCamera2DShake.Instance.ConstantShake("BBisNear");
+            Debug.Log("Boom ca bouge");
         }
     }
 

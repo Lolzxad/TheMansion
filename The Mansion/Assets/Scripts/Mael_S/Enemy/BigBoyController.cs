@@ -103,14 +103,15 @@ namespace TheMansion
                 BBMG();
             }
 
-            if (other.gameObject.tag == "Hard Hiding Spot" && playerScript.isHiding)
+            if (other.gameObject.tag == "Player" && playerScript.isHiding)
             {
 
                 Debug.Log("Big boy Touching hiding spot");
                 Debug.Log(isRunning);
                 bBcanMove = false;
-                HideCheck();
-                //StartCoroutine(ModeRecherche());
+                isPatrolling = false;
+                
+                StartCoroutine(ModeRecherche()); 
 
                 if (hideFail)
                 {
@@ -136,16 +137,16 @@ namespace TheMansion
 
         IEnumerator ModeRecherche()
         {
-            bBcanMove = false;
-           
+            
+            
             //lance anim recherche
             Debug.Log("Mode recherche en cours");
-            yield return new WaitForSeconds(rechercheTime);
+            yield return new WaitForSecondsRealtime(rechercheTime);
 
             Debug.Log("Mode recherche terminé");
-
+            HideCheck();
             //arête anim recherche
-            
+
         }
 
         public void TriggerPoursuite()
