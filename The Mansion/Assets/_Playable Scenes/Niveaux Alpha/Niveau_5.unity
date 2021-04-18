@@ -149,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &37396998
 PrefabInstance:
@@ -1086,7 +1086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445082965
 GameObject:
@@ -2447,12 +2447,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904494731}
   m_CullTransparentMesh: 0
---- !u!4 &909631686 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4083986822241546065, guid: cfa00dd28c4de844299a9e4a398f17a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1153051086}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &926127939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,18 +3372,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa00dd28c4de844299a9e4a398f17a9, type: 3}
---- !u!114 &1153051087 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4083986822241546064, guid: cfa00dd28c4de844299a9e4a398f17a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1153051086}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad509239b9e60da43bbf81a043fbe1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1174252005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3566,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 9808ce7d4cfc14043833038a22459917, type: 3}
 --- !u!4 &1221196692 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8147632956330511527, guid: 9808ce7d4cfc14043833038a22459917,
+  m_CorrespondingSourceObject: {fileID: 3203845648887730025, guid: 9808ce7d4cfc14043833038a22459917,
     type: 3}
   m_PrefabInstance: {fileID: 1221196691}
   m_PrefabAsset: {fileID: 0}
@@ -4094,7 +4076,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 9808ce7d4cfc14043833038a22459917, type: 3}
 --- !u!4 &1638168824 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8147632956330511527, guid: 9808ce7d4cfc14043833038a22459917,
+  m_CorrespondingSourceObject: {fileID: 3203845648887730025, guid: 9808ce7d4cfc14043833038a22459917,
     type: 3}
   m_PrefabInstance: {fileID: 1638168823}
   m_PrefabAsset: {fileID: 0}
@@ -4634,7 +4616,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817556921
 GameObject:
@@ -4860,6 +4842,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1925218635, guid: 497e8b456d93cb040aca67c34330fc00, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538142, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4934,7 +4920,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CameraTargets.Array.data[0].TargetTransform
       value: 
-      objectReference: {fileID: 909631686}
+      objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
       propertyPath: OffsetY
@@ -5140,8 +5126,8 @@ Transform:
   - {fileID: 84071138}
   - {fileID: 1522012315}
   - {fileID: 475056336}
-  - {fileID: 1638168824}
   - {fileID: 1221196692}
+  - {fileID: 1638168824}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5176,7 +5162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.27, y: 8.45}
+    oldSize: {x: 6.2714844, y: 8.45}
     newSize: {x: 0.5, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5745,7 +5731,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.27, y: 8.45}
+    oldSize: {x: 6.2714844, y: 8.45}
     newSize: {x: 0.5, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6081,7 +6067,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.27, y: 8.45}
+    oldSize: {x: 6.2714844, y: 8.45}
     newSize: {x: 0.5, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6157,7 +6143,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.27, y: 8.45}
+    oldSize: {x: 6.2714844, y: 8.45}
     newSize: {x: 0.5, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6416,7 +6402,7 @@ Transform:
   - {fileID: 2493156568598955103}
   - {fileID: 2493156569260143514}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2493156570060182576
 Transform:
@@ -6646,7 +6632,7 @@ RectTransform:
   - {fileID: 1854367699}
   - {fileID: 37396999}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6736,7 +6722,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153051087}
+      - m_Target: {fileID: 0}
         m_MethodName: CalmingHeart
         m_Mode: 1
         m_Arguments:
