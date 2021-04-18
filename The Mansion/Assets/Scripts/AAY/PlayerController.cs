@@ -203,7 +203,9 @@ namespace TheMansion
                             if (touchedObject.tag == "Hard Hiding Spot")
                             {
                                 isHiding = false;
+                                playerAnimator.SetBool("isHiding", false);
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                                playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
                                 transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;
@@ -215,7 +217,9 @@ namespace TheMansion
                             {
                                 isHiding = true;
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
-                                playerAnimator.SetTrigger("isHiding");
+                                playerRb.gravityScale = 0;
+                                playerAnimator.SetTrigger("playerHides");
+                                playerAnimator.SetBool("isHiding", true);
                                 Debug.Log("Is Hiding");
                                 basePosition = transform.position;
                                 baseSpritePosition = playerSprite.transform.position;

@@ -233,11 +233,14 @@ namespace TheMansion
         {
             Debug.Log("Mode Grab");
             isGrabbing = true;
+            
             //canClimb = false;
 
             ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
 
             playerScript.isGrabbed = true;
+            playerScript.playerAnimator.SetTrigger("playerGrabbed");
+            playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
             spamInput.SetActive(true);            
@@ -252,6 +255,7 @@ namespace TheMansion
             spamInput.SetActive(false);
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
+            playerScript.playerAnimator.SetBool("isGrabbed", false);
             playerScript.heartBeat = playerScript.heartBeat + 20f;
             playerScript.hidingFactor = playerScript.hidingFactor + 20f;
             StartCoroutine(MobCantMove());   

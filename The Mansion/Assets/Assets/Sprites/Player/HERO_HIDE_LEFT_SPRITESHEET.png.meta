@@ -154,8 +154,8 @@ TextureImporter:
         y: 531
         width: 110
         height: 203
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: -2.224599, y: 0.52400905}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: HERO_HIDE_LEFT_SPRITESHEET_2
       rect:
         serializedVersion: 2
-        x: 2193
+        x: 2191
         y: 221
         width: 734
         height: 557
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: -0.34331295, y: 0.5306262}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,7 +197,7 @@ TextureImporter:
         width: 270
         height: 710
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,8 +217,8 @@ TextureImporter:
         y: 234
         width: 375
         height: 304
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: -0.63725555, y: 0.5160327}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
