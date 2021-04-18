@@ -11,7 +11,7 @@ namespace TheMansion
         public GameObject mapButton;
 
 
-        public Transform playerPos;
+       // public Transform playerPos;
         GameObject player;
         PlayerController playerController;
 
@@ -29,7 +29,7 @@ namespace TheMansion
         {
             Time.timeScale = 0;
             map.SetActive(true);
-            playerPos = player.transform;
+            //playerPos = player.transform;
             mapButton.SetActive(false);
 
             

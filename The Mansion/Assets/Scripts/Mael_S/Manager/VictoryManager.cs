@@ -10,7 +10,7 @@ namespace TheMansion
     public class VictoryManager : MonoBehaviour
     {
         GameObject player;
-
+        
         public bool canWin;
 
         public bool sideObj1;
@@ -38,8 +38,11 @@ namespace TheMansion
 
         private void Start()
         {
-            //provisoire
-            isLevel1 = true;
+            if (isLevel1)
+            {
+                bigWin = true;
+            }
+            
 
             player = GameObject.FindGameObjectWithTag("Player");
             canWin = false;
@@ -82,13 +85,47 @@ namespace TheMansion
                     if(bigWin && isCDV)
                     {
                         Debug.Log("C'est bon t'as win");
-
+                        Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);                      
                     }
                 }
-                
 
+                if (isLevel2)
+                {
+
+                    if (!canWin && !isCDV)
+                    {
+                        Debug.Log("T'as trouvé la clé, bien ouej");
+
+                        bigWin = true;
+                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                        //supp la clé dans la map (fx)
+                        keyUI.SetActive(true);
+                        StartCoroutine(TextKeyLooted());
+                    }
+
+
+
+                    if (!bigWin && isCDV)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+
+
+
+                    if (bigWin && isCDV)
+                    {
+                        Debug.Log("C'est bon t'as win");
+                        Time.timeScale = 0;
+                        //anim (on va utiliser une ptite coroutine
+                        menuWin.SetActive(true);
+                    }
+                }
             }
         }
 
