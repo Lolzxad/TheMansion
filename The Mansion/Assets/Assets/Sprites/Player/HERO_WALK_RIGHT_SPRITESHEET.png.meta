@@ -1,0 +1,524 @@
+fileFormatVersion: 2
+guid: a3b4145bb0a23af45b24a3945a375a3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2656545553875807603
+    second: HERO_WALK_RIGHT_SPRITESHEET_0
+  - first:
+      213: -2677129618530366406
+    second: HERO_WALK_RIGHT_SPRITESHEET_1
+  - first:
+      213: 3050041847308666006
+    second: HERO_WALK_RIGHT_SPRITESHEET_2
+  - first:
+      213: -7502584843214866082
+    second: HERO_WALK_RIGHT_SPRITESHEET_3
+  - first:
+      213: -1958805668581003029
+    second: HERO_WALK_RIGHT_SPRITESHEET_4
+  - first:
+      213: 830317170247251333
+    second: HERO_WALK_RIGHT_SPRITESHEET_5
+  - first:
+      213: 54551859836589756
+    second: HERO_WALK_RIGHT_SPRITESHEET_6
+  - first:
+      213: -7791267200246175086
+    second: HERO_WALK_RIGHT_SPRITESHEET_7
+  - first:
+      213: -6777262044789817239
+    second: HERO_WALK_RIGHT_SPRITESHEET_8
+  - first:
+      213: -6380821829029658268
+    second: HERO_WALK_RIGHT_SPRITESHEET_9
+  - first:
+      213: -7361311138759061051
+    second: HERO_WALK_RIGHT_SPRITESHEET_10
+  - first:
+      213: 1142809387547836352
+    second: HERO_WALK_RIGHT_SPRITESHEET_11
+  - first:
+      213: -3274063602761506381
+    second: HERO_WALK_RIGHT_SPRITESHEET_12
+  - first:
+      213: 9156751707198491800
+    second: HERO_WALK_RIGHT_SPRITESHEET_13
+  - first:
+      213: -7840524932479456501
+    second: HERO_WALK_RIGHT_SPRITESHEET_14
+  - first:
+      213: 8813733745089907048
+    second: HERO_WALK_RIGHT_SPRITESHEET_15
+  - first:
+      213: 1793810222140413141
+    second: HERO_WALK_RIGHT_SPRITESHEET_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_0
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 96
+        width: 447
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d29643b12fdd420800000000000000
+      internalID: 2656545553875807603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_1
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 102
+        width: 375
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c02d5cbcce8dad0800000000000000
+      internalID: -2677129618530366406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_2
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 96
+        width: 454
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694c8ea76ece35a20800000000000000
+      internalID: 3050041847308666006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_3
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 96
+        width: 408
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59b2f2e5d671e790800000000000000
+      internalID: -7502584843214866082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_4
+      rect:
+        serializedVersion: 2
+        x: 3426
+        y: 96
+        width: 364
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be035346f9ce0d4e0800000000000000
+      internalID: -1958805668581003029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 96
+        width: 335
+        height: 664
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585be7f2111e58b00800000000000000
+      internalID: 830317170247251333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 5027
+        y: 96
+        width: 268
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb69563a0aec1c000800000000000000
+      internalID: 54551859836589756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_7
+      rect:
+        serializedVersion: 2
+        x: 5835
+        y: 96
+        width: 256
+        height: 671
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aac23e2cbdfd390800000000000000
+      internalID: -7791267200246175086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_8
+      rect:
+        serializedVersion: 2
+        x: 6564
+        y: 96
+        width: 355
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960c096e31452f1a0800000000000000
+      internalID: -6777262044789817239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_9
+      rect:
+        serializedVersion: 2
+        x: 7366
+        y: 96
+        width: 375
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46101a18a54c277a0800000000000000
+      internalID: -6380821829029658268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_10
+      rect:
+        serializedVersion: 2
+        x: 8142
+        y: 96
+        width: 375
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1d32d658e57d990800000000000000
+      internalID: -7361311138759061051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_11
+      rect:
+        serializedVersion: 2
+        x: 8964
+        y: 96
+        width: 315
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf35c645131cdf00800000000000000
+      internalID: 1142809387547836352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_12
+      rect:
+        serializedVersion: 2
+        x: 9759
+        y: 96
+        width: 270
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b16d5100803092d0800000000000000
+      internalID: -3274063602761506381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_13
+      rect:
+        serializedVersion: 2
+        x: 10555
+        y: 96
+        width: 243
+        height: 665
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c8404c921531f70800000000000000
+      internalID: 9156751707198491800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_14
+      rect:
+        serializedVersion: 2
+        x: 11370
+        y: 96
+        width: 222
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0be7f26d1cd03390800000000000000
+      internalID: -7840524932479456501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_15
+      rect:
+        serializedVersion: 2
+        x: 12120
+        y: 96
+        width: 295
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86905fcd42ca05a70800000000000000
+      internalID: 8813733745089907048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_RIGHT_SPRITESHEET_16
+      rect:
+        serializedVersion: 2
+        x: 12869
+        y: 96
+        width: 342
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4d42d94e4e4e810800000000000000
+      internalID: 1793810222140413141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

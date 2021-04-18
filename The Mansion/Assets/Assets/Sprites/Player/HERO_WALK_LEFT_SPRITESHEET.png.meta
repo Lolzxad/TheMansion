@@ -1,0 +1,527 @@
+fileFormatVersion: 2
+guid: ce7662734e4adfb4aba355abede14fc5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7133723159658671736
+    second: HERO_WALK_LEFT_SPRITESHEET_0
+  - first:
+      213: -1819489540191618849
+    second: HERO_WALK_LEFT_SPRITESHEET_1
+  - first:
+      213: 6806039866407906246
+    second: HERO_WALK_LEFT_SPRITESHEET_2
+  - first:
+      213: -3456778905283580716
+    second: HERO_WALK_LEFT_SPRITESHEET_3
+  - first:
+      213: -3228082741372594043
+    second: HERO_WALK_LEFT_SPRITESHEET_4
+  - first:
+      213: -8333016403077630299
+    second: HERO_WALK_LEFT_SPRITESHEET_5
+  - first:
+      213: -4554200369317282328
+    second: HERO_WALK_LEFT_SPRITESHEET_6
+  - first:
+      213: -3759183775727605207
+    second: HERO_WALK_LEFT_SPRITESHEET_7
+  - first:
+      213: 6851156624827151092
+    second: HERO_WALK_LEFT_SPRITESHEET_8
+  - first:
+      213: 4216334689751711885
+    second: HERO_WALK_LEFT_SPRITESHEET_9
+  - first:
+      213: -1069341704581786898
+    second: HERO_WALK_LEFT_SPRITESHEET_10
+  - first:
+      213: 2372627161726369889
+    second: HERO_WALK_LEFT_SPRITESHEET_11
+  - first:
+      213: -1654111227112708543
+    second: HERO_WALK_LEFT_SPRITESHEET_12
+  - first:
+      213: 4870628054702737729
+    second: HERO_WALK_LEFT_SPRITESHEET_13
+  - first:
+      213: -6787076922952510782
+    second: HERO_WALK_LEFT_SPRITESHEET_14
+  - first:
+      213: 4558975499568690933
+    second: HERO_WALK_LEFT_SPRITESHEET_15
+  - first:
+      213: -6994556741331661001
+    second: HERO_WALK_LEFT_SPRITESHEET_16
+  - first:
+      213: 2091257074969772960
+    second: HERO_WALK_LEFT_SPRITESHEET_0
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_0
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 104
+        width: 328
+        height: 661
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3889fca33a50d10800000000000000
+      internalID: 2091257074969772960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_1
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 104
+        width: 284
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8f65c37efdfb6e0800000000000000
+      internalID: -1819489540191618849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_2
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 104
+        width: 211
+        height: 663
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbe364d239e37e50800000000000000
+      internalID: 6806039866407906246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_3
+      rect:
+        serializedVersion: 2
+        x: 2673
+        y: 104
+        width: 231
+        height: 655
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc228386ed0700d0800000000000000
+      internalID: -3456778905283580716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_4
+      rect:
+        serializedVersion: 2
+        x: 3442
+        y: 101
+        width: 259
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588daee89db8333d0800000000000000
+      internalID: -3228082741372594043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 4189
+        y: 103
+        width: 306
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6fd0b4bbd2b5c80800000000000000
+      internalID: -8333016403077630299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 4955
+        y: 103
+        width: 363
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edf3eea4ea3cc0c0800000000000000
+      internalID: -4554200369317282328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_7
+      rect:
+        serializedVersion: 2
+        x: 5727
+        y: 104
+        width: 365
+        height: 656
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a2852e542b4dbc0800000000000000
+      internalID: -3759183775727605207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_8
+      rect:
+        serializedVersion: 2
+        x: 6552
+        y: 104
+        width: 340
+        height: 664
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2f26bb6a2341f50800000000000000
+      internalID: 6851156624827151092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_9
+      rect:
+        serializedVersion: 2
+        x: 7379
+        y: 103
+        width: 242
+        height: 656
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80ceccaf0e638a30800000000000000
+      internalID: 4216334689751711885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_10
+      rect:
+        serializedVersion: 2
+        x: 8173
+        y: 101
+        width: 257
+        height: 663
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee254e2a26fe821f0800000000000000
+      internalID: -1069341704581786898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_11
+      rect:
+        serializedVersion: 2
+        x: 8917
+        y: 100
+        width: 322
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160c42735d34de020800000000000000
+      internalID: 2372627161726369889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_12
+      rect:
+        serializedVersion: 2
+        x: 9681
+        y: 101
+        width: 352
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14626f05a9a6b09e0800000000000000
+      internalID: -1654111227112708543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_13
+      rect:
+        serializedVersion: 2
+        x: 10474
+        y: 102
+        width: 397
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149cb99f862f79340800000000000000
+      internalID: 4870628054702737729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_14
+      rect:
+        serializedVersion: 2
+        x: 11249
+        y: 100
+        width: 443
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c21a208f757fc1a0800000000000000
+      internalID: -6787076922952510782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_15
+      rect:
+        serializedVersion: 2
+        x: 12116
+        y: 108
+        width: 366
+        height: 651
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f63087ff0cb44f30800000000000000
+      internalID: 4558975499568690933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_WALK_LEFT_SPRITESHEET_16
+      rect:
+        serializedVersion: 2
+        x: 12849
+        y: 104
+        width: 437
+        height: 638
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fcc97d3b75eee90800000000000000
+      internalID: -6994556741331661001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
