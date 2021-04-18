@@ -41,6 +41,7 @@ namespace TheMansion
         [SerializeField] float waitTime;
         float startWaitTime;
 
+        public GameObject playerSprite;
         public GameObject spamInput;
         public GameObject triggerBB;
         GameObject player;
@@ -118,6 +119,7 @@ namespace TheMansion
                     Debug.Log("hide failed");
 
                     playerScript.isHiding = false;
+                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                     playerScript.transform.position = playerScript.basePosition;
                     playerScript.playerSprite.transform.position = playerScript.baseSpritePosition;
@@ -283,7 +285,7 @@ namespace TheMansion
             Debug.Log("BB is stunned");
 
             ProCamera2DShake.Instance.StopConstantShaking();
-
+            gameObject.GetComponent<Collider2D>().enabled = false;
             spamInput.SetActive(false);
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
@@ -309,6 +311,7 @@ namespace TheMansion
         {
             
             yield return new WaitForSeconds(5f);
+            gameObject.GetComponent<Collider2D>().enabled = false;
             bBcanMove = true;
             isGrabbing = false;
             isPatrolling = true;

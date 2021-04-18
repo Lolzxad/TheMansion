@@ -28,6 +28,7 @@ namespace TheMansion
         public GameObject frontBbTrigger;
         public GameObject backBbTrigger;
         public GameObject bBCameraHandlerTrigger;
+        public GameObject canWinTrigger;
 
         [Space]
         [Header("Core GameObjects-")]
@@ -59,12 +60,14 @@ namespace TheMansion
             
 
             player.GetComponent<PlayerController>().enabled = false;
+
             bigBoy.GetComponent<BigBoyController>().enabled = false;
             bigBoy.GetComponent<SpriteRenderer>().enabled = false;
+            bigBoy.GetComponent<Collider2D>().enabled = false;
             frontBbTrigger.SetActive(false);
             backBbTrigger.SetActive(false);
-            
 
+            canWinTrigger.SetActive(false);
 
 
             StartCoroutine(SpawnInputMove());
@@ -98,7 +101,7 @@ namespace TheMansion
 
         IEnumerator WaitForMove()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
             player.GetComponent<PlayerController>().enabled = true;
         }
 
@@ -117,7 +120,7 @@ namespace TheMansion
 
         IEnumerator WaitToRemoveInputMove()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             movementInput.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
         }
@@ -156,6 +159,8 @@ namespace TheMansion
             playerIsHiding = false;
 
             heartTexte.SetActive(true);
+            playerController.heartBeat = 300;
+            playerController.hidingFactor = 300;
             heart.SetActive(true);
             heart.GetComponent<HeartAnimation>().enabled = false;
             yield return new WaitForSeconds(8);
@@ -175,10 +180,11 @@ namespace TheMansion
             heartInput.SetActive(false);
             hideTrigger.SetActive(false);
 
-            playerController.heartBeat = 300;
-            playerController.hidingFactor = 300;
+            
+            bigBoy.GetComponent<Collider2D>().enabled = true;
             bigBoy.GetComponent<BigBoyController>().enabled = true;
             bigBoy.GetComponent<SpriteRenderer>().enabled = true;
+            
             frontBbTrigger.SetActive(true);
             backBbTrigger.SetActive(true);
             //bBCameraHandlerTrigger.SetActive(true);
@@ -206,10 +212,11 @@ namespace TheMansion
 
         public void ReadyToHide()
         {
+            player.GetComponent<PlayerController>().enabled = false;
             hideTrigger.SetActive(false);
             timeToHideTexte.SetActive(true);
             readyToHide = false;
-            player.GetComponent<PlayerController>().enabled = false;
+            
             Debug.Log("PEUT PAS BOUGER");
 
             bigBoy.SetActive(true);

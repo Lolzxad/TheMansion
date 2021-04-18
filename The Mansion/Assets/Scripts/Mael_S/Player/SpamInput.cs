@@ -15,7 +15,7 @@ namespace TheMansion
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
-
+        float timeLimitDefault;
 
         bool spamDone;
         bool timeIsRunning;
@@ -23,6 +23,8 @@ namespace TheMansion
         BigBoyController bbController;
         RunnerController runnerController;
         TutoManager tuto;
+
+        public bool isTuto;
 
         private void Start()
         {
@@ -86,8 +88,12 @@ namespace TheMansion
                     playerLives--;
                 }
 
-                tuto.stunTexte.SetActive(true);
-
+                if (tuto)
+                {
+                    tuto.stunTexte.SetActive(true);
+                    tuto.canWinTrigger.SetActive(true);
+                }
+                
 
                 /*if (runnerController.isGrabbing)
                 {

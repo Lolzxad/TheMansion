@@ -17,19 +17,23 @@ namespace TheMansion
             tuto = FindObjectOfType<TutoManager>();
         }
 
-        public void OnTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            if (isDoor)
+            if(other.gameObject.tag == "Player")
             {
-                Debug.Log("Trigger porte fermee");
-                tuto.DoorLocked();
+                if (isDoor)
+                {
+                    Debug.Log("Trigger porte fermee");
+                    tuto.DoorLocked();
+                }
+                else
+                {
+                    Debug.Log("Trigger hide ready");
+                    //tuto.player.GetComponent<PlayerController>().enabled = false;
+                    tuto.ReadyToHide();
+                }
             }
-            else
-            {
-                Debug.Log("Trigger hide ready");
-                //tuto.player.GetComponent<PlayerController>().enabled = false;
-                tuto.ReadyToHide();
-            }
+            
         }
     }
 }

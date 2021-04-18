@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 2015879604}
   - component: {fileID: 2015879606}
   - component: {fileID: 2015879605}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CameraHandlerBB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.28895187, y: 0}
@@ -183,15 +183,25 @@ PrefabInstance:
       propertyPath: speedPO
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
+        type: 3}
+      propertyPath: rechercheTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951075757185934884, guid: 578ee73d0a3548c4b83cff65721a996a,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934885, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24
+      value: -2.68
       objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934885, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.2
+      value: -24.6
       objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934885, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
@@ -238,10 +248,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1951075757185934886, guid: 578ee73d0a3548c4b83cff65721a996a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951075757185934887, guid: 578ee73d0a3548c4b83cff65721a996a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934888, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: m_Name
       value: BigBoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951075757185934888, guid: 578ee73d0a3548c4b83cff65721a996a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819285911356190389, guid: 578ee73d0a3548c4b83cff65721a996a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 578ee73d0a3548c4b83cff65721a996a, type: 3}
