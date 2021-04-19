@@ -19,6 +19,7 @@ namespace TheMansion
         public void ChangeLevel(string levelName)
         {
             SceneManager.LoadScene(levelName);
+            Time.timeScale = 1;
         }
 
         public void LoadLevel1()
