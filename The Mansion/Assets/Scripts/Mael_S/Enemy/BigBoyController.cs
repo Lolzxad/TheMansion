@@ -294,7 +294,7 @@ namespace TheMansion
             playerScript.playerAnimator.SetBool("isGrabbed", false);
             playerScript.heartBeat = playerScript.heartBeat + 20f;
             playerScript.hidingFactor = playerScript.hidingFactor + 20f;
-            StartCoroutine(MobCantMove());   
+            StartCoroutine(MobCanMove());   
         }
         public void HideCheck() 
         {
@@ -308,11 +308,11 @@ namespace TheMansion
             }
         }
 
-        IEnumerator MobCantMove()
+        IEnumerator MobCanMove()
         {
             
             yield return new WaitForSeconds(5f);
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = true;
             bBcanMove = true;
             isGrabbing = false;
             isPatrolling = true;

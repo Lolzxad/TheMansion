@@ -7,8 +7,10 @@ namespace TheMansion
 {
     public class MenuManager : MonoBehaviour
     {
-        [SerializeField] GameObject fonds;
-        [SerializeField] GameObject levels;
+        //  [SerializeField] GameObject fonds;
+        //[SerializeField] GameObject levels;
+
+        [SerializeField] GameObject selectionLevel;
 
         [SerializeField] GameObject storyButton;
         [SerializeField] GameObject levelsButton;
@@ -31,8 +33,10 @@ namespace TheMansion
 
         public void SetLevelSelection()
         {
-            fonds.SetActive(true);
-            levels.SetActive(true);
+            Debug.Log("Menu selection");
+            // fonds.SetActive(true);
+            //levels.SetActive(true);
+            selectionLevel.SetActive(true);
 
             storyButton.SetActive(false);
             levelsButton.SetActive(false);
@@ -41,8 +45,9 @@ namespace TheMansion
 
         public void RemoveSelectionLevel()
         {
-            fonds.SetActive(false);
-            levels.SetActive(false);
+            //fonds.SetActive(false);
+            //levels.SetActive(false);
+            selectionLevel.SetActive(false);
 
             storyButton.SetActive(true);
             levelsButton.SetActive(true);

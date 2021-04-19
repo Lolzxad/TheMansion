@@ -3227,6 +3227,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1153051086}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1153051088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2804488090665838134, guid: cfa00dd28c4de844299a9e4a398f17a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153051086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1174252005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,7 +5981,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0bdbfd34a4c9a194abf5bac70470c61d, type: 3}
   m_Color: {r: 0.84756297, g: 0.9622642, b: 0, a: 1}
   m_FlipX: 0
@@ -6699,6 +6705,11 @@ PrefabInstance:
       propertyPath: spamInput
       value: 
       objectReference: {fileID: 37397000}
+    - target: {fileID: 2539212096410481197, guid: 9a86480ada013b349a56d2cba168445d,
+        type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 1153051088}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a86480ada013b349a56d2cba168445d, type: 3}
 --- !u!1 &4943281956185834905

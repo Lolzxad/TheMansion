@@ -874,6 +874,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 772357233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &845891242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2804488090665838134, guid: cfa00dd28c4de844299a9e4a398f17a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153051086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &914804467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,45 +1021,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1952158145}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1019794107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2507647027773538210, guid: 497e8b456d93cb040aca67c34330fc00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1952158145}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1019794108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019794107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac0ec3d6ad5f4a3d9d184bc3773a3a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pc2D: {fileID: 1019794110}
-  ShakePresets:
-  - {fileID: 11400000, guid: bdeb758c7bbd24b29bc19493062ef65e, type: 2}
-  ConstantShakePresets:
-  - {fileID: 11400000, guid: 95769aec75c2d49ddb90af1600d6496c, type: 2}
-  - {fileID: 11400000, guid: 892e7a55ce003499d8f72636131605c7, type: 2}
-  - {fileID: 11400000, guid: ebc879e34fd7cc640a559243e0dd5b49, type: 2}
-  StartConstantShakePreset: {fileID: 0}
-  CurrentConstantShakePreset: {fileID: 0}
---- !u!114 &1019794110 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1952158145}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019794107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b8c96e2cdc154e848a3d9fe62464d42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1022857500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8630687562628115454, guid: a84b7b200d8e23148a3a8de9ca709e42,
@@ -1719,6 +1686,11 @@ PrefabInstance:
       propertyPath: BasePosition
       value: 
       objectReference: {fileID: 1980880053}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: isMouse
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2569,18 +2541,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 338126170, guid: 497e8b456d93cb040aca67c34330fc00, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925218635, guid: 497e8b456d93cb040aca67c34330fc00, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925218636, guid: 497e8b456d93cb040aca67c34330fc00, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538142, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2638,48 +2598,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
-      propertyPath: CameraTargets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
-      propertyPath: CameraTargets.Array.data[0].TargetInfluenceH
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
-      propertyPath: CameraTargets.Array.data[0].TargetInfluenceV
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
       propertyPath: CameraTargets.Array.data[0].TargetTransform
       value: 
       objectReference: {fileID: 1202638617}
-    - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
-      propertyPath: OffsetY
-      value: 0.089
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
-      propertyPath: UpdateType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507647027773538209, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538210, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
       propertyPath: m_Name
       value: Dual Forward Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507647027773538210, guid: 497e8b456d93cb040aca67c34330fc00,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 497e8b456d93cb040aca67c34330fc00, type: 3}
@@ -2706,11 +2631,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InputSpam
-      objectReference: {fileID: 0}
-    - target: {fileID: 4054990203193038157, guid: cec5a983bad55e84e85331c88d3c714b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4054990203193038194, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
@@ -3766,7 +3686,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0bdbfd34a4c9a194abf5bac70470c61d, type: 3}
   m_Color: {r: 0.84756297, g: 0.9622642, b: 0, a: 1}
   m_FlipX: 0
@@ -4765,6 +4685,11 @@ PrefabInstance:
       propertyPath: spamInput
       value: 
       objectReference: {fileID: 2094149980}
+    - target: {fileID: 2539212096410481197, guid: 9a86480ada013b349a56d2cba168445d,
+        type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 845891242}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a86480ada013b349a56d2cba168445d, type: 3}
 --- !u!1 &4943281956185834905
@@ -4888,8 +4813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b797ed6cf4c9af4a985a56a39beb372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fonds: {fileID: 0}
-  levels: {fileID: 0}
+  selectionLevel: {fileID: 0}
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
