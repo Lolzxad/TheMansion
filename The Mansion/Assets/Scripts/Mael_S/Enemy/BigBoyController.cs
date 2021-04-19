@@ -100,6 +100,7 @@ namespace TheMansion
         {
             if (other.gameObject.tag == "Player" && isRunning)
             {
+                Debug.Log("Gotcha");
                 //triggerBB.SetActive(false);
                 BBMG();
             }
