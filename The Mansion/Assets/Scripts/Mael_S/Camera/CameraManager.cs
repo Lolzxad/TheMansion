@@ -13,7 +13,7 @@ namespace TheMansion
         public Transform target;
 
 
-        [SerializeField] bool setNewCamera;
+        //[SerializeField] bool setNewCamera;
         [SerializeField] bool justOneCameraPls;
 
         private void Start()
@@ -28,7 +28,7 @@ namespace TheMansion
 
                 ProCamera2D.Instance.CenterOnTargets();
            
-                
+               // ProCamera2DForwardFocus.ExtensionName.
             }
 
             
@@ -40,10 +40,10 @@ namespace TheMansion
 
             }
 
-            if (!playerController.isGrabbed)
+          /*  if (!playerController.isGrabbed)
             {
                 setNewCamera = true;
-            }
+            }*/
         }
 
 

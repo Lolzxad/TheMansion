@@ -27,6 +27,11 @@ namespace TheMansion
             SceneManager.LoadScene("Niveau_1_TUTO");
         }
 
+        public void ReloadLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         public void QuitGame()
         {
             Application.Quit();
