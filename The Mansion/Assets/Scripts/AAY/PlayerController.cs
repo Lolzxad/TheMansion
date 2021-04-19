@@ -119,7 +119,7 @@ namespace TheMansion
                         }
                     }
 
-                    if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && !isHiding && !isGrabbed)
+                    if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && canMove)
                     {
                         Debug.Log("Walk Right");
                         playerAnimator.SetBool("isLookingRight", true);
@@ -129,7 +129,7 @@ namespace TheMansion
                         transform.Translate((Vector3.right * Time.deltaTime) * 5f);
                     }
 
-                    if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && !isHiding && !isGrabbed)
+                    if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && canMove)
                     {
                         Debug.Log("Walk Left");
                         playerAnimator.SetBool("isLookingLeft", true);
@@ -139,7 +139,7 @@ namespace TheMansion
                         transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                     }
 
-                    if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && !isHiding && !isGrabbed)
+                    if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && canMove)
                     {
                         Debug.Log("Run Right");
                         playerAnimator.SetBool("isLookingRight", true);
@@ -150,7 +150,7 @@ namespace TheMansion
                         StartCoroutine(StaminaLoss());
                     }
 
-                    if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && !isHiding && !isGrabbed)
+                    if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && canMove)
                     {
                         Debug.Log("Run Left");
                         playerAnimator.SetBool("isLookingLeft", true);
