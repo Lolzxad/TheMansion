@@ -216,6 +216,7 @@ namespace TheMansion
         {
             if (InteractableObject.tag == "Hard Hiding Spot")
             {
+                //var hidingSpot = InteractableObject.gameObject;
                 if (isHiding)
                 {
                     InteractableObject.GetComponent<OutlineActivator>().DisableOutline();
@@ -223,8 +224,8 @@ namespace TheMansion
                 else
                 {
                     canHide = true;
-                    InteractableObject.GetComponent<OutlineActivator>().EnableOutline();
-                }                              
+                    InteractableObject.GetComponent<OutlineActivator>().EnableOutline();                
+                }  
             }
 
             if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
