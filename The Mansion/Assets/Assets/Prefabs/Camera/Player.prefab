@@ -335,7 +335,7 @@ MonoBehaviour:
   heartBeat: 100
   hidingFactor: 0
   canMove: 1
-  isMouse: 1
+  isMouse: 0
   isHiding: 0
   isGrabbed: 0
   usingLadder: 0
