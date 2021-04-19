@@ -38,6 +38,8 @@ namespace TheMansion
 
         private void Start()
         {
+            bigWin = false;
+
             if (isLevel1)
             {
                 bigWin = true;

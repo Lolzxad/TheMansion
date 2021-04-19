@@ -2252,6 +2252,11 @@ PrefabInstance:
       propertyPath: RunLeft
       value: 
       objectReference: {fileID: 905176995}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: isMouse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3332,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3102d356461ad234ca0f5013e1aeef06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTuto: 0
+  isTuto: 1
   introTexte: {fileID: 2143002459}
   doorIsLockedTexte: {fileID: 347722660}
   timeToHideTexte: {fileID: 536380032}
