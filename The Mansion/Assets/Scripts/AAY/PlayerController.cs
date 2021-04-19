@@ -80,8 +80,8 @@ namespace TheMansion
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
-                                    transform.position = basePosition;
-                                    playerSprite.transform.position = baseSpritePosition;
+                                    /*transform.position = basePosition;
+                                    playerSprite.transform.position = baseSpritePosition;*/
                                 }
                             }
                             else
@@ -283,8 +283,8 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
-                                transform.position = basePosition;
-                                playerSprite.transform.position = baseSpritePosition;
+                                /*transform.position = basePosition;
+                                playerSprite.transform.position = baseSpritePosition;*/
                             }
                         }
                         else
