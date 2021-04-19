@@ -3193,7 +3193,7 @@ PrefabInstance:
     - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: isMouse
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
@@ -3967,6 +3967,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2110548748}
     m_Modifications:
+    - target: {fileID: 3203845648869623073, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 3.3554754
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203845648869623073, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10.023022
+      objectReference: {fileID: 0}
     - target: {fileID: 3203845648869623079, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4001,6 +4011,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203845650042692118, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -5.070831
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203845650042692118, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15.110934
       objectReference: {fileID: 0}
     - target: {fileID: 8147632956330511526, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}

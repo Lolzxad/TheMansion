@@ -103,18 +103,34 @@ namespace TheMansion
                                 }
                             }
 
-                            if (touchedObject.tag == "LadderDown" && canUseLadder)
+                            if (touchedObject.tag == "LadderDown")
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                                StartCoroutine(DownLadder());
+
+                                if (!usingLadder && canUseLadder)
+                                {
+                                    StartCoroutine(DownLadder());
+                                }
+                                else
+                                {
+                                    StartCoroutine(OffLadder());
+                                }
                             }
 
-                            if (touchedObject.tag == "LadderUp" && canUseLadder)
+                            if (touchedObject.tag == "LadderUp")
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                                StartCoroutine(UpLadder());
+
+                                if (!usingLadder && canUseLadder)
+                                {
+                                    StartCoroutine(UpLadder());
+                                }
+                                else
+                                {
+                                    StartCoroutine(OffLadder());
+                                }
                             }
                         }
                     }
@@ -196,7 +212,7 @@ namespace TheMansion
 
 
         }
-        void OnTriggerEnter2D(Collider2D InteractableObject)
+        void OnTriggerStay2D(Collider2D InteractableObject)
         {
             if (InteractableObject.tag == "Hard Hiding Spot")
             {
@@ -213,6 +229,7 @@ namespace TheMansion
 
             if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
             {
+
                 if (usingLadder)
                 {
                     InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
@@ -289,18 +306,34 @@ namespace TheMansion
                             }
                         }
 
-                        if (touchedObject.tag == "LadderDown" && canUseLadder)
-                        {
-                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
-                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;                                                     
-                            StartCoroutine(DownLadder());                          
-                        }
-
-                        if (touchedObject.tag == "LadderUp" && canUseLadder)
+                        if (touchedObject.tag == "LadderDown")
                         {
                             ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
                             ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                            StartCoroutine(UpLadder());
+
+                            if (!usingLadder && canUseLadder)
+                            {
+                                StartCoroutine(DownLadder());
+                            }
+                            else
+                            {
+                                StartCoroutine(OffLadder());
+                            }
+                        }
+
+                        if (touchedObject.tag == "LadderUp")
+                        {
+                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
+
+                            if (!usingLadder && canUseLadder)
+                            {                               
+                                StartCoroutine(UpLadder());
+                            }
+                            else
+                            {
+                                StartCoroutine(OffLadder());
+                            }
                         }
                     }
                 }
@@ -427,6 +460,16 @@ namespace TheMansion
             Physics2D.IgnoreLayerCollision(2, 9, false);
             canMove = true;
             usingLadder = false;
+        }
+
+        IEnumerator OffLadder()
+        {
+            StopAllCoroutines();
+            playerRb.gravityScale = defaultGravity;
+            Physics2D.IgnoreLayerCollision(2, 9, false);
+            canMove = true;
+            usingLadder = false;
+            yield return null;
         }
     }
 }
