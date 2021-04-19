@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 6cf620a4025a4b3428a1809a8b4931f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4214528801383782041
+    second: SPRITESHEET-Sang_0
+  - first:
+      213: 4755119298157281602
+    second: SPRITESHEET-Sang_1
+  - first:
+      213: -7611427254786431681
+    second: SPRITESHEET-Sang_2
+  - first:
+      213: 7662813139917160384
+    second: SPRITESHEET-Sang_3
+  - first:
+      213: 6462004667056226225
+    second: SPRITESHEET-Sang_4
+  - first:
+      213: -6645324607875508698
+    second: SPRITESHEET-Sang_5
+  - first:
+      213: -5273526056363590106
+    second: SPRITESHEET-Sang_6
+  - first:
+      213: 4637397025453395827
+    second: SPRITESHEET-Sang_7
+  - first:
+      213: 463522648762749552
+    second: SPRITESHEET-Sang_8
+  - first:
+      213: 404940047741669325
+    second: SPRITESHEET-Sang_9
+  - first:
+      213: -7566803989067137489
+    second: SPRITESHEET-Sang_10
+  - first:
+      213: 6331209522965462960
+    second: SPRITESHEET-Sang_11
+  - first:
+      213: 653855581934888755
+    second: SPRITESHEET-Sang_12
+  - first:
+      213: 5944621739040145332
+    second: SPRITESHEET-Sang_13
+  - first:
+      213: -9039596900996069492
+    second: SPRITESHEET-Sang_14
+  - first:
+      213: -1460535625403727551
+    second: SPRITESHEET-Sang_15
+  - first:
+      213: -4544465889301696914
+    second: SPRITESHEET-Sang_16
+  - first:
+      213: -9221139606670454730
+    second: SPRITESHEET-Sang_17
+  - first:
+      213: 7902385281192032020
+    second: SPRITESHEET-Sang_18
+  - first:
+      213: -4974364218273758187
+    second: SPRITESHEET-Sang_19
+  - first:
+      213: -2587505081057136889
+    second: SPRITESHEET-Sang_20
+  - first:
+      213: -5374033385421535894
+    second: SPRITESHEET-Sang_21
+  - first:
+      213: -7720611567125046893
+    second: SPRITESHEET-Sang_22
+  - first:
+      213: -2949694392942022954
+    second: SPRITESHEET-Sang_23
+  - first:
+      213: 5916020047629470966
+    second: SPRITESHEET-Sang_24
+  - first:
+      213: -6999265864950202597
+    second: SPRITESHEET-Sang_25
+  - first:
+      213: 7978181005452695342
+    second: SPRITESHEET-Sang_26
+  - first:
+      213: -525823978042189155
+    second: SPRITESHEET-Sang_27
+  - first:
+      213: 4540641027277194474
+    second: SPRITESHEET-Sang_28
+  - first:
+      213: -6712258424883067507
+    second: SPRITESHEET-Sang_29
+  - first:
+      213: -3595835144622418232
+    second: SPRITESHEET-Sang_30
+  - first:
+      213: -8448143060447469739
+    second: SPRITESHEET-Sang_31
+  - first:
+      213: -8513839443789081392
+    second: SPRITESHEET-Sang_32
+  - first:
+      213: 2553102624046246616
+    second: SPRITESHEET-Sang_33
+  - first:
+      213: -7518525574201836395
+    second: SPRITESHEET-Sang_34
+  - first:
+      213: 9206173276048769073
+    second: SPRITESHEET-Sang_35
+  - first:
+      213: -7341855874391768907
+    second: SPRITESHEET-Sang_36
+  - first:
+      213: 1090824555148507406
+    second: SPRITESHEET-Sang_37
+  - first:
+      213: 4529791376703077800
+    second: SPRITESHEET-Sang_38
+  - first:
+      213: 3150957462287233323
+    second: SPRITESHEET-Sang_39
+  - first:
+      213: -5708192357667837236
+    second: SPRITESHEET-Sang_40
+  - first:
+      213: -6902732242569684102
+    second: SPRITESHEET-Sang_41
+  - first:
+      213: 6491026810412098146
+    second: SPRITESHEET-Sang_42
+  - first:
+      213: 2401511583085606571
+    second: SPRITESHEET-Sang_43
+  - first:
+      213: -4771831578896931940
+    second: SPRITESHEET-Sang_44
+  - first:
+      213: 8203421564507888329
+    second: SPRITESHEET-Sang_45
+  - first:
+      213: 1453044913697025258
+    second: SPRITESHEET-Sang_46
+  - first:
+      213: 8001104812901720049
+    second: SPRITESHEET-Sang_47
+  - first:
+      213: -6235544776579324373
+    second: SPRITESHEET-Sang_48
+  - first:
+      213: 86756228427617092
+    second: SPRITESHEET-Sang_49
+  - first:
+      213: -1658386930672162370
+    second: SPRITESHEET-Sang_50
+  - first:
+      213: -5800547996530720251
+    second: SPRITESHEET-Sang_51
+  - first:
+      213: 4749672657419515047
+    second: SPRITESHEET-Sang_52
+  - first:
+      213: 4851026436026960896
+    second: SPRITESHEET-Sang_53
+  - first:
+      213: 4323773167572471513
+    second: SPRITESHEET-Sang_54
+  - first:
+      213: 2626472646958900221
+    second: SPRITESHEET-Sang_55
+  - first:
+      213: -4424952027239563259
+    second: SPRITESHEET-Sang_56
+  - first:
+      213: 3795225166727613860
+    second: SPRITESHEET-Sang_57
+  - first:
+      213: 3025619538237503480
+    second: SPRITESHEET-Sang_58
+  - first:
+      213: -2845198841224055427
+    second: SPRITESHEET-Sang_59
+  - first:
+      213: 4109913466033671267
+    second: SPRITESHEET-Sang_60
+  - first:
+      213: -1989347419832578604
+    second: SPRITESHEET-Sang_61
+  - first:
+      213: 5777910141241417346
+    second: SPRITESHEET-Sang_62
+  - first:
+      213: 6682223303068808931
+    second: SPRITESHEET-Sang_63
+  - first:
+      213: 4994186250431569514
+    second: SPRITESHEET-Sang_64
+  - first:
+      213: -1011457067971507188
+    second: SPRITESHEET-Sang_65
+  - first:
+      213: -1407368876729168410
+    second: SPRITESHEET-Sang_66
+  - first:
+      213: 1912358550287091035
+    second: SPRITESHEET-Sang_67
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SPRITESHEET-Sang_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 1717
+        height: 985
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769edd9726cf285c0800000000000000
+      internalID: -4214528801383782041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITESHEET-Sang_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 1717
+        height: 985
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2410547dec39df140800000000000000
+      internalID: 4755119298157281602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITESHEET-Sang_2
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 0
+        width: 1791
+        height: 991
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f356ab42d37ce5690800000000000000
+      internalID: -7611427254786431681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITESHEET-Sang_3
+      rect:
+        serializedVersion: 2
+        x: 3547
+        y: 0
+        width: 1763
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf35f093f7c75a60800000000000000
+      internalID: 7662813139917160384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

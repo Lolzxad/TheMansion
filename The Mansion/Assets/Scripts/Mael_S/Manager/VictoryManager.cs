@@ -92,6 +92,7 @@ namespace TheMansion
                 }
 
                 if (isLevel2)
+
                 {
 
                     if (!canWin && !isCDV)
@@ -126,6 +127,120 @@ namespace TheMansion
                         menuWin.SetActive(true);
                     }
                 }
+
+                if (isLevel3)
+
+                {
+
+                    if (!canWin && !isCDV)
+                    {
+                        Debug.Log("T'as trouvé la clé, bien ouej");
+
+                        bigWin = true;
+                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                        //supp la clé dans la map (fx)
+                        keyUI.SetActive(true);
+                        StartCoroutine(TextKeyLooted());
+                    }
+
+
+
+                    if (!bigWin && isCDV)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+
+
+
+                    if (bigWin && isCDV)
+                    {
+                        Debug.Log("C'est bon t'as win");
+                        Time.timeScale = 0;
+                        //anim (on va utiliser une ptite coroutine
+                        menuWin.SetActive(true);
+                    }
+                }
+
+                if (isLevel4)
+
+                {
+
+                    if (!canWin && !isCDV)
+                    {
+                        Debug.Log("T'as trouvé la clé, bien ouej");
+
+                        bigWin = true;
+                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                        //supp la clé dans la map (fx)
+                        keyUI.SetActive(true);
+                        StartCoroutine(TextKeyLooted());
+                    }
+
+
+
+                    if (!bigWin && isCDV)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+
+
+
+                    if (bigWin && isCDV)
+                    {
+                        Debug.Log("C'est bon t'as win");
+                        Time.timeScale = 0;
+                        //anim (on va utiliser une ptite coroutine
+                        menuWin.SetActive(true);
+                    }
+                }
+
+                if (isLevel5)
+
+                {
+
+                    if (!canWin && !isCDV)
+                    {
+                        Debug.Log("T'as trouvé la clé, bien ouej");
+
+                        bigWin = true;
+                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                        //supp la clé dans la map (fx)
+                        keyUI.SetActive(true);
+                        StartCoroutine(TextKeyLooted());
+                    }
+
+
+
+                    if (!bigWin && isCDV)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+
+
+
+                    if (bigWin && isCDV)
+                    {
+                        Debug.Log("C'est bon t'as win");
+                        Time.timeScale = 0;
+                        //anim (on va utiliser une ptite coroutine
+                        menuWin.SetActive(true);
+                    }
+                }
+
+
+
             }
         }
 

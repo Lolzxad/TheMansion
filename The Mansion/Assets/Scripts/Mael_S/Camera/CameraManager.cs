@@ -25,8 +25,8 @@ namespace TheMansion
         {
             if (playerController.isHiding)
             {
-              
-                   ProCamera2D.Instance.AdjustCameraTargetInfluence(target, 1f, 1f, 1f);
+
+                ProCamera2D.Instance.CenterOnTargets();
            
                 
             }
@@ -35,11 +35,8 @@ namespace TheMansion
 
             if (playerController.isGrabbed)
             {
-                if (setNewCamera)
-                {
-                    ProCamera2D.Instance.AddCameraTarget(target, 1f, 1f, 1f);
-                    setNewCamera = false;
-                }
+                
+               ProCamera2D.Instance.CenterOnTargets();
 
             }
 

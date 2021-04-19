@@ -458,7 +458,7 @@ MonoBehaviour:
   Progressive: 0
   SpeedMultiplier: 1
   TransitionSmoothness: 2.7
-  MaintainInfluenceOnStop: 1
+  MaintainInfluenceOnStop: 0
   MovementThreshold: {x: 0, y: 0}
   LeftFocus: 0.3
   RightFocus: 0.3

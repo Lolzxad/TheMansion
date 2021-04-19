@@ -26,6 +26,8 @@ namespace TheMansion
 
         public bool isTuto;
 
+        public GameObject menuDefaite;
+
         private void Start()
         {
 
@@ -125,6 +127,7 @@ namespace TheMansion
         public void GameOver()
         {
             Debug.Log("U DEAD DEAD DEAD JUST DIE ALREADY");
+            menuDefaite.SetActive(true);
         }
     } 
 }

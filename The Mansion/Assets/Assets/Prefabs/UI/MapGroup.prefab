@@ -171,8 +171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 388.09998, y: 211.5}
-  m_SizeDelta: {x: 123.95657, y: 57}
+  m_AnchoredPosition: {x: -259.47, y: 213.82}
+  m_SizeDelta: {x: 111.60959, y: 52.369843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &201805942845140338
 CanvasRenderer:
@@ -301,8 +301,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -123, y: -93}
-  m_SizeDelta: {x: 1125, y: 610}
+  m_AnchoredPosition: {x: 97, y: 81}
+  m_SizeDelta: {x: 524.82654, y: 284.57263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &201805943364406274
 CanvasRenderer:
@@ -393,7 +393,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 201805943364406276}
   mapButton: {fileID: 201805942845140342}
-  playerPos: {fileID: 0}
 --- !u!1 &201805944153916743
 GameObject:
   m_ObjectHideFlags: 0
