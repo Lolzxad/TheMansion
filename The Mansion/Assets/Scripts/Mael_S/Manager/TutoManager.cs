@@ -48,6 +48,7 @@ namespace TheMansion
         public bool isDoorLocked;
         public bool readyToHide;
         bool playerIsHiding;
+        bool bbIsHere;
 
         public void Start()
         {
@@ -59,17 +60,17 @@ namespace TheMansion
 
             
 
-            player.GetComponent<PlayerController>().enabled = false;
+           // player.GetComponent<PlayerController>().enabled = false;
 
-            bigBoy.GetComponent<BigBoyController>().enabled = false;
+          /*  bigBoy.GetComponent<BigBoyController>().enabled = false;
             bigBoy.GetComponent<SpriteRenderer>().enabled = false;
             bigBoy.GetComponent<Collider2D>().enabled = false;
             frontBbTrigger.SetActive(false);
             backBbTrigger.SetActive(false);
 
-            canWinTrigger.SetActive(false);
-
-
+            canWinTrigger.SetActive(false);*/
+            
+           
             StartCoroutine(SpawnInputMove());
         }
 
@@ -83,15 +84,20 @@ namespace TheMansion
                 StartCoroutine(WaitForHeart());
             }
 
-            if(bigBoyController.bBcanMove == false)
+            if (bbIsHere)
             {
-                Debug.Log("BB can't move AAAAAAAAAh");
+                if (bigBoyController.bBcanMove == false)
+                {
+                    Debug.Log("BB can't move AAAAAAAAAh");
 
-                bigBoy.GetComponent<BigBoyController>().enabled = false;
-                //stunTexte.SetActive(true);
-                player.GetComponent<PlayerController>().enabled = false;
-                StartCoroutine(WaitForMove());
+                    bigBoy.GetComponent<BigBoyController>().enabled = false;
+                    //stunTexte.SetActive(true);
+                    player.GetComponent<PlayerController>().enabled = false;
+                    StartCoroutine(WaitForMove());
+                }
             }
+
+           
 
             if(readyToHide == true)
             {
@@ -122,7 +128,9 @@ namespace TheMansion
         {
             yield return new WaitForSeconds(2);
             movementInput.SetActive(false);
-            player.GetComponent<PlayerController>().enabled = true;
+           // player.GetComponent<PlayerController>().enabled = true;
+            Debug.Log("LA vie est une pute");
+            introTexte.SetActive(false);
         }
 
         IEnumerator WaitForInput()
@@ -180,11 +188,13 @@ namespace TheMansion
             heartInput.SetActive(false);
             hideTrigger.SetActive(false);
 
-            
-            bigBoy.GetComponent<Collider2D>().enabled = true;
+
+            /*bigBoy.GetComponent<Collider2D>().enabled = true;
             bigBoy.GetComponent<BigBoyController>().enabled = true;
-            bigBoy.GetComponent<SpriteRenderer>().enabled = true;
-            
+            bigBoy.GetComponent<SpriteRenderer>().enabled = true;*/
+
+            bigBoy.SetActive(true);
+            bbIsHere = true;
             frontBbTrigger.SetActive(true);
             backBbTrigger.SetActive(true);
             //bBCameraHandlerTrigger.SetActive(true);

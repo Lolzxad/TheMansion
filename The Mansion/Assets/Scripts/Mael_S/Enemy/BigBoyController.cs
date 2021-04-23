@@ -50,7 +50,7 @@ namespace TheMansion
         private void Awake()
         {
             playerScript = FindObjectOfType<PlayerController>();
-            tuto = FindObjectOfType<TutoManager>();
+           // tuto = FindObjectOfType<TutoManager>();
         }
 
         private void Start()
