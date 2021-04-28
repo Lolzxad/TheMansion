@@ -38,10 +38,11 @@ namespace TheMansion
 
         [Space]
         [Header("Inputs")]
-        public GameObject movementInput;
+        //public GameObject movementInput;
         public GameObject hideInput;
         public GameObject hideInput2;
         public GameObject heartInput;
+        public GameObject newMovementInput;
 
         [Space]
         [Header("Des bools")]
@@ -58,19 +59,26 @@ namespace TheMansion
             playerController = FindObjectOfType<PlayerController>();
             bigBoyController = FindObjectOfType<BigBoyController>();
 
+
+
+            // player.GetComponent<PlayerController>().enabled = false;
+
+              bigBoy.GetComponent<BigBoyController>().enabled = false;
+              bigBoy.GetComponent<SpriteRenderer>().enabled = false;
+              bigBoy.GetComponent<Collider2D>().enabled = false;
+              frontBbTrigger.SetActive(false);
+              backBbTrigger.SetActive(false);
+
+              canWinTrigger.SetActive(false);
+
+            Time.timeScale = 0;
             
+        }
 
-           // player.GetComponent<PlayerController>().enabled = false;
-
-          /*  bigBoy.GetComponent<BigBoyController>().enabled = false;
-            bigBoy.GetComponent<SpriteRenderer>().enabled = false;
-            bigBoy.GetComponent<Collider2D>().enabled = false;
-            frontBbTrigger.SetActive(false);
-            backBbTrigger.SetActive(false);
-
-            canWinTrigger.SetActive(false);*/
-            
-           
+        public void okNowMove()
+        {
+            newMovementInput.SetActive(false);
+            Time.timeScale = 1;
             StartCoroutine(SpawnInputMove());
         }
 
@@ -118,7 +126,7 @@ namespace TheMansion
             introTexte.SetActive(true);
             
             yield return new WaitForSeconds(7);
-            movementInput.SetActive(true);
+            //movementInput.SetActive(true);
 
             StartCoroutine(WaitToRemoveInputMove());
 
@@ -127,7 +135,7 @@ namespace TheMansion
         IEnumerator WaitToRemoveInputMove()
         {
             yield return new WaitForSeconds(2);
-            movementInput.SetActive(false);
+            //movementInput.SetActive(false);
            // player.GetComponent<PlayerController>().enabled = true;
             Debug.Log("LA vie est une pute");
             introTexte.SetActive(false);
@@ -163,6 +171,8 @@ namespace TheMansion
 
         IEnumerator WaitForHeart()
         {
+            player.GetComponent<PlayerController>().enabled = false;
+
             Debug.Log("Heart");
             playerIsHiding = false;
 
@@ -187,17 +197,17 @@ namespace TheMansion
             yield return new WaitForSeconds(5);
             heartInput.SetActive(false);
             hideTrigger.SetActive(false);
+            player.GetComponent<PlayerController>().enabled = true;
 
-
-            /*bigBoy.GetComponent<Collider2D>().enabled = true;
+            bigBoy.GetComponent<Collider2D>().enabled = true;
             bigBoy.GetComponent<BigBoyController>().enabled = true;
-            bigBoy.GetComponent<SpriteRenderer>().enabled = true;*/
+            bigBoy.GetComponent<SpriteRenderer>().enabled = true;
 
-            bigBoy.SetActive(true);
+            // bigBoy.SetActive(true);
             bbIsHere = true;
             frontBbTrigger.SetActive(true);
             backBbTrigger.SetActive(true);
-            //bBCameraHandlerTrigger.SetActive(true);
+            bBCameraHandlerTrigger.SetActive(true);
         }
 
         public void OnTriggerEnter2D(Collider2D other)

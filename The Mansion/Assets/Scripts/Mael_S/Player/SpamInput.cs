@@ -94,6 +94,7 @@ namespace TheMansion
                 {
                     tuto.stunTexte.SetActive(true);
                     tuto.canWinTrigger.SetActive(true);
+                    bbController.GetComponent<BigBoyController>().enabled = false;
                 }
                 
 
