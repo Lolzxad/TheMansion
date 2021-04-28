@@ -152,7 +152,7 @@ RectTransform:
   m_Children:
   - {fileID: 1256267451}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -350,7 +350,7 @@ RectTransform:
   m_Children:
   - {fileID: 1961896357}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1002,7 +1002,7 @@ RectTransform:
   - {fileID: 1631358798}
   - {fileID: 822680298}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1023,9 +1023,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplayDoorLocked: {fileID: 822680299}
   sentences:
-  - "Cette porte est ferm\xE9e \xE0 cl\xE9! "
-  - Je dois trouver un autre moyen de m'enfuir....
-  - "Peut \xEAtre qu'au bout du couloir je trouverai quelque chose."
+  - This door is locked!
+  - I have to find an another path...
+  - Maybe at the end of the hallway I will find a way out
   typingSpeed: 0.02
   continueButton: {fileID: 1631358797}
 --- !u!1 &385578139 stripped
@@ -1290,7 +1290,7 @@ RectTransform:
   - {fileID: 452740343}
   - {fileID: 1826816718}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1311,9 +1311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplayDoorLocked: {fileID: 1826816719}
   sentences:
-  - Quels sont ses vibrations ?
-  - "Quelque chose arrive... Je ferai peut \xEAtre mieux de me cacher."
-  - Cette armoire fera l'affaire.
+  - Why is the ground shaking ?
+  - Something is coming... I should hide myself just to be safe
+  - This closet will do the job.
   typingSpeed: 0.02
   continueButton: {fileID: 452740342}
 --- !u!1 &536996438
@@ -2419,7 +2419,7 @@ RectTransform:
   m_Children:
   - {fileID: 1630526497}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2654,7 +2654,7 @@ RectTransform:
   - {fileID: 1027761560}
   - {fileID: 226711500}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2675,9 +2675,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplayDoorLocked: {fileID: 226711501}
   sentences:
-  - Pourquoi mon coeur s'affole ainsi ??
-  - "Je commence \xE0 paniquer, \xE0 ce rythme on va m'entendre !"
-  - Il faut que je me calme....
+  - Why is my heart going so wild ?
+  - I'm starting to panic, at this point someone will hear me!
+  - I have to calm myself.
   typingSpeed: 0.02
   continueButton: {fileID: 1027761559}
 --- !u!1 &1249987125
@@ -2979,7 +2979,7 @@ RectTransform:
   - {fileID: 1742202823}
   - {fileID: 1941182515}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -3000,9 +3000,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplayDoorLocked: {fileID: 1941182516}
   sentences:
-  - "C'EST QUOI \xC7A ?!"
-  - Cette chose a l'air immobile, je devrais profiter pour m'enfuir...
-  - "Mon dieu o\xF9 est ce que j'ai atteri"
+  - WHAT WAS THAT ??
+  - This thing seems immobile, I should take advantage of that.
+  - My God where I am ?
   typingSpeed: 0.02
   continueButton: {fileID: 1742202822}
 --- !u!1 &1359201584 stripped
@@ -3877,6 +3877,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1782258195}
   - {fileID: 2143002460}
   - {fileID: 347722661}
   - {fileID: 536380033}
@@ -4377,15 +4378,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782258194}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 728384065}
   - {fileID: 1456631225}
   - {fileID: 1762604538}
-  m_Father: {fileID: 4943281956185834909}
-  m_RootOrder: 14
+  m_Father: {fileID: 1723623495}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5392,7 +5393,7 @@ RectTransform:
   - {fileID: 1657065866}
   - {fileID: 302054840}
   m_Father: {fileID: 1723623495}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -5413,9 +5414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplayDoorLocked: {fileID: 302054841}
   sentences:
-  - "Mais... o\xF9 suis-je ?"
-  - Cet endroit me dit rien qui vaille.
-  - Je dois vite sortir d'ici avant qu'il m'arrive quelque chose.
+  - Where....where am I ?
+  - This place gives me bad vibes....
+  - I should leave right now before something happens to me
   typingSpeed: 0.02
   continueButton: {fileID: 1657065865}
 --- !u!1001 &197993365883309982
@@ -7949,7 +7950,6 @@ RectTransform:
   - {fileID: 1854367699}
   - {fileID: 1359201585}
   - {fileID: 1723623495}
-  - {fileID: 1782258195}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
