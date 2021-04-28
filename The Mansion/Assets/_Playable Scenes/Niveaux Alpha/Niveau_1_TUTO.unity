@@ -3698,7 +3698,6 @@ MonoBehaviour:
   player: {fileID: 1913395649}
   bigBoy: {fileID: 385578139}
   heart: {fileID: 265266636}
-  movementInput: {fileID: 1168676655}
   hideInput: {fileID: 11999827}
   hideInput2: {fileID: 536996438}
   heartInput: {fileID: 143648124}
