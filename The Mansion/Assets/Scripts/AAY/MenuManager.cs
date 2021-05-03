@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace TheMansion
@@ -11,10 +12,18 @@ namespace TheMansion
         //[SerializeField] GameObject levels;
 
         [SerializeField] GameObject selectionLevel;
+        [SerializeField] GameObject selectionStory;
+        [SerializeField] GameObject storyList;
 
         [SerializeField] GameObject storyButton;
         [SerializeField] GameObject levelsButton;
         [SerializeField] GameObject optionsButton;
+
+        [SerializeField] GameObject story1Button;
+        [SerializeField] GameObject story1;
+
+        public bool story1Get;
+        public Sprite story1Sprite;
 
         public void ChangeLevel(string levelName)
         {
@@ -58,6 +67,47 @@ namespace TheMansion
             storyButton.SetActive(true);
             levelsButton.SetActive(true);
             optionsButton.SetActive(true);
+        }
+
+        public void SetStorySelection()
+        {
+            selectionStory.SetActive(true);
+
+            storyButton.SetActive(false);
+            levelsButton.SetActive(false);
+            optionsButton.SetActive(false);
+
+            if (story1Get)
+            {
+                story1Button.GetComponent<Image>().sprite = story1Sprite;
+            }
+        }
+
+        public void RemoveStorySelection()
+        {
+            selectionStory.SetActive(false);
+
+            storyButton.SetActive(true);
+            levelsButton.SetActive(true);
+            optionsButton.SetActive(true);
+        }
+
+        public void StoriesClose()
+        {
+            story1.SetActive(false);
+
+            storyList.SetActive(false);
+            selectionStory.SetActive(true);
+        }
+
+        public void Story1Opened()
+        {
+            if (story1Get)
+            {
+                story1.SetActive(true);
+                selectionStory.SetActive(false);
+                storyList.SetActive(true);
+            }
         }
     }
 }
