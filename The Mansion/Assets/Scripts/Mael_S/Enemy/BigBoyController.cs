@@ -32,7 +32,7 @@ namespace TheMansion
         public bool isFacingRight;
         public float rechercheTime;
 
-        public bool movingRight = true;
+        public bool movingLeft = true;
         public float distance;
         public int detectZonePatrol;
         [SerializeField] Transform target1;
@@ -230,7 +230,7 @@ namespace TheMansion
                 float distance2 = Vector3.Distance(target2.position, transform.position);
                 //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
 
-                if (movingRight && bBcanMove)
+                if (movingLeft && bBcanMove)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
                     bigBoyAnimator.SetBool("isWalking", true);
@@ -240,7 +240,7 @@ namespace TheMansion
                     }                                   
                 }
 
-                if (!movingRight && bBcanMove)
+                if (!movingLeft && bBcanMove)
                     {
                     transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
                     bigBoyAnimator.SetBool("isWalking", true);
@@ -252,21 +252,21 @@ namespace TheMansion
 
                 if (distance1 <= detectZonePatrol)
                 {
-                    if (movingRight == true)
+                    if (movingLeft == true)
                     {
                         Debug.Log("Target 1 detected");
                         transform.eulerAngles = new Vector3(0, -180, 0);
-                        movingRight = false;
+                        movingLeft = false;
                     }
 
                 }
                 if (distance2 <= detectZonePatrol)
                 {
-                    if (movingRight == false)
+                    if (movingLeft == false)
                     {
                         Debug.Log("Target 2 detected");
                         transform.eulerAngles = new Vector3(0, 0, 0);
-                        movingRight = true;
+                        movingLeft = true;
                     }
                 }
             
@@ -344,6 +344,7 @@ namespace TheMansion
 
         public void Flip()
         {
+            transform.Rotate(new Vector3(0, 180, 0));
             isFacingRight = !isFacingRight;
             transform.Rotate(new Vector3(0, 180, 0));
         }
