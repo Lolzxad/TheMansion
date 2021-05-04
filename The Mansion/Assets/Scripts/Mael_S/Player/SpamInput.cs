@@ -9,15 +9,15 @@ namespace TheMansion
 
     public class SpamInput : MonoBehaviour
     {
-        [SerializeField] int spam;
+        public int spam;
 
-        [SerializeField] int playerLives = 4;
+        public int playerLives = 4;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
         float timeLimitDefault;
 
-        bool spamDone;
+        public bool spamDone;
         bool timeIsRunning;
 
         BigBoyController bbController;
@@ -89,6 +89,11 @@ namespace TheMansion
                     gameObject.SetActive(false);
                     playerLives--;
                 }
+
+               
+
+              
+
 
                 if (tuto)
                 {
