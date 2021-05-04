@@ -8,6 +8,8 @@ namespace TheMansion
 {
     public class PlayerController : MonoBehaviour
     {
+        private MenuManager MenuManagerScript;
+
         public Animator playerAnimator;
 
         public float stamina = 100f;
@@ -18,6 +20,7 @@ namespace TheMansion
         private bool canHide;
         private bool canUseLadder;
         public bool canMove = true;
+        public bool isFacingRight = true;
         public bool isMouse;
         public bool isHiding;
         public bool isGrabbed;
@@ -80,19 +83,18 @@ namespace TheMansion
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
-                                    transform.position = basePosition;
-                                    playerSprite.transform.position = baseSpritePosition;
+                                    /*transform.position = basePosition;
+                                    playerSprite.transform.position = baseSpritePosition;*/
                                 }
                             }
                             else
                             {
-                                if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed)
+                                if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed && !usingLadder)
                                 {
                                     isHiding = true;
                                     canMove = false;
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                     playerRb.gravityScale = 0;
-                                    playerAnimator.SetTrigger("playerHides");
                                     playerAnimator.SetBool("isHiding", true);
                                     //Debug.Log("Is Hiding");
                                     basePosition = transform.position;
@@ -103,60 +105,85 @@ namespace TheMansion
                                 }
                             }
 
-                            if (touchedObject.tag == "LadderDown" && canUseLadder)
+                            if (touchedObject.tag == "LadderDown")
                             {
-                                ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
-                                ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                                StartCoroutine(DownLadder());
+                                ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
+                                ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+
+                                if (!usingLadder && !isHiding && canUseLadder)
+                                {
+                                    StartCoroutine(DownLadder());
+                                }
+                                else
+                                {
+                                    StartCoroutine(OffLadder());
+                                }
                             }
 
-                            if (touchedObject.tag == "LadderUp" && canUseLadder)
+                            if (touchedObject.tag == "LadderUp")
                             {
-                                ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
-                                ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                                StartCoroutine(UpLadder());
+                                ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
+                                ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+
+                                if (!usingLadder && !isHiding && canUseLadder)
+                                {
+                                    StartCoroutine(UpLadder());
+                                }
+                                else
+                                {
+                                    StartCoroutine(OffLadder());
+                                }
+                            }
+
+                            if (touchedObject.tag == "StoryLore")
+                            {
+                                MenuManagerScript.story1Get = true;
                             }
                         }
                     }
 
-                    if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && !isHiding && !isGrabbed)
+                    if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && canMove)
                     {
                         Debug.Log("Walk Right");
-                        playerAnimator.SetBool("isLookingRight", true);
-                        playerAnimator.SetBool("isLookingLeft", false);
-                        playerAnimator.SetBool("isWalkingRight", true);
-                        playerAnimator.SetBool("isRunningRight", false);
+                        if (!isFacingRight)
+                        {
+                            Flip();
+                        }
+                        playerAnimator.SetBool("isWalking", true);
                         transform.Translate((Vector3.right * Time.deltaTime) * 5f);
                     }
 
-                    if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && !isHiding && !isGrabbed)
+                    if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && canMove)
                     {
                         Debug.Log("Walk Left");
-                        playerAnimator.SetBool("isLookingLeft", true);
-                        playerAnimator.SetBool("isLookingRight", false);
-                        playerAnimator.SetBool("isWalkingLeft", true);
-                        playerAnimator.SetBool("isRunningLeft", false);
+                        if (isFacingRight)
+                        {
+                            Flip();
+                        }
+                        playerAnimator.SetBool("isWalking", true);
                         transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                     }
 
-                    if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && !isHiding && !isGrabbed)
+                    if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && canMove)
                     {
                         Debug.Log("Run Right");
-                        playerAnimator.SetBool("isLookingRight", true);
-                        playerAnimator.SetBool("isLookingLeft", false);
-                        playerAnimator.SetBool("isRunningRight", true);
-                        playerAnimator.SetBool("isWalkingRight", false);
+                        if (!isFacingRight)
+                        {
+                            Flip();
+                        }
+                        playerAnimator.SetBool("isRunning", true);
                         transform.Translate((Vector3.right * Time.deltaTime) * 10f);
                         StartCoroutine(StaminaLoss());
                     }
 
-                    if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && !isHiding && !isGrabbed)
+                    if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && canMove)
                     {
                         Debug.Log("Run Left");
-                        playerAnimator.SetBool("isLookingLeft", true);
-                        playerAnimator.SetBool("isLookingRight", false);
-                        playerAnimator.SetBool("isRunningLeft", true);
-                        playerAnimator.SetBool("isWalkingLeft", false);
+                        if (isFacingRight)
+                        {
+                            Flip();
+                        }
+                        playerAnimator.SetBool("isRunning", true);
                         transform.Translate((Vector3.left * Time.deltaTime) * 10f);
                         StartCoroutine(StaminaLoss());
                     }
@@ -172,10 +199,8 @@ namespace TheMansion
             if (!transform.hasChanged)
             {
                 StartCoroutine(StandingRegen());
-                playerAnimator.SetBool("isWalkingRight", false);
-                playerAnimator.SetBool("isRunningRight", false);
-                playerAnimator.SetBool("isWalkingLeft", false);
-                playerAnimator.SetBool("isRunningLeft", false);
+                playerAnimator.SetBool("isWalking", false);
+                playerAnimator.SetBool("isRunning", false);
             }
             transform.hasChanged = false;
 
@@ -196,10 +221,11 @@ namespace TheMansion
 
 
         }
-        void OnTriggerEnter2D(Collider2D InteractableObject)
+        void OnTriggerStay2D(Collider2D InteractableObject)
         {
             if (InteractableObject.tag == "Hard Hiding Spot")
             {
+                //var hidingSpot = InteractableObject.gameObject;
                 if (isHiding)
                 {
                     InteractableObject.GetComponent<OutlineActivator>().DisableOutline();
@@ -207,20 +233,23 @@ namespace TheMansion
                 else
                 {
                     canHide = true;
-                    InteractableObject.GetComponent<OutlineActivator>().EnableOutline();
-                }                              
+                    InteractableObject.GetComponent<OutlineActivator>().EnableOutline();                
+                }  
             }
 
             if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
             {
+
                 if (usingLadder)
                 {
                     InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
+                    InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(false);
                 }
                 else
                 {
                     canUseLadder = true;
                     InteractableObject.transform.parent.GetComponent<OutlineActivator>().EnableOutline();
+                    InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(true);
                 }                           
             }
         }
@@ -236,6 +265,7 @@ namespace TheMansion
             {
                 canUseLadder = false;
                 InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
+                InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(false);
             }
         }
 
@@ -266,21 +296,20 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
-                                transform.position = basePosition;
-                                playerSprite.transform.position = baseSpritePosition;
+                                /*transform.position = basePosition;
+                                playerSprite.transform.position = baseSpritePosition;*/
                             }
                         }
                         else
                         {
-                            if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed)
+                            if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed && !usingLadder)
                             {
                                 isHiding = true;
                                 canMove = false;
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                 playerRb.gravityScale = 0;
-                                playerAnimator.SetTrigger("playerHides");
                                 playerAnimator.SetBool("isHiding", true);
-                                Debug.Log("Is Hiding");
+                                //Debug.Log("Is Hiding");
                                 basePosition = transform.position;
                                 baseSpritePosition = playerSprite.transform.position;
                                 transform.position = touchedObject.transform.position;
@@ -289,18 +318,34 @@ namespace TheMansion
                             }
                         }
 
-                        if (touchedObject.tag == "LadderDown" && canUseLadder)
+                        if (touchedObject.tag == "LadderDown")
                         {
-                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
-                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;                                                     
-                            StartCoroutine(DownLadder());                          
+                            ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+
+                            if (!usingLadder && !isHiding && canUseLadder)
+                            {
+                                StartCoroutine(DownLadder());
+                            }
+                            else
+                            {
+                                StartCoroutine(OffLadder());
+                            }
                         }
 
-                        if (touchedObject.tag == "LadderUp" && canUseLadder)
+                        if (touchedObject.tag == "LadderUp")
                         {
-                            ladderBottom = touchedObject.transform.parent.gameObject.transform.GetChild(0).transform.position;
-                            ladderTop = touchedObject.transform.parent.gameObject.transform.GetChild(1).transform.position;
-                            StartCoroutine(UpLadder());
+                            ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
+                            ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+
+                            if (!usingLadder && !isHiding && canUseLadder)
+                            {                               
+                                StartCoroutine(UpLadder());
+                            }
+                            else
+                            {
+                                StartCoroutine(OffLadder());
+                            }
                         }
                     }
                 }
@@ -308,30 +353,33 @@ namespace TheMansion
                 if (clickPosition2D.x > BasePosition.position.x && clickPosition2D.x <= WalkRight.position.x && canMove)
                 {
                     Debug.Log("Walk Right");
-                    playerAnimator.SetBool("isLookingRight", true);
-                    playerAnimator.SetBool("isLookingLeft", false);
-                    playerAnimator.SetBool("isWalkingRight", true);
-                    playerAnimator.SetBool("isRunningRight", false);
+                    if (!isFacingRight)
+                    {
+                        Flip();
+                    }
+                    playerAnimator.SetBool("isWalking", true);
                     transform.Translate((Vector3.right * Time.deltaTime) * 5f);
                 }
 
                 if (clickPosition2D.x < BasePosition.position.x && clickPosition2D.x >= WalkLeft.position.x && canMove)
                 {
                     Debug.Log("Walk Left");
-                    playerAnimator.SetBool("isLookingLeft", true);
-                    playerAnimator.SetBool("isLookingRight", false);
-                    playerAnimator.SetBool("isWalkingLeft", true);
-                    playerAnimator.SetBool("isRunningLeft", false);
+                    if (isFacingRight)
+                    {
+                        Flip();
+                    }
+                    playerAnimator.SetBool("isWalking", true);
                     transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                 }
 
                 if (clickPosition2D.x > WalkRight.position.x && clickPosition2D.x <= RunRight.position.x && stamina > 0 && canMove)
                 {
                     Debug.Log("Run Right");
-                    playerAnimator.SetBool("isLookingRight", true);
-                    playerAnimator.SetBool("isLookingLeft", false);
-                    playerAnimator.SetBool("isRunningRight", true);
-                    playerAnimator.SetBool("isWalkingRight", false);
+                    if (!isFacingRight)
+                    {
+                        Flip();
+                    }
+                    playerAnimator.SetBool("isRunning", true);
                     transform.Translate((Vector3.right * Time.deltaTime) * 10f);
                     StartCoroutine(StaminaLoss());
                 }
@@ -339,14 +387,21 @@ namespace TheMansion
                 if (clickPosition2D.x < WalkLeft.position.x && clickPosition2D.x >= RunLeft.position.x && stamina > 0 && canMove)
                 {
                     Debug.Log("Run Left");
-                    playerAnimator.SetBool("isLookingLeft", true);
-                    playerAnimator.SetBool("isLookingRight", false);
-                    playerAnimator.SetBool("isRunningLeft", true);
-                    playerAnimator.SetBool("isWalkingLeft", false);
+                    if (isFacingRight)
+                    {
+                        Flip();
+                    }
+                    playerAnimator.SetBool("isRunning", true);
                     transform.Translate((Vector3.left * Time.deltaTime) * 10f);
                     StartCoroutine(StaminaLoss());
                 }
             }
+        }
+
+        public void Flip()
+        {
+            isFacingRight = !isFacingRight;
+            transform.Find("Sprite").transform.Rotate(new Vector3(0, 180, 0));
         }
 
         public void CalmingHeart()
@@ -394,6 +449,7 @@ namespace TheMansion
         {
             canMove = false;
             usingLadder = true;
+            playerAnimator.SetBool("isUsingLadder", true);
             transform.position = ladderTop;
             playerRb.gravityScale = 0;
             Physics2D.IgnoreLayerCollision(2, 9, true);
@@ -413,6 +469,7 @@ namespace TheMansion
         {
             canMove = false;
             usingLadder = true;
+            playerAnimator.SetBool("isUsingLadder", true);
             transform.position = ladderBottom;
             playerRb.gravityScale = 0;
             Physics2D.IgnoreLayerCollision(2, 9, true);
@@ -427,6 +484,18 @@ namespace TheMansion
             Physics2D.IgnoreLayerCollision(2, 9, false);
             canMove = true;
             usingLadder = false;
+            playerAnimator.SetBool("isUsingLadder", false);
+        }
+
+        IEnumerator OffLadder()
+        {
+            StopAllCoroutines();
+            playerRb.gravityScale = defaultGravity;
+            Physics2D.IgnoreLayerCollision(2, 9, false);
+            canMove = true;
+            usingLadder = false;
+            playerAnimator.SetBool("isUsingLadder", false);
+            yield return null;
         }
     }
 }

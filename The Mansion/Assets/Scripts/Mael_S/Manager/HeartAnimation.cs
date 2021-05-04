@@ -21,6 +21,7 @@ namespace TheMansion
         {
             if(player.heartBeat <= 120)
             {
+                //default
                 anim.speed = 1;
             }
 

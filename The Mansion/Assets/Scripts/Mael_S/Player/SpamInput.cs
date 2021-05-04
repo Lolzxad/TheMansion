@@ -9,20 +9,24 @@ namespace TheMansion
 
     public class SpamInput : MonoBehaviour
     {
-        [SerializeField] int spam;
+        public int spam;
 
-        [SerializeField] int playerLives = 4;
+        public int playerLives = 4;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
+        float timeLimitDefault;
 
-
-        bool spamDone;
+        public bool spamDone;
         bool timeIsRunning;
 
         BigBoyController bbController;
         RunnerController runnerController;
         TutoManager tuto;
+
+        public bool isTuto;
+
+        public GameObject menuDefaite;
 
         private void Start()
         {
@@ -86,8 +90,18 @@ namespace TheMansion
                     playerLives--;
                 }
 
-                tuto.stunTexte.SetActive(true);
+               
 
+              
+
+
+                if (tuto)
+                {
+                    tuto.stunTexte.SetActive(true);
+                    tuto.canWinTrigger.SetActive(true);
+                    bbController.GetComponent<BigBoyController>().enabled = false;
+                }
+                
 
                 /*if (runnerController.isGrabbing)
                 {
@@ -119,6 +133,7 @@ namespace TheMansion
         public void GameOver()
         {
             Debug.Log("U DEAD DEAD DEAD JUST DIE ALREADY");
+            menuDefaite.SetActive(true);
         }
     } 
 }
