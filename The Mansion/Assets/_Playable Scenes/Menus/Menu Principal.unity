@@ -922,8 +922,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -0.00016022}
-  m_SizeDelta: {x: 800, y: 389.1889}
+  m_AnchoredPosition: {x: 0.000015259, y: -0.00016975}
+  m_SizeDelta: {x: 800, y: 449.90222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667335140
 MonoBehaviour:
@@ -1035,8 +1035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000045776, y: -0.00023651}
-  m_SizeDelta: {x: 800.00006, y: 389.18875}
+  m_AnchoredPosition: {x: 0.000045776, y: -0.00014591}
+  m_SizeDelta: {x: 800.00006, y: 449.90213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &781141336
 MonoBehaviour:
@@ -1074,7 +1074,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781141334}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &895639443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,8 +1541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.29992676, y: 0.90000916}
-  m_SizeDelta: {x: 795.99133, y: 391.2909}
+  m_AnchoredPosition: {x: 0.29992676, y: -0.7}
+  m_SizeDelta: {x: 795.99133, y: 450.8094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986774741
 MonoBehaviour:
@@ -2625,8 +2625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.487239, y: -0.9149989}
-  m_SizeDelta: {x: 795.99133, y: 391.2909}
+  m_AnchoredPosition: {x: -12.487239, y: -0.9}
+  m_SizeDelta: {x: 795.99133, y: 447.67676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504795467
 MonoBehaviour:
@@ -3477,7 +3477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1706928170
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3962,7 +3962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1873474145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4021,7 +4021,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873474144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -0.033, z: 0}
+  m_LocalPosition: {x: 0.04, y: 0.05, z: 0}
   m_LocalScale: {x: 1.0731789, y: 0.9339044, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -125,12 +125,15 @@ namespace TheMansion
    
                 spamInputController.spam = 0;
 
-                spamInputController.spamDone = false;
                 spamInput.SetActive(false);
                 spamInputController.playerLives--;
 
                 Stunned();
+                spamInputController.spamDone = false;
             }
+
+           
+                
 
             
         }
