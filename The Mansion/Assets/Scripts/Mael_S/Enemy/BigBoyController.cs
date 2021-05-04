@@ -10,6 +10,8 @@ namespace TheMansion
 
     public class BigBoyController : MonoBehaviour
     {
+        public Animator bigBoyAnimator;
+
         public float bigBoySpeed;
         public float speedPO;
         public float continueRunning = 8;
@@ -27,6 +29,7 @@ namespace TheMansion
         public bool bBcanMove;
         public bool playerInVision;
         public bool hideFail;
+        public bool isFacingRight;
         public float rechercheTime;
 
         public bool movingRight = true;
@@ -73,11 +76,16 @@ namespace TheMansion
         {
             //Debug.Log(isRunning);
 
-           /* if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
+            /* if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
+             {
+                 isRunning = true;
+                 isPatrolling = false;
+             }*/
+            if (!transform.hasChanged)
             {
-                isRunning = true;
-                isPatrolling = false;
-            }*/
+                bigBoyAnimator.SetBool("isWalking", false);
+            }
+            transform.hasChanged = false;
 
             if (isPatrolling && bBcanMove)
             {
@@ -144,9 +152,11 @@ namespace TheMansion
             
             //lance anim recherche
             Debug.Log("Mode recherche en cours");
+            bigBoyAnimator.SetBool("isSearching", true);
             yield return new WaitForSecondsRealtime(rechercheTime);
 
             Debug.Log("Mode recherche terminé");
+            bigBoyAnimator.SetBool("isSearching", false);
             HideCheck();
             //arête anim recherche
 
@@ -223,11 +233,21 @@ namespace TheMansion
                 if (movingRight && bBcanMove)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
+                    bigBoyAnimator.SetBool("isWalking", true);
+                    if (isFacingRight)
+                    {
+                        Flip();
+                    }                                   
                 }
 
                 if (!movingRight && bBcanMove)
-                {
+                    {
                     transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
+                    bigBoyAnimator.SetBool("isWalking", true);
+                    if (!isFacingRight)
+                    {
+                        Flip();
+                    }                   
                 }
 
                 if (distance1 <= detectZonePatrol)
@@ -268,6 +288,7 @@ namespace TheMansion
         {
             Debug.Log("Mode Grab");
             isGrabbing = true;
+            bigBoyAnimator.SetTrigger("hasGrabbed");
             bBcanMove = false;
 
             ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
@@ -284,6 +305,8 @@ namespace TheMansion
         public void Stunned()
         {
             Debug.Log("BB is stunned");
+            bigBoyAnimator.ResetTrigger("hasGrabbed");
+            bigBoyAnimator.SetBool("isStunned", true);
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -313,9 +336,16 @@ namespace TheMansion
             
             yield return new WaitForSeconds(5f);
             gameObject.GetComponent<Collider2D>().enabled = true;
+            bigBoyAnimator.SetBool("isStunned", false);
             bBcanMove = true;
             isGrabbing = false;
             isPatrolling = true;
+        }
+
+        public void Flip()
+        {
+            isFacingRight = !isFacingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
         }
 
         private void OnDrawGizmosSelected()

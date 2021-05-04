@@ -18,7 +18,7 @@ public class OutlineActivator : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        /*if(Input.GetKeyDown(KeyCode.E))
         {
             EnableOutline();
         }
@@ -26,7 +26,7 @@ public class OutlineActivator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             DisableOutline();
-        }
+        }*/
     }
 
     public void EnableOutline()
