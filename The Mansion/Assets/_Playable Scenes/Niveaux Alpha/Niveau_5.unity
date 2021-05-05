@@ -1111,6 +1111,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &439601218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 439601219}
+  m_Layer: 0
+  m_Name: Story 4
+  m_TagString: StoryLore
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &439601219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439601218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.95, y: -37.48942, z: -0.16382883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &475056336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3973967967896471244, guid: 1eb8ae0307dfe4f4eb43ad0d843d6cd3,
@@ -2939,7 +2969,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 9808ce7d4cfc14043833038a22459917, type: 3}
 --- !u!4 &1638168824 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3203845648887730025, guid: 9808ce7d4cfc14043833038a22459917,
+  m_CorrespondingSourceObject: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
     type: 3}
   m_PrefabInstance: {fileID: 1638168823}
   m_PrefabAsset: {fileID: 0}
@@ -5280,9 +5310,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionLevel: {fileID: 0}
+  selectionStory: {fileID: 0}
+  storyList: {fileID: 0}
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
+  story1Button: {fileID: 0}
+  story1: {fileID: 0}
+  story2Button: {fileID: 0}
+  story2: {fileID: 0}
+  story3Button: {fileID: 0}
+  story3: {fileID: 0}
+  story4Button: {fileID: 0}
+  story4: {fileID: 0}
+  story1Get: 0
+  story1Sprite: {fileID: 0}
+  story2Get: 0
+  story2Sprite: {fileID: 0}
+  story3Get: 0
+  story3Sprite: {fileID: 0}
+  story4Get: 0
+  story4Sprite: {fileID: 0}
 --- !u!1 &4943281956450724722
 GameObject:
   m_ObjectHideFlags: 0

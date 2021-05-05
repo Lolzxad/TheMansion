@@ -140,7 +140,26 @@ namespace TheMansion
 
                             if (touchedObject.tag == "StoryLore")
                             {
-                                MenuManagerScript.story1Get = true;
+                                if (touchedObject.name == "Story 1")
+                                {
+                                    MenuManagerScript.story1Get = true;
+                                }
+
+                                if (touchedObject.name == "Story 2")
+                                {
+                                    MenuManagerScript.story2Get = true;
+                                }
+
+                                if (touchedObject.name == "Story 3")
+                                {
+                                    MenuManagerScript.story3Get = true;
+                                }
+
+                                if (touchedObject.name == "Story 4")
+                                {
+                                    MenuManagerScript.story4Get = true;
+                                }
+
                             }
                         }
                     }

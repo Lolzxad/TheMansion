@@ -2119,6 +2119,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043942082}
   m_CullTransparentMesh: 0
+--- !u!1 &1150884262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150884263}
+  m_Layer: 0
+  m_Name: Story 2
+  m_TagString: StoryLore
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1150884263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150884262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -56.67, y: -39.489998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1153051086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5329,9 +5359,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionLevel: {fileID: 0}
+  selectionStory: {fileID: 0}
+  storyList: {fileID: 0}
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
+  story1Button: {fileID: 0}
+  story1: {fileID: 0}
+  story2Button: {fileID: 0}
+  story2: {fileID: 0}
+  story3Button: {fileID: 0}
+  story3: {fileID: 0}
+  story4Button: {fileID: 0}
+  story4: {fileID: 0}
+  story1Get: 0
+  story1Sprite: {fileID: 0}
+  story2Get: 0
+  story2Sprite: {fileID: 0}
+  story3Get: 0
+  story3Sprite: {fileID: 0}
+  story4Get: 0
+  story4Sprite: {fileID: 0}
 --- !u!1 &4943281956450724722
 GameObject:
   m_ObjectHideFlags: 0
