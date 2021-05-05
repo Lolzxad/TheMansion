@@ -336,7 +336,7 @@ MonoBehaviour:
   hidingFactor: 0
   canMove: 1
   isFacingRight: 1
-  isMouse: 0
+  isMouse: 1
   isHiding: 0
   isGrabbed: 0
   usingLadder: 0

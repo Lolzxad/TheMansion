@@ -1604,11 +1604,6 @@ PrefabInstance:
       propertyPath: RunLeft
       value: 
       objectReference: {fileID: 1228250550}
-    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: isMouse
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2527,7 +2522,7 @@ PrefabInstance:
     - target: {fileID: 2507647027773538142, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.31
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538142, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}

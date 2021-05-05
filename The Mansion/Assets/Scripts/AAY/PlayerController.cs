@@ -296,6 +296,7 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
+                                gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                 /*transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;*/
                             }
@@ -426,6 +427,7 @@ namespace TheMansion
         {
             //Hiding stuff
             gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = false;
             yield return null;
         }
 
