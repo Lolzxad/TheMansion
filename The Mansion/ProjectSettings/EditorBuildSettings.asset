@@ -15,18 +15,18 @@ EditorBuildSettings:
     path: Assets/_Playable Scenes/Menus/Menu Principal.unity
     guid: 03e1c9a1715343d44b9656e401131a88
   - enabled: 1
-    path: Assets/_Playable Scenes/Niveaux Alpha/Niveau_1_TUTO.unity
+    path: Assets/_Playable Scenes/Niveaux/Niveau_1_TUTO.unity
     guid: 0a1a2195f7cdbbe49842c6b22f65f06f
   - enabled: 1
-    path: Assets/_Playable Scenes/Niveaux Alpha/Niveau_2.unity
+    path: Assets/_Playable Scenes/Niveaux/Niveau_2.unity
     guid: a1709539bbef4034e952a93219497ecf
   - enabled: 1
-    path: Assets/_Playable Scenes/Niveaux Alpha/Niveau_3.unity
+    path: Assets/_Playable Scenes/Niveaux/Niveau_3.unity
     guid: 6f69bd5bd7f3ca04583642d39c1ecdc6
   - enabled: 1
-    path: Assets/_Playable Scenes/Niveaux Alpha/Niveau_4.unity
+    path: Assets/_Playable Scenes/Niveaux/Niveau_4.unity
     guid: 1cd63b8d28b442448881be4aa8fcfa12
   - enabled: 1
-    path: Assets/_Playable Scenes/Niveaux Alpha/Niveau_5.unity
+    path: Assets/_Playable Scenes/Niveaux/Niveau_5.unity
     guid: 08b255e8a4aea12488703216793fc7c3
   m_configObjects: {}

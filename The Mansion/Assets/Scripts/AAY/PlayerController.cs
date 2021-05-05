@@ -11,10 +11,12 @@ namespace TheMansion
         private MenuManager MenuManagerScript;
 
         public Animator playerAnimator;
+        public Animator heartAnimator;
 
         public float stamina = 100f;
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
+        private float heartbeatSpeed = 0.1f;
         private float defaultGravity;
 
         private bool canHide;
@@ -25,6 +27,7 @@ namespace TheMansion
         public bool isHiding;
         public bool isGrabbed;
         public bool usingLadder;
+        public bool isRunning;
 
         public Transform BasePosition;
         public Transform WalkRight;
@@ -50,7 +53,8 @@ namespace TheMansion
         // Update is called once per frame
         void Update()
         {
-            //Debug.Log(stamina);            
+            //Debug.Log(stamina);    
+            heartAnimator.SetFloat("speed", 1 + heartbeatSpeed);
 
             if (!isMouse)
             {
@@ -137,7 +141,26 @@ namespace TheMansion
 
                             if (touchedObject.tag == "StoryLore")
                             {
-                                MenuManagerScript.story1Get = true;
+                                if (touchedObject.name == "Story 1")
+                                {
+                                    MenuManagerScript.story1Get = true;
+                                }
+
+                                if (touchedObject.name == "Story 2")
+                                {
+                                    MenuManagerScript.story2Get = true;
+                                }
+
+                                if (touchedObject.name == "Story 3")
+                                {
+                                    MenuManagerScript.story3Get = true;
+                                }
+
+                                if (touchedObject.name == "Story 4")
+                                {
+                                    MenuManagerScript.story4Get = true;
+                                }
+
                             }
                         }
                     }
@@ -150,6 +173,7 @@ namespace TheMansion
                             Flip();
                         }
                         playerAnimator.SetBool("isWalking", true);
+                        isRunning = false;
                         transform.Translate((Vector3.right * Time.deltaTime) * 5f);
                     }
 
@@ -161,6 +185,7 @@ namespace TheMansion
                             Flip();
                         }
                         playerAnimator.SetBool("isWalking", true);
+                        isRunning = false;
                         transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                     }
 
@@ -173,8 +198,10 @@ namespace TheMansion
                         }
                         playerAnimator.SetBool("isRunning", true);
                         transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                        isRunning = true;
                         StartCoroutine(StaminaLoss());
                     }
+                    
 
                     if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && canMove)
                     {
@@ -185,8 +212,10 @@ namespace TheMansion
                         }
                         playerAnimator.SetBool("isRunning", true);
                         transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                        isRunning = true;
                         StartCoroutine(StaminaLoss());
                     }
+                    
                 }
             }
 
@@ -217,6 +246,11 @@ namespace TheMansion
             if (hidingFactor < 1)
             {
                 hidingFactor = 1;
+            }
+
+            if (heartbeatSpeed < 0.1f)
+            {
+                heartbeatSpeed = 0.1f;
             }
 
 
@@ -296,6 +330,7 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
+                                gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                 /*transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;*/
                             }
@@ -359,6 +394,7 @@ namespace TheMansion
                     }
                     playerAnimator.SetBool("isWalking", true);
                     transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                    isRunning = false;
                 }
 
                 if (clickPosition2D.x < BasePosition.position.x && clickPosition2D.x >= WalkLeft.position.x && canMove)
@@ -370,6 +406,7 @@ namespace TheMansion
                     }
                     playerAnimator.SetBool("isWalking", true);
                     transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                    isRunning = false;
                 }
 
                 if (clickPosition2D.x > WalkRight.position.x && clickPosition2D.x <= RunRight.position.x && stamina > 0 && canMove)
@@ -381,6 +418,7 @@ namespace TheMansion
                     }
                     playerAnimator.SetBool("isRunning", true);
                     transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                    isRunning = true;
                     StartCoroutine(StaminaLoss());
                 }
 
@@ -393,6 +431,7 @@ namespace TheMansion
                     }
                     playerAnimator.SetBool("isRunning", true);
                     transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                    isRunning = true;
                     StartCoroutine(StaminaLoss());
                 }
             }
@@ -408,17 +447,20 @@ namespace TheMansion
         {
             if (stamina > 0 && isHiding)
             {
-                stamina = stamina - 10f;
-                heartBeat = heartBeat - 5f;
-                hidingFactor = hidingFactor - 5;
+                stamina -= 10f;
+                heartBeat -= 5f;
+                hidingFactor -= 5;
+                heartbeatSpeed -= 0.5f;     
             }           
         }
 
         public IEnumerator StaminaLoss()
         {
-            stamina = stamina - 0.1f;
-            heartBeat = heartBeat + 2 * Time.deltaTime;
-            hidingFactor = hidingFactor + 2 * Time.deltaTime;
+            stamina -= 0.1f;
+            heartBeat += 2 * Time.deltaTime;
+            hidingFactor += 2 * Time.deltaTime;
+            heartbeatSpeed += 0.2f * Time.deltaTime;
+
             yield return new WaitForSeconds(1f);
         }
 
@@ -426,6 +468,7 @@ namespace TheMansion
         {
             //Hiding stuff
             gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = false;
             yield return null;
         }
 
@@ -435,13 +478,14 @@ namespace TheMansion
 
             if (stamina < 100f)
             {
-                stamina = stamina + 0.05f;
+                stamina += 0.05f;
             }
 
             if (heartBeat > 100f)
             {
-                heartBeat = heartBeat - 0.25f * Time.deltaTime;
-                hidingFactor = hidingFactor - 0.25f * Time.deltaTime;
+                heartBeat -= 0.25f * Time.deltaTime;
+                hidingFactor -= 0.25f * Time.deltaTime;
+                heartbeatSpeed -= 0.025f * Time.deltaTime;
             }
         }
 

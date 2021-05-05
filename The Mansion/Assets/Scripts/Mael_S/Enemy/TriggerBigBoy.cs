@@ -11,6 +11,7 @@ namespace TheMansion
         BigBoyController bigBoyScript;
 
         Transform target;
+  
 
         public int detectRadius = 10;
 
@@ -23,6 +24,7 @@ namespace TheMansion
         private void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            
         }
 
         private void Update()
