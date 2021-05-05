@@ -653,12 +653,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb8ae0307dfe4f4eb43ad0d843d6cd3, type: 3}
---- !u!1 &265266636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1925218635, guid: 497e8b456d93cb040aca67c34330fc00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1952158145}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297555830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1269,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 219899132, guid: 9a86480ada013b349a56d2cba168445d,
     type: 3}
   m_PrefabInstance: {fileID: 4048325820547661476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &703412149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4002302044651707977, guid: 2404d19d51252ec489afb3bea8ea440c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1779585358}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &706758307 stripped
 Transform:
@@ -3457,9 +3457,9 @@ MonoBehaviour:
   backBbTrigger: {fileID: 602713282}
   bBCameraHandlerTrigger: {fileID: 496850786}
   canWinTrigger: {fileID: 2493156569939721886}
-  player: {fileID: 0}
+  player: {fileID: 703412149}
   bigBoy: {fileID: 385578139}
-  heart: {fileID: 265266636}
+  heart: {fileID: 3186594706104012276}
   hideInput: {fileID: 11999827}
   hideInput2: {fileID: 536996438}
   heartInput: {fileID: 143648124}
@@ -4222,7 +4222,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1779585358}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 703412149}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad509239b9e60da43bbf81a043fbe1ed, type: 3}
@@ -4243,7 +4243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1782258195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4902,6 +4902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
+        type: 3}
+      propertyPath: CameraTargets.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2507647027773538143, guid: 497e8b456d93cb040aca67c34330fc00,
         type: 3}
@@ -7364,7 +7369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3186594706104012277
 RectTransform:
   m_ObjectHideFlags: 0

@@ -43,18 +43,16 @@ namespace TheMansion
         private void Awake()
         {
             audioManager = AudioManager.instance;
-        }
-
-        private void Start()
-        {
             if (isMainMenu)
             {
                 audioManager.PlaySound("MainMenu_Music");
             }
-            else
-            {
-                audioManager.StopSound("MainMenu_Music");
-            }
+            
+        }
+
+        private void Start()
+        {
+           
         }
 
         public void ChangeLevel(string levelName)

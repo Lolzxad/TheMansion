@@ -25,7 +25,7 @@ namespace TheMansion
                     Debug.Log("Trigger porte fermee");
                     tuto.DoorLocked();
             }
-            else
+            else if (!isDoor)
             {
                 Debug.Log("Trigger hide ready");
                 //tuto.player.GetComponent<PlayerController>().enabled = false;

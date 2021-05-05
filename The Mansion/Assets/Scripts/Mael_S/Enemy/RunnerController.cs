@@ -24,7 +24,7 @@ namespace TheMansion
         public GameObject spamInput;
         GameObject player;
         PlayerController playerScript;
-        SpamInput spamInputController;
+        SpamInputRunner spamInputController;
 
         [SerializeField] bool isIdle;
         [SerializeField] bool isLoading;
@@ -38,7 +38,7 @@ namespace TheMansion
         private void Awake()
         {
             playerScript = FindObjectOfType<PlayerController>();
-            spamInputController = FindObjectOfType<SpamInput>();
+            spamInputController = FindObjectOfType<SpamInputRunner>();
         }
 
         private void Start()
@@ -119,17 +119,26 @@ namespace TheMansion
                 }
             }
 
-            if (isGrabbing && spamInputController.spamDone)
+            if (isGrabbing)
             {
-                Debug.Log("IsStunned");
-   
-                spamInputController.spam = 0;
 
-                spamInput.SetActive(false);
-                spamInputController.playerLives--;
+                /*if (spamInputController.spamDone)
+                {
+                    Debug.Log("IsStunned");
 
-                Stunned();
-                spamInputController.spamDone = false;
+                    spamInputController.spam = 0;
+
+                    spamInput.SetActive(false);
+                    spamInputController.playerLives--;
+
+                    Stunned();
+                    spamInputController.spamDone = false;
+                }
+                else
+                {
+                    Debug.Log("Not done");
+                }*/
+                
             }
 
            

@@ -89,6 +89,16 @@ namespace TheMansion
                     gameObject.SetActive(false);
                     playerLives--;
                 }
+                else if (runnerController.isGrabbing)
+                {
+                    runnerController.Stunned();
+                    spam = 0;
+
+                    spamDone = false;
+                    gameObject.SetActive(false);
+                    playerLives--;
+
+                }
 
                
 
