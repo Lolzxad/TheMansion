@@ -116,17 +116,17 @@ namespace TheMansion
 
             if (story2Get)
             {
-                story1Button.GetComponent<Image>().sprite = story2Sprite;
+                story2Button.GetComponent<Image>().sprite = story2Sprite;
             }
 
             if (story3Get)
             {
-                story1Button.GetComponent<Image>().sprite = story3Sprite;
+                story3Button.GetComponent<Image>().sprite = story3Sprite;
             }
 
             if (story4Get)
             {
-                story1Button.GetComponent<Image>().sprite = story4Sprite;
+                story4Button.GetComponent<Image>().sprite = story4Sprite;
             }
         }
 
@@ -142,6 +142,9 @@ namespace TheMansion
         public void StoriesClose()
         {
             story1.SetActive(false);
+            story2.SetActive(false);
+            story3.SetActive(false);
+            story4.SetActive(false);
 
             storyList.SetActive(false);
             selectionStory.SetActive(true);
