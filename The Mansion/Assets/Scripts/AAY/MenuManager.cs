@@ -25,6 +25,26 @@ namespace TheMansion
         public bool story1Get;
         public Sprite story1Sprite;
 
+        [SerializeField] bool isMainMenu;
+        AudioManager audioManager;
+
+        private void Awake()
+        {
+            audioManager = AudioManager.instance;
+        }
+
+        private void Start()
+        {
+            if (isMainMenu)
+            {
+                audioManager.PlaySound("MainMenu_Music");
+            }
+            else
+            {
+                audioManager.StopSound("MainMenu_Music");
+            }
+        }
+
         public void ChangeLevel(string levelName)
         {
             SceneManager.LoadScene(levelName);
