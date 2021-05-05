@@ -15,9 +15,12 @@ namespace TheMansion
 
         public GameObject continueButton;
 
+        PlayerController playerScript;
+
         private void Start()
         {
             StartCoroutine(Type());
+            playerScript = FindObjectOfType<PlayerController>();
         }
 
         private void Update()
@@ -42,6 +45,7 @@ namespace TheMansion
         public void NextSentence()
         {
             continueButton.SetActive(false);
+            playerScript.canMove = false;
 
             if(index < sentences.Length - 1)
             {
@@ -52,6 +56,7 @@ namespace TheMansion
             else
             {
                 textDisplayDoorLocked.text = "";
+                playerScript.canMove = true;
             }
         }
     }

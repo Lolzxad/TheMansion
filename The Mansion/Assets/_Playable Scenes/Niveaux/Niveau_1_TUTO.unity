@@ -4277,6 +4277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoor: 0
+  isCrawler: 0
+  crawlerTexte: {fileID: 0}
 --- !u!61 &1812622930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4634,6 +4636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoor: 1
+  isCrawler: 0
+  crawlerTexte: {fileID: 0}
 --- !u!61 &1927230896
 BoxCollider2D:
   m_ObjectHideFlags: 0

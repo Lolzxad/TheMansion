@@ -30,6 +30,8 @@ namespace TheMansion
         public bool playerInVision;
         public bool hideFail;
         public bool isFacingRight;
+        public bool canBeCalled;
+        public bool isCalled;
         public float rechercheTime;
 
         public bool movingLeft = true;
@@ -37,6 +39,7 @@ namespace TheMansion
         public int detectZonePatrol;
         [SerializeField] Transform target1;
         [SerializeField] Transform target2;
+        [SerializeField] Transform crawler;
 
         PlayerController playerScript;
         TutoManager tuto;
@@ -101,6 +104,14 @@ namespace TheMansion
             {
                 playerScript.heartBeat = playerScript.heartBeat + 1 * Time.deltaTime;
                 playerScript.hidingFactor = playerScript.hidingFactor + 1 * Time.deltaTime;
+            }
+
+            if (isCalled)
+            {
+                if (canBeCalled && !isGrabbing)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, crawler.transform.position, speedPO * Time.deltaTime);
+                }
             }
         }
 
@@ -228,6 +239,7 @@ namespace TheMansion
                 // distance = Vector3.Distance(target.position, transform.position);
                 float distance1 = Vector3.Distance(target1.position, transform.position);
                 float distance2 = Vector3.Distance(target2.position, transform.position);
+                float crawlerDis = Vector3.Distance(crawler.position, transform.position);
                 //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
 
                 if (movingLeft && bBcanMove)
@@ -268,6 +280,11 @@ namespace TheMansion
                         transform.eulerAngles = new Vector3(0, 0, 0);
                         movingLeft = true;
                     }
+                }
+
+                if(crawlerDis <= detectZonePatrol)
+                {
+                     CrawlerReached();
                 }
             
            
@@ -348,6 +365,23 @@ namespace TheMansion
             isFacingRight = !isFacingRight;
             transform.Rotate(new Vector3(0, 180, 0));
         }
+
+
+      
+
+        public void CrawlerReached()
+        {
+            isCalled = false;
+            canBeCalled = false;
+            StartCoroutine(WaitBeforeBeCalled());
+        }
+
+        IEnumerator WaitBeforeBeCalled()
+        {
+            yield return new WaitForSeconds(5);
+            canBeCalled = true;
+        }
+        
 
         private void OnDrawGizmosSelected()
         {

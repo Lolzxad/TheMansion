@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace TheMansion
 {
-    public class TriggerBigBoy : MonoBehaviour
+    public class CrawlerController : MonoBehaviour
     {
+        BigBoyController bbScript;
         PlayerController playerScript;
-        BigBoyController bigBoyScript;
 
+        Animation anim;
         Transform target;
-  
 
         public int detectRadius = 10;
 
         private void Awake()
         {
             playerScript = FindObjectOfType<PlayerController>();
-            bigBoyScript = FindObjectOfType<BigBoyController>();
+            bbScript = FindObjectOfType<BigBoyController>();
         }
 
         private void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            anim = gameObject.GetComponent<Animation>();
+
             
         }
 
@@ -31,29 +32,29 @@ namespace TheMansion
         {
             float distance = Vector3.Distance(target.position, transform.position);
 
-            if(distance <= detectRadius && bigBoyScript.bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
+            if (distance <= detectRadius && playerScript.isRunning )
             {
-                bigBoyScript.TriggerPoursuite();
+                StartCoroutine(CrawlerIsScreaming());
+                Debug.Log("IS SCREAMING");                                                 
             }
 
-            if(distance >= detectRadius)
-            {
-                bigBoyScript.playerInVision = false;
-                bigBoyScript.RunningOutsideCamera();
-            }
+    
         }
 
-        /*public void OnTriggerEnter2D(Collider2D other)
+        IEnumerator CrawlerIsScreaming()
         {
-            if(other.gameObject.tag == "Player")
-            {
-                bigBoyScript.TriggerPoursuite();
-            }
-        }*/
+            anim.Play("CrawlerScream");
+            bbScript.isCalled = true;
+
+            yield return new WaitForSeconds(4);
+
+            anim.Stop("CrawlerScream");
+        }
+      
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(transform.position, detectRadius);
         }
     }

@@ -7,6 +7,7 @@ namespace TheMansion
     public class TriggerTutoText : MonoBehaviour
     {
         [SerializeField] bool isDoor;
+        [SerializeField] bool isCrawler;
 
         
 
@@ -19,21 +20,21 @@ namespace TheMansion
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.gameObject.tag == "Player")
-            {
-                if (isDoor)
-                {
+            if(other.gameObject.tag == "Player" && isDoor)
+            {                        
                     Debug.Log("Trigger porte fermee");
                     tuto.DoorLocked();
-                }
-                else
-                {
-                    Debug.Log("Trigger hide ready");
-                    //tuto.player.GetComponent<PlayerController>().enabled = false;
-                    tuto.ReadyToHide();
-                }
             }
-            
+            else
+            {
+                Debug.Log("Trigger hide ready");
+                //tuto.player.GetComponent<PlayerController>().enabled = false;
+                tuto.ReadyToHide();
+            }
+
+
+
+
         }
     }
 }
