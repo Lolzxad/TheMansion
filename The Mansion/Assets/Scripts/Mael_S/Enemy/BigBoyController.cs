@@ -141,6 +141,7 @@ namespace TheMansion
                     playerScript.isHiding = false;
                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
+                    playerScript.gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                     playerScript.transform.position = playerScript.basePosition;
                     playerScript.playerSprite.transform.position = playerScript.baseSpritePosition;
                     BBMG();

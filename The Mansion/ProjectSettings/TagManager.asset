@@ -11,6 +11,7 @@ TagManager:
   - LadderUp
   - Patrol Point
   - Enemy
+  - StoryLore
   layers:
   - Default
   - TransparentFX
