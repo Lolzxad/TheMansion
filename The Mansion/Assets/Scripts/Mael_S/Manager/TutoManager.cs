@@ -180,14 +180,14 @@ namespace TheMansion
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
             heart.SetActive(true);
-            heart.GetComponent<HeartAnimation>().enabled = false;
+            heart.GetComponent<Animator>().enabled = false;
             yield return new WaitForSeconds(8);
 
             heartInput.SetActive(true);
 
             StartCoroutine(WaitToRemoveInputHeart());
 
-            heart.GetComponent<HeartAnimation>().enabled = true;  
+            heart.GetComponent<Animator>().enabled = true;  
 
 
         }
