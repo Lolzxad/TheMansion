@@ -117,7 +117,7 @@ namespace TheMansion
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.tag == "Player" && isRunning)
+            if (other.gameObject.tag == "Player" && isRunning && !playerScript.isHiding)
             {
                 Debug.Log("Gotcha");
                 //triggerBB.SetActive(false);
@@ -141,9 +141,8 @@ namespace TheMansion
                     playerScript.isHiding = false;
                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
-                    playerScript.gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
-                    playerScript.transform.position = playerScript.basePosition;
-                    playerScript.playerSprite.transform.position = playerScript.baseSpritePosition;
+                    playerScript.playerAnimator.SetBool("isHiding", false);
+                    playerScript.playerRb.gravityScale = playerScript.defaultGravity;
                     BBMG();
                     hideFail = false;
                 }
@@ -160,8 +159,7 @@ namespace TheMansion
 
         IEnumerator ModeRecherche()
         {
-            
-            
+                      
             //lance anim recherche
             Debug.Log("Mode recherche en cours");
             bigBoyAnimator.SetBool("isSearching", true);
@@ -313,7 +311,6 @@ namespace TheMansion
 
             playerScript.isGrabbed = true;
             playerScript.canMove = false;
-            playerScript.playerAnimator.SetTrigger("playerGrabbed");
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
