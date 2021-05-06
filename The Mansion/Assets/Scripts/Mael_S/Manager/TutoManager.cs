@@ -88,7 +88,7 @@ namespace TheMansion
             {
                 //hideTrigger.SetActive(false);
                 
-                bigBoy.GetComponent<BigBoyController>().enabled = false;
+                //bigBoy.GetComponent<BigBoyController>().enabled = false;
                 StartCoroutine(WaitForHeart());
             }
 
@@ -180,7 +180,7 @@ namespace TheMansion
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
             heart.SetActive(true);
-            heart.GetComponent<Animator>().enabled = false;
+            heart.GetComponent<Animator>().enabled = true;
             yield return new WaitForSeconds(8);
 
             heartInput.SetActive(true);
@@ -195,16 +195,18 @@ namespace TheMansion
         IEnumerator WaitToRemoveInputHeart()
         {
             yield return new WaitForSeconds(5);
+            bigBoy.GetComponent<BigBoyController>().enabled = true;
             heartInput.SetActive(false);
             hideTrigger.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
+            player.GetComponent<Collider2D>().enabled = true;
 
             bigBoy.GetComponent<Collider2D>().enabled = true;
-            bigBoy.GetComponent<BigBoyController>().enabled = true;
+            
             bigBoy.GetComponent<SpriteRenderer>().enabled = true;
 
             // bigBoy.SetActive(true);
-            bbIsHere = true;
+            
             frontBbTrigger.SetActive(true);
             backBbTrigger.SetActive(true);
             bBCameraHandlerTrigger.SetActive(true);
