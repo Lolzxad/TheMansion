@@ -16,11 +16,13 @@ namespace TheMansion
         public float stamina = 100f;
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
+        public float defaultGravity;
         private float heartbeatSpeed = 0.1f;
-        private float defaultGravity;
+        
 
         private bool canHide;
         private bool canUseLadder;
+        private bool isCalmingHeart;
         public bool canMove = true;
         public bool isFacingRight = true;
         public bool isMouse;
@@ -87,7 +89,7 @@ namespace TheMansion
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
-                                    gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
+                                    //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                     /*transform.position = basePosition;
                                     playerSprite.transform.position = baseSpritePosition;*/
                                 }
@@ -228,7 +230,10 @@ namespace TheMansion
           
             if (!transform.hasChanged)
             {
-                StartCoroutine(StandingRegen());
+                if (!isHiding && !canUseLadder)
+                {
+                    StartCoroutine(StandingRegen());
+                }            
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);
             }
@@ -331,7 +336,7 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
-                                gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
+                                //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                 /*transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;*/
                             }
@@ -443,16 +448,15 @@ namespace TheMansion
             isFacingRight = !isFacingRight;
             transform.Find("Sprite").transform.Rotate(new Vector3(0, 180, 0));
         }
-
-        public void CalmingHeart()
+        public void CalmingHeartStart()
         {
-            if (stamina > 0 && isHiding)
-            {
-                stamina -= 10f;
-                heartBeat -= 5f;
-                hidingFactor -= 5;
-                heartbeatSpeed -= 0.5f;     
-            }           
+            isCalmingHeart = true;
+            StartCoroutine(CalmingHeart());
+        }
+
+        public void CalmingHeartStop()
+        {
+            isCalmingHeart = false;      
         }
 
         public IEnumerator StaminaLoss()
@@ -464,17 +468,32 @@ namespace TheMansion
 
             yield return new WaitForSeconds(1f);
         }
+        public IEnumerator CalmingHeart()
+        {
+            if (stamina > 0 && isHiding)
+            {
+                while (isCalmingHeart)
+                {
+                    yield return new WaitForSeconds(1);
+                    stamina -= 10f;
+                    heartBeat -= 5f;
+                    hidingFactor -= 5;
+                    heartbeatSpeed -= 0.5f;
+                }
+            }
+        }
 
         IEnumerator Hiding()
         {
             //Hiding stuff
             gameObject.GetComponent<Collider2D>().enabled = false;
-            gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = false;
+            //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = false;
             yield return null;
         }
 
         IEnumerator StandingRegen()
         {
+
             yield return new WaitForSeconds(5f);
 
             if (stamina < 100f)
