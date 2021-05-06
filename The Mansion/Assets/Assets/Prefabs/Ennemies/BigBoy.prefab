@@ -226,7 +226,7 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 0.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1951075757185934887
@@ -288,8 +288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d834939cbcddaa41bdc4a58fe45edb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigBoyAnimator: {fileID: 0}
   bigBoySpeed: 2
-  speedPO: 5
+  speedPO: 8
   continueRunning: 3
   moveSpots:
   - {fileID: 0}
@@ -302,12 +303,18 @@ MonoBehaviour:
   bBcanMove: 0
   playerInVision: 0
   hideFail: 0
-  movingRight: 1
+  isFacingRight: 0
+  canBeCalled: 0
+  isCalled: 0
+  rechercheTime: 2
+  movingLeft: 1
   distance: 2
   detectZonePatrol: 5
   target1: {fileID: 0}
   target2: {fileID: 0}
+  crawler: {fileID: 0}
   waitTime: 1
+  playerSprite: {fileID: 0}
   spamInput: {fileID: 0}
   triggerBB: {fileID: 7133650944751025784}
 --- !u!1 &7133650944751025784

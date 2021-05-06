@@ -4802,7 +4802,7 @@ Transform:
   - {fileID: 2493156568598955103}
   - {fileID: 2493156569260143514}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2493156570060182576
 Transform:
@@ -5055,6 +5055,11 @@ PrefabInstance:
       objectReference: {fileID: 1022857500}
     - target: {fileID: 2539212096410481197, guid: 9a86480ada013b349a56d2cba168445d,
         type: 3}
+      propertyPath: crawler
+      value: 
+      objectReference: {fileID: 1107001984}
+    - target: {fileID: 2539212096410481197, guid: 9a86480ada013b349a56d2cba168445d,
+        type: 3}
       propertyPath: playerSprite
       value: 
       objectReference: {fileID: 845891242}
@@ -5065,9 +5070,9 @@ PrefabInstance:
       objectReference: {fileID: 2094149980}
     - target: {fileID: 2539212096410481197, guid: 9a86480ada013b349a56d2cba168445d,
         type: 3}
-      propertyPath: crawler
-      value: 
-      objectReference: {fileID: 1107001984}
+      propertyPath: speedPO
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a86480ada013b349a56d2cba168445d, type: 3}
 --- !u!1 &4943281956185834905
