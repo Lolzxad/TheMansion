@@ -3997,7 +3997,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1676004943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2100582262}
+        m_MethodName: ChangeLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Niveau_1_TUTO
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1676004943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4017,7 +4028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eeebe116924225147831e8fe82bf0cdd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 956b519cc9d10ab40bea480b4d1c19f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

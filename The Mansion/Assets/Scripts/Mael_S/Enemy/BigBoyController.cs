@@ -162,10 +162,14 @@ namespace TheMansion
                       
             //lance anim recherche
             Debug.Log("Mode recherche en cours");
+            bigBoySpeed = 0;
+            speedPO = 0;
             bigBoyAnimator.SetBool("isSearching", true);
             yield return new WaitForSecondsRealtime(rechercheTime);
 
             Debug.Log("Mode recherche terminé");
+            bigBoySpeed = defaultSpeed;
+            speedPO = defaultSpeedPO;
             bigBoyAnimator.SetBool("isSearching", false);
             HideCheck();
             //arête anim recherche
