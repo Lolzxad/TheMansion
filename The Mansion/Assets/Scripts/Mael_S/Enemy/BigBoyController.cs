@@ -143,8 +143,13 @@ namespace TheMansion
                 Debug.Log(isRunning);
                 bBcanMove = false;
                 isPatrolling = false;
+
+                if(playerScript.heartBeat >= 120)
+                {
+                    StartCoroutine(ModeRecherche());
+                }
                 
-                StartCoroutine(ModeRecherche()); 
+                
 
                 if (hideFail)
                 {
