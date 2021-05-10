@@ -9,23 +9,32 @@ namespace TheMansion
 
     public class RunnerController : MonoBehaviour
     {
+
+        [Space]
+        [Header("Floats")]
         [SerializeField] float runSpeed;
         [SerializeField] float walkSpeed;
         [SerializeField] float waitForRun;
         [SerializeField] float waitForIdle;
 
+        [Space]
+        [Header("Int")]
         [SerializeField] int detectZone;
 
+        [Space]
+        [Header("GameObjects")]
         public GameObject idlePos;
         public GameObject limitLeft;
         public GameObject limitRight;
-
-
         public GameObject spamInput;
+
         GameObject player;
         PlayerController playerScript;
         SpamInputRunner spamInputController;
 
+
+        [Space]
+        [Header("Bools")]
         [SerializeField] bool isIdle;
         [SerializeField] bool isLoading;
         [SerializeField] bool isRunning;
@@ -64,7 +73,7 @@ namespace TheMansion
                 Steady();             
             }
 
-            if (isRunning && !playerScript.isHiding)
+            if (isRunning /*&& !playerScript.isHiding*/)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, runSpeed * Time.deltaTime);
 
@@ -82,21 +91,21 @@ namespace TheMansion
                     LimitReached();
                 }
 
-                if (distancePlayer <= detectZone)
+                if (distancePlayer <= detectZone && !isComingBack)
                 {
                     RunnerGrab();
                     
                 }
             }
 
-            if(isRunning && playerScript.isHiding)
+            /*if(isRunning && playerScript.isHiding)
             {
                 if(distancePlayer > detectZone)
                 {
                     isComingBack = true;
                     isRunning = false;
                 }
-            }
+            }*/
 
             if(isRunning && !gameObject.GetComponent<Renderer>().isVisible && runAgain)
             {
@@ -112,9 +121,10 @@ namespace TheMansion
             {
                 transform.position = Vector2.MoveTowards(transform.position, idlePos.transform.position, walkSpeed * Time.deltaTime);
 
-                if (distanceIdle > detectZone)
+                if (distanceIdle <= detectZone)
                 {
                     isIdle = true;
+                    isComingBack = false;
                     Debug.Log("COli bien arrivé");
                 }
             }
@@ -191,12 +201,22 @@ namespace TheMansion
 
         void RunnerGrab()
         {
-            isGrabbing = true;
-            playerScript.isGrabbed = true;
-            spamInput.SetActive(true);
-            isRunning = false;
+            if (playerScript.isHiding)
+            {
+                isRunning = false;
+                StartCoroutine(Tired());
+                //anim fatigue
+            }
+            else
+            {
+                isGrabbing = true;
+                playerScript.isGrabbed = true;
+                spamInput.SetActive(true);
+                isRunning = false;
 
-            Debug.Log("GRAAAAAAAAAAB");
+                Debug.Log("GRAAAAAAAAAAB");
+            }
+            
         }
 
         IEnumerator Tired()

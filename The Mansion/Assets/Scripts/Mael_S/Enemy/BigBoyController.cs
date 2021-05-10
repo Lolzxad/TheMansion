@@ -12,17 +12,27 @@ namespace TheMansion
     {
         public Animator bigBoyAnimator;
 
+        [Space]
+        [Header("Floats")]
         public float bigBoySpeed;
         public float speedPO;
         public float continueRunning = 8;
+        [SerializeField] float waitTime;
+        float startWaitTime;
+        public float distance;
+        public float rechercheTime;
 
         float defaultSpeed;
         float defaultSpeedPO;
 
-        public Transform[] moveSpots;
+        [Space]
+        [Header("Int")]
+        public int detectZonePatrol;
         private int randomSpot;
         public int baseChance = 1;
 
+        [Space]
+        [Header("Bools")]
         public bool isPatrolling;
         public bool isRunning;
         public bool isGrabbing;
@@ -32,25 +42,27 @@ namespace TheMansion
         public bool isFacingRight;
         public bool canBeCalled;
         public bool isCalled;
-        public float rechercheTime;
-
         public bool movingLeft = true;
-        public float distance;
-        public int detectZonePatrol;
+        
+        
+
+        [Space]
+        [Header("GameObjects")]
         [SerializeField] Transform target1;
         [SerializeField] Transform target2;
         [SerializeField] Transform crawler;
-
-        PlayerController playerScript;
-        TutoManager tuto;
-
-        [SerializeField] float waitTime;
-        float startWaitTime;
-
         public GameObject playerSprite;
         public GameObject spamInput;
         public GameObject triggerBB;
         GameObject player;
+        public Transform[] moveSpots;
+
+        PlayerController playerScript;
+        TutoManager tuto;
+
+    
+
+       
         //[SerializeField] GameObject warning;
 
         private void Awake()
