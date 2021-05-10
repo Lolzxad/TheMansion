@@ -259,6 +259,14 @@ namespace TheMansion
                 heartbeatSpeed = 0.1f;
             }
 
+            if (isCalmingHeart)
+            {
+                canMove = false;
+            }
+            else
+            {
+                canMove = true;
+            }
 
         }
         void OnTriggerStay2D(Collider2D InteractableObject)
