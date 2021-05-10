@@ -209,8 +209,12 @@ namespace TheMansion
             }
             else
             {
-                isGrabbing = true;
                 playerScript.isGrabbed = true;
+                playerScript.canMove = false;
+                playerScript.playerAnimator.SetBool("isGrabbed", true);
+
+                isGrabbing = true;
+                
                 spamInput.SetActive(true);
                 isRunning = false;
 
