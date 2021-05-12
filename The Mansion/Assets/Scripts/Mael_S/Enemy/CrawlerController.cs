@@ -45,6 +45,8 @@ namespace TheMansion
         {
             anim.Play("CrawlerScream");
             bbScript.isCalled = true;
+            playerScript.heartBeat = playerScript.heartBeat + 10f;
+            playerScript.hidingFactor = playerScript.hidingFactor + 10f;
 
             yield return new WaitForSeconds(4);
 
