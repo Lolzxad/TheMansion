@@ -39,7 +39,7 @@ namespace TheMansion
         [Space]
         [Header("Inputs")]
         //public GameObject movementInput;
-        public GameObject hideInput;
+       // public GameObject hideInput;
         public GameObject hideInput2;
         public GameObject heartInput;
         public GameObject newMovementInput;
@@ -148,7 +148,7 @@ namespace TheMansion
             
 
             yield return new WaitForSeconds(5);
-            hideInput.SetActive(true);
+          //  hideInput.SetActive(true);
             hideInput2.SetActive(true);
             Debug.Log("Show input hide");
 
@@ -162,7 +162,7 @@ namespace TheMansion
         IEnumerator WaitToRemoveInputHide()
         {
             yield return new WaitForSeconds(5);
-            hideInput.SetActive(false);
+            //hideInput.SetActive(false);
             hideInput2.SetActive(false);
 
             Debug.Log("IL PEUT BOUGER");
@@ -187,7 +187,7 @@ namespace TheMansion
 
             StartCoroutine(WaitToRemoveInputHeart());
 
-            heart.GetComponent<Animator>().enabled = true;  
+            
 
 
         }
