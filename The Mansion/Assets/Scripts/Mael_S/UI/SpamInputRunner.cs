@@ -28,6 +28,8 @@ namespace TheMansion
 
         public GameObject menuDefaite;
 
+        
+
         private void Start()
         {
 
@@ -38,6 +40,9 @@ namespace TheMansion
             bbController = FindObjectOfType<BigBoyController>();
             runnerController = FindObjectOfType<RunnerController>();
             tuto = FindObjectOfType<TutoManager>();
+
+            
+
         }
 
         private void Update()

@@ -9,7 +9,8 @@ namespace TheMansion
 
     public class SpamInput : MonoBehaviour
     {
-        public int spam;
+        public int spamL;
+        public int spamR;
 
         public int playerLives = 4;
         [SerializeField] int spamNeeded = 15;
@@ -31,7 +32,8 @@ namespace TheMansion
         private void Start()
         {
 
-            spam = 0;
+            spamL = 0;
+            spamR = 0;
 
             timeIsRunning = true;
 
@@ -67,7 +69,7 @@ namespace TheMansion
             }
 
 
-            if(spam == spamNeeded)
+            if(spamL == spamNeeded && spamR == spamNeeded)
             {
                 spamDone = true;
                 Debug.Log(spamDone);
@@ -83,8 +85,9 @@ namespace TheMansion
                     Debug.Log("IsStunned");
                     bbController.Stunned();
 
-                    spam = 0;
-  
+                    spamL = 0;
+                    spamR = 0;
+
                     spamDone = false;
                     gameObject.SetActive(false);
                     playerLives--;
@@ -125,9 +128,14 @@ namespace TheMansion
         }
 
 
-        public void AddSpam()
+        public void AddSpamL()
         {
-            spam += 1;
+            spamL += 1;
+        }
+
+        public void AddSpamR()
+        {
+            spamR += 1;
         }
 
         public void GameOver()
