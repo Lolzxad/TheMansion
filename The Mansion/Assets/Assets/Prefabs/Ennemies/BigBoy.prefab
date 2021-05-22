@@ -176,6 +176,7 @@ Transform:
   - {fileID: 1951075756290135531}
   - {fileID: 1951075756271103594}
   - {fileID: 7111280485842733181}
+  - {fileID: 661993822628443479}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -292,10 +293,10 @@ MonoBehaviour:
   bigBoySpeed: 2
   speedPO: 8
   continueRunning: 3
-  moveSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waitTime: 1
+  distance: 2
+  rechercheTime: 2
+  detectZonePatrol: 5
   baseChance: 1
   isPatrolling: 0
   isRunning: 0
@@ -306,17 +307,75 @@ MonoBehaviour:
   isFacingRight: 0
   canBeCalled: 0
   isCalled: 0
-  rechercheTime: 2
   movingLeft: 1
-  distance: 2
-  detectZonePatrol: 5
   target1: {fileID: 0}
   target2: {fileID: 0}
   crawler: {fileID: 0}
-  waitTime: 1
   playerSprite: {fileID: 0}
   spamInput: {fileID: 0}
   triggerBB: {fileID: 7133650944751025784}
+  moveSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  grabSpot: {fileID: 0}
+--- !u!1 &3830717925506684112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661993822628443479}
+  - component: {fileID: 3395708510063116609}
+  m_Layer: 2
+  m_Name: Grab spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &661993822628443479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830717925506684112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.95, y: 2.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1951075757185934885}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3395708510063116609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830717925506684112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14058948, y: -4.0442743}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.050499, y: 2.9881363}
+  m_EdgeRadius: 0
 --- !u!1 &7133650944751025784
 GameObject:
   m_ObjectHideFlags: 0
