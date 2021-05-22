@@ -13,8 +13,12 @@ namespace TheMansion
         
         public bool canWin;
 
-        public bool sideObj1;
-        public bool sideObj2;
+        public static bool sideObj1;
+        public static bool sideObj2;
+        public bool isDoor_O;
+        public bool isDoor_Y;
+        public bool isKey_O;
+        public bool isKey_Y;
 
         public bool isCDV;
         public static bool bigWin;
@@ -208,7 +212,7 @@ namespace TheMansion
 
                 {
 
-                    if (!canWin && !isCDV)
+                    if (!canWin && !isCDV && !isDoor_O && !isDoor_Y && !isKey_O && !isKey_Y)
                     {
                         Debug.Log("T'as trouvé la clé, bien ouej");
 
@@ -221,9 +225,46 @@ namespace TheMansion
                         StartCoroutine(TextKeyLooted());
                     }
 
+                    if (isKey_O)
+                    {
+                        sideObj1 = true;
+                        gameObject.SetActive(false);
+                    }
+
+
+                    if (isKey_Y)
+                    {
+                        sideObj2 = true;
+                        gameObject.SetActive(false);
+                    }
+
+                    if (!canWin && !isCDV && sideObj1 && isDoor_O)
+                    {
+                        gameObject.SetActive(false);
+                    }
+
+                    if (!canWin && !isCDV && sideObj2 && isDoor_Y)
+                    {
+                        gameObject.SetActive(false);
+                    }
+
 
 
                     if (!bigWin && isCDV)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+
+                    if(!bigWin && isDoor_O)
+                    {
+                        Debug.Log("La porte est fermée frero");
+
+                        StartCoroutine(TextDoorLocked());
+                    }
+
+                    if (!bigWin && isDoor_Y)
                     {
                         Debug.Log("La porte est fermée frero");
 

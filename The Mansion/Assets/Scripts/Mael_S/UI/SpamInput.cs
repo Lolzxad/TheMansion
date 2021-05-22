@@ -19,6 +19,8 @@ namespace TheMansion
         float timeLimitDefault;
 
         public bool spamDone;
+        [SerializeField] bool spamDone_L;
+        [SerializeField] bool spamDone_R;
         bool timeIsRunning;
 
         BigBoyController bbController;
@@ -52,7 +54,7 @@ namespace TheMansion
                 }
                 else
                 {
-                    if (!tuto.isTuto)
+                    if (!isTuto)
                     {
                         Debug.Log("TIME OUT");
                         GameOver();
@@ -69,14 +71,25 @@ namespace TheMansion
             }
 
 
-            if(spamL == spamNeeded && spamR == spamNeeded)
+            if(spamL >= spamNeeded)
+            {
+                spamDone_L = true;
+                Debug.Log("Done spam_L");
+            }
+
+            if (spamR >= spamNeeded)
+            {
+                spamDone_R = true;
+                Debug.Log("Done spam_R");
+            }
+            
+            if(spamDone_L && spamDone_R)
             {
                 spamDone = true;
-                Debug.Log(spamDone);
             }
 
 
-            if(spamDone)
+            if (spamDone)
             {
                 Debug.Log("YOU FREE TO GO");
 
@@ -88,6 +101,8 @@ namespace TheMansion
                     spamL = 0;
                     spamR = 0;
 
+                    spamDone_L = false;
+                    spamDone_R = false;
                     spamDone = false;
                     gameObject.SetActive(false);
                     playerLives--;
