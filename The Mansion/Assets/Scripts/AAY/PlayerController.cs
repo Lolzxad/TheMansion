@@ -24,6 +24,7 @@ namespace TheMansion
         private bool canHide;
         private bool canUseLadder;
         private bool isCalmingHeart;
+        public bool isRegening;
         public bool canMove = true;
         public bool isFacingRight = true;
         public bool isMouse;
@@ -71,7 +72,7 @@ namespace TheMansion
 
             staminaBarScript.SetStamina(stamina);
 
-            if (lastStamina == stamina && staminaBar.activeSelf)
+            if (lastStamina == stamina && staminaBar.activeSelf && !isRunning && !isCalmingHeart && !isRegening)
             {
                 StartCoroutine(StaminaBarDisappearance());                
             }
@@ -102,8 +103,9 @@ namespace TheMansion
 
                             if (isHiding)
                             {
-                                if (touchedObject.tag == "Hard Hiding Spot")
+                                if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled)
                                 {
+                                    touchedObject.GetComponent<SpriteMask>().enabled = !touchedObject.GetComponent<SpriteMask>().enabled;
                                     isHiding = false;
                                     canMove = true;
                                     hideFeedback.SetActive(false);
@@ -111,6 +113,7 @@ namespace TheMansion
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
+                                    transform.position = touchedObject.transform.GetChild(0).transform.position;
                                     //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                     /*transform.position = basePosition;
                                     playerSprite.transform.position = baseSpritePosition;*/
@@ -118,14 +121,14 @@ namespace TheMansion
                             }
                             else
                             {
-                                if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed && !usingLadder)
+                                if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled && canHide && !isGrabbed && !usingLadder)
                                 {
                                     isHiding = true;
                                     canMove = false;
                                     hideFeedback.SetActive(true);
-                                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 2;
                                     playerRb.gravityScale = 0;
-                                    playerAnimator.SetBool("isHiding", true);
+                                    //playerAnimator.SetBool("isHiding", true);
                                     //Debug.Log("Is Hiding");
                                     basePosition = transform.position;
                                     baseSpritePosition = playerSprite.transform.position;
@@ -253,14 +256,15 @@ namespace TheMansion
           
             if (!transform.hasChanged)
             {
-                if (!isHiding && !canUseLadder)
+                if (!isHiding && !usingLadder && !isCalmingHeart && !isRegening)
                 {
                     StartCoroutine(StandingRegen());
-                }            
+                }               
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);
             }
             transform.hasChanged = false;
+            StopCoroutine(StandingRegen());
 
             if (heartBeat < 100f)
             {
@@ -281,16 +285,6 @@ namespace TheMansion
             {
                 heartbeatSpeed = 0.1f;
             }
-
-            if (isCalmingHeart)
-            {
-                canMove = false;
-            }
-            else
-            {
-                canMove = true;
-            }
-
         }
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
@@ -304,7 +298,11 @@ namespace TheMansion
                 else
                 {
                     canHide = true;
-                    InteractableObject.GetComponent<OutlineActivator>().EnableOutline();                
+                    InteractableObject.GetComponent<OutlineActivator>().EnableOutline();
+                    if (!InteractableObject.GetComponent<SpriteMask>().enabled)
+                    {
+                        InteractableObject.GetComponent<SpriteMask>().enabled = !InteractableObject.GetComponent<SpriteMask>().enabled;
+                    }                                
                 }  
             }
 
@@ -359,8 +357,9 @@ namespace TheMansion
 
                         if (isHiding)
                         {
-                            if (touchedObject.tag == "Hard Hiding Spot")
+                            if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled)
                             {
+                                touchedObject.GetComponent<SpriteMask>().enabled = !touchedObject.GetComponent<SpriteMask>().enabled;
                                 isHiding = false;
                                 canMove = true;
                                 hideFeedback.SetActive(false);
@@ -368,6 +367,7 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
+                                transform.position = touchedObject.transform.GetChild(0).transform.position;
                                 //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                 /*transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;*/
@@ -375,12 +375,12 @@ namespace TheMansion
                         }
                         else
                         {
-                            if (touchedObject.tag == "Hard Hiding Spot" && canHide && !isGrabbed && !usingLadder)
+                            if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled && canHide && !isGrabbed && !usingLadder)
                             {
                                 isHiding = true;
                                 canMove = false;
                                 hideFeedback.SetActive(true);
-                                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 2;
                                 playerRb.gravityScale = 0;
                                 playerAnimator.SetBool("isHiding", true);
                                 //Debug.Log("Is Hiding");
@@ -535,11 +535,13 @@ namespace TheMansion
         }
         public IEnumerator CalmingHeart()
         {
-            if (stamina > 0 && isHiding)
+            canMove = false;
+            if (stamina > 0)
             {
                 while (isCalmingHeart)
                 {
                     yield return new WaitForSeconds(1);
+                   
                     stamina -= 10f;
                     heartBeat -= 5f;
                     hidingFactor -= 5;
@@ -547,6 +549,7 @@ namespace TheMansion
                     staminaBar.SetActive(true);
                 }
             }
+            canMove = true;
         }
 
         IEnumerator Hiding()
@@ -558,14 +561,15 @@ namespace TheMansion
         }
 
         IEnumerator StandingRegen()
-        {
-
+        {          
             yield return new WaitForSeconds(5f);
+            isRegening = true;
 
             if (stamina < 100f)
             {
                 stamina += 0.05f;
                 staminaBar.SetActive(true);
+                yield return new WaitForSeconds(1f);
             }
 
             if (heartBeat > 100f)
@@ -574,6 +578,8 @@ namespace TheMansion
                 hidingFactor -= 0.25f * Time.deltaTime;
                 heartbeatSpeed -= 0.025f * Time.deltaTime;
             }
+            isRegening = false;
+            yield break;
         }
 
         IEnumerator DownLadder()
