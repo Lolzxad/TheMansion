@@ -2504,6 +2504,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Closet
       objectReference: {fileID: 0}
+    - target: {fileID: 4806939711221039406, guid: 1eb8ae0307dfe4f4eb43ad0d843d6cd3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb8ae0307dfe4f4eb43ad0d843d6cd3, type: 3}
 --- !u!1 &1688021865
