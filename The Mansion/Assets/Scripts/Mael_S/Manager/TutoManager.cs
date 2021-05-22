@@ -84,7 +84,7 @@ namespace TheMansion
 
         public void Update()
         {
-            if(playerController.isHiding && playerIsHiding)
+            if (playerController.isHiding && playerIsHiding)
             {
                 //hideTrigger.SetActive(false);
                 
@@ -186,6 +186,7 @@ namespace TheMansion
             heartInput.SetActive(true);
 
             StartCoroutine(WaitToRemoveInputHeart());
+            
 
             
 
@@ -194,7 +195,10 @@ namespace TheMansion
 
         IEnumerator WaitToRemoveInputHeart()
         {
+            Debug.Log("BeforeRemoveHeart");
+            playerController.canMove = false;
             yield return new WaitForSeconds(5);
+            Debug.Log("AfterRemoveHeart");
             bigBoy.GetComponent<BigBoyController>().enabled = true;
             heartInput.SetActive(false);
             hideTrigger.SetActive(false);
@@ -240,6 +244,7 @@ namespace TheMansion
             readyToHide = false;
             
             Debug.Log("PEUT PAS BOUGER");
+
 
             bigBoy.SetActive(true);
             bigBoy.GetComponent<BigBoyController>().enabled = false;
