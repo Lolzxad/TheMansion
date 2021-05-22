@@ -53,12 +53,14 @@ namespace TheMansion
         [SerializeField] Transform crawler;
         public GameObject playerSprite;
         public GameObject spamInput;
-        public GameObject triggerBB;
-        GameObject player;
+        public GameObject triggerBB;       
         public Transform[] moveSpots;
+        public GameObject grabSpot;
+        private GameObject player;
 
         PlayerController playerScript;
         TutoManager tuto;
+        private Vector3 bigBoyDirection;
 
     
 
@@ -67,7 +69,7 @@ namespace TheMansion
 
         private void Awake()
         {
-            playerScript = FindObjectOfType<PlayerController>();
+            playerScript = FindObjectOfType<PlayerController>();          
            // tuto = FindObjectOfType<TutoManager>();
         }
 
@@ -84,11 +86,31 @@ namespace TheMansion
 
             defaultSpeed = bigBoySpeed;
             defaultSpeedPO = speedPO;
-
         }
 
         private void Update()
         {
+            if (bigBoyDirection.x < transform.position.x)
+            {
+                Debug.Log("Moving Right");
+
+                if (!isFacingRight)
+                {
+                    Flip();
+                }               
+            }
+
+            if (bigBoyDirection.x > transform.position.x)
+            {
+                Debug.Log("Moving Left");
+
+                if (isFacingRight)
+                {
+                    Flip();
+                }
+
+            }
+            bigBoyDirection.x = transform.position.x;
             //Debug.Log(isRunning);
 
             /* if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
@@ -265,21 +287,13 @@ namespace TheMansion
                 if (movingLeft && bBcanMove)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
-                    bigBoyAnimator.SetBool("isWalking", true);
-                    if (isFacingRight)
-                    {
-                        Flip();
-                    }                                   
+                    bigBoyAnimator.SetBool("isWalking", true);                                
                 }
 
                 if (!movingLeft && bBcanMove)
                     {
                     transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
-                    bigBoyAnimator.SetBool("isWalking", true);
-                    if (!isFacingRight)
-                    {
-                        Flip();
-                    }                   
+                    bigBoyAnimator.SetBool("isWalking", true);           
                 }
 
                 if (distance1 <= detectZonePatrol)
@@ -287,7 +301,8 @@ namespace TheMansion
                     if (movingLeft == true)
                     {
                         Debug.Log("Target 1 detected");
-                        transform.eulerAngles = new Vector3(0, -180, 0);
+                        //transform.eulerAngles = new Vector3(0, -180, 0);
+                        Flip();
                         movingLeft = false;
                     }
 
@@ -297,7 +312,8 @@ namespace TheMansion
                     if (movingLeft == false)
                     {
                         Debug.Log("Target 2 detected");
-                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        //transform.eulerAngles = new Vector3(0, 0, 0);
+                        Flip();
                         movingLeft = true;
                     }
                 }
@@ -332,10 +348,12 @@ namespace TheMansion
 
             playerScript.isGrabbed = true;
             playerScript.canMove = false;
+            player.transform.position = grabSpot.transform.position;
+            grabSpot.SetActive(true);
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
-            spamInput.SetActive(true);            
+            spamInput.SetActive(true);
         }
 
         public void Stunned()
@@ -346,6 +364,7 @@ namespace TheMansion
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
+            grabSpot.SetActive(false);
             spamInput.SetActive(false);
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
@@ -382,7 +401,7 @@ namespace TheMansion
         {
             transform.Rotate(new Vector3(0, 180, 0));
             isFacingRight = !isFacingRight;
-            transform.Rotate(new Vector3(0, 180, 0));
+            //transform.Rotate(new Vector3(0, 180, 0));
         }
 
 

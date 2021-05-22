@@ -9,7 +9,7 @@ namespace TheMansion
         BigBoyController bbScript;
         PlayerController playerScript;
 
-        Animation anim;
+        Animator animator;
         Transform target;
 
         public int detectRadius = 10;
@@ -23,8 +23,6 @@ namespace TheMansion
         private void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            anim = gameObject.GetComponent<Animation>();
-
             
         }
 
@@ -43,14 +41,14 @@ namespace TheMansion
 
         IEnumerator CrawlerIsScreaming()
         {
-            anim.Play("CrawlerScream");
+            animator.SetBool("isScreaming", true);
             bbScript.isCalled = true;
             playerScript.heartBeat = playerScript.heartBeat + 10f;
             playerScript.hidingFactor = playerScript.hidingFactor + 10f;
 
             yield return new WaitForSeconds(4);
 
-            anim.Stop("CrawlerScream");
+            animator.SetBool("isScreaming", false);
         }
       
 

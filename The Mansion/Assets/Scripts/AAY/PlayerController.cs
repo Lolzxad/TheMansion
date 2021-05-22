@@ -80,6 +80,11 @@ namespace TheMansion
 
             HeartFeedback();
 
+            if (!usingLadder)
+            {
+                playerAnimator.SetBool("isUsingLadder", false);
+            }
+
             if (!isMouse)
             {
                 if (Input.touchCount > 0)
