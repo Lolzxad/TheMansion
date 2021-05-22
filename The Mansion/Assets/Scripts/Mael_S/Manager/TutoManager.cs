@@ -39,7 +39,7 @@ namespace TheMansion
         [Space]
         [Header("Inputs")]
         //public GameObject movementInput;
-        public GameObject hideInput;
+       // public GameObject hideInput;
         public GameObject hideInput2;
         public GameObject heartInput;
         public GameObject newMovementInput;
@@ -84,11 +84,11 @@ namespace TheMansion
 
         public void Update()
         {
-            if(playerController.isHiding && playerIsHiding)
+            if (playerController.isHiding && playerIsHiding)
             {
                 //hideTrigger.SetActive(false);
                 
-                bigBoy.GetComponent<BigBoyController>().enabled = false;
+                //bigBoy.GetComponent<BigBoyController>().enabled = false;
                 StartCoroutine(WaitForHeart());
             }
 
@@ -148,7 +148,7 @@ namespace TheMansion
             
 
             yield return new WaitForSeconds(5);
-            hideInput.SetActive(true);
+          //  hideInput.SetActive(true);
             hideInput2.SetActive(true);
             Debug.Log("Show input hide");
 
@@ -162,7 +162,7 @@ namespace TheMansion
         IEnumerator WaitToRemoveInputHide()
         {
             yield return new WaitForSeconds(5);
-            hideInput.SetActive(false);
+            //hideInput.SetActive(false);
             hideInput2.SetActive(false);
 
             Debug.Log("IL PEUT BOUGER");
@@ -180,31 +180,37 @@ namespace TheMansion
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
             heart.SetActive(true);
-            heart.GetComponent<HeartAnimation>().enabled = false;
+            heart.GetComponent<Animator>().enabled = true;
             yield return new WaitForSeconds(8);
 
             heartInput.SetActive(true);
 
             StartCoroutine(WaitToRemoveInputHeart());
+            
 
-            heart.GetComponent<HeartAnimation>().enabled = true;  
+            
 
 
         }
 
         IEnumerator WaitToRemoveInputHeart()
         {
+            Debug.Log("BeforeRemoveHeart");
+            playerController.canMove = false;
             yield return new WaitForSeconds(5);
+            Debug.Log("AfterRemoveHeart");
+            bigBoy.GetComponent<BigBoyController>().enabled = true;
             heartInput.SetActive(false);
             hideTrigger.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
+            player.GetComponent<Collider2D>().enabled = true;
 
             bigBoy.GetComponent<Collider2D>().enabled = true;
-            bigBoy.GetComponent<BigBoyController>().enabled = true;
+            
             bigBoy.GetComponent<SpriteRenderer>().enabled = true;
 
             // bigBoy.SetActive(true);
-            bbIsHere = true;
+            
             frontBbTrigger.SetActive(true);
             backBbTrigger.SetActive(true);
             bBCameraHandlerTrigger.SetActive(true);
@@ -238,6 +244,7 @@ namespace TheMansion
             readyToHide = false;
             
             Debug.Log("PEUT PAS BOUGER");
+
 
             bigBoy.SetActive(true);
             bigBoy.GetComponent<BigBoyController>().enabled = false;

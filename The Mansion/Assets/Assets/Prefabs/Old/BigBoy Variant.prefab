@@ -200,12 +200,12 @@ PrefabInstance:
     - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: speedPO
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: rechercheTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934883, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 1951075757185934888, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}
       propertyPath: m_Name
-      value: BigBoy
+      value: BigBoy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1951075757185934888, guid: 578ee73d0a3548c4b83cff65721a996a,
         type: 3}

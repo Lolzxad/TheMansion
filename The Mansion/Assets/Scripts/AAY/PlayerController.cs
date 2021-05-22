@@ -16,11 +16,14 @@ namespace TheMansion
         public float stamina = 100f;
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
+        public float defaultGravity;
         private float heartbeatSpeed = 0.1f;
-        private float defaultGravity;
+        private float lastStamina = 100f;
+        
 
         private bool canHide;
         private bool canUseLadder;
+        private bool isCalmingHeart;
         public bool canMove = true;
         public bool isFacingRight = true;
         public bool isMouse;
@@ -36,11 +39,18 @@ namespace TheMansion
         public Transform RunLeft;
 
         public GameObject playerSprite;
+        public GameObject hideFeedback;
+        public GameObject heartFeedbackLevel1;
+        public GameObject heartFeedbackLevel2;
+        public GameObject heartFeedbackLevel3;
         public Rigidbody2D playerRb;
         public Vector3 baseSpritePosition;
         public Vector3 basePosition;
         public Vector3 ladderTop;
         public Vector3 ladderBottom;
+
+        public StaminaBar staminaBarScript;
+        public GameObject staminaBar;
 
         TouchPhase touchPhase = TouchPhase.Ended;
 
@@ -53,8 +63,21 @@ namespace TheMansion
         // Update is called once per frame
         void Update()
         {
-            //Debug.Log(stamina);    
-            heartAnimator.SetFloat("speed", 1 + heartbeatSpeed);
+            //Debug.Log(stamina);
+            if (heartbeatSpeed < 1)
+            {
+                heartAnimator.SetFloat("speed", 1 + heartbeatSpeed);
+            }
+
+            staminaBarScript.SetStamina(stamina);
+
+            if (lastStamina == stamina && staminaBar.activeSelf)
+            {
+                StartCoroutine(StaminaBarDisappearance());                
+            }
+            lastStamina = stamina;
+
+            HeartFeedback();
 
             if (!isMouse)
             {
@@ -83,11 +106,12 @@ namespace TheMansion
                                 {
                                     isHiding = false;
                                     canMove = true;
+                                    hideFeedback.SetActive(false);
                                     playerAnimator.SetBool("isHiding", false);
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
-                                    gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
+                                    //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                     /*transform.position = basePosition;
                                     playerSprite.transform.position = baseSpritePosition;*/
                                 }
@@ -98,6 +122,7 @@ namespace TheMansion
                                 {
                                     isHiding = true;
                                     canMove = false;
+                                    hideFeedback.SetActive(true);
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                     playerRb.gravityScale = 0;
                                     playerAnimator.SetBool("isHiding", true);
@@ -228,7 +253,10 @@ namespace TheMansion
           
             if (!transform.hasChanged)
             {
-                StartCoroutine(StandingRegen());
+                if (!isHiding && !canUseLadder)
+                {
+                    StartCoroutine(StandingRegen());
+                }            
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);
             }
@@ -254,6 +282,14 @@ namespace TheMansion
                 heartbeatSpeed = 0.1f;
             }
 
+            if (isCalmingHeart)
+            {
+                canMove = false;
+            }
+            else
+            {
+                canMove = true;
+            }
 
         }
         void OnTriggerStay2D(Collider2D InteractableObject)
@@ -327,11 +363,12 @@ namespace TheMansion
                             {
                                 isHiding = false;
                                 canMove = true;
+                                hideFeedback.SetActive(false);
                                 playerAnimator.SetBool("isHiding", false);
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
-                                gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
+                                //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                 /*transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;*/
                             }
@@ -342,6 +379,7 @@ namespace TheMansion
                             {
                                 isHiding = true;
                                 canMove = false;
+                                hideFeedback.SetActive(true);
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                 playerRb.gravityScale = 0;
                                 playerAnimator.SetBool("isHiding", true);
@@ -443,16 +481,46 @@ namespace TheMansion
             isFacingRight = !isFacingRight;
             transform.Find("Sprite").transform.Rotate(new Vector3(0, 180, 0));
         }
-
-        public void CalmingHeart()
+        public void CalmingHeartStart()
         {
-            if (stamina > 0 && isHiding)
+            isCalmingHeart = true;
+            StartCoroutine(CalmingHeart());
+        }
+
+        public void CalmingHeartStop()
+        {
+            isCalmingHeart = false;      
+        }
+
+        public void HeartFeedback()
+        {
+            if (heartBeat <= 110f)
             {
-                stamina -= 10f;
-                heartBeat -= 5f;
-                hidingFactor -= 5;
-                heartbeatSpeed -= 0.5f;     
-            }           
+                heartFeedbackLevel1.SetActive(false);
+                heartFeedbackLevel2.SetActive(false);
+                heartFeedbackLevel3.SetActive(false);
+            }
+
+            if (heartBeat >= 110f)
+            {
+                heartFeedbackLevel1.SetActive(true);
+                heartFeedbackLevel2.SetActive(false);
+                heartFeedbackLevel3.SetActive(false);
+            }
+
+            if (heartBeat >= 120f)
+            {
+                heartFeedbackLevel1.SetActive(false);
+                heartFeedbackLevel2.SetActive(true);
+                heartFeedbackLevel3.SetActive(false);
+            }
+
+            if (heartBeat >= 130f)
+            {
+                heartFeedbackLevel1.SetActive(false);
+                heartFeedbackLevel2.SetActive(false);
+                heartFeedbackLevel3.SetActive(true);
+            }
         }
 
         public IEnumerator StaminaLoss()
@@ -461,25 +529,43 @@ namespace TheMansion
             heartBeat += 2 * Time.deltaTime;
             hidingFactor += 2 * Time.deltaTime;
             heartbeatSpeed += 0.2f * Time.deltaTime;
+            staminaBar.SetActive(true);
 
             yield return new WaitForSeconds(1f);
+        }
+        public IEnumerator CalmingHeart()
+        {
+            if (stamina > 0 && isHiding)
+            {
+                while (isCalmingHeart)
+                {
+                    yield return new WaitForSeconds(1);
+                    stamina -= 10f;
+                    heartBeat -= 5f;
+                    hidingFactor -= 5;
+                    heartbeatSpeed -= 0.5f;
+                    staminaBar.SetActive(true);
+                }
+            }
         }
 
         IEnumerator Hiding()
         {
             //Hiding stuff
             gameObject.GetComponent<Collider2D>().enabled = false;
-            gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = false;
+            //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = false;
             yield return null;
         }
 
         IEnumerator StandingRegen()
         {
+
             yield return new WaitForSeconds(5f);
 
             if (stamina < 100f)
             {
                 stamina += 0.05f;
+                staminaBar.SetActive(true);
             }
 
             if (heartBeat > 100f)
@@ -541,6 +627,12 @@ namespace TheMansion
             usingLadder = false;
             playerAnimator.SetBool("isUsingLadder", false);
             yield return null;
+        }
+
+        IEnumerator StaminaBarDisappearance()
+        {
+            yield return new WaitForSeconds(3f);
+            staminaBar.SetActive(false);
         }
     }
 }

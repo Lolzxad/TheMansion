@@ -3831,7 +3831,7 @@ PrefabInstance:
     - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: isMouse
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
@@ -5604,7 +5604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.51, y: -100}
+  m_AnchoredPosition: {x: 63.8, y: -48.7}
   m_SizeDelta: {x: 138.39673, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854367700

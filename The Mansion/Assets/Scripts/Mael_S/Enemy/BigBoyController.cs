@@ -12,17 +12,27 @@ namespace TheMansion
     {
         public Animator bigBoyAnimator;
 
+        [Space]
+        [Header("Floats")]
         public float bigBoySpeed;
         public float speedPO;
         public float continueRunning = 8;
+        [SerializeField] float waitTime;
+        float startWaitTime;
+        public float distance;
+        public float rechercheTime;
 
         float defaultSpeed;
         float defaultSpeedPO;
 
-        public Transform[] moveSpots;
+        [Space]
+        [Header("Int")]
+        public int detectZonePatrol;
         private int randomSpot;
         public int baseChance = 1;
 
+        [Space]
+        [Header("Bools")]
         public bool isPatrolling;
         public bool isRunning;
         public bool isGrabbing;
@@ -32,25 +42,27 @@ namespace TheMansion
         public bool isFacingRight;
         public bool canBeCalled;
         public bool isCalled;
-        public float rechercheTime;
-
         public bool movingLeft = true;
-        public float distance;
-        public int detectZonePatrol;
+        
+        
+
+        [Space]
+        [Header("GameObjects")]
         [SerializeField] Transform target1;
         [SerializeField] Transform target2;
         [SerializeField] Transform crawler;
-
-        PlayerController playerScript;
-        TutoManager tuto;
-
-        [SerializeField] float waitTime;
-        float startWaitTime;
-
         public GameObject playerSprite;
         public GameObject spamInput;
         public GameObject triggerBB;
         GameObject player;
+        public Transform[] moveSpots;
+
+        PlayerController playerScript;
+        TutoManager tuto;
+
+    
+
+       
         //[SerializeField] GameObject warning;
 
         private void Awake()
@@ -117,7 +129,7 @@ namespace TheMansion
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.tag == "Player" && isRunning)
+            if (other.gameObject.tag == "Player" && isRunning && !playerScript.isHiding)
             {
                 Debug.Log("Gotcha");
                 //triggerBB.SetActive(false);
@@ -131,8 +143,13 @@ namespace TheMansion
                 Debug.Log(isRunning);
                 bBcanMove = false;
                 isPatrolling = false;
+
+                if(playerScript.heartBeat >= 120)
+                {
+                    StartCoroutine(ModeRecherche());
+                }
                 
-                StartCoroutine(ModeRecherche()); 
+                
 
                 if (hideFail)
                 {
@@ -141,9 +158,8 @@ namespace TheMansion
                     playerScript.isHiding = false;
                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
-                    playerScript.gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
-                    playerScript.transform.position = playerScript.basePosition;
-                    playerScript.playerSprite.transform.position = playerScript.baseSpritePosition;
+                    playerScript.playerAnimator.SetBool("isHiding", false);
+                    playerScript.playerRb.gravityScale = playerScript.defaultGravity;
                     BBMG();
                     hideFail = false;
                 }
@@ -160,14 +176,17 @@ namespace TheMansion
 
         IEnumerator ModeRecherche()
         {
-            
-            
+                      
             //lance anim recherche
             Debug.Log("Mode recherche en cours");
+            bigBoySpeed = 0;
+            speedPO = 0;
             bigBoyAnimator.SetBool("isSearching", true);
             yield return new WaitForSecondsRealtime(rechercheTime);
 
             Debug.Log("Mode recherche terminé");
+            bigBoySpeed = defaultSpeed;
+            speedPO = defaultSpeedPO;
             bigBoyAnimator.SetBool("isSearching", false);
             HideCheck();
             //arête anim recherche
@@ -313,7 +332,6 @@ namespace TheMansion
 
             playerScript.isGrabbed = true;
             playerScript.canMove = false;
-            playerScript.playerAnimator.SetTrigger("playerGrabbed");
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
