@@ -113,6 +113,7 @@ namespace TheMansion
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
+                                    transform.position = touchedObject.transform.GetChild(0).transform.position;
                                     //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                     /*transform.position = basePosition;
                                     playerSprite.transform.position = baseSpritePosition;*/
@@ -125,9 +126,9 @@ namespace TheMansion
                                     isHiding = true;
                                     canMove = false;
                                     hideFeedback.SetActive(true);
-                                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 2;
                                     playerRb.gravityScale = 0;
-                                    playerAnimator.SetBool("isHiding", true);
+                                    //playerAnimator.SetBool("isHiding", true);
                                     //Debug.Log("Is Hiding");
                                     basePosition = transform.position;
                                     baseSpritePosition = playerSprite.transform.position;
@@ -284,16 +285,6 @@ namespace TheMansion
             {
                 heartbeatSpeed = 0.1f;
             }
-
-            if (isCalmingHeart)
-            {
-                canMove = false;
-            }
-            else if (!isCalmingHeart && !isGrabbed && !isHiding)
-            {
-                canMove = true;
-            }
-
         }
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
@@ -376,6 +367,7 @@ namespace TheMansion
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
+                                transform.position = touchedObject.transform.GetChild(0).transform.position;
                                 //gameObject.transform.Find("Sprite").GetComponent<Collider2D>().enabled = true;
                                 /*transform.position = basePosition;
                                 playerSprite.transform.position = baseSpritePosition;*/
@@ -388,7 +380,7 @@ namespace TheMansion
                                 isHiding = true;
                                 canMove = false;
                                 hideFeedback.SetActive(true);
-                                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 2;
                                 playerRb.gravityScale = 0;
                                 playerAnimator.SetBool("isHiding", true);
                                 //Debug.Log("Is Hiding");
@@ -543,11 +535,13 @@ namespace TheMansion
         }
         public IEnumerator CalmingHeart()
         {
+            canMove = false;
             if (stamina > 0)
             {
                 while (isCalmingHeart)
                 {
                     yield return new WaitForSeconds(1);
+                   
                     stamina -= 10f;
                     heartBeat -= 5f;
                     hidingFactor -= 5;
@@ -555,6 +549,7 @@ namespace TheMansion
                     staminaBar.SetActive(true);
                 }
             }
+            canMove = true;
         }
 
         IEnumerator Hiding()
