@@ -348,7 +348,7 @@ namespace TheMansion
 
             playerScript.isGrabbed = true;
             playerScript.canMove = false;
-            player.transform.position = grabSpot.transform.position;
+            playerSprite.transform.position = grabSpot.transform.position;
             grabSpot.SetActive(true);
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
