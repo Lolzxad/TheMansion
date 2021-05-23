@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 namespace TheMansion
 {
@@ -64,6 +65,16 @@ namespace TheMansion
         // Update is called once per frame
         void Update()
         {
+            if (isGrabbed)
+            {
+                ProCamera2D.Instance.CenterOnTargets();
+            }
+
+            if (usingLadder)
+            {
+                ProCamera2D.Instance.CenterOnTargets();
+            }
+
             //Debug.Log(stamina);
             if (heartbeatSpeed < 1)
             {
