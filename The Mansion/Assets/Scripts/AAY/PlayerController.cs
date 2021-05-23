@@ -241,8 +241,17 @@ namespace TheMansion
                         {
                             Flip();
                         }
-                        playerAnimator.SetBool("isRunning", true);
-                        transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                        if (stamina > 0f)
+                        {
+                            playerAnimator.SetBool("isRunning", true);
+                            transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                        }
+
+                        else
+                        {
+                            playerAnimator.SetBool("isWalking", true);
+                            transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                        }
                         isRunning = true;
                         StartCoroutine(StaminaLoss());
                     }
@@ -256,11 +265,20 @@ namespace TheMansion
                             Flip();
                         }
                         playerAnimator.SetBool("isRunning", true);
-                        transform.Translate((Vector3.left * Time.deltaTime) * 10f);
-                        isRunning = true;
+
+                        if (stamina > 0f)
+                        {
+                            playerAnimator.SetBool("isRunning", true);
+                            transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                        }
+
+                        else
+                        {
+                            playerAnimator.SetBool("isWalking", true);
+                            transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                        }
                         StartCoroutine(StaminaLoss());
-                    }
-                    
+                    }                   
                 }
             }
 
@@ -464,28 +482,46 @@ namespace TheMansion
                     isRunning = false;
                 }
 
-                if (clickPosition2D.x > WalkRight.position.x && clickPosition2D.x <= RunRight.position.x && stamina > 0 && canMove)
+                if (clickPosition2D.x > WalkRight.position.x && clickPosition2D.x <= RunRight.position.x && canMove)
                 {
                     Debug.Log("Run Right");
                     if (!isFacingRight)
                     {
                         Flip();
                     }
-                    playerAnimator.SetBool("isRunning", true);
-                    transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+
+                    if (stamina > 0f)
+                    {
+                        playerAnimator.SetBool("isRunning", true);
+                        transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                    }
+                    else
+                    {
+                        playerAnimator.SetBool("isWalking", true);
+                        transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                    }
                     isRunning = true;
                     StartCoroutine(StaminaLoss());
                 }
 
-                if (clickPosition2D.x < WalkLeft.position.x && clickPosition2D.x >= RunLeft.position.x && stamina > 0 && canMove)
+                if (clickPosition2D.x < WalkLeft.position.x && clickPosition2D.x >= RunLeft.position.x && canMove)
                 {
                     Debug.Log("Run Left");
                     if (isFacingRight)
                     {
                         Flip();
                     }
-                    playerAnimator.SetBool("isRunning", true);
-                    transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                    if (stamina > 0f)
+                    {
+                        playerAnimator.SetBool("isRunning", true);
+                        transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                    }
+
+                    else
+                    {
+                        playerAnimator.SetBool("isWalking", true);
+                        transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                    }
                     isRunning = true;
                     StartCoroutine(StaminaLoss());
                 }
