@@ -367,6 +367,7 @@ namespace TheMansion
             grabSpot.SetActive(false);
             spamInput.SetActive(false);
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
+            ProCamera2D.Instance.CenterOnTargets();
             playerScript.isGrabbed = false;
             playerScript.canMove = true;
             playerScript.playerAnimator.SetBool("isGrabbed", false);

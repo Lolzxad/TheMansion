@@ -55,7 +55,7 @@ namespace TheMansion
                 }
                 else
                 {
-                    if (!tuto.isTuto)
+                    if (!isTuto)
                     {
                         Debug.Log("TIME OUT");
                         GameOver();

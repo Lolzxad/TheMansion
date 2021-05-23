@@ -212,7 +212,7 @@ namespace TheMansion
                 playerScript.isGrabbed = true;
                 playerScript.canMove = false;
                 playerScript.playerAnimator.SetBool("isGrabbed", true);
-
+                ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
                 isGrabbing = true;
                 
                 spamInput.SetActive(true);
