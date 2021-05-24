@@ -189,6 +189,7 @@ namespace TheMansion
                                 if (touchedObject.name == "Story 1")
                                 {
                                     MenuManagerScript.story1Get = true;
+                                    Debug.Log("STORY 1");
                                 }
 
                                 if (touchedObject.name == "Story 2")
