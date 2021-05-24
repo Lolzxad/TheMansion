@@ -89,40 +89,40 @@ namespace TheMansion
         }
 
         private void Update()
-        {
-            if (bigBoyDirection.x < transform.position.x)
-            {
-                Debug.Log("Moving Right");
-
-                if (!isFacingRight)
-                {
-                    Flip();
-                }               
-            }
-
-            if (bigBoyDirection.x > transform.position.x)
-            {
-                Debug.Log("Moving Left");
-
-                if (isFacingRight)
-                {
-                    Flip();
-                }
-
-            }
-
-            if (isGrabbing == true)
-            {
-                Handheld.Vibrate();
-            }
-            bigBoyDirection.x = transform.position.x;
-            //Debug.Log(isRunning);
-
-            /* if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
-             {
-                 isRunning = true;
-                 isPatrolling = false;
-             }*/
+        {
+            if (bigBoyDirection.x < transform.position.x)
+            {
+                Debug.Log("Moving Right");
+
+                if (!isFacingRight)
+                {
+                    Flip();
+                }               
+            }
+
+            if (bigBoyDirection.x > transform.position.x)
+            {
+                Debug.Log("Moving Left");
+
+                if (isFacingRight)
+                {
+                    Flip();
+                }
+
+            }
+
+            if (isGrabbing == true)
+            {
+                Handheld.Vibrate();
+            }
+            bigBoyDirection.x = transform.position.x;
+            //Debug.Log(isRunning);
+
+            /* if (gameObject.GetComponent<Renderer>().isVisible && bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
+             {
+                 isRunning = true;
+                 isPatrolling = false;
+             }*/
             if (!transform.hasChanged)
             {
                 bigBoyAnimator.SetBool("isWalking", false);
@@ -145,12 +145,12 @@ namespace TheMansion
                 playerScript.hidingFactor = playerScript.hidingFactor + 1 * Time.deltaTime;
             }
 
-            if (isCalled)
-            {
-                if (canBeCalled && !isGrabbing)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, crawler.transform.position, speedPO * Time.deltaTime);
-                }
+            if (isCalled)
+            {
+                if (canBeCalled && !isGrabbing)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, crawler.transform.position, speedPO * Time.deltaTime);
+                }
             }
         }
 
@@ -171,9 +171,9 @@ namespace TheMansion
                 bBcanMove = false;
                 isPatrolling = false;
 
-                if(playerScript.heartBeat >= 120)
-                {
-                    StartCoroutine(ModeRecherche());
+                if(playerScript.heartBeat >= 120)
+                {
+                    StartCoroutine(ModeRecherche());
                 }
                 
                 
@@ -285,28 +285,28 @@ namespace TheMansion
 
                 // distance = Vector3.Distance(target.position, transform.position);
                 float distance1 = Vector3.Distance(target1.position, transform.position);
-                float distance2 = Vector3.Distance(target2.position, transform.position);
+                float distance2 = Vector3.Distance(target2.position, transform.position);
                 float crawlerDis = Vector3.Distance(crawler.position, transform.position);
                 //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
 
                 if (movingLeft && bBcanMove)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
                     bigBoyAnimator.SetBool("isWalking", true);                                
                 }
 
                 if (!movingLeft && bBcanMove)
-                    {
-                    transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
-                    bigBoyAnimator.SetBool("isWalking", true);           
+                    {
+                    transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
+                    bigBoyAnimator.SetBool("isWalking", true);           
                 }
 
                 if (distance1 <= detectZonePatrol)
                 {
                     if (movingLeft == true)
                     {
-                        Debug.Log("Target 1 detected");
-                        //transform.eulerAngles = new Vector3(0, -180, 0);
+                        Debug.Log("Target 1 detected");
+                        //transform.eulerAngles = new Vector3(0, -180, 0);
                         Flip();
                         movingLeft = false;
                     }
@@ -316,16 +316,16 @@ namespace TheMansion
                 {
                     if (movingLeft == false)
                     {
-                        Debug.Log("Target 2 detected");
-                        //transform.eulerAngles = new Vector3(0, 0, 0);
+                        Debug.Log("Target 2 detected");
+                        //transform.eulerAngles = new Vector3(0, 0, 0);
                         Flip();
                         movingLeft = true;
                     }
                 }
 
-                if(crawlerDis <= detectZonePatrol)
-                {
-                     CrawlerReached();
+                if(crawlerDis <= detectZonePatrol)
+                {
+                     CrawlerReached();
                 }
             
            
@@ -413,17 +413,17 @@ namespace TheMansion
 
       
 
-        public void CrawlerReached()
-        {
-            isCalled = false;
-            canBeCalled = false;
-            StartCoroutine(WaitBeforeBeCalled());
+        public void CrawlerReached()
+        {
+            isCalled = false;
+            canBeCalled = false;
+            StartCoroutine(WaitBeforeBeCalled());
         }
 
-        IEnumerator WaitBeforeBeCalled()
-        {
-            yield return new WaitForSeconds(5);
-            canBeCalled = true;
+        IEnumerator WaitBeforeBeCalled()
+        {
+            yield return new WaitForSeconds(5);
+            canBeCalled = true;
         }
         
 

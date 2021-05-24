@@ -40,6 +40,7 @@ namespace TheMansion
         public Transform RunRight;
         public Transform RunLeft;
 
+        
         public GameObject playerSprite;
         public GameObject hideFeedback;
         public GameObject heartFeedbackLevel1;
@@ -58,6 +59,7 @@ namespace TheMansion
 
         private void Awake()
         {
+            MenuManagerScript = FindObjectOfType<MenuManager>();
             playerRb = GetComponent<Rigidbody2D>();
             defaultGravity = playerRb.gravityScale;
         }
@@ -189,21 +191,26 @@ namespace TheMansion
                                 if (touchedObject.name == "Story 1")
                                 {
                                     MenuManagerScript.story1Get = true;
+                                    touchedObject.SetActive(false);
+                                    Debug.Log("STORY 1");
                                 }
 
                                 if (touchedObject.name == "Story 2")
                                 {
                                     MenuManagerScript.story2Get = true;
+                                    touchedObject.SetActive(false);
                                 }
 
                                 if (touchedObject.name == "Story 3")
                                 {
+                                    touchedObject.SetActive(false);
                                     MenuManagerScript.story3Get = true;
                                 }
 
                                 if (touchedObject.name == "Story 4")
                                 {
                                     MenuManagerScript.story4Get = true;
+                                    touchedObject.SetActive(false);
                                 }
 
                             }
@@ -454,6 +461,35 @@ namespace TheMansion
                             {
                                 StartCoroutine(OffLadder());
                             }
+                        }
+
+                        if (touchedObject.tag == "StoryLore")
+                        {
+                            if (touchedObject.name == "Story 1")
+                            {
+                                MenuManagerScript.story1Get = true;
+                                touchedObject.SetActive(false);
+                                Debug.Log("STORY 1");
+                            }
+
+                            if (touchedObject.name == "Story 2")
+                            {
+                                MenuManagerScript.story2Get = true;
+                                touchedObject.SetActive(false);
+                            }
+
+                            if (touchedObject.name == "Story 3")
+                            {
+                                MenuManagerScript.story3Get = true;
+                                touchedObject.SetActive(false);
+                            }
+
+                            if (touchedObject.name == "Story 4")
+                            {
+                                MenuManagerScript.story4Get = true;
+                                touchedObject.SetActive(false);
+                            }
+
                         }
                     }
                 }
