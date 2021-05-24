@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668570341058491194}
   - component: {fileID: 512549051664787642}
+  - component: {fileID: 1376397712092777990}
   m_Layer: 0
   m_Name: Story 4
   m_TagString: StoryLore
@@ -81,3 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1376397712092777990
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517117027297314964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 5.1200004, y: 5.1200004}
+  m_Direction: 0
