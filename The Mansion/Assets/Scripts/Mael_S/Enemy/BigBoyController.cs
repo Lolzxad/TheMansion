@@ -110,6 +110,11 @@ namespace TheMansion
                 }
 
             }
+
+            if (isGrabbing == true)
+            {
+                Handheld.Vibrate();
+            }
             bigBoyDirection.x = transform.position.x;
             //Debug.Log(isRunning);
 
@@ -344,12 +349,12 @@ namespace TheMansion
             bigBoyAnimator.SetTrigger("hasGrabbed");
             bBcanMove = false;
 
-            ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
+            ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");           
 
             playerScript.isGrabbed = true;
             playerScript.canMove = false;
-            playerSprite.transform.position = grabSpot.transform.position;
-            grabSpot.SetActive(true);
+            /*playerSprite.transform.position = grabSpot.transform.position;
+            grabSpot.SetActive(true);*/
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
@@ -364,7 +369,7 @@ namespace TheMansion
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
-            grabSpot.SetActive(false);
+            //grabSpot.SetActive(false);
             spamInput.SetActive(false);
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             ProCamera2D.Instance.CenterOnTargets();
