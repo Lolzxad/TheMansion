@@ -613,7 +613,7 @@ namespace TheMansion
 
         public IEnumerator StaminaLoss()
         {
-            stamina -= 0.1f;
+            stamina -= 0.1f * Time.deltaTime;
             heartBeat += 2 * Time.deltaTime;
             hidingFactor += 2 * Time.deltaTime;
             heartbeatSpeed += 0.2f * Time.deltaTime;
@@ -630,10 +630,10 @@ namespace TheMansion
                 {
                     yield return new WaitForSeconds(1);
                    
-                    stamina -= 10f;
-                    heartBeat -= 5f;
-                    hidingFactor -= 5;
-                    heartbeatSpeed -= 0.5f;
+                    stamina -= 10f * Time.deltaTime;
+                    heartBeat -= 5f * Time.deltaTime;
+                    hidingFactor -= 5 * Time.deltaTime;
+                    heartbeatSpeed -= 0.5f * Time.deltaTime;
                     staminaBar.SetActive(true);
                 }
             }
@@ -655,7 +655,7 @@ namespace TheMansion
 
             if (stamina < 100f)
             {
-                stamina += 0.05f;
+                stamina += 0.05f * Time.deltaTime;
                 staminaBar.SetActive(true);
                 yield return new WaitForSeconds(1f);
             }
