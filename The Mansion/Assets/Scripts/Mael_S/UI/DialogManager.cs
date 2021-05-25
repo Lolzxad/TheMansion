@@ -15,12 +15,17 @@ namespace TheMansion
 
         public GameObject continueButton;
 
+        [Header("Bools frer")]
+        public bool isTimeToHide;
+        public bool isTimeToCalmHeart;
+
         PlayerController playerScript;
 
         private void Start()
         {
             StartCoroutine(Type());
             playerScript = FindObjectOfType<PlayerController>();
+            playerScript.canMove = false;
         }
 
         private void Update()
@@ -45,9 +50,19 @@ namespace TheMansion
         public void NextSentence()
         {
             continueButton.SetActive(false);
-            playerScript.canMove = false;
+            
 
-            if(index < sentences.Length - 1)
+            if (isTimeToHide)
+            {
+                playerScript.GetComponent<PlayerController>().enabled = false;
+            }
+
+            if (isTimeToCalmHeart)
+            {
+                playerScript.GetComponent<PlayerController>().enabled = false;
+            }
+
+            if (index < sentences.Length - 1)
             {
                 index++;
                 textDisplayDoorLocked.text = "";
@@ -56,7 +71,19 @@ namespace TheMansion
             else
             {
                 textDisplayDoorLocked.text = "";
+               
                 playerScript.canMove = true;
+
+
+                if (isTimeToHide)
+                {
+                    playerScript.GetComponent<PlayerController>().enabled = true;
+                }
+
+                if (isTimeToCalmHeart)
+                {
+                    playerScript.GetComponent<PlayerController>().enabled = true;
+                }
             }
         }
     }

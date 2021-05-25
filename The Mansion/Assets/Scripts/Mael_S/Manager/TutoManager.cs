@@ -116,7 +116,7 @@ namespace TheMansion
         IEnumerator WaitForMove()
         {
             yield return new WaitForSeconds(2);
-            player.GetComponent<PlayerController>().enabled = true;
+            //player.GetComponent<PlayerController>().enabled = true;
         }
 
 
@@ -148,7 +148,7 @@ namespace TheMansion
             
 
             yield return new WaitForSeconds(5);
-          //  hideInput.SetActive(true);
+          
             hideInput2.SetActive(true);
             Debug.Log("Show input hide");
 
@@ -231,14 +231,14 @@ namespace TheMansion
         {
             doorLockedTrigger.SetActive(false);
             isDoorLocked = false;
-            player.GetComponent<PlayerController>().enabled = false;
+            
             doorIsLockedTexte.SetActive(true);
             readyToHide = true;
         }
 
         public void ReadyToHide()
         {
-            player.GetComponent<PlayerController>().enabled = false;
+            
             hideTrigger.SetActive(false);
             timeToHideTexte.SetActive(true);
             readyToHide = false;
