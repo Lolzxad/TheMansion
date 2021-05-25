@@ -71,14 +71,14 @@ namespace TheMansion
 
               canWinTrigger.SetActive(false);
 
-            Time.timeScale = 0;
+            
             
         }
 
         public void okNowMove()
         {
             newMovementInput.SetActive(false);
-            Time.timeScale = 1;
+            
             StartCoroutine(SpawnInputMove());
         }
 
