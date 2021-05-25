@@ -366,6 +366,7 @@ namespace TheMansion
             Debug.Log("BB is stunned");
             bigBoyAnimator.ResetTrigger("hasGrabbed");
             bigBoyAnimator.SetBool("isStunned", true);
+            isGrabbing = false;
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -398,8 +399,7 @@ namespace TheMansion
             yield return new WaitForSeconds(5f);
             gameObject.GetComponent<Collider2D>().enabled = true;
             bigBoyAnimator.SetBool("isStunned", false);
-            bBcanMove = true;
-            isGrabbing = false;
+            bBcanMove = true;           
             isPatrolling = true;
         }
 

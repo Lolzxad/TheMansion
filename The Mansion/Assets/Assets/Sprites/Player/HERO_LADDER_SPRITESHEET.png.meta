@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: 2b6ad15c802c4004aac634d7e352dad8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6548409314049034953
+    second: HERO_LADDER_SPRITESHEET_0
+  - first:
+      213: -8086765871127786073
+    second: HERO_LADDER_SPRITESHEET_1
+  - first:
+      213: 7134512012525025131
+    second: HERO_LADDER_SPRITESHEET_2
+  - first:
+      213: -6341809645032937319
+    second: HERO_LADDER_SPRITESHEET_3
+  - first:
+      213: -7271185977337527301
+    second: HERO_LADDER_SPRITESHEET_4
+  - first:
+      213: -6795006581398968557
+    second: HERO_LADDER_SPRITESHEET_5
+  - first:
+      213: -8898287819135975406
+    second: HERO_LADDER_SPRITESHEET_6
+  - first:
+      213: -2357937884201643850
+    second: HERO_LADDER_SPRITESHEET_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 3
+        width: 259
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7357f308c606f15a0800000000000000
+      internalID: -6548409314049034953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 48
+        width: 285
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad0da5294906cf80800000000000000
+      internalID: -8086765871127786073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_2
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 48
+        width: 307
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67bf4800e0e20360800000000000000
+      internalID: 7134512012525025131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_3
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 30
+        width: 280
+        height: 724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9986aaa6abd5df7a0800000000000000
+      internalID: -6341809645032937319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_4
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 26
+        width: 285
+        height: 728
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3cef4c0ee871b90800000000000000
+      internalID: -7271185977337527301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 63
+        width: 257
+        height: 707
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317e545048943b1a0800000000000000
+      internalID: -6795006581398968557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 38
+        width: 255
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2100737af5ee28480800000000000000
+      internalID: -8898287819135975406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HERO_LADDER_SPRITESHEET_7
+      rect:
+        serializedVersion: 2
+        x: 2391
+        y: 14
+        width: 278
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b099b9bcfbe64fd0800000000000000
+      internalID: -2357937884201643850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
