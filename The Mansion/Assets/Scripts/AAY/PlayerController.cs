@@ -24,7 +24,7 @@ namespace TheMansion
 
         private bool canHide;
         private bool canUseLadder;
-        private bool isCalmingHeart;
+        public bool isCalmingHeart;
         public bool isRegening;
         public bool canMove = true;
         public bool isFacingRight = true;
@@ -641,7 +641,12 @@ namespace TheMansion
                     staminaBar.SetActive(true);
                 }
             }
-            canMove = true;
+            if (!isHiding)
+            {
+                canMove = true;
+            }
+
+           
         }
 
         IEnumerator Hiding()

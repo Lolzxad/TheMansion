@@ -20,12 +20,23 @@ namespace TheMansion
         public bool isTimeToCalmHeart;
 
         PlayerController playerScript;
+        GameObject tuto;
 
         private void Start()
         {
             StartCoroutine(Type());
             playerScript = FindObjectOfType<PlayerController>();
             playerScript.canMove = false;
+
+            if (isTimeToHide)
+            {
+                playerScript.GetComponent<PlayerController>().enabled = false;
+            }
+
+            if (isTimeToCalmHeart)
+            {
+                playerScript.GetComponent<PlayerController>().enabled = false;
+            }
         }
 
         private void Update()
@@ -52,15 +63,7 @@ namespace TheMansion
             continueButton.SetActive(false);
             
 
-            if (isTimeToHide)
-            {
-                playerScript.GetComponent<PlayerController>().enabled = false;
-            }
-
-            if (isTimeToCalmHeart)
-            {
-                playerScript.GetComponent<PlayerController>().enabled = false;
-            }
+          
 
             if (index < sentences.Length - 1)
             {
@@ -82,7 +85,7 @@ namespace TheMansion
 
                 if (isTimeToCalmHeart)
                 {
-                    playerScript.GetComponent<PlayerController>().enabled = true;
+                    tuto.GetComponent<TutoManager>().heartInput.SetActive(true);
                 }
             }
         }

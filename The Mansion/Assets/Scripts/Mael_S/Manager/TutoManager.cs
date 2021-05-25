@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TheMansion
 {
@@ -71,7 +72,8 @@ namespace TheMansion
 
               canWinTrigger.SetActive(false);
 
-            
+              heart.GetComponent<Image>().enabled = false;
+              heart.GetComponent<Button>().enabled = false;
             
         }
 
@@ -87,8 +89,9 @@ namespace TheMansion
             if (playerController.isHiding && playerIsHiding)
             {
                 //hideTrigger.SetActive(false);
-                
+
                 //bigBoy.GetComponent<BigBoyController>().enabled = false;
+                hideInput2.SetActive(false);
                 StartCoroutine(WaitForHeart());
             }
 
@@ -105,7 +108,10 @@ namespace TheMansion
                 }
             }
 
-           
+            if (playerController.isCalmingHeart)
+            {
+                heartInput.SetActive(false);
+            }
 
             if(readyToHide == true)
             {
@@ -166,24 +172,27 @@ namespace TheMansion
             hideInput2.SetActive(false);
 
             Debug.Log("IL PEUT BOUGER");
-            player.GetComponent<PlayerController>().enabled = true;
+            //player.GetComponent<PlayerController>().enabled = true;
         }
 
         IEnumerator WaitForHeart()
         {
-            player.GetComponent<PlayerController>().enabled = false;
+//            player.GetComponent<PlayerController>().enabled = false;
 
             Debug.Log("Heart");
             playerIsHiding = false;
-
+            heart.GetComponent<Image>().enabled = true;
+            heart.GetComponent<Button>().enabled = true;
+            heart.GetComponent<Animator>().enabled = true;
             heartTexte.SetActive(true);
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
-            heart.SetActive(true);
-            heart.GetComponent<Animator>().enabled = true;
+           
+           
             yield return new WaitForSeconds(8);
 
-            heartInput.SetActive(true);
+            //heartInput.SetActive(true);
+            //player.GetComponent<PlayerController>().enabled = true;
 
             StartCoroutine(WaitToRemoveInputHeart());
             
