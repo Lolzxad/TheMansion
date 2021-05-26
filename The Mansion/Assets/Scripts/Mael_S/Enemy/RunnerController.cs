@@ -31,6 +31,7 @@ namespace TheMansion
         GameObject player;
         PlayerController playerScript;
         SpamInputRunner spamInputController;
+        AudioManagerVEVO audioManager;
 
 
         [Space]
@@ -48,6 +49,7 @@ namespace TheMansion
         {
             playerScript = FindObjectOfType<PlayerController>();
             spamInputController = FindObjectOfType<SpamInputRunner>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
         }
 
         private void Start()
@@ -56,7 +58,7 @@ namespace TheMansion
 
             isIdle = true;
 
-            
+            StartCoroutine(RunnerLaugh());
         }
 
         private void Update()
@@ -276,6 +278,12 @@ namespace TheMansion
             isComingBack = true;
             isGrabbing = false;
             
+        }
+
+        IEnumerator RunnerLaugh()
+        {
+            yield return new WaitForSeconds(3f);
+            audioManager.PlayAudio(AudioType.Runner_Laugh_SFX);
         }
 
         private void OnDrawGizmosSelected()

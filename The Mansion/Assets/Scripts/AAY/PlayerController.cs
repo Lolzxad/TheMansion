@@ -24,7 +24,7 @@ namespace TheMansion
 
         private bool canHide;
         private bool canUseLadder;
-        private bool isCalmingHeart;
+        public bool isCalmingHeart;
         public bool isRegening;
         public bool canMove = true;
         public bool isFacingRight = true;
@@ -54,6 +54,7 @@ namespace TheMansion
 
         public StaminaBar staminaBarScript;
         public GameObject staminaBar;
+
 
         TouchPhase touchPhase = TouchPhase.Ended;
 
@@ -190,36 +191,44 @@ namespace TheMansion
                             {
                                 if (touchedObject.name == "Story 1")
                                 {
-                                    MenuManagerScript.story1Get = true;
+                   
+                                    //MenuManagerScript.story1Get = true;
+                                    PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
                                     touchedObject.SetActive(false);
                                     Debug.Log("STORY 1");
+
                                 }
 
                                 if (touchedObject.name == "Story 2")
                                 {
-                                    MenuManagerScript.story2Get = true;
+                                    //MenuManagerScript.story2Get = true;
+                                    PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
                                     touchedObject.SetActive(false);
                                 }
 
                                 if (touchedObject.name == "Story 3")
-                                {
-                                    touchedObject.SetActive(false);
+                                {                                   
+                                    PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
                                     MenuManagerScript.story3Get = true;
+                                    touchedObject.SetActive(false);
                                 }
 
                                 if (touchedObject.name == "Story 4")
                                 {
-                                    MenuManagerScript.story4Get = true;
+                                    //MenuManagerScript.story4Get = true;
+                                    PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
                                     touchedObject.SetActive(false);
                                 }
 
                             }
+
+
                         }
                     }
 
                     if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && canMove)
                     {
-                        Debug.Log("Walk Right");
+                        //Debug.Log("Walk Right");
                         if (!isFacingRight)
                         {
                             Flip();
@@ -231,7 +240,7 @@ namespace TheMansion
 
                     if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && canMove)
                     {
-                        Debug.Log("Walk Left");
+                        //Debug.Log("Walk Left");
                         if (isFacingRight)
                         {
                             Flip();
@@ -243,7 +252,7 @@ namespace TheMansion
 
                     if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && canMove)
                     {
-                        Debug.Log("Run Right");
+                        //Debug.Log("Run Right");
                         if (!isFacingRight)
                         {
                             Flip();
@@ -266,7 +275,7 @@ namespace TheMansion
 
                     if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && canMove)
                     {
-                        Debug.Log("Run Left");
+                        //Debug.Log("Run Left");
                         if (isFacingRight)
                         {
                             Flip();
@@ -297,19 +306,27 @@ namespace TheMansion
           
             if (!transform.hasChanged)
             {
-                if (!isHiding && !usingLadder && !isCalmingHeart && !isRegening)
-                {
-                    StartCoroutine(StandingRegen());
-                }               
+                Debug.Log("hasn'tChanged");
+                StartCoroutine("StandingRegen");
                 playerAnimator.SetBool("isWalking", false);
-                playerAnimator.SetBool("isRunning", false);
+                playerAnimator.SetBool("isRunning", false);               
             }
-            transform.hasChanged = false;
-            StopCoroutine(StandingRegen());
+            //transform.hasChanged = false;
+
+            if (transform.hasChanged)
+            {
+                Debug.Log("hasChanged");
+                StopCoroutine("StandingRegen");
+                isRegening = false;
+                transform.hasChanged = false;
+            }
+            
+
+            
 
             if (heartBeat < 100f)
             {
-                heartBeat = 100f;
+                heartBeat = 100f;   
             }
 
             if (stamina < 0f)
@@ -463,40 +480,42 @@ namespace TheMansion
                             }
                         }
 
-                        if (touchedObject.tag == "StoryLore")
+                        if (touchedObject.name == "Story 1")
                         {
-                            if (touchedObject.name == "Story 1")
-                            {
-                                MenuManagerScript.story1Get = true;
-                                touchedObject.SetActive(false);
-                                Debug.Log("STORY 1");
-                            }
 
-                            if (touchedObject.name == "Story 2")
-                            {
-                                MenuManagerScript.story2Get = true;
-                                touchedObject.SetActive(false);
-                            }
+                            MenuManagerScript.story1Get = true;
+                            PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+                            touchedObject.SetActive(false);
+                            Debug.Log("STORY 1");
 
-                            if (touchedObject.name == "Story 3")
-                            {
-                                MenuManagerScript.story3Get = true;
-                                touchedObject.SetActive(false);
-                            }
+                        }
 
-                            if (touchedObject.name == "Story 4")
-                            {
-                                MenuManagerScript.story4Get = true;
-                                touchedObject.SetActive(false);
-                            }
+                        if (touchedObject.name == "Story 2")
+                        {
+                            MenuManagerScript.story2Get = true;
+                            PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                            touchedObject.SetActive(false);
+                        }
 
+                        if (touchedObject.name == "Story 3")
+                        {
+                            touchedObject.SetActive(false);
+                            PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                            MenuManagerScript.story3Get = true;
+                        }
+
+                        if (touchedObject.name == "Story 4")
+                        {
+                            MenuManagerScript.story4Get = true;
+                            PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                            touchedObject.SetActive(false);
                         }
                     }
                 }
 
                 if (clickPosition2D.x > BasePosition.position.x && clickPosition2D.x <= WalkRight.position.x && canMove)
                 {
-                    Debug.Log("Walk Right");
+                    //Debug.Log("Walk Right");
                     if (!isFacingRight)
                     {
                         Flip();
@@ -508,7 +527,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x < BasePosition.position.x && clickPosition2D.x >= WalkLeft.position.x && canMove)
                 {
-                    Debug.Log("Walk Left");
+                    //Debug.Log("Walk Left");
                     if (isFacingRight)
                     {
                         Flip();
@@ -520,7 +539,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x > WalkRight.position.x && clickPosition2D.x <= RunRight.position.x && canMove)
                 {
-                    Debug.Log("Run Right");
+                    //Debug.Log("Run Right");
                     if (!isFacingRight)
                     {
                         Flip();
@@ -542,7 +561,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x < WalkLeft.position.x && clickPosition2D.x >= RunLeft.position.x && canMove)
                 {
-                    Debug.Log("Run Left");
+                    //Debug.Log("Run Left");
                     if (isFacingRight)
                     {
                         Flip();
@@ -613,7 +632,7 @@ namespace TheMansion
 
         public IEnumerator StaminaLoss()
         {
-            stamina -= 0.1f;
+            stamina -= 30f * Time.deltaTime;
             heartBeat += 2 * Time.deltaTime;
             hidingFactor += 2 * Time.deltaTime;
             heartbeatSpeed += 0.2f * Time.deltaTime;
@@ -628,16 +647,17 @@ namespace TheMansion
             {
                 while (isCalmingHeart)
                 {
-                    yield return new WaitForSeconds(1);
+                    //yield return new WaitForSeconds(1);
                    
-                    stamina -= 10f;
-                    heartBeat -= 5f;
-                    hidingFactor -= 5;
-                    heartbeatSpeed -= 0.5f;
+                    stamina -= 10f * Time.deltaTime;
+                    heartBeat -= 5f * Time.deltaTime;
+                    hidingFactor -= 5 * Time.deltaTime;
+                    heartbeatSpeed -= 0.5f * Time.deltaTime;
                     staminaBar.SetActive(true);
+                    yield return null;
                 }
             }
-            canMove = true;
+            canMove = true;          
         }
 
         IEnumerator Hiding()
@@ -651,23 +671,21 @@ namespace TheMansion
         IEnumerator StandingRegen()
         {          
             yield return new WaitForSeconds(5f);
-            isRegening = true;
 
-            if (stamina < 100f)
+            if (!isHiding && !usingLadder && !isCalmingHeart && stamina < 100f)
             {
-                stamina += 0.05f;
+                isRegening = true;
+                stamina += 20f * Time.deltaTime;
                 staminaBar.SetActive(true);
-                yield return new WaitForSeconds(1f);
             }
 
-            if (heartBeat > 100f)
+            if (heartBeat > 100f && isRegening)
             {
+                isRegening = true;
                 heartBeat -= 0.25f * Time.deltaTime;
                 hidingFactor -= 0.25f * Time.deltaTime;
                 heartbeatSpeed -= 0.025f * Time.deltaTime;
             }
-            isRegening = false;
-            yield break;
         }
 
         IEnumerator DownLadder()
@@ -727,6 +745,7 @@ namespace TheMansion
         {
             yield return new WaitForSeconds(3f);
             staminaBar.SetActive(false);
+            yield break;
         }
     }
 }

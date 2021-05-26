@@ -15,12 +15,35 @@ namespace TheMansion
 
         public GameObject continueButton;
 
+        [Header("Bools frer")]
+        public bool isTimeToHide;
+        public bool isTimeToCalmHeart;
+
         PlayerController playerScript;
+        GameObject tuto;
+        AudioManagerVEVO audioManager;
+
+
+        private void Awake()
+        {
+            audioManager = FindObjectOfType<AudioManagerVEVO>();    
+        }
 
         private void Start()
         {
             StartCoroutine(Type());
             playerScript = FindObjectOfType<PlayerController>();
+            playerScript.canMove = false;
+
+            if (isTimeToHide)
+            {
+                playerScript.GetComponent<PlayerController>().enabled = false;
+            }
+
+            if (isTimeToCalmHeart)
+            {
+                playerScript.GetComponent<PlayerController>().enabled = false;
+            }
         }
 
         private void Update()
@@ -45,9 +68,11 @@ namespace TheMansion
         public void NextSentence()
         {
             continueButton.SetActive(false);
-            playerScript.canMove = false;
 
-            if(index < sentences.Length - 1)
+            audioManager.PlayAudio(AudioType.Click_Button_SFX);
+
+
+            if (index < sentences.Length - 1)
             {
                 index++;
                 textDisplayDoorLocked.text = "";
@@ -56,7 +81,19 @@ namespace TheMansion
             else
             {
                 textDisplayDoorLocked.text = "";
+               
                 playerScript.canMove = true;
+
+
+                if (isTimeToHide)
+                {
+                    playerScript.GetComponent<PlayerController>().enabled = true;
+                }
+
+                if (isTimeToCalmHeart)
+                {
+                    tuto.GetComponent<TutoManager>().heartInput.SetActive(true);
+                }
             }
         }
     }

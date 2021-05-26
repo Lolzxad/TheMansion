@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TheMansion
 {
@@ -11,6 +12,7 @@ namespace TheMansion
         PlayerController playerController;
         BigBoyController bigBoyController;
         VictoryManager victoryManager;
+        AudioManagerVEVO audioController;
 
         [Space]
         [Header("Texte")]
@@ -51,6 +53,8 @@ namespace TheMansion
         bool playerIsHiding;
         bool bbIsHere;
 
+        
+
         public void Start()
         {
             isTuto = true;
@@ -71,14 +75,15 @@ namespace TheMansion
 
               canWinTrigger.SetActive(false);
 
-            Time.timeScale = 0;
+              heart.GetComponent<Image>().enabled = false;
+              heart.GetComponent<Button>().enabled = false;
             
         }
 
         public void okNowMove()
         {
             newMovementInput.SetActive(false);
-            Time.timeScale = 1;
+            
             StartCoroutine(SpawnInputMove());
         }
 
@@ -87,8 +92,9 @@ namespace TheMansion
             if (playerController.isHiding && playerIsHiding)
             {
                 //hideTrigger.SetActive(false);
-                
+
                 //bigBoy.GetComponent<BigBoyController>().enabled = false;
+                hideInput2.SetActive(false);
                 StartCoroutine(WaitForHeart());
             }
 
@@ -105,7 +111,10 @@ namespace TheMansion
                 }
             }
 
-           
+            if (playerController.isCalmingHeart)
+            {
+                heartInput.SetActive(false);
+            }
 
             if(readyToHide == true)
             {
@@ -116,7 +125,7 @@ namespace TheMansion
         IEnumerator WaitForMove()
         {
             yield return new WaitForSeconds(2);
-            player.GetComponent<PlayerController>().enabled = true;
+            //player.GetComponent<PlayerController>().enabled = true;
         }
 
 
@@ -148,7 +157,7 @@ namespace TheMansion
             
 
             yield return new WaitForSeconds(5);
-          //  hideInput.SetActive(true);
+          
             hideInput2.SetActive(true);
             Debug.Log("Show input hide");
 
@@ -166,24 +175,27 @@ namespace TheMansion
             hideInput2.SetActive(false);
 
             Debug.Log("IL PEUT BOUGER");
-            player.GetComponent<PlayerController>().enabled = true;
+            //player.GetComponent<PlayerController>().enabled = true;
         }
 
         IEnumerator WaitForHeart()
         {
-            player.GetComponent<PlayerController>().enabled = false;
+//            player.GetComponent<PlayerController>().enabled = false;
 
             Debug.Log("Heart");
             playerIsHiding = false;
-
+            heart.GetComponent<Image>().enabled = true;
+            heart.GetComponent<Button>().enabled = true;
+            heart.GetComponent<Animator>().enabled = true;
             heartTexte.SetActive(true);
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
-            heart.SetActive(true);
-            heart.GetComponent<Animator>().enabled = true;
+           
+           
             yield return new WaitForSeconds(8);
 
-            heartInput.SetActive(true);
+            //heartInput.SetActive(true);
+            //player.GetComponent<PlayerController>().enabled = true;
 
             StartCoroutine(WaitToRemoveInputHeart());
             
@@ -231,14 +243,14 @@ namespace TheMansion
         {
             doorLockedTrigger.SetActive(false);
             isDoorLocked = false;
-            player.GetComponent<PlayerController>().enabled = false;
+            
             doorIsLockedTexte.SetActive(true);
             readyToHide = true;
         }
 
         public void ReadyToHide()
         {
-            player.GetComponent<PlayerController>().enabled = false;
+            
             hideTrigger.SetActive(false);
             timeToHideTexte.SetActive(true);
             readyToHide = false;
