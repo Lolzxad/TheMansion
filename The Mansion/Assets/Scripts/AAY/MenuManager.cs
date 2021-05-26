@@ -38,15 +38,10 @@ namespace TheMansion
         public Sprite story4Sprite;
 
         [SerializeField] bool isMainMenu;
-        AudioManager audioManager;
+        
 
         private void Awake()
         {
-            audioManager = AudioManager.instance;
-            if (isMainMenu)
-            {
-                audioManager.PlaySound("MainMenu_Music");
-            }
             
         }
 
