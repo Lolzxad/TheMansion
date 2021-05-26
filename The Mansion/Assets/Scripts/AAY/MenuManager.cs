@@ -38,16 +38,12 @@ namespace TheMansion
         public Sprite story4Sprite;
 
         [SerializeField] bool isMainMenu;
-        AudioManager audioManager;
+
+        AudioManagerVEVO audioController;
 
         private void Awake()
         {
-            audioManager = AudioManager.instance;
-            if (isMainMenu)
-            {
-                audioManager.PlaySound("MainMenu_Music");
-            }
-            
+            audioController = FindObjectOfType<AudioManagerVEVO>();
         }
 
         private void Start()
@@ -56,31 +52,45 @@ namespace TheMansion
             story2Get = (PlayerPrefs.GetInt("Story2") != 0);
             story3Get = (PlayerPrefs.GetInt("Story3") != 0);
             story4Get = (PlayerPrefs.GetInt("Story4") != 0);
+            
+            if (isMainMenu)
+            {
+                audioController.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
+            }
         }
 
         public void ChangeLevel(string levelName)
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (isMainMenu)
+            {
+                audioController.StopAudio(AudioType.Main_Music_ST, true, 1f);
+            }
             SceneManager.LoadScene(levelName);
             Time.timeScale = 1;
         }
 
         public void LoadLevel1()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             SceneManager.LoadScene("Niveau_1_TUTO");
         }
 
         public void ReloadLevel()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void QuitGame()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             Application.Quit();
         }
 
         public void SetLevelSelection()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             Debug.Log("Menu selection");
             // fonds.SetActive(true);
             //levels.SetActive(true);
@@ -93,6 +103,7 @@ namespace TheMansion
 
         public void RemoveSelectionLevel()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             //fonds.SetActive(false);
             //levels.SetActive(false);
             selectionLevel.SetActive(false);
@@ -104,6 +115,7 @@ namespace TheMansion
 
         public void SetStorySelection()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             selectionStory.SetActive(true);
 
             storyButton.SetActive(false);
@@ -133,6 +145,7 @@ namespace TheMansion
 
         public void RemoveStorySelection()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             selectionStory.SetActive(false);
 
             storyButton.SetActive(true);
@@ -142,6 +155,7 @@ namespace TheMansion
 
         public void StoriesClose()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             story1.SetActive(false);
             story2.SetActive(false);
             story3.SetActive(false);
@@ -153,6 +167,7 @@ namespace TheMansion
 
         public void Story1Opened()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             if (story1Get)
             {
                 story1.SetActive(true);
@@ -163,6 +178,7 @@ namespace TheMansion
 
         public void Story2Opened()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             if (story2Get)
             {
                 story2.SetActive(true);
@@ -173,6 +189,7 @@ namespace TheMansion
 
         public void Story3Opened()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             if (story3Get)
             {
                 story3.SetActive(true);
@@ -183,6 +200,7 @@ namespace TheMansion
 
         public void Story4Opened()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             if (story4Get)
             {
                 story4.SetActive(true);

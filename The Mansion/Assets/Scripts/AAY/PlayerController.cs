@@ -24,7 +24,7 @@ namespace TheMansion
 
         private bool canHide;
         private bool canUseLadder;
-        private bool isCalmingHeart;
+        public bool isCalmingHeart;
         public bool isRegening;
         public bool canMove = true;
         public bool isFacingRight = true;
@@ -221,12 +221,14 @@ namespace TheMansion
                                 }
 
                             }
+
+
                         }
                     }
 
                     if (touchPosition.x > BasePosition.position.x && touchPosition.x <= WalkRight.position.x && canMove)
                     {
-                        Debug.Log("Walk Right");
+                        //Debug.Log("Walk Right");
                         if (!isFacingRight)
                         {
                             Flip();
@@ -238,7 +240,7 @@ namespace TheMansion
 
                     if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && canMove)
                     {
-                        Debug.Log("Walk Left");
+                        //Debug.Log("Walk Left");
                         if (isFacingRight)
                         {
                             Flip();
@@ -250,7 +252,7 @@ namespace TheMansion
 
                     if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && canMove)
                     {
-                        Debug.Log("Run Right");
+                        //Debug.Log("Run Right");
                         if (!isFacingRight)
                         {
                             Flip();
@@ -273,7 +275,7 @@ namespace TheMansion
 
                     if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && canMove)
                     {
-                        Debug.Log("Run Left");
+                        //Debug.Log("Run Left");
                         if (isFacingRight)
                         {
                             Flip();
@@ -513,7 +515,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x > BasePosition.position.x && clickPosition2D.x <= WalkRight.position.x && canMove)
                 {
-                    Debug.Log("Walk Right");
+                    //Debug.Log("Walk Right");
                     if (!isFacingRight)
                     {
                         Flip();
@@ -525,7 +527,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x < BasePosition.position.x && clickPosition2D.x >= WalkLeft.position.x && canMove)
                 {
-                    Debug.Log("Walk Left");
+                    //Debug.Log("Walk Left");
                     if (isFacingRight)
                     {
                         Flip();
@@ -537,7 +539,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x > WalkRight.position.x && clickPosition2D.x <= RunRight.position.x && canMove)
                 {
-                    Debug.Log("Run Right");
+                    //Debug.Log("Run Right");
                     if (!isFacingRight)
                     {
                         Flip();
@@ -559,7 +561,7 @@ namespace TheMansion
 
                 if (clickPosition2D.x < WalkLeft.position.x && clickPosition2D.x >= RunLeft.position.x && canMove)
                 {
-                    Debug.Log("Run Left");
+                    //Debug.Log("Run Left");
                     if (isFacingRight)
                     {
                         Flip();

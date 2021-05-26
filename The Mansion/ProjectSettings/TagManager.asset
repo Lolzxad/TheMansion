@@ -12,6 +12,7 @@ TagManager:
   - Patrol Point
   - Enemy
   - StoryLore
+  - Input Tuto
   layers:
   - Default
   - TransparentFX

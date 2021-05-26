@@ -169,6 +169,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1568251472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &168787281
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9029208236770651690, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -35.24193
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -24.866993
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.25641263
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61742aeb5e308a0428ac123af52fff38, type: 3}
 --- !u!1 &170441653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1432733643822260808, guid: ce175685696b9b04bbadf5b05e172c77,
@@ -534,6 +603,8 @@ MonoBehaviour:
   - I should continue to pick them up.
   typingSpeed: 0.01
   continueButton: {fileID: 2102709907}
+  isTimeToHide: 0
+  isTimeToCalmHeart: 0
 --- !u!1 &668030658
 GameObject:
   m_ObjectHideFlags: 0
