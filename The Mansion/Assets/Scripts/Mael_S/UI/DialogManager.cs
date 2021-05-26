@@ -21,6 +21,13 @@ namespace TheMansion
 
         PlayerController playerScript;
         GameObject tuto;
+        AudioManagerVEVO audioManager;
+
+
+        private void Awake()
+        {
+            audioManager = FindObjectOfType<AudioManagerVEVO>();    
+        }
 
         private void Start()
         {
@@ -61,9 +68,9 @@ namespace TheMansion
         public void NextSentence()
         {
             continueButton.SetActive(false);
-            
 
-          
+            audioManager.PlayAudio(AudioType.Click_Button_SFX);
+
 
             if (index < sentences.Length - 1)
             {

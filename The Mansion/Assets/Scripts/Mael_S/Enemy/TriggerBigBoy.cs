@@ -9,6 +9,7 @@ namespace TheMansion
     {
         PlayerController playerScript;
         BigBoyController bigBoyScript;
+       
 
         Transform target;
   
@@ -19,6 +20,7 @@ namespace TheMansion
         {
             playerScript = FindObjectOfType<PlayerController>();
             bigBoyScript = FindObjectOfType<BigBoyController>();
+            
         }
 
         private void Start()

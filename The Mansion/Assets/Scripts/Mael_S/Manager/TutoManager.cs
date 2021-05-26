@@ -12,6 +12,7 @@ namespace TheMansion
         PlayerController playerController;
         BigBoyController bigBoyController;
         VictoryManager victoryManager;
+        AudioManagerVEVO audioController;
 
         [Space]
         [Header("Texte")]
@@ -51,6 +52,8 @@ namespace TheMansion
         public bool readyToHide;
         bool playerIsHiding;
         bool bbIsHere;
+
+        
 
         public void Start()
         {

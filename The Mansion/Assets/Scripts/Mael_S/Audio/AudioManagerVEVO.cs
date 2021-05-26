@@ -168,9 +168,9 @@ namespace TheMansion
 
             if (_job.fade)
             {
-                float _initial = _job.action == AudioAction.START || _job.action == AudioAction.RESTART ? 0.0f : 1.0f;
-                float _target = _initial == 0 ? 1 : 0;
-                float _duration = 1.0f;
+                float _initial = _job.action == AudioAction.START || _job.action == AudioAction.RESTART ? 0.0f : 0.3f;
+                float _target = _initial == 0 ? 0.3f : 0;
+                float _duration = 2.5f;
                 float _timer = 0.0f;
 
                 while(_timer <= _duration)

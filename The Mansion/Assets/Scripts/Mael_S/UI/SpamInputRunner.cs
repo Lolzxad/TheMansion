@@ -23,6 +23,7 @@ namespace TheMansion
         BigBoyController bbController;
         RunnerController runnerController;
         TutoManager tuto;
+        AudioManagerVEVO audioManager;
 
         public bool isTuto;
 
@@ -40,7 +41,7 @@ namespace TheMansion
             bbController = FindObjectOfType<BigBoyController>();
             runnerController = FindObjectOfType<RunnerController>();
             tuto = FindObjectOfType<TutoManager>();
-
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
             
 
         }
@@ -143,6 +144,7 @@ namespace TheMansion
         public void AddSpam()
         {
             spam += 1;
+            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
         }
 
         public void GameOver()

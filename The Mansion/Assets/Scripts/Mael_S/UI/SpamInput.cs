@@ -26,10 +26,16 @@ namespace TheMansion
         BigBoyController bbController;
         RunnerController runnerController;
         TutoManager tuto;
+        AudioManagerVEVO audioManager;
 
         public bool isTuto;
 
         public GameObject menuDefaite;
+
+        private void Awake()
+        {
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
+        }
 
         private void Start()
         {
@@ -96,6 +102,7 @@ namespace TheMansion
                 if (bbController.isGrabbing)
                 {
                     Debug.Log("IsStunned");
+                    audioManager.PlayAudio(AudioType.Bb_Stun_SFX);
                     bbController.Stunned();
 
                     spamL = 0;
@@ -146,11 +153,13 @@ namespace TheMansion
         public void AddSpamL()
         {
             spamL += 1;
+            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
         }
 
         public void AddSpamR()
         {
             spamR += 1;
+            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
         }
 
         public void GameOver()

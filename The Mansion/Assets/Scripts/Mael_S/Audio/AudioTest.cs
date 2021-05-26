@@ -8,6 +8,7 @@ namespace TheMansion
     {
         public AudioManagerVEVO audioController;
 
+        /*
         #region Unity Functions
 
 
@@ -54,6 +55,7 @@ namespace TheMansion
     
 
         #endregion
-    
+    */
+    }
 }
 

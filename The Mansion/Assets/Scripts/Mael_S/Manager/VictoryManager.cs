@@ -40,6 +40,13 @@ namespace TheMansion
         public GameObject keyUI;
         public GameObject doorLockedTMP;
 
+        AudioManagerVEVO audioManager;
+
+        private void Awake()
+        {
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
+        }
+
         private void Start()
         {
             bigWin = false;
@@ -67,7 +74,7 @@ namespace TheMansion
                     if(!canWin && !isCDV)
                     {
                         Debug.Log("T'as trouvé la clé, bien ouej");
-
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
                         obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         obj.gameObject.GetComponent<Collider2D>().enabled = false;
@@ -91,6 +98,7 @@ namespace TheMansion
                     if(bigWin && isCDV)
                     {
                         Debug.Log("C'est bon t'as win");
+                        audioManager.PlayAudio(AudioType.Door_Opened_SFX);
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);                      
@@ -104,7 +112,7 @@ namespace TheMansion
                     if (!canWin && !isCDV)
                     {
                         Debug.Log("T'as trouvé la clé, bien ouej");
-
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
                         obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         obj.gameObject.GetComponent<Collider2D>().enabled = false;
@@ -128,6 +136,7 @@ namespace TheMansion
                     if (bigWin && isCDV)
                     {
                         Debug.Log("C'est bon t'as win");
+                        audioManager.PlayAudio(AudioType.Door_Opened_SFX);
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);
@@ -141,7 +150,7 @@ namespace TheMansion
                     if (!canWin && !isCDV)
                     {
                         Debug.Log("T'as trouvé la clé, bien ouej");
-
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
                         obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         obj.gameObject.GetComponent<Collider2D>().enabled = false;
@@ -165,6 +174,7 @@ namespace TheMansion
                     if (bigWin && isCDV)
                     {
                         Debug.Log("C'est bon t'as win");
+                        audioManager.PlayAudio(AudioType.Door_Opened_SFX);
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);
@@ -178,7 +188,7 @@ namespace TheMansion
                     if (!canWin && !isCDV)
                     {
                         Debug.Log("T'as trouvé la clé, bien ouej");
-
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
                         obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         obj.gameObject.GetComponent<Collider2D>().enabled = false;
@@ -202,6 +212,7 @@ namespace TheMansion
                     if (bigWin && isCDV)
                     {
                         Debug.Log("C'est bon t'as win");
+                        audioManager.PlayAudio(AudioType.Door_Opened_SFX);
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);
@@ -215,7 +226,7 @@ namespace TheMansion
                     if (!canWin && !isCDV && !isDoor_O && !isDoor_Y && !isKey_O && !isKey_Y)
                     {
                         Debug.Log("T'as trouvé la clé, bien ouej");
-
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
                         obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         obj.gameObject.GetComponent<Collider2D>().enabled = false;
@@ -227,6 +238,7 @@ namespace TheMansion
 
                     if (isKey_O)
                     {
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         sideObj1 = true;
                         gameObject.SetActive(false);
                     }
@@ -234,6 +246,7 @@ namespace TheMansion
 
                     if (isKey_Y)
                     {
+                        audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         sideObj2 = true;
                         gameObject.SetActive(false);
                     }
@@ -276,6 +289,7 @@ namespace TheMansion
                     if (bigWin && isCDV)
                     {
                         Debug.Log("C'est bon t'as win");
+                        audioManager.PlayAudio(AudioType.Door_Opened_SFX);
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);

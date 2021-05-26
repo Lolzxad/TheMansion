@@ -60,6 +60,7 @@ namespace TheMansion
 
         PlayerController playerScript;
         TutoManager tuto;
+        AudioManagerVEVO audioManager;
         private Vector3 bigBoyDirection;
 
     
@@ -69,7 +70,8 @@ namespace TheMansion
 
         private void Awake()
         {
-            playerScript = FindObjectOfType<PlayerController>();          
+            playerScript = FindObjectOfType<PlayerController>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
            // tuto = FindObjectOfType<TutoManager>();
         }
 
@@ -352,6 +354,8 @@ namespace TheMansion
             ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");           
 
             playerScript.isGrabbed = true;
+
+            audioManager.PlayAudio(AudioType.Player_Choke_SFX);
             playerScript.canMove = false;
             /*playerSprite.transform.position = grabSpot.transform.position;
             grabSpot.SetActive(true);*/
@@ -364,6 +368,9 @@ namespace TheMansion
         public void Stunned()
         {
             Debug.Log("BB is stunned");
+
+            
+
             bigBoyAnimator.ResetTrigger("hasGrabbed");
             bigBoyAnimator.SetBool("isStunned", true);
 
