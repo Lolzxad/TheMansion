@@ -52,7 +52,10 @@ namespace TheMansion
 
         private void Start()
         {
-           
+            story1Get = (PlayerPrefs.GetInt("Story1") != 0);
+            story2Get = (PlayerPrefs.GetInt("Story2") != 0);
+            story3Get = (PlayerPrefs.GetInt("Story3") != 0);
+            story4Get = (PlayerPrefs.GetInt("Story4") != 0);
         }
 
         public void ChangeLevel(string levelName)
