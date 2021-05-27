@@ -53,26 +53,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 7936092887321814222}
-  stamina: 100
+  heartAnimator: {fileID: 0}
+  stamina: 200
   heartBeat: 100
   hidingFactor: 0
+  defaultGravity: 0
+  isCalmingHeart: 0
+  isRegening: 0
   canMove: 1
   isFacingRight: 1
   isMouse: 1
   isHiding: 0
   isGrabbed: 0
   usingLadder: 0
+  isRunning: 0
   BasePosition: {fileID: 0}
   WalkRight: {fileID: 0}
   WalkLeft: {fileID: 0}
   RunRight: {fileID: 0}
   RunLeft: {fileID: 0}
   playerSprite: {fileID: 7936092887321814218}
+  hideFeedback: {fileID: 0}
+  heartFeedbackLevel1: {fileID: 0}
+  heartFeedbackLevel2: {fileID: 0}
+  heartFeedbackLevel3: {fileID: 0}
   playerRb: {fileID: 4002302044651707974}
   baseSpritePosition: {x: 0, y: 0, z: 0}
   basePosition: {x: 0, y: 0, z: 0}
   ladderTop: {x: 0, y: 0, z: 0}
   ladderBottom: {x: 0, y: 0, z: 0}
+  staminaBarScript: {fileID: 0}
+  staminaBar: {fileID: 0}
 --- !u!50 &4002302044651707974
 Rigidbody2D:
   serializedVersion: 4

@@ -94,7 +94,7 @@ namespace TheMansion
         {
             if (bigBoyDirection.x < transform.position.x)
             {
-                Debug.Log("Moving Right");
+                //Debug.Log("Moving Right");
 
                 if (!isFacingRight)
                 {
@@ -104,7 +104,7 @@ namespace TheMansion
 
             if (bigBoyDirection.x > transform.position.x)
             {
-                Debug.Log("Moving Left");
+                //Debug.Log("Moving Left");
 
                 if (isFacingRight)
                 {
@@ -266,8 +266,9 @@ namespace TheMansion
         public void BBMPA()
         {
 
-           
-                Debug.Log("Big Boy is patrolling");
+
+            //
+            //Debug.Log("Big Boy is patrolling");
                 // triggerBB.SetActive(true);
 
                 /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
@@ -359,6 +360,18 @@ namespace TheMansion
             playerScript.canMove = false;
             /*playerSprite.transform.position = grabSpot.transform.position;
             grabSpot.SetActive(true);*/
+
+            if (playerSprite.transform.position.x < transform.position.x && playerSprite.transform.rotation.eulerAngles.y >= 180)
+            {
+                //Debug.Log("You're right from the closet");
+                playerScript.Flip();
+            }
+
+            if (playerSprite.transform.position.x > transform.position.x && playerSprite.transform.rotation.eulerAngles.y < 180)
+            {
+                //Debug.Log("You're right from the closet");
+                playerScript.Flip();
+            }
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
@@ -429,7 +442,7 @@ namespace TheMansion
 
         IEnumerator WaitBeforeBeCalled()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(5);            audioManager.StopAudio(AudioType.Phonograph);
             canBeCalled = true;
         }
         
