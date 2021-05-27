@@ -1806,31 +1806,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2804488090665838128, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804488090665838131, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804488090665838131, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804488090665838131, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.6700387
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804488090665838131, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 7.1400003
-      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935349, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_Name
@@ -1896,16 +1871,6 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 915056710}
-    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: story1
-      value: 
-      objectReference: {fileID: 1037481714}
-    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: closet
-      value: 
-      objectReference: {fileID: 1330990644}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2214,12 +2179,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249010172}
   m_CullTransparentMesh: 0
---- !u!1 &1330990644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3973967967896471245, guid: 1eb8ae0307dfe4f4eb43ad0d843d6cd3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1663427643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1342823585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6009,16 +5968,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BigBoy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539212096410481190, guid: 9a86480ada013b349a56d2cba168445d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539212096410481193, guid: 9a86480ada013b349a56d2cba168445d,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2539212096410481195, guid: 9a86480ada013b349a56d2cba168445d,
         type: 3}

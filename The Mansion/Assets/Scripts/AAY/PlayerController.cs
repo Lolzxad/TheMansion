@@ -697,7 +697,7 @@ namespace TheMansion
 
         IEnumerator StandingRegen()
         {          
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
             if (!isHiding && !usingLadder && !isCalmingHeart && stamina < 100f)
             {
