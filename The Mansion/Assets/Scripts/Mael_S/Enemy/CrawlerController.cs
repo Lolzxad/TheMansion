@@ -8,21 +8,28 @@ namespace TheMansion
     {
         BigBoyController bbScript;
         PlayerController playerScript;
+        AudioManagerVEVO audioManager;
 
         Animator animator;
         Transform target;
+        VictoryManager victoryManager;
 
         public int detectRadius = 10;
+
+        bool canPlayMusic;
 
         private void Awake()
         {
             playerScript = FindObjectOfType<PlayerController>();
             bbScript = FindObjectOfType<BigBoyController>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
+            victoryManager = FindObjectOfType<VictoryManager>();
         }
 
         private void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            canPlayMusic = true;
             
         }
 
@@ -30,7 +37,7 @@ namespace TheMansion
         {
             float distance = Vector3.Distance(target.position, transform.position);
 
-            if (distance <= detectRadius && playerScript.isRunning )
+            if (distance <= detectRadius && playerScript.playerAnimator.GetBool("isRunning"))
             {
                 StartCoroutine(CrawlerIsScreaming());
                 Debug.Log("IS SCREAMING");                                                 
@@ -41,14 +48,27 @@ namespace TheMansion
 
         IEnumerator CrawlerIsScreaming()
         {
-            animator.SetBool("isScreaming", true);
+            if (victoryManager.isLevel3 && canPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Phonograph);
+                canPlayMusic = false;
+            }
+
+            if (victoryManager.isLevel5 && canPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Phonograph);
+                canPlayMusic = false;
+            }
+
+            //animator.SetBool("isScreaming", true);
             bbScript.isCalled = true;
             playerScript.heartBeat = playerScript.heartBeat + 10f;
             playerScript.hidingFactor = playerScript.hidingFactor + 10f;
 
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(8);
 
-            animator.SetBool("isScreaming", false);
+            canPlayMusic = true;
+            //animator.SetBool("isScreaming", false);
         }
       
 

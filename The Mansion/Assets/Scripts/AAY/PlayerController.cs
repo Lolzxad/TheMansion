@@ -10,6 +10,7 @@ namespace TheMansion
     public class PlayerController : MonoBehaviour
     {
         private MenuManager MenuManagerScript;
+        AudioManagerVEVO audioManager;
 
         public Animator playerAnimator;
         public Animator heartAnimator;
@@ -61,6 +62,7 @@ namespace TheMansion
         private void Awake()
         {
             MenuManagerScript = FindObjectOfType<MenuManager>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
             playerRb = GetComponent<Rigidbody2D>();
             defaultGravity = playerRb.gravityScale;
         }
@@ -76,6 +78,7 @@ namespace TheMansion
             if (usingLadder)
             {
                 ProCamera2D.Instance.CenterOnTargets();
+                
             }
 
             //Debug.Log(stamina);
@@ -96,6 +99,7 @@ namespace TheMansion
 
             if (!usingLadder)
             {
+                
                 playerAnimator.SetBool("isUsingLadder", false);
             }
 
@@ -142,6 +146,7 @@ namespace TheMansion
                             {
                                 if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled && canHide && !isGrabbed && !usingLadder)
                                 {
+                                    audioManager.PlayAudio(AudioType.Player_Hide);
                                     isHiding = true;
                                     canMove = false;
                                     hideFeedback.SetActive(true);
@@ -161,6 +166,9 @@ namespace TheMansion
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+                                
+                                
+                                
 
                                 if (!usingLadder && !isHiding && canUseLadder)
                                 {
@@ -176,6 +184,8 @@ namespace TheMansion
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+
+                                
 
                                 if (!usingLadder && !isHiding && canUseLadder)
                                 {
@@ -194,6 +204,7 @@ namespace TheMansion
                    
                                     //MenuManagerScript.story1Get = true;
                                     PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     touchedObject.SetActive(false);
                                     Debug.Log("STORY 1");
 
@@ -203,12 +214,14 @@ namespace TheMansion
                                 {
                                     //MenuManagerScript.story2Get = true;
                                     PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     touchedObject.SetActive(false);
                                 }
 
                                 if (touchedObject.name == "Story 3")
                                 {                                   
                                     PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     MenuManagerScript.story3Get = true;
                                     touchedObject.SetActive(false);
                                 }
@@ -217,6 +230,7 @@ namespace TheMansion
                                 {
                                     //MenuManagerScript.story4Get = true;
                                     PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     touchedObject.SetActive(false);
                                 }
 
@@ -306,7 +320,7 @@ namespace TheMansion
           
             if (!transform.hasChanged)
             {
-                Debug.Log("hasn'tChanged");
+                //Debug.Log("hasn'tChanged");
                 StartCoroutine("StandingRegen");
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);               
@@ -315,7 +329,7 @@ namespace TheMansion
 
             if (transform.hasChanged)
             {
-                Debug.Log("hasChanged");
+                //Debug.Log("hasChanged");
                 StopCoroutine("StandingRegen");
                 isRegening = false;
                 transform.hasChanged = false;
@@ -344,6 +358,9 @@ namespace TheMansion
                 heartbeatSpeed = 0.1f;
             }
         }
+
+        
+
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
             if (InteractableObject.tag == "Hard Hiding Spot")
@@ -374,6 +391,7 @@ namespace TheMansion
                 }
                 else
                 {
+                    
                     canUseLadder = true;
                     InteractableObject.transform.parent.GetComponent<OutlineActivator>().EnableOutline();
                     InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(true);
@@ -390,6 +408,7 @@ namespace TheMansion
 
             if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
             {
+                //audioManager.StopAudio(AudioType.Player_Ladder);
                 canUseLadder = false;
                 InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
                 InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(false);
@@ -485,6 +504,7 @@ namespace TheMansion
 
                             MenuManagerScript.story1Get = true;
                             PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             touchedObject.SetActive(false);
                             Debug.Log("STORY 1");
 
@@ -494,6 +514,7 @@ namespace TheMansion
                         {
                             MenuManagerScript.story2Get = true;
                             PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             touchedObject.SetActive(false);
                         }
 
@@ -501,6 +522,7 @@ namespace TheMansion
                         {
                             touchedObject.SetActive(false);
                             PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             MenuManagerScript.story3Get = true;
                         }
 
@@ -508,6 +530,7 @@ namespace TheMansion
                         {
                             MenuManagerScript.story4Get = true;
                             PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             touchedObject.SetActive(false);
                         }
                     }
@@ -596,6 +619,7 @@ namespace TheMansion
 
         public void CalmingHeartStop()
         {
+            canMove = true;
             isCalmingHeart = false;      
         }
 
@@ -657,7 +681,7 @@ namespace TheMansion
                     yield return null;
                 }
             }
-            canMove = true;          
+      
         }
 
         IEnumerator Hiding()
@@ -670,7 +694,7 @@ namespace TheMansion
 
         IEnumerator StandingRegen()
         {          
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
             if (!isHiding && !usingLadder && !isCalmingHeart && stamina < 100f)
             {
@@ -690,6 +714,7 @@ namespace TheMansion
 
         IEnumerator DownLadder()
         {
+            audioManager.PlayAudio(AudioType.Player_Ladder);
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);
@@ -710,6 +735,7 @@ namespace TheMansion
         }
         IEnumerator UpLadder()
         {
+            audioManager.PlayAudio(AudioType.Player_Ladder);
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);

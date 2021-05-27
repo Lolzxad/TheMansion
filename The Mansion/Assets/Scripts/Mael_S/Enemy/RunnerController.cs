@@ -78,7 +78,7 @@ namespace TheMansion
             if (isRunning /*&& !playerScript.isHiding*/)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, runSpeed * Time.deltaTime);
-
+                audioManager.PlayAudio(AudioType.Runner_Run);
                 
 
                 if(distance1 <= detectZone)
@@ -211,6 +211,9 @@ namespace TheMansion
             }
             else
             {
+                audioManager.StopAudio(AudioType.Runner_Run);
+                audioManager.PlayAudio(AudioType.Runner_Attack);
+
                 playerScript.isGrabbed = true;
                 playerScript.canMove = false;
                 playerScript.playerAnimator.SetBool("isGrabbed", true);
@@ -228,8 +231,10 @@ namespace TheMansion
         IEnumerator Tired()
         {
             Debug.Log("is tired");
+            audioManager.StopAudio(AudioType.Runner_Run);
+            audioManager.PlayAudio(AudioType.RUnner_Fatigue, false, 0.5f);
             yield return new WaitForSeconds(waitForIdle);
-
+            audioManager.StopAudio(AudioType.RUnner_Fatigue, false, 0.5f);
             isComingBack = true;
             isTired = false;
         }
@@ -258,6 +263,8 @@ namespace TheMansion
         {
             Debug.Log("runner is stunned");
 
+            audioManager.PlayAudio(AudioType.Runner_Stun);
+
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
             spamInput.SetActive(false);
@@ -283,7 +290,7 @@ namespace TheMansion
         IEnumerator RunnerLaugh()
         {
             yield return new WaitForSeconds(3f);
-            audioManager.PlayAudio(AudioType.Runner_Laugh_SFX);
+            audioManager.PlayAudio(AudioType.Runner_Laugh_SFX, false, 0.6f);
         }
 
         private void OnDrawGizmosSelected()

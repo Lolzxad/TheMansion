@@ -94,7 +94,7 @@ namespace TheMansion
         {
             if (bigBoyDirection.x < transform.position.x)
             {
-                Debug.Log("Moving Right");
+                //Debug.Log("Moving Right");
 
                 if (!isFacingRight)
                 {
@@ -104,7 +104,7 @@ namespace TheMansion
 
             if (bigBoyDirection.x > transform.position.x)
             {
-                Debug.Log("Moving Left");
+                //Debug.Log("Moving Left");
 
                 if (isFacingRight)
                 {
@@ -266,8 +266,9 @@ namespace TheMansion
         public void BBMPA()
         {
 
-           
-                Debug.Log("Big Boy is patrolling");
+
+            //
+            //Debug.Log("Big Boy is patrolling");
                 // triggerBB.SetActive(true);
 
                 /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
@@ -429,7 +430,7 @@ namespace TheMansion
 
         IEnumerator WaitBeforeBeCalled()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(5);            audioManager.StopAudio(AudioType.Phonograph);
             canBeCalled = true;
         }
         

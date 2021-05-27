@@ -17,6 +17,8 @@ namespace TheMansion
         private Hashtable m_AudioTable; //relation entre les types d'audio (key) et les audio tracks (value)
         private Hashtable m_JobTable; //relation entre les types d'audio (key) et les jobs (value) (Coroutine)
 
+        [SerializeField] bool isMainMenu;
+
         [System.Serializable]
         public class AudioObject
         {
@@ -64,6 +66,15 @@ namespace TheMansion
             {
                 instance = this;
                 Configure();
+            }
+        }
+
+        private void Start()
+        {
+            if (isMainMenu)
+            {
+                AudioListener.volume = 0.7f;
+                PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
             }
         }
 

@@ -55,10 +55,15 @@ namespace TheMansion
             {
                 bigWin = true;
             }
+            else
+            {
+                audioManager.PlayAudio(AudioType.Ambience_1_ST, true);
+            }
             
 
             player = GameObject.FindGameObjectWithTag("Player");
             canWin = false;
+            
 
         }
 

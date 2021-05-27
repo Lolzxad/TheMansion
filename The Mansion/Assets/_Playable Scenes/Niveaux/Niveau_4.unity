@@ -3383,7 +3383,7 @@ PrefabInstance:
     - target: {fileID: 715673820908053800, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -192.51
+      value: -161
       objectReference: {fileID: 0}
     - target: {fileID: 715673820908053800, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
@@ -4231,6 +4231,11 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 988811785}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: heartBeat
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4861,6 +4866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651691, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: debug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
         type: 3}
@@ -5909,6 +5919,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Runner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467638552475799624, guid: 63c2acd2c90dd5448a674f8e5a8c89a1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4467638552475799628, guid: 63c2acd2c90dd5448a674f8e5a8c89a1,
         type: 3}
