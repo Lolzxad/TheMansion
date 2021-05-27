@@ -183,13 +183,16 @@ namespace TheMansion
                                 
                                 
 
-                                if (!usingLadder && !isHiding && canUseLadder)
+                                if (!usingLadder && !isHiding && !isGrabbed && canUseLadder)
                                 {
                                     StartCoroutine(DownLadder());
                                 }
                                 else
                                 {
-                                    StartCoroutine(OffLadder());
+                                    if (usingLadder)
+                                    {
+                                        StartCoroutine(OffLadder());
+                                    }
                                 }
                             }
 
@@ -200,13 +203,16 @@ namespace TheMansion
 
                                 
 
-                                if (!usingLadder && !isHiding && canUseLadder)
+                                if (!usingLadder && !isHiding && !isGrabbed && canUseLadder)
                                 {
                                     StartCoroutine(UpLadder());
                                 }
                                 else
                                 {
-                                    StartCoroutine(OffLadder());
+                                    if (usingLadder)
+                                    {
+                                        StartCoroutine(OffLadder());
+                                    }
                                 }
                             }
 
@@ -500,13 +506,16 @@ namespace TheMansion
                             ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                             ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
 
-                            if (!usingLadder && !isHiding && canUseLadder)
+                            if (!usingLadder && !isHiding && !isGrabbed && canUseLadder)
                             {
                                 StartCoroutine(DownLadder());
                             }
                             else
                             {
-                                StartCoroutine(OffLadder());
+                                if (usingLadder)
+                                {
+                                    StartCoroutine(OffLadder());
+                                }
                             }
                         }
 
@@ -515,13 +524,16 @@ namespace TheMansion
                             ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                             ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
 
-                            if (!usingLadder && !isHiding && canUseLadder)
+                            if (!usingLadder && !isHiding && !isGrabbed && canUseLadder)
                             {                               
                                 StartCoroutine(UpLadder());
                             }
                             else
                             {
-                                StartCoroutine(OffLadder());
+                                if (usingLadder)
+                                {
+                                    StartCoroutine(OffLadder());
+                                }                              
                             }
                         }
 
@@ -683,10 +695,10 @@ namespace TheMansion
 
         public IEnumerator StaminaLoss()
         {
-            stamina -= 30f * Time.deltaTime;
-            heartBeat += 2 * Time.deltaTime;
-            hidingFactor += 2 * Time.deltaTime;
-            heartbeatSpeed += 0.2f * Time.deltaTime;
+            stamina -= 15f * Time.deltaTime;
+            heartBeat += 1 * Time.deltaTime;
+            hidingFactor += 1 * Time.deltaTime;
+            heartbeatSpeed += 0.1f * Time.deltaTime;
             staminaBar.SetActive(true);
 
             yield return new WaitForSeconds(1f);
@@ -702,7 +714,7 @@ namespace TheMansion
                    
                     stamina -= 10f * Time.deltaTime;
                     heartBeat -= 5f * Time.deltaTime;
-                    hidingFactor -= 5 * Time.deltaTime;
+                    hidingFactor -= 2.5f * Time.deltaTime;
                     heartbeatSpeed -= 0.5f * Time.deltaTime;
                     staminaBar.SetActive(true);
                     yield return null;
@@ -723,7 +735,7 @@ namespace TheMansion
         {          
             yield return new WaitForSeconds(3f);
 
-            if (!isHiding && !usingLadder && !isCalmingHeart && stamina < 100f)
+            if (!usingLadder && !isCalmingHeart && stamina < 100f)
             {
                 isRegening = true;
                 stamina += 20f * Time.deltaTime;
@@ -733,9 +745,9 @@ namespace TheMansion
             if (heartBeat > 100f && isRegening)
             {
                 isRegening = true;
-                heartBeat -= 0.25f * Time.deltaTime;
-                hidingFactor -= 0.25f * Time.deltaTime;
-                heartbeatSpeed -= 0.025f * Time.deltaTime;
+                heartBeat -= 1f * Time.deltaTime;
+                hidingFactor -= 1f * Time.deltaTime;
+                heartbeatSpeed -= 1f * Time.deltaTime;
             }
         }
 

@@ -32,6 +32,7 @@ namespace TheMansion
         PlayerController playerScript;
         SpamInputRunner spamInputController;
         AudioManagerVEVO audioManager;
+        Animator animator;
 
 
         [Space]
@@ -50,6 +51,7 @@ namespace TheMansion
             playerScript = FindObjectOfType<PlayerController>();
             spamInputController = FindObjectOfType<SpamInputRunner>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -77,6 +79,8 @@ namespace TheMansion
 
             if (isRunning /*&& !playerScript.isHiding*/)
             {
+                animator.SetBool("isRunning", true);
+                animator.ResetTrigger("isPreparing");
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, runSpeed * Time.deltaTime);
                 audioManager.PlayAudio(AudioType.Runner_Run);
                 
@@ -183,7 +187,7 @@ namespace TheMansion
         {
             Debug.Log("Steady");
             isIdle = false;
-            //anim steady
+            animator.SetTrigger("isPreparing");
             StartCoroutine(Loading());
             
             //la meuf se dirige en direction du joueur
@@ -211,12 +215,13 @@ namespace TheMansion
             }
             else
             {
+                animator.SetBool("isRunning", false);
                 audioManager.StopAudio(AudioType.Runner_Run);
                 audioManager.PlayAudio(AudioType.Runner_Attack);
 
                 playerScript.isGrabbed = true;
                 playerScript.canMove = false;
-                playerScript.playerAnimator.SetBool("isGrabbed", true);
+                //playerScript.playerAnimator.SetBool("isGrabbed", true);
                 ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
                 isGrabbing = true;
                 
@@ -231,6 +236,7 @@ namespace TheMansion
         IEnumerator Tired()
         {
             Debug.Log("is tired");
+            animator.SetBool("isRunning", false);
             audioManager.StopAudio(AudioType.Runner_Run);
             audioManager.PlayAudio(AudioType.RUnner_Fatigue, false, 0.5f);
             yield return new WaitForSeconds(waitForIdle);
@@ -271,7 +277,7 @@ namespace TheMansion
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
             playerScript.canMove = true;
-            playerScript.playerAnimator.SetBool("isGrabbed", false);
+            //playerScript.playerAnimator.SetBool("isGrabbed", false);
             playerScript.heartBeat = playerScript.heartBeat + 20f;
             playerScript.hidingFactor = playerScript.hidingFactor + 20f;
             StartCoroutine(MobCanMove());

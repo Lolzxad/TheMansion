@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: ae0a11d066c8b464ebf7142cd4e5044b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1322916241374363799
+    second: BOIGBOY_FINAL_SONNE_0
+  - first:
+      213: -3696984924638801303
+    second: BOIGBOY_FINAL_SONNE_1
+  - first:
+      213: 4769541176624077265
+    second: BOIGBOY_FINAL_SONNE_2
+  - first:
+      213: -1091166091893080305
+    second: BOIGBOY_FINAL_SONNE_3
+  - first:
+      213: 162471592303301989
+    second: BOIGBOY_FINAL_SONNE_4
+  - first:
+      213: -1345181106683891959
+    second: BOIGBOY_FINAL_SONNE_5
+  - first:
+      213: -3019360229663916321
+    second: BOIGBOY_FINAL_SONNE_6
+  - first:
+      213: 6703113992824338747
+    second: BOIGBOY_FINAL_SONNE_6
+  - first:
+      213: -2845463766757234349
+    second: BOIGBOY_FINAL_SONNE_8
+  - first:
+      213: 4015890137206691891
+    second: BOIGBOY_FINAL_SONNE_9
+  - first:
+      213: -8188541269964700212
+    second: BOIGBOY_FINAL_SONNE_10
+  - first:
+      213: 2542836636533778301
+    second: BOIGBOY_FINAL_SONNE_11
+  - first:
+      213: 8156236367509081222
+    second: BOIGBOY_FINAL_SONNE_12
+  - first:
+      213: -3540207765682711373
+    second: BOIGBOY_FINAL_SONNE_13
+  - first:
+      213: 6692062960238599392
+    second: BOIGBOY_FINAL_SONNE_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BOIGBOY_FINAL_SONNE_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 6
+        width: 379
+        height: 597
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56594596d07314200800000000000000
+      internalID: 162471592303301989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOIGBOY_FINAL_SONNE_5
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 4
+        width: 368
+        height: 616
+      alignment: 9
+      pivot: {x: 0.5162135, y: 0.4878937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f2a8919e4f45de0800000000000000
+      internalID: -1345181106683891959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOIGBOY_FINAL_SONNE_6
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 5
+        width: 366
+        height: 628
+      alignment: 9
+      pivot: {x: 0.5163037, y: 0.48100019}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39be3f69ae360d50800000000000000
+      internalID: 6703113992824338747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
