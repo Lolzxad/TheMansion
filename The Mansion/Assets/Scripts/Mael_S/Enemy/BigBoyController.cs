@@ -267,7 +267,7 @@ namespace TheMansion
         {
 
            
-                Debug.Log("Big Boy is patrolling");
+                //Debug.Log("Big Boy is patrolling");
                 // triggerBB.SetActive(true);
 
                 /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);

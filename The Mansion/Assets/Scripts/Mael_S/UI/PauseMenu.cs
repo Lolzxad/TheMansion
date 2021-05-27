@@ -44,7 +44,9 @@ namespace TheMansion
         public void LoadMenu()
         {
             audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            audioManager.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
             SceneManager.LoadScene("Menu Principal");
+            audioManager.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
         }
 
         public void QuitGame()

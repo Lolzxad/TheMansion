@@ -44,6 +44,8 @@ namespace TheMansion
         private void Awake()
         {
             audioController = FindObjectOfType<AudioManagerVEVO>();
+
+            
         }
 
         private void Start()
@@ -53,18 +55,17 @@ namespace TheMansion
             story3Get = (PlayerPrefs.GetInt("Story3") != 0);
             story4Get = (PlayerPrefs.GetInt("Story4") != 0);
             
-            if (isMainMenu)
-            {
-                audioController.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
-            }
+            
         }
+
+        
 
         public void ChangeLevel(string levelName)
         {
             audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             if (isMainMenu)
             {
-                audioController.StopAudio(AudioType.Main_Music_ST, true, 1f);
+                //audioController.StopAudio(AudioType.Main_Music_ST, true, 1f);
             }
             SceneManager.LoadScene(levelName);
             Time.timeScale = 1;

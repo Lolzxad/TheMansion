@@ -78,7 +78,7 @@ namespace TheMansion
             if (usingLadder)
             {
                 ProCamera2D.Instance.CenterOnTargets();
-                audioManager.PlayAudio(AudioType.Player_Ladder);
+                
             }
 
             //Debug.Log(stamina);
@@ -166,6 +166,9 @@ namespace TheMansion
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+                                
+                                
+                                
 
                                 if (!usingLadder && !isHiding && canUseLadder)
                                 {
@@ -181,6 +184,8 @@ namespace TheMansion
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
+
+                                
 
                                 if (!usingLadder && !isHiding && canUseLadder)
                                 {
@@ -349,6 +354,9 @@ namespace TheMansion
                 heartbeatSpeed = 0.1f;
             }
         }
+
+        
+
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
             if (InteractableObject.tag == "Hard Hiding Spot")
@@ -379,6 +387,7 @@ namespace TheMansion
                 }
                 else
                 {
+                    
                     canUseLadder = true;
                     InteractableObject.transform.parent.GetComponent<OutlineActivator>().EnableOutline();
                     InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(true);
@@ -395,7 +404,7 @@ namespace TheMansion
 
             if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
             {
-                audioManager.StopAudio(AudioType.Player_Ladder);
+                //audioManager.StopAudio(AudioType.Player_Ladder);
                 canUseLadder = false;
                 InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
                 InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(false);
@@ -696,6 +705,7 @@ namespace TheMansion
 
         IEnumerator DownLadder()
         {
+            audioManager.PlayAudio(AudioType.Player_Ladder);
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);
@@ -716,6 +726,7 @@ namespace TheMansion
         }
         IEnumerator UpLadder()
         {
+            audioManager.PlayAudio(AudioType.Player_Ladder);
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);

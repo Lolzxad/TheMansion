@@ -32,7 +32,7 @@ namespace TheMansion
         {
             float distance = Vector3.Distance(target.position, transform.position);
 
-            if (distance <= detectRadius && playerScript.isRunning )
+            if (distance <= detectRadius && playerScript.playerAnimator.GetBool("isRunning"))
             {
                 StartCoroutine(CrawlerIsScreaming());
                 Debug.Log("IS SCREAMING");                                                 
@@ -44,15 +44,15 @@ namespace TheMansion
         IEnumerator CrawlerIsScreaming()
         {
             audioManager.PlayAudio(AudioType.Phonograph);
-            animator.SetBool("isScreaming", true);
+            //animator.SetBool("isScreaming", true);
             bbScript.isCalled = true;
             playerScript.heartBeat = playerScript.heartBeat + 10f;
             playerScript.hidingFactor = playerScript.hidingFactor + 10f;
 
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(6);
 
             audioManager.StopAudio(AudioType.Phonograph);
-            animator.SetBool("isScreaming", false);
+            //animator.SetBool("isScreaming", false);
         }
       
 
