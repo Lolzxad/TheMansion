@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 54417135}
   - component: {fileID: 54417134}
   - component: {fileID: 54417133}
+  - component: {fileID: 54417136}
   m_Layer: 5
   m_Name: Walk Right Button
   m_TagString: Untagged
@@ -232,7 +233,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 54417134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 54417136}
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &54417134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +282,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54417131}
   m_CullTransparentMesh: 0
+--- !u!114 &54417136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54417131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78a31292819ce459aee36a224ca13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &89799966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8630687562170558189, guid: a84b7b200d8e23148a3a8de9ca709e42,
@@ -641,6 +665,7 @@ GameObject:
   - component: {fileID: 237743052}
   - component: {fileID: 237743051}
   - component: {fileID: 237743050}
+  - component: {fileID: 237743053}
   m_Layer: 5
   m_Name: Run Left Button
   m_TagString: Untagged
@@ -710,7 +735,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 237743051}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 237743053}
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &237743051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +784,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237743048}
   m_CullTransparentMesh: 0
+--- !u!114 &237743053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237743048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78a31292819ce459aee36a224ca13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &241216618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1429,6 +1477,7 @@ GameObject:
   - component: {fileID: 390394766}
   - component: {fileID: 390394765}
   - component: {fileID: 390394764}
+  - component: {fileID: 390394767}
   m_Layer: 5
   m_Name: Walk Left Button
   m_TagString: Untagged
@@ -1498,7 +1547,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 390394765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 390394767}
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390394765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,6 +1596,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390394762}
   m_CullTransparentMesh: 0
+--- !u!114 &390394767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390394762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78a31292819ce459aee36a224ca13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &390460047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 63724584, guid: 497e8b456d93cb040aca67c34330fc00,
@@ -3640,6 +3712,7 @@ GameObject:
   - component: {fileID: 1473999175}
   - component: {fileID: 1473999174}
   - component: {fileID: 1473999173}
+  - component: {fileID: 1473999176}
   m_Layer: 5
   m_Name: Run Right Button
   m_TagString: Untagged
@@ -3709,7 +3782,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1473999174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1473999176}
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1473999174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3747,6 +3831,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473999171}
   m_CullTransparentMesh: 0
+--- !u!114 &1473999176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473999171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78a31292819ce459aee36a224ca13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475420430
 GameObject:
   m_ObjectHideFlags: 0

@@ -62,6 +62,7 @@ namespace TheMansion
         private void Awake()
         {
             MenuManagerScript = FindObjectOfType<MenuManager>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
             playerRb = GetComponent<Rigidbody2D>();
             defaultGravity = playerRb.gravityScale;
         }
@@ -310,7 +311,7 @@ namespace TheMansion
           
             if (!transform.hasChanged)
             {
-                Debug.Log("hasn'tChanged");
+                //Debug.Log("hasn'tChanged");
                 StartCoroutine("StandingRegen");
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);               
