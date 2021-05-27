@@ -22,11 +22,13 @@ namespace TheMansion
         PlayerController playerScript;
         GameObject tuto;
         AudioManagerVEVO audioManager;
+        TutoManager tutoScript;
 
 
         private void Awake()
         {
-            audioManager = FindObjectOfType<AudioManagerVEVO>();    
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
+            tutoScript = FindObjectOfType<TutoManager>();
         }
 
         private void Start()
@@ -92,7 +94,7 @@ namespace TheMansion
 
                 if (isTimeToCalmHeart)
                 {
-                    tuto.GetComponent<TutoManager>().heartInput.SetActive(true);
+                    tutoScript.heartInput.SetActive(true);
                 }
             }
         }

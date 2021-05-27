@@ -94,7 +94,7 @@ namespace TheMansion
         {
             if (bigBoyDirection.x < transform.position.x)
             {
-                Debug.Log("Moving Right");
+                //Debug.Log("Moving Right");
 
                 if (!isFacingRight)
                 {
@@ -104,7 +104,7 @@ namespace TheMansion
 
             if (bigBoyDirection.x > transform.position.x)
             {
-                Debug.Log("Moving Left");
+                //Debug.Log("Moving Left");
 
                 if (isFacingRight)
                 {

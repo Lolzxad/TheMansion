@@ -12,7 +12,7 @@ namespace TheMansion
         PlayerController playerController;
         BigBoyController bigBoyController;
         VictoryManager victoryManager;
-        AudioManagerVEVO audioController;
+        AudioManagerVEVO audioManager;
 
         [Space]
         [Header("Texte")]
@@ -52,6 +52,8 @@ namespace TheMansion
         public bool readyToHide;
         bool playerIsHiding;
         bool bbIsHere;
+        public bool timeToHeart;
+        bool canHeart;
 
         
 
@@ -62,7 +64,7 @@ namespace TheMansion
 
             playerController = FindObjectOfType<PlayerController>();
             bigBoyController = FindObjectOfType<BigBoyController>();
-
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
 
 
             // player.GetComponent<PlayerController>().enabled = false;
@@ -77,6 +79,8 @@ namespace TheMansion
 
               heart.GetComponent<Image>().enabled = false;
               heart.GetComponent<Button>().enabled = false;
+
+              audioManager.PlayAudio(AudioType.Ambience_1_ST);
             
         }
 
@@ -183,6 +187,7 @@ namespace TheMansion
 //            player.GetComponent<PlayerController>().enabled = false;
 
             Debug.Log("Heart");
+            //heartInput.SetActive(true);
             playerIsHiding = false;
             heart.GetComponent<Image>().enabled = true;
             heart.GetComponent<Button>().enabled = true;
