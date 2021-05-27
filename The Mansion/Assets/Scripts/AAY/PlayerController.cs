@@ -10,6 +10,7 @@ namespace TheMansion
     public class PlayerController : MonoBehaviour
     {
         private MenuManager MenuManagerScript;
+        AudioManagerVEVO audioManager;
 
         public Animator playerAnimator;
         public Animator heartAnimator;
@@ -76,6 +77,7 @@ namespace TheMansion
             if (usingLadder)
             {
                 ProCamera2D.Instance.CenterOnTargets();
+                audioManager.PlayAudio(AudioType.Player_Ladder);
             }
 
             //Debug.Log(stamina);
@@ -96,6 +98,7 @@ namespace TheMansion
 
             if (!usingLadder)
             {
+                audioManager.StopAudio(AudioType.Player_Ladder);
                 playerAnimator.SetBool("isUsingLadder", false);
             }
 
@@ -142,6 +145,7 @@ namespace TheMansion
                             {
                                 if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled && canHide && !isGrabbed && !usingLadder)
                                 {
+                                    audioManager.PlayAudio(AudioType.Player_Hide);
                                     isHiding = true;
                                     canMove = false;
                                     hideFeedback.SetActive(true);

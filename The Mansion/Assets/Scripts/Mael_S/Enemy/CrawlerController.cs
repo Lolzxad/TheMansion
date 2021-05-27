@@ -8,6 +8,7 @@ namespace TheMansion
     {
         BigBoyController bbScript;
         PlayerController playerScript;
+        AudioManagerVEVO audioManager;
 
         Animator animator;
         Transform target;
@@ -18,6 +19,7 @@ namespace TheMansion
         {
             playerScript = FindObjectOfType<PlayerController>();
             bbScript = FindObjectOfType<BigBoyController>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
         }
 
         private void Start()
@@ -41,6 +43,7 @@ namespace TheMansion
 
         IEnumerator CrawlerIsScreaming()
         {
+            audioManager.PlayAudio(AudioType.Phonograph);
             animator.SetBool("isScreaming", true);
             bbScript.isCalled = true;
             playerScript.heartBeat = playerScript.heartBeat + 10f;
@@ -48,6 +51,7 @@ namespace TheMansion
 
             yield return new WaitForSeconds(4);
 
+            audioManager.StopAudio(AudioType.Phonograph);
             animator.SetBool("isScreaming", false);
         }
       

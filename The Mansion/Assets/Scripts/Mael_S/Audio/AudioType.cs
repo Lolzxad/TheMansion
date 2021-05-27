@@ -17,6 +17,16 @@ namespace TheMansion
             Recup_Cle_SFX,
             Recup_Narra_SFX,
             Spam_Hit_SFX,
+            Bb_Grab,
+            Player_Ladder,
+            Player_Hide,
+            Bat_Coeur,
+            Runner_Stun,
+            RUnner_Fatigue,
+            Runner_Attack,
+            Runner_Run,
+            Phonograph,
+
 
 
         }
