@@ -359,6 +359,18 @@ namespace TheMansion
             playerScript.canMove = false;
             /*playerSprite.transform.position = grabSpot.transform.position;
             grabSpot.SetActive(true);*/
+
+            if (playerSprite.transform.position.x < transform.position.x && playerSprite.transform.rotation.eulerAngles.y >= 180)
+            {
+                //Debug.Log("You're right from the closet");
+                playerScript.Flip();
+            }
+
+            if (playerSprite.transform.position.x > transform.position.x && playerSprite.transform.rotation.eulerAngles.y < 180)
+            {
+                //Debug.Log("You're right from the closet");
+                playerScript.Flip();
+            }
             playerScript.playerAnimator.SetBool("isGrabbed", true);
             isRunning = false;
             
