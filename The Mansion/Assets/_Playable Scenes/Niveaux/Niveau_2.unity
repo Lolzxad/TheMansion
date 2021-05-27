@@ -6142,6 +6142,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 10.15
       objectReference: {fileID: 0}
+    - target: {fileID: 8542317853409100329, guid: 87efe6d0809a7d24a8136e874e5a54a1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542317853409100333, guid: 87efe6d0809a7d24a8136e874e5a54a1,
         type: 3}
       propertyPath: keyTMP

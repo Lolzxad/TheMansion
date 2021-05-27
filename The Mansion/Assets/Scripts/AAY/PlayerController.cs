@@ -204,6 +204,7 @@ namespace TheMansion
                    
                                     //MenuManagerScript.story1Get = true;
                                     PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     touchedObject.SetActive(false);
                                     Debug.Log("STORY 1");
 
@@ -213,12 +214,14 @@ namespace TheMansion
                                 {
                                     //MenuManagerScript.story2Get = true;
                                     PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     touchedObject.SetActive(false);
                                 }
 
                                 if (touchedObject.name == "Story 3")
                                 {                                   
                                     PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     MenuManagerScript.story3Get = true;
                                     touchedObject.SetActive(false);
                                 }
@@ -227,6 +230,7 @@ namespace TheMansion
                                 {
                                     //MenuManagerScript.story4Get = true;
                                     PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     touchedObject.SetActive(false);
                                 }
 
@@ -500,6 +504,7 @@ namespace TheMansion
 
                             MenuManagerScript.story1Get = true;
                             PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             touchedObject.SetActive(false);
                             Debug.Log("STORY 1");
 
@@ -509,6 +514,7 @@ namespace TheMansion
                         {
                             MenuManagerScript.story2Get = true;
                             PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             touchedObject.SetActive(false);
                         }
 
@@ -516,6 +522,7 @@ namespace TheMansion
                         {
                             touchedObject.SetActive(false);
                             PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             MenuManagerScript.story3Get = true;
                         }
 
@@ -523,6 +530,7 @@ namespace TheMansion
                         {
                             MenuManagerScript.story4Get = true;
                             PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                            audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                             touchedObject.SetActive(false);
                         }
                     }
@@ -611,6 +619,7 @@ namespace TheMansion
 
         public void CalmingHeartStop()
         {
+            canMove = true;
             isCalmingHeart = false;      
         }
 
@@ -672,7 +681,7 @@ namespace TheMansion
                     yield return null;
                 }
             }
-            canMove = true;          
+      
         }
 
         IEnumerator Hiding()
@@ -685,7 +694,7 @@ namespace TheMansion
 
         IEnumerator StandingRegen()
         {          
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
             if (!isHiding && !usingLadder && !isCalmingHeart && stamina < 100f)
             {
