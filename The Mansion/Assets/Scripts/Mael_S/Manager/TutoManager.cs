@@ -8,7 +8,7 @@ namespace TheMansion
     public class TutoManager : MonoBehaviour
     {
 
-        public bool isTuto;
+        
         PlayerController playerController;
         BigBoyController bigBoyController;
         VictoryManager victoryManager;
@@ -54,8 +54,9 @@ namespace TheMansion
         bool bbIsHere;
         public bool timeToHeart;
         bool canHeart;
+        public bool isTuto;
 
-        
+
 
         public void Start()
         {
@@ -81,6 +82,7 @@ namespace TheMansion
               heart.GetComponent<Button>().enabled = false;
 
               audioManager.PlayAudio(AudioType.Ambience_1_ST);
+              introTexte.SetActive(true);
             
         }
 

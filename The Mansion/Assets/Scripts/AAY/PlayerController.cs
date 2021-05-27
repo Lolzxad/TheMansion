@@ -659,6 +659,12 @@ namespace TheMansion
         public void CalmingHeartStop()
         {
             canMove = true;
+
+            if (isHiding)
+            {
+                canMove = false;
+            }
+            
             isCalmingHeart = false;      
         }
 
