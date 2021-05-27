@@ -59,6 +59,7 @@ namespace TheMansion
 
             player = GameObject.FindGameObjectWithTag("Player");
             canWin = false;
+            audioManager.PlayAudio(AudioType.Ambience_1_ST, true);
 
         }
 

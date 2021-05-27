@@ -2,31 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrawlerTuto : MonoBehaviour
+
+namespace TheMansion
 {
-    public GameObject crawlerTexte;
-    public GameObject injonctionNTexte;
-
-    [SerializeField] bool isForCrawler;
-
-    public void OnTriggerEnter2D(Collider2D other)
+    public class CrawlerTuto : MonoBehaviour
     {
+        public GameObject crawlerTexte;
+        public GameObject injonctionNTexte;
 
-        if (other.gameObject.tag == "Player")
+        [SerializeField] bool isForCrawler;
+
+
+
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            if (isForCrawler)
+
+            if (other.gameObject.tag == "Player")
             {
-                crawlerTexte.SetActive(true);
+                if (isForCrawler)
+                {
+                    crawlerTexte.SetActive(true);
+                }
+                else
+                {
+                    injonctionNTexte.SetActive(true);
+                }
+
             }
-            else
-            {
-                injonctionNTexte.SetActive(true);
-            }
-            
+
+
         }
 
 
     }
-
-
 }
+

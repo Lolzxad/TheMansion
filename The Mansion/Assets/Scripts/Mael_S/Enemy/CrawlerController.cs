@@ -12,19 +12,24 @@ namespace TheMansion
 
         Animator animator;
         Transform target;
+        VictoryManager victoryManager;
 
         public int detectRadius = 10;
+
+        bool canPlayMusic;
 
         private void Awake()
         {
             playerScript = FindObjectOfType<PlayerController>();
             bbScript = FindObjectOfType<BigBoyController>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            victoryManager = FindObjectOfType<VictoryManager>();
         }
 
         private void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            canPlayMusic = true;
             
         }
 
@@ -43,15 +48,26 @@ namespace TheMansion
 
         IEnumerator CrawlerIsScreaming()
         {
-            audioManager.PlayAudio(AudioType.Phonograph);
+            if (victoryManager.isLevel3 && canPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Phonograph);
+                canPlayMusic = false;
+            }
+
+            if (victoryManager.isLevel5 && canPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Phonograph);
+                canPlayMusic = false;
+            }
+
             //animator.SetBool("isScreaming", true);
             bbScript.isCalled = true;
             playerScript.heartBeat = playerScript.heartBeat + 10f;
             playerScript.hidingFactor = playerScript.hidingFactor + 10f;
 
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(8);
 
-            audioManager.StopAudio(AudioType.Phonograph);
+            canPlayMusic = true;
             //animator.SetBool("isScreaming", false);
         }
       

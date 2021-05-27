@@ -26,10 +26,12 @@ namespace TheMansion
             Runner_Attack,
             Runner_Run,
             Phonograph,
+            Ambience_1_ST,
+            Phonograph_2,
 
 
 
-        }
+    }
     
 }
 
