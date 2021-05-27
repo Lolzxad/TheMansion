@@ -12,6 +12,7 @@ namespace TheMansion
         public string[] sentences;
         private int index;
         public float typingSpeed;
+        [SerializeField] GameObject fond;
 
         public GameObject continueButton;
 
@@ -85,7 +86,7 @@ namespace TheMansion
                 textDisplayDoorLocked.text = "";
                
                 playerScript.canMove = true;
-
+                fond.SetActive(false);
 
                 if (isTimeToHide)
                 {
