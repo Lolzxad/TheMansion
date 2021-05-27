@@ -189,6 +189,8 @@ MonoBehaviour:
   spamNeeded: 15
   timeLimit: 20
   spamDone: 0
+  spamDone_L: 0
+  spamDone_R: 0
   isTuto: 0
   menuDefaite: {fileID: 0}
 --- !u!1 &5111341851159748171
@@ -257,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 76baba1921dd6394680f4e33634e9fd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fc2552d66730b84fb73729266a4ee01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -520,7 +522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 76baba1921dd6394680f4e33634e9fd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fc2552d66730b84fb73729266a4ee01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
