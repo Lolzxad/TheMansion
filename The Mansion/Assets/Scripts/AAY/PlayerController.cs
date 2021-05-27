@@ -99,7 +99,7 @@ namespace TheMansion
 
             if (!usingLadder)
             {
-                audioManager.StopAudio(AudioType.Player_Ladder);
+                
                 playerAnimator.SetBool("isUsingLadder", false);
             }
 
@@ -320,7 +320,7 @@ namespace TheMansion
 
             if (transform.hasChanged)
             {
-                Debug.Log("hasChanged");
+                //Debug.Log("hasChanged");
                 StopCoroutine("StandingRegen");
                 isRegening = false;
                 transform.hasChanged = false;
@@ -395,6 +395,7 @@ namespace TheMansion
 
             if (InteractableObject.tag == "LadderDown" || InteractableObject.tag == "LadderUp")
             {
+                audioManager.StopAudio(AudioType.Player_Ladder);
                 canUseLadder = false;
                 InteractableObject.transform.parent.GetComponent<OutlineActivator>().DisableOutline();
                 InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(false);
