@@ -56,7 +56,6 @@ namespace TheMansion
         public StaminaBar staminaBarScript;
         public GameObject staminaBar;
 
-
         TouchPhase touchPhase = TouchPhase.Ended;
 
         private void Awake()
@@ -70,6 +69,7 @@ namespace TheMansion
         // Update is called once per frame
         void Update()
         {
+
             if (isGrabbed)
             {
                 ProCamera2D.Instance.CenterOnTargets();
@@ -152,7 +152,20 @@ namespace TheMansion
                                     hideFeedback.SetActive(true);
                                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 2;
                                     playerRb.gravityScale = 0;
-                                    //playerAnimator.SetBool("isHiding", true);
+
+                                    if (playerSprite.transform.position.x < touchedObject.transform.position.x && playerSprite.transform.rotation.eulerAngles.y >= 180)
+                                    {
+                                        //Debug.Log("You're left from the closet");
+                                        Flip();
+                                    }
+
+                                    if (playerSprite.transform.position.x > touchedObject.transform.position.x && playerSprite.transform.rotation.eulerAngles.y < 180)
+                                    {
+                                        //Debug.Log("You're right from the closet");
+                                        Flip();
+                                    }
+                                    playerAnimator.SetBool("isHiding", true);
+
                                     //Debug.Log("Is Hiding");
                                     basePosition = transform.position;
                                     baseSpritePosition = playerSprite.transform.position;
@@ -459,7 +472,20 @@ namespace TheMansion
                                 hideFeedback.SetActive(true);
                                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 2;
                                 playerRb.gravityScale = 0;
+
+                                if (playerSprite.transform.position.x < touchedObject.transform.position.x && playerSprite.transform.rotation.eulerAngles.y >= 180)
+                                {
+                                    Debug.Log("You're left from the closet");
+                                    Flip();
+                                }
+
+                                if (playerSprite.transform.position.x > touchedObject.transform.position.x && playerSprite.transform.rotation.eulerAngles.y < 180)
+                                {
+                                    Debug.Log("You're right from the closet");
+                                    Flip();
+                                }
                                 playerAnimator.SetBool("isHiding", true);
+
                                 //Debug.Log("Is Hiding");
                                 basePosition = transform.position;
                                 baseSpritePosition = playerSprite.transform.position;
@@ -609,8 +635,9 @@ namespace TheMansion
         public void Flip()
         {
             isFacingRight = !isFacingRight;
-            transform.Find("Sprite").transform.Rotate(new Vector3(0, 180, 0));
+            playerSprite.transform.Rotate(new Vector3(0, 180, 0));
         }
+
         public void CalmingHeartStart()
         {
             isCalmingHeart = true;

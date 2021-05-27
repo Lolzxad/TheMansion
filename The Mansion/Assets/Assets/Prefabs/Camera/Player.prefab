@@ -191,8 +191,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 5919872322184845882, guid: caf5df779fd59394ba539a1b5de8766f,
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 4014755957875319744, guid: d32ba1b6680027a49b49e11d12484d9b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   heartBeat: 100
   hidingFactor: 0
   defaultGravity: 0
+  isCalmingHeart: 0
   isRegening: 0
   canMove: 1
   isFacingRight: 1
