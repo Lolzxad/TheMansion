@@ -64,6 +64,7 @@ namespace TheMansion
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             playerRb = GetComponent<Rigidbody2D>();
             defaultGravity = playerRb.gravityScale;
+            Physics2D.IgnoreLayerCollision(2, 9, false);
         }
 
         // Update is called once per frame
@@ -77,8 +78,7 @@ namespace TheMansion
 
             if (usingLadder)
             {
-                ProCamera2D.Instance.CenterOnTargets();
-                
+                ProCamera2D.Instance.CenterOnTargets();              
             }
 
             //Debug.Log(stamina);
