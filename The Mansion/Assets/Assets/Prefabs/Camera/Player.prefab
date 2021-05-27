@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 2804488090665838130}
   heartAnimator: {fileID: 0}
-  stamina: 200
+  stamina: 100
   heartBeat: 100
   hidingFactor: 0
   defaultGravity: 0

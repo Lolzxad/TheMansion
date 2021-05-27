@@ -276,6 +276,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9029208236770651691, guid: 61742aeb5e308a0428ac123af52fff38,
+        type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9029208236770651732, guid: 61742aeb5e308a0428ac123af52fff38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1976,16 +1981,6 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 915056710}
-    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: story1
-      value: 
-      objectReference: {fileID: 1037481714}
-    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
-        type: 3}
-      propertyPath: stamina
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
