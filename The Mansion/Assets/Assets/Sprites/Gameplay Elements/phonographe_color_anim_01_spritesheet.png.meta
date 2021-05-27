@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: 1fada0af9cf05f641931a6fc271dae76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8529208670272845106
+    second: phonographe_color_anim_01_spritesheet_0
+  - first:
+      213: -2463722951495126539
+    second: phonographe_color_anim_01_spritesheet_3
+  - first:
+      213: 722433851229148980
+    second: phonographe_color_anim_01_spritesheet_0
+  - first:
+      213: -3813872863494712907
+    second: phonographe_color_anim_01_spritesheet_3
+  - first:
+      213: -6384605149609412622
+    second: phonographe_color_anim_01_spritesheet_0
+  - first:
+      213: 8209553039359212145
+    second: phonographe_color_anim_01_spritesheet_1
+  - first:
+      213: 2640070707751632940
+    second: phonographe_color_anim_01_spritesheet_5
+  - first:
+      213: -7085711600555521673
+    second: phonographe_color_anim_01_spritesheet_0
+  - first:
+      213: -2550525647897734190
+    second: phonographe_color_anim_01_spritesheet_3
+  - first:
+      213: -4969549728876327623
+    second: phonographe_color_anim_01_spritesheet_0
+  - first:
+      213: 3557509898214666139
+    second: phonographe_color_anim_01_spritesheet_0
+  - first:
+      213: 6078748580425005797
+    second: phonographe_color_anim_01_spritesheet_1
+  - first:
+      213: -4221229277273306482
+    second: phonographe_color_anim_01_spritesheet_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: phonographe_color_anim_01_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 17
+        width: 332
+        height: 364
+      alignment: 9
+      pivot: {x: 0.49579996, y: 0.46168917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779060c47de7aad90800000000000000
+      internalID: -7085711600555521673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phonographe_color_anim_01_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 19
+        width: 330
+        height: 360
+      alignment: 9
+      pivot: {x: 0.4873228, y: 0.45738983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3588ebf66ba9cd0800000000000000
+      internalID: -2550525647897734190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phonographe_color_anim_01_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 17
+        width: 336
+        height: 409
+      alignment: 9
+      pivot: {x: 0.50415075, y: 0.41135105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d00b4f9dc980bb0800000000000000
+      internalID: -4969549728876327623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phonographe_color_anim_01_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 20
+        width: 330
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f65086760de5130800000000000000
+      internalID: 3557509898214666139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phonographe_color_anim_01_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 19
+        width: 330
+        height: 342
+      alignment: 9
+      pivot: {x: 0.4898308, y: 0.4792011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea742790ad0c5450800000000000000
+      internalID: 6078748580425005797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phonographe_color_anim_01_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 16
+        width: 332
+        height: 344
+      alignment: 9
+      pivot: {x: 0.49956504, y: 0.49083892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a45ac565e2b65c0800000000000000
+      internalID: -4221229277273306482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

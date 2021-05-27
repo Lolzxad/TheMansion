@@ -28,9 +28,9 @@ namespace TheMansion
 
         private void Start()
         {
+            animator = GetComponent<Animator>();
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            canPlayMusic = true;
-            
+            canPlayMusic = true;           
         }
 
         private void Update()
@@ -40,7 +40,8 @@ namespace TheMansion
             if (distance <= detectRadius && playerScript.playerAnimator.GetBool("isRunning"))
             {
                 StartCoroutine(CrawlerIsScreaming());
-                Debug.Log("IS SCREAMING");                                                 
+                Debug.Log("IS SCREAMING");
+                animator.SetBool("isScreaming", true);
             }
 
     
@@ -60,7 +61,7 @@ namespace TheMansion
                 canPlayMusic = false;
             }
 
-            //animator.SetBool("isScreaming", true);
+            
             bbScript.isCalled = true;
             playerScript.heartBeat = playerScript.heartBeat + 10f;
             playerScript.hidingFactor = playerScript.hidingFactor + 10f;
@@ -68,7 +69,7 @@ namespace TheMansion
             yield return new WaitForSeconds(8);
 
             canPlayMusic = true;
-            //animator.SetBool("isScreaming", false);
+            animator.SetBool("isScreaming", false);
         }
       
 
