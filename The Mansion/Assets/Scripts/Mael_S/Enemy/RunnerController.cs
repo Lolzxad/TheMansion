@@ -216,6 +216,7 @@ namespace TheMansion
             else
             {
                 animator.SetBool("isRunning", false);
+                animator.SetTrigger("hasAttacked");
                 audioManager.StopAudio(AudioType.Runner_Run);
                 audioManager.PlayAudio(AudioType.Runner_Attack);
 
@@ -237,6 +238,7 @@ namespace TheMansion
         {
             Debug.Log("is tired");
             animator.SetBool("isRunning", false);
+            animator.ResetTrigger("hasAttacked");
             audioManager.StopAudio(AudioType.Runner_Run);
             audioManager.PlayAudio(AudioType.RUnner_Fatigue, false, 0.5f);
             yield return new WaitForSeconds(waitForIdle);
@@ -270,6 +272,7 @@ namespace TheMansion
             Debug.Log("runner is stunned");
 
             audioManager.PlayAudio(AudioType.Runner_Stun);
+            animator.SetBool("isStunned", true);
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -287,6 +290,7 @@ namespace TheMansion
         {
 
             yield return new WaitForSeconds(5f);
+            animator.SetBool("isStunned", false);
             gameObject.GetComponent<Collider2D>().enabled = true;
             isComingBack = true;
             isGrabbing = false;
