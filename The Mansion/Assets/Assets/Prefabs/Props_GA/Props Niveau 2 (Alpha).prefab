@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &252468258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252468259}
+  - component: {fileID: 252468260}
+  m_Layer: 0
+  m_Name: FondSalle3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &252468259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252468258}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.338, y: -6.91, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 689284817556909577}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &252468260
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252468258}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: d491dd992eca84c41970e48ff0f26e8a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 2
+  m_Size: {x: 51.55539, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &689284816567104957
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +92,7 @@ GameObject:
   - component: {fileID: 689284816567104959}
   - component: {fileID: 689284816567104956}
   m_Layer: 0
-  m_Name: statue__color
+  m_Name: Statue_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +173,7 @@ GameObject:
   - component: {fileID: 689284816607526285}
   - component: {fileID: 689284816607526282}
   m_Layer: 0
-  m_Name: cadre_04_color (2)
+  m_Name: CadreV3_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +288,7 @@ GameObject:
   - component: {fileID: 689284816757846995}
   - component: {fileID: 689284816757846992}
   m_Layer: 0
-  m_Name: lampemurale_color (1)
+  m_Name: LampeMurale_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +369,7 @@ GameObject:
   - component: {fileID: 689284816758921946}
   - component: {fileID: 689284816758921947}
   m_Layer: 0
-  m_Name: dog_head_color
+  m_Name: DogHead_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +450,7 @@ GameObject:
   - component: {fileID: 689284816871758072}
   - component: {fileID: 689284816871758073}
   m_Layer: 0
-  m_Name: console_color
+  m_Name: Console02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,7 +939,7 @@ GameObject:
   - component: {fileID: 689284817202667773}
   - component: {fileID: 689284817202667772}
   m_Layer: 0
-  m_Name: cadre_04_color (3)
+  m_Name: CadreV3_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,7 +1101,7 @@ GameObject:
   - component: {fileID: 689284817281191060}
   - component: {fileID: 689284817281191061}
   m_Layer: 0
-  m_Name: gueridon_color (1)
+  m_Name: Gueridon_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1182,7 @@ GameObject:
   - component: {fileID: 689284817302554202}
   - component: {fileID: 689284817302554203}
   m_Layer: 0
-  m_Name: cadre_04_color (1)
+  m_Name: CadreV3_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,7 +1344,7 @@ GameObject:
   - component: {fileID: 689284817335425366}
   - component: {fileID: 689284817335425367}
   m_Layer: 0
-  m_Name: gueridon_color
+  m_Name: Gueridon_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1344,7 +1425,7 @@ GameObject:
   - component: {fileID: 689284817494589489}
   - component: {fileID: 689284817494589486}
   m_Layer: 0
-  m_Name: cadre_03_color
+  m_Name: CadreV2_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1450,6 +1531,7 @@ Transform:
   - {fileID: 689284817719662157}
   - {fileID: 689284818678555780}
   - {fileID: 689284817062299994}
+  - {fileID: 252468259}
   m_Father: {fileID: 689284817178579433}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1464,7 +1546,7 @@ GameObject:
   - component: {fileID: 689284817653779148}
   - component: {fileID: 689284817653779149}
   m_Layer: 0
-  m_Name: cadre_03_color (1)
+  m_Name: CadreV2_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1626,7 +1708,7 @@ GameObject:
   - component: {fileID: 689284817765209105}
   - component: {fileID: 689284817765209102}
   m_Layer: 0
-  m_Name: lampemurale_color
+  m_Name: LampeMurale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1789,7 @@ GameObject:
   - component: {fileID: 689284817827176381}
   - component: {fileID: 689284817827176378}
   m_Layer: 0
-  m_Name: plante_color
+  m_Name: Plante_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1788,7 +1870,7 @@ GameObject:
   - component: {fileID: 689284817831776133}
   - component: {fileID: 689284817831776130}
   m_Layer: 0
-  m_Name: lustre_color
+  m_Name: Lustre01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1869,7 +1951,7 @@ GameObject:
   - component: {fileID: 689284817844611074}
   - component: {fileID: 689284817844611075}
   m_Layer: 0
-  m_Name: lustre_color (1)
+  m_Name: Lustre02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,7 +2113,7 @@ GameObject:
   - component: {fileID: 689284817889510599}
   - component: {fileID: 689284817889510596}
   m_Layer: 0
-  m_Name: cadre_01_color
+  m_Name: CadreV1_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2112,7 +2194,7 @@ GameObject:
   - component: {fileID: 689284818115376356}
   - component: {fileID: 689284818115376357}
   m_Layer: 0
-  m_Name: he is here
+  m_Name: PeintureMurale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2355,7 +2437,7 @@ GameObject:
   - component: {fileID: 689284818305243284}
   - component: {fileID: 689284818305243285}
   m_Layer: 0
-  m_Name: plante_color (1)
+  m_Name: Plante_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,7 +2599,7 @@ GameObject:
   - component: {fileID: 689284818609456022}
   - component: {fileID: 689284818609456023}
   m_Layer: 0
-  m_Name: bambito_color
+  m_Name: Bambito_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2679,7 +2761,7 @@ GameObject:
   - component: {fileID: 689284818622977490}
   - component: {fileID: 689284818622977491}
   m_Layer: 0
-  m_Name: fond_01_seamless
+  m_Name: FondSalle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2693,7 +2775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689284818622977488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5689993, y: 6.7980003, z: 0}
+  m_LocalPosition: {x: -9.223, y: 6.7091, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 689284817035749363}
@@ -2743,7 +2825,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 85.08845, y: 10.8}
+  m_Size: {x: 99.28023, y: 10.732561}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2841,7 +2923,7 @@ GameObject:
   - component: {fileID: 689284818691697223}
   - component: {fileID: 689284818691697220}
   m_Layer: 0
-  m_Name: globe_color
+  m_Name: Globe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
