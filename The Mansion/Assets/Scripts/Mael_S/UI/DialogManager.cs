@@ -24,6 +24,7 @@ namespace TheMansion
         GameObject tuto;
         AudioManagerVEVO audioManager;
         TutoManager tutoScript;
+        public Animator penAnim;
 
 
         private void Awake()
@@ -54,6 +55,7 @@ namespace TheMansion
             if(textDisplayDoorLocked.text == sentences[index])
             {
                 continueButton.SetActive(true);
+                penAnim.SetBool("isWriting", false);
             }
         }
 
@@ -63,6 +65,7 @@ namespace TheMansion
             foreach (char letter in sentences[index].ToCharArray())
             {
                 textDisplayDoorLocked.text += letter;
+                penAnim.SetBool("isWriting", true);
                 yield return new WaitForSeconds(typingSpeed);
             }
             
@@ -71,7 +74,7 @@ namespace TheMansion
         public void NextSentence()
         {
             continueButton.SetActive(false);
-
+            
             audioManager.PlayAudio(AudioType.Click_Button_SFX);
 
 
