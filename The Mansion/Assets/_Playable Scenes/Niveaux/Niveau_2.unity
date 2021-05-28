@@ -4413,6 +4413,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 715673820348623399, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 715673820348623399, guid: d0e16896251e51248803ed66908fce4a,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -4479,7 +4484,7 @@ PrefabInstance:
     - target: {fileID: 715673820908053800, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -163
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 715673820908053800, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
@@ -4525,11 +4530,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stamina Bar
-      objectReference: {fileID: 0}
-    - target: {fileID: 715673820908053801, guid: d0e16896251e51248803ed66908fce4a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0e16896251e51248803ed66908fce4a, type: 3}
