@@ -83,9 +83,9 @@ namespace TheMansion
             story6Get = (PlayerPrefs.GetInt("Story6") != 0);
             story7Get = (PlayerPrefs.GetInt("Story7") != 0);
             story8Get = (PlayerPrefs.GetInt("Story8") != 0);
-            
 
 
+            Time.timeScale = 1;
         }
 
         
@@ -98,7 +98,7 @@ namespace TheMansion
                 //audioController.StopAudio(AudioType.Main_Music_ST, true, 1f);
             }
             SceneManager.LoadScene(levelName);
-            Time.timeScale = 1;
+            
         }
 
         

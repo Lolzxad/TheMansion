@@ -11,10 +11,15 @@ namespace TheMansion
         [SerializeField] Sprite notebookRecup;
 
         [SerializeField] GameObject closeNarraButton;
+        [SerializeField] GameObject closeNarraButton2;
+        [SerializeField] GameObject closeNarraButton3;
         [SerializeField] GameObject narra_1;
         [SerializeField] GameObject narra_2;
         [SerializeField] GameObject narra_3;
 
+        [SerializeField] GameObject narra_1_VEVO;
+        [SerializeField] GameObject narra_2_VEVO;
+        [SerializeField] GameObject narra_3_VEVO;
 
         MenuManager menu;
         VictoryManager victoryManager;
@@ -99,6 +104,7 @@ namespace TheMansion
             {
                 narra_1.SetActive(true);
                 closeNarraButton.SetActive(true);
+                narra_1_VEVO.SetActive(true);
             }
         }
 
@@ -107,7 +113,8 @@ namespace TheMansion
             if (narraRecup_2)
             {
                 narra_2.SetActive(true);
-                closeNarraButton.SetActive(true);
+                closeNarraButton2.SetActive(true);
+                narra_2_VEVO.SetActive(true);
             }
         }
 
@@ -116,26 +123,30 @@ namespace TheMansion
             if (narraRecup_3)
             {
                 narra_3.SetActive(true);
-                closeNarraButton.SetActive(true);
+                closeNarraButton3.SetActive(true);
+                narra_3_VEVO.SetActive(true);
             }
         }
 
         public void CloseNarra1()
         {
-            narra_1.SetActive(false);
+            
             closeNarraButton.SetActive(false);
+            narra_1_VEVO.SetActive(false);
         }
 
         public void CloseNarra2()
         {
-            narra_2.SetActive(false);
-            closeNarraButton.SetActive(false);
+            
+            closeNarraButton2.SetActive(false);
+            narra_2_VEVO.SetActive(false);
         }
 
         public void CloseNarra_3()
         {
-            narra_3.SetActive(false);
-            closeNarraButton.SetActive(false);
+            
+            closeNarraButton3.SetActive(false);
+            narra_3_VEVO.SetActive(false);
         }
 
     }
