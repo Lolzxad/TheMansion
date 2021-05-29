@@ -13,7 +13,8 @@ namespace TheMansion
 
         [SerializeField] GameObject selectionLevel;
         [SerializeField] GameObject selectionStory;
-        [SerializeField] GameObject storyList;
+        [SerializeField] GameObject storyList1;
+        [SerializeField] GameObject storyList2;
 
         [SerializeField] GameObject storyButton;
         [SerializeField] GameObject levelsButton;
@@ -31,6 +32,10 @@ namespace TheMansion
         [SerializeField] GameObject story6Button;
         [SerializeField] GameObject story7Button;
         [SerializeField] GameObject story8Button;
+        [SerializeField] GameObject story5;
+        [SerializeField] GameObject story6;
+        [SerializeField] GameObject story7;
+        [SerializeField] GameObject story8;
 
 
         [SerializeField] GameObject credits;
@@ -44,6 +49,18 @@ namespace TheMansion
         public Sprite story3Sprite;
         public bool story4Get;
         public Sprite story4Sprite;
+        public bool story5Get;
+        public Sprite story5Sprite;
+        public bool story6Get;
+        public Sprite story6Sprite;
+        public bool story7Get;
+        public Sprite story7Sprite;
+        public bool story8Get;
+        public Sprite story8Sprite;
+
+
+        [SerializeField] GameObject lettersMenu;
+        [SerializeField] GameObject notebookMenu;
 
         [SerializeField] bool isMainMenu;
 
@@ -62,8 +79,13 @@ namespace TheMansion
             story2Get = (PlayerPrefs.GetInt("Story2") != 0);
             story3Get = (PlayerPrefs.GetInt("Story3") != 0);
             story4Get = (PlayerPrefs.GetInt("Story4") != 0);
+            story5Get = (PlayerPrefs.GetInt("Story4") != 0);
+            story6Get = (PlayerPrefs.GetInt("Story4") != 0);
+            story7Get = (PlayerPrefs.GetInt("Story4") != 0);
+            story8Get = (PlayerPrefs.GetInt("Story4") != 0);
             
-            
+
+
         }
 
         
@@ -152,6 +174,28 @@ namespace TheMansion
             {
                 story4Button.GetComponent<Image>().sprite = story4Sprite;
             }
+
+            if (story5Get)
+            {
+                story5Button.GetComponent<Image>().sprite = story5Sprite;
+            }
+
+            if (story6Get)
+            {
+                story6Button.GetComponent<Image>().sprite = story6Sprite;
+            }
+
+            if (story7Get)
+            {
+                story7Button.GetComponent<Image>().sprite = story7Sprite;
+            }
+
+            if (story8Get)
+            {
+                story8Button.GetComponent<Image>().sprite = story8Sprite;
+            }
+
+            
         }
 
         public void RemoveStorySelection()
@@ -172,18 +216,20 @@ namespace TheMansion
             story3.SetActive(false);
             story4.SetActive(false);
 
-            storyList.SetActive(false);
+            storyList1.SetActive(false);
             selectionStory.SetActive(true);
         }
 
+
+        #region story opened functions
         public void Story1Opened()
         {
             audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             if (story1Get)
             {
                 story1.SetActive(true);
-                selectionStory.SetActive(false);
-                storyList.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList1.SetActive(true);
             }
         }
 
@@ -193,8 +239,8 @@ namespace TheMansion
             if (story2Get)
             {
                 story2.SetActive(true);
-                selectionStory.SetActive(false);
-                storyList.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList1.SetActive(true);
             }
         }
 
@@ -204,8 +250,8 @@ namespace TheMansion
             if (story3Get)
             {
                 story3.SetActive(true);
-                selectionStory.SetActive(false);
-                storyList.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList1.SetActive(true);
             }
         }
 
@@ -215,9 +261,67 @@ namespace TheMansion
             if (story4Get)
             {
                 story4.SetActive(true);
-                selectionStory.SetActive(false);
-                storyList.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList1.SetActive(true);
             }
+        }
+
+        public void Story5Opened()
+        {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (story5Get)
+            {
+                story5.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList2.SetActive(true);
+            }
+        }
+
+        public void Story6Opened()
+        {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (story6Get)
+            {
+                story6.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList2.SetActive(true);
+            }
+        }
+
+        public void Story7Opened()
+        {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (story7Get)
+            {
+                story7.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList2.SetActive(true);
+            }
+        }
+
+        public void Story8Opened()
+        {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (story8Get)
+            {
+                story8.SetActive(true);
+                //selectionStory.SetActive(false);
+                storyList2.SetActive(true);
+            }
+        }
+        #endregion
+
+
+        public void GoToNotebooks()
+        {
+            lettersMenu.SetActive(false);
+            notebookMenu.SetActive(true);
+        }
+
+        public void GoToLetters()
+        {
+            notebookMenu.SetActive(false);
+            lettersMenu.SetActive(true);           
         }
 
         #endregion
