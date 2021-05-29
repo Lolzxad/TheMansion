@@ -50,6 +50,7 @@ namespace TheMansion
         private void Start()
         {
             bigWin = false;
+            Time.timeScale = 1f;
 
             if (isLevel1)
             {

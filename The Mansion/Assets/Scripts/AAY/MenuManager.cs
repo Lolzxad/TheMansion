@@ -101,6 +101,8 @@ namespace TheMansion
             Time.timeScale = 1;
         }
 
+        
+
         public void LoadLevel1()
         {
             audioController.PlayAudio(AudioType.Click_Button_SFX, false);
@@ -314,12 +316,14 @@ namespace TheMansion
 
         public void GoToNotebooks()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             lettersMenu.SetActive(false);
             notebookMenu.SetActive(true);
         }
 
         public void GoToLetters()
         {
+            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             notebookMenu.SetActive(false);
             lettersMenu.SetActive(true);           
         }

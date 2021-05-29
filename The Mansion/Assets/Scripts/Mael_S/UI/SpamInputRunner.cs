@@ -24,6 +24,7 @@ namespace TheMansion
         RunnerController runnerController;
         TutoManager tuto;
         AudioManagerVEVO audioManager;
+        SpamInput spamBigboy;
 
         public bool isTuto;
 
@@ -42,7 +43,7 @@ namespace TheMansion
             runnerController = FindObjectOfType<RunnerController>();
             tuto = FindObjectOfType<TutoManager>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
-            
+            spamBigboy = FindObjectOfType<SpamInput>();
 
         }
 
@@ -93,7 +94,8 @@ namespace TheMansion
   
                     spamDone = false;
                     gameObject.SetActive(false);
-                    playerLives--;
+                    playerLives -= 1;
+                    spamBigboy.playerLives -= 1;
                 }
                 else if (runnerController.isGrabbing)
                 {
@@ -102,7 +104,8 @@ namespace TheMansion
 
                     spamDone = false;
                     gameObject.SetActive(false);
-                    playerLives--;
+                    playerLives -= 1;
+                    spamBigboy.playerLives -= 1;
 
                 }
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace TheMansion
 {
@@ -12,7 +12,7 @@ namespace TheMansion
         public int spamL;
         public int spamR;
 
-        public int playerLives = 4;
+        public int playerLives = 3;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
@@ -27,6 +27,14 @@ namespace TheMansion
         RunnerController runnerController;
         TutoManager tuto;
         AudioManagerVEVO audioManager;
+        SpamInputRunner spamRunner;
+
+
+        [SerializeField] Sprite heart_1;
+        [SerializeField] Sprite heart_2;
+        [SerializeField] Sprite heart_3;
+        [SerializeField] GameObject heart;
+
 
         public bool isTuto;
 
@@ -48,6 +56,10 @@ namespace TheMansion
             bbController = FindObjectOfType<BigBoyController>();
             runnerController = FindObjectOfType<RunnerController>();
             tuto = FindObjectOfType<TutoManager>();
+            spamRunner = FindObjectOfType<SpamInputRunner>();
+
+
+            heart.GetComponent<Image>();
         }
 
         private void Update()
@@ -112,7 +124,8 @@ namespace TheMansion
                     spamDone_R = false;
                     spamDone = false;
                     gameObject.SetActive(false);
-                    playerLives--;
+                    playerLives -= 1;
+                    spamRunner.playerLives -= 1;
                 }
 
                
@@ -142,6 +155,16 @@ namespace TheMansion
 
             }
 
+            if(playerLives == 2)
+            {
+                heart.GetComponent<Image>().sprite = heart_2;
+            }
+
+            if (playerLives == 1)
+            {
+                heart.GetComponent<Image>().sprite = heart_1;
+            }
+
             if (playerLives == 0)
             {
                 GameOver();
@@ -166,6 +189,7 @@ namespace TheMansion
         {
             Debug.Log("U DEAD DEAD DEAD JUST DIE ALREADY");
             menuDefaite.SetActive(true);
+            Time.timeScale = 0;
         }
     } 
 }
