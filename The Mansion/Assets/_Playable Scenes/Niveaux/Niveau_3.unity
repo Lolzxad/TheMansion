@@ -1823,6 +1823,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &535624303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1432733642497954208, guid: ce175685696b9b04bbadf5b05e172c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 558076962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &558076962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3984,7 +3990,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideFeedback
       value: 
-      objectReference: {fileID: 558076964}
+      objectReference: {fileID: 535624303}
     - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: heartFeedbackLevel1
@@ -4010,6 +4016,11 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 56361353}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: heartFeedback
+      value: 
+      objectReference: {fileID: 558076964}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8710,6 +8721,12 @@ MonoBehaviour:
   story3: {fileID: 0}
   story4Button: {fileID: 0}
   story4: {fileID: 0}
+  story5Button: {fileID: 0}
+  story6Button: {fileID: 0}
+  story7Button: {fileID: 0}
+  story8Button: {fileID: 0}
+  credits: {fileID: 0}
+  options: {fileID: 0}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0

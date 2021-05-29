@@ -101,7 +101,7 @@ namespace TheMansion
             {
                 animator.SetBool("isRunning", true);
                 animator.ResetTrigger("isPreparing");
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, runSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), runSpeed * Time.deltaTime);
                 audioManager.PlayAudio(AudioType.Runner_Run);
                 
 
@@ -119,8 +119,7 @@ namespace TheMansion
 
                 if (distancePlayer <= detectZone && !isComingBack)
                 {
-                    RunnerGrab();
-                    
+                    RunnerGrab();                  
                 }
             }
 
@@ -145,7 +144,7 @@ namespace TheMansion
 
             if (isComingBack)
             {
-                transform.position = Vector2.MoveTowards(transform.position, idlePos.transform.position, walkSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(idlePos.transform.position.x, transform.position.y), walkSpeed * Time.deltaTime);
                 animator.SetBool("isWalking", true);
 
                 if (distanceIdle <= detectZone)

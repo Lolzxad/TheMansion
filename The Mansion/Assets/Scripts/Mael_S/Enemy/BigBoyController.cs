@@ -72,6 +72,7 @@ namespace TheMansion
         {
             playerScript = FindObjectOfType<PlayerController>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
            // tuto = FindObjectOfType<TutoManager>();
         }
 
@@ -153,7 +154,7 @@ namespace TheMansion
             {
                 if (canBeCalled && !isGrabbing)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, crawler.transform.position, speedPO * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(crawler.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
                 }
             }
         }
@@ -296,13 +297,13 @@ namespace TheMansion
 
                 if (movingLeft && bBcanMove)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, target1.position, bigBoySpeed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(target1.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
                     bigBoyAnimator.SetBool("isWalking", true);                                
                 }
 
                 if (!movingLeft && bBcanMove)
                     {
-                    transform.position = Vector2.MoveTowards(transform.position, target2.position, bigBoySpeed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(target2.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
                     bigBoyAnimator.SetBool("isWalking", true);           
                 }
 
@@ -341,7 +342,7 @@ namespace TheMansion
         {
             Debug.Log("Pursuit of happiness");
 
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speedPO * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
 
             //si le joueur sort de son champ de vision/distance alors il va à sa dernière position
         }

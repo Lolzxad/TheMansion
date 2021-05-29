@@ -61,6 +61,7 @@ namespace TheMansion
             MenuManagerScript = FindObjectOfType<MenuManager>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             playerRb = GetComponent<Rigidbody2D>();
+            playerRb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             defaultGravity = playerRb.gravityScale;
             Physics2D.IgnoreLayerCollision(2, 9, false);
         }
@@ -776,9 +777,9 @@ namespace TheMansion
             playerRb.gravityScale = 0;
             Physics2D.IgnoreLayerCollision(2, 9, true);
 
-            while (transform.position != ladderBottom)
+            while (transform.position.y != ladderBottom.y)
             {
-                transform.position = Vector3.MoveTowards(transform.position, ladderBottom, Time.deltaTime * 5f);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, ladderBottom.y), Time.deltaTime * 5f);
                 yield return null;
             }
 
@@ -797,9 +798,9 @@ namespace TheMansion
             playerRb.gravityScale = 0;
             Physics2D.IgnoreLayerCollision(2, 9, true);
 
-            while (transform.position != ladderTop)
+            while (transform.position.y != ladderTop.y)
             {
-                transform.position = Vector3.MoveTowards(transform.position, ladderTop, Time.deltaTime * 5f);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector2(transform.position.x, ladderTop.y), Time.deltaTime * 5f);
                 yield return null;
             }
             
