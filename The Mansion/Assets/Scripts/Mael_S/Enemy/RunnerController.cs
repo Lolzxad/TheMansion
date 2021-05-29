@@ -47,6 +47,10 @@ namespace TheMansion
         bool runAgain;
 
         private Vector3 runnerDirection;
+        private float distance1;
+        private float distance2;
+        private float distanceIdle;
+        private float distancePlayer;
 
 
         private void Awake()
@@ -68,10 +72,10 @@ namespace TheMansion
 
         private void Update()
         {
-            float distance1 = Vector3.Distance(limitLeft.transform.position, transform.position);
-            float distance2 = Vector3.Distance(limitRight.transform.position, transform.position);
-            float distanceIdle = Vector3.Distance(idlePos.transform.position, transform.position);
-            float distancePlayer = Vector3.Distance(player.transform.position, transform.position);
+            distance1 = Vector2.Distance(limitLeft.transform.position, transform.position);
+            distance2 = Vector2.Distance(limitRight.transform.position, transform.position);
+            distanceIdle = Vector2.Distance(idlePos.transform.position, transform.position);
+            distancePlayer = Vector2.Distance(player.transform.position, transform.position);
 
             if (runnerDirection.x < transform.position.x && (isRunning || isComingBack))
             {
@@ -101,7 +105,14 @@ namespace TheMansion
             {
                 animator.SetBool("isRunning", true);
                 animator.ResetTrigger("isPreparing");
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), runSpeed * Time.deltaTime);
+                if (!playerScript.isHiding)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), runSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    transform.Translate((Vector2.right * Time.deltaTime) * runSpeed);
+                }
                 audioManager.PlayAudio(AudioType.Runner_Run);
                 
 
@@ -281,6 +292,13 @@ namespace TheMansion
             {
                 isRunning = true;
                 runAgain = true;
+
+                if (transform.position.x >= limitRight.transform.position.x)
+                {
+                    isRunning = false;
+                    isTired = true;
+                    runAgain = false;
+                }
             }
             else
             {

@@ -25,6 +25,7 @@ namespace TheMansion
 
         private bool canHide;
         private bool canUseLadder;
+        public bool isGrounded;
         public bool isCalmingHeart;
         public bool isRegening;
         public bool canMove = true;
@@ -45,6 +46,7 @@ namespace TheMansion
         public GameObject playerSprite;
         public GameObject hideFeedback;
         public GameObject heartFeedback;
+        public GameObject feet;
         public Rigidbody2D playerRb;
         public Vector3 baseSpritePosition;
         public Vector3 basePosition;
@@ -82,8 +84,13 @@ namespace TheMansion
                 ProCamera2D.Instance.CenterOnTargets();
             }
 
+            if (!isGrounded)
+            {
+                canUseLadder = false;
+            }
+
             //Debug.Log(stamina);
-            if (heartbeatSpeed < 1)
+            if (heartbeatSpeed <= 1)
             {
                 heartAnimator.SetFloat("speed", 1 + heartbeatSpeed);
             }
@@ -303,7 +310,7 @@ namespace TheMansion
                         }
                         playerAnimator.SetBool("isWalking", true);
                         isRunning = false;
-                        transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                     }
 
                     if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && canMove)
@@ -315,7 +322,7 @@ namespace TheMansion
                         }
                         playerAnimator.SetBool("isWalking", true);
                         isRunning = false;
-                        transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                     }
 
                     if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && canMove)
@@ -328,13 +335,13 @@ namespace TheMansion
                         if (stamina > 0f)
                         {
                             playerAnimator.SetBool("isRunning", true);
-                            transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                            transform.Translate((Vector2.right * Time.deltaTime) * 10f);
                         }
 
                         else
                         {
                             playerAnimator.SetBool("isWalking", true);
-                            transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                            transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                         }
                         isRunning = true;
                         StartCoroutine(StaminaLoss());
@@ -353,13 +360,13 @@ namespace TheMansion
                         if (stamina > 0f)
                         {
                             playerAnimator.SetBool("isRunning", true);
-                            transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                            transform.Translate((Vector2.left * Time.deltaTime) * 10f);
                         }
 
                         else
                         {
                             playerAnimator.SetBool("isWalking", true);
-                            transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                            transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                         }
                         StartCoroutine(StaminaLoss());
                     }
@@ -374,6 +381,7 @@ namespace TheMansion
 
             if (!transform.hasChanged)
             {
+                isRunning = false;
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);
             }
@@ -390,9 +398,6 @@ namespace TheMansion
                 isRegening = false;
             }
             
-
-            
-
             if (heartBeat < 100f)
             {
                 heartBeat = 100f;   
@@ -412,9 +417,28 @@ namespace TheMansion
             {
                 heartbeatSpeed = 0.1f;
             }
+
+            if (heartbeatSpeed > 1)
+            {
+                heartbeatSpeed = 1;
+            }
         }
 
-        
+        private void OnCollisionEnter2D(Collision2D ground)
+        {
+            if (ground.collider.tag == "Ground")
+            {
+                isGrounded = true;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D ground)
+        {
+            if (ground.collider.tag == "Ground")
+            {
+                isGrounded = false;
+            }
+        }
 
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
@@ -446,10 +470,12 @@ namespace TheMansion
                 }
                 else
                 {
-                    
-                    canUseLadder = true;
-                    InteractableObject.transform.parent.GetComponent<OutlineActivator>().EnableOutline();
-                    InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(true);
+                    if (isGrounded)
+                    {
+                        canUseLadder = true;
+                        InteractableObject.transform.parent.GetComponent<OutlineActivator>().EnableOutline();
+                        InteractableObject.transform.parent.gameObject.transform.Find("UseLadderDown").gameObject.SetActive(true);
+                    }                   
                 }                           
             }
         }
@@ -653,7 +679,7 @@ namespace TheMansion
                         Flip();
                     }
                     playerAnimator.SetBool("isWalking", true);
-                    transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                    transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                     isRunning = false;
                 }
 
@@ -665,7 +691,7 @@ namespace TheMansion
                         Flip();
                     }
                     playerAnimator.SetBool("isWalking", true);
-                    transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                    transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                     isRunning = false;
                 }
 
@@ -680,12 +706,12 @@ namespace TheMansion
                     if (stamina > 0f)
                     {
                         playerAnimator.SetBool("isRunning", true);
-                        transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                        transform.Translate((Vector2.right * Time.deltaTime) * 10f);
                     }
                     else
                     {
                         playerAnimator.SetBool("isWalking", true);
-                        transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                     }
                     isRunning = true;
                     StartCoroutine(StaminaLoss());
@@ -701,13 +727,13 @@ namespace TheMansion
                     if (stamina > 0f)
                     {
                         playerAnimator.SetBool("isRunning", true);
-                        transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                        transform.Translate((Vector2.left * Time.deltaTime) * 10f);
                     }
 
                     else
                     {
                         playerAnimator.SetBool("isWalking", true);
-                        transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                     }
                     isRunning = true;
                     StartCoroutine(StaminaLoss());
@@ -864,7 +890,7 @@ namespace TheMansion
 
             while (transform.position.y != ladderTop.y)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector2(transform.position.x, ladderTop.y), Time.deltaTime * 5f);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, ladderTop.y), Time.deltaTime * 5f);
                 yield return null;
             }
             

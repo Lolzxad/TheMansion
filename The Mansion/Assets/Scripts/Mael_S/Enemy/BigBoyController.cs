@@ -21,6 +21,8 @@ namespace TheMansion
         float startWaitTime;
         public float distance;
         public float rechercheTime;
+        private float playerDistance;
+        private float lastPlayerDistance = 100f;
 
         float defaultSpeed;
         float defaultSpeedPO;
@@ -38,7 +40,7 @@ namespace TheMansion
         public bool isGrabbing;
         public bool bBcanMove;
         public bool playerInVision;
-        public bool hideFail;
+        public bool hideCheck;
         public bool isFacingRight;
         public bool canBeCalled;
         public bool isCalled;
@@ -61,7 +63,8 @@ namespace TheMansion
         PlayerController playerScript;
         TutoManager tuto;
         AudioManagerVEVO audioManager;
-        private Vector3 bigBoyDirection;
+        private Vector2 bigBoyDirection;
+       
 
     
 
@@ -92,7 +95,14 @@ namespace TheMansion
         }
 
         private void Update()
-        {
+        {            playerDistance = Vector2.Distance(player.transform.position, transform.position);
+
+            if (!playerScript.isHiding && playerInVision)
+            {
+                lastPlayerDistance = playerDistance;
+            }
+            Debug.Log(lastPlayerDistance);
+
             if (bigBoyDirection.x < transform.position.x)
             {
                 //Debug.Log("Moving Right");
@@ -150,16 +160,16 @@ namespace TheMansion
                 playerScript.heartOpacity += 0.05f * Time.deltaTime;
             }
 
-            if (isCalled)
-            {
-                if (canBeCalled && !isGrabbing)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(crawler.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
-                }
+            if (isCalled)
+            {
+                if (canBeCalled && !isGrabbing && !isRunning)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(crawler.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
+                }
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerStay2D(Collider2D other)
         {
             if (other.gameObject.tag == "Player" && isRunning && !playerScript.isHiding)
             {
@@ -170,39 +180,40 @@ namespace TheMansion
 
             if (other.gameObject.tag == "Player" && playerScript.isHiding)
             {
-
                 Debug.Log("Big boy Touching hiding spot");
-                Debug.Log(isRunning);
-                bBcanMove = false;
-                isPatrolling = false;
 
-                if(playerScript.heartBeat >= 120)
-                {
-                    StartCoroutine(ModeRecherche());
-                }
-                
-                
-
-                if (hideFail)
+                if (playerScript.heartBeat >= 120 && !hideCheck && !isRunning)
                 {
-                    Debug.Log("hide failed");
+                    bBcanMove = false;
+                    isPatrolling = false;
+                    StartCoroutine(ModeRecherche());
+                }
 
+                if (isRunning && lastPlayerDistance < 10f)
+                {
+                    //Le big boy a vu le joueur se cacher
+                    isRunning = false;
                     playerScript.isHiding = false;
                     playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                     playerScript.playerAnimator.SetBool("isHiding", false);
                     playerScript.playerRb.gravityScale = playerScript.defaultGravity;
                     BBMG();
-                    hideFail = false;
                 }
-                else
-                {
-                    Debug.Log("hide passed");
 
-                    isPatrolling = true;
-                    bBcanMove = true;
+                if (isRunning && (lastPlayerDistance > 10f && lastPlayerDistance <= 15f))
+                {
                     isRunning = false;
-                }                
+                    playerScript.hidingFactor += 10f;
+                    StartCoroutine(ModeRecherche());
+                }
+
+                if (isRunning && lastPlayerDistance > 15f)
+                {
+                    isRunning = false;
+                    bBcanMove = true;
+                    isPatrolling = true;
+                }
             }
         }
 
@@ -221,8 +232,8 @@ namespace TheMansion
             speedPO = defaultSpeedPO;
             bigBoyAnimator.SetBool("isSearching", false);
             HideCheck();
-            //arête anim recherche
-
+            yield return new WaitForSecondsRealtime(5f);
+            hideCheck = false;
         }
 
         public void TriggerPoursuite()
@@ -353,6 +364,17 @@ namespace TheMansion
         {
             Debug.Log("Mode Grab");
             isGrabbing = true;
+
+            if (playerSprite.transform.position.x < transform.position.x && playerSprite.transform.rotation.eulerAngles.y >= 180)
+            {
+                playerScript.Flip();
+            }
+
+            if (playerSprite.transform.position.x > transform.position.x && playerSprite.transform.rotation.eulerAngles.y < 180)
+            {
+                playerScript.Flip();
+            }
+            playerScript.playerAnimator.SetBool("isGrabbed", true);
             bigBoyAnimator.SetTrigger("hasGrabbed");
             bBcanMove = false;
 
@@ -369,18 +391,7 @@ namespace TheMansion
             /*playerSprite.transform.position = grabSpot.transform.position;
             grabSpot.SetActive(true);*/
 
-            if (playerSprite.transform.position.x < transform.position.x && playerSprite.transform.rotation.eulerAngles.y >= 180)
-            {
-                //Debug.Log("You're right from the closet");
-                playerScript.Flip();
-            }
-
-            if (playerSprite.transform.position.x > transform.position.x && playerSprite.transform.rotation.eulerAngles.y < 180)
-            {
-                //Debug.Log("You're right from the closet");
-                playerScript.Flip();
-            }
-            playerScript.playerAnimator.SetBool("isGrabbed", true);
+            
             isRunning = false;
             
             spamInput.SetActive(true);
@@ -409,13 +420,24 @@ namespace TheMansion
         }
         public void HideCheck() 
         {
-            Debug.Log("Hide check wip");
-
+            hideCheck = true;
             //Formule pour calculer la probabilité de se faire chopper
             if (playerScript.hidingFactor * Random.Range(1, 6) >= 100)
-            {
-                hideFail = true;
+            {              
+                playerScript.isHiding = false;
+                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
+                playerScript.playerAnimator.SetBool("isHiding", false);
+                playerScript.playerRb.gravityScale = playerScript.defaultGravity;
+                BBMG();
                 Debug.Log("AAAAAAAAAAAH");
+            }
+            else
+            {
+                Debug.Log("hide passed");
+                isPatrolling = true;
+                bBcanMove = true;
+                isRunning = false;
             }
         }
 
@@ -457,6 +479,9 @@ namespace TheMansion
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, detectZonePatrol);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, 10f);
         }
     }
 }
