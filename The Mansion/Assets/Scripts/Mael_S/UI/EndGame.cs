@@ -25,9 +25,9 @@ namespace TheMansion
         VictoryManager victoryManager;
 
 
-        bool narraRecup_1;
-        bool narraRecup_2;
-        bool narraRecup_3;
+        [SerializeField] bool narraRecup_1;
+        [SerializeField] bool narraRecup_2;
+        [SerializeField] bool narraRecup_3;
 
 
         private void Start()

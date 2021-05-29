@@ -101,7 +101,7 @@ namespace TheMansion
             {
                 lastPlayerDistance = playerDistance;
             }
-            Debug.Log(lastPlayerDistance);
+            //Debug.Log(lastPlayerDistance);
 
             if (bigBoyDirection.x < transform.position.x)
             {
