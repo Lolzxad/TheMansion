@@ -4859,7 +4859,7 @@ PrefabInstance:
     - target: {fileID: 1432733643822260808, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1432733643822260808, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}
@@ -5165,7 +5165,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ee7b4e16e9bb2745a64af04ee2365f2, type: 3}
   m_Color: {r: 0.098039225, g: 0.050980397, b: 0.03137255, a: 1}
   m_FlipX: 0
@@ -5204,8 +5204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2493156568874637322}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 51.7, y: 0.18999863, z: 0}
-  m_LocalScale: {x: 13.256691, y: 0.70175445, z: 1}
+  m_LocalPosition: {x: -20.1, y: -0.246, z: 0}
+  m_LocalScale: {x: 13.46509, y: 0.7017548, z: 1}
   m_Children: []
   m_Father: {fileID: 2493156568561162619}
   m_RootOrder: 3
@@ -5217,7 +5217,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2493156568874637322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5274,7 +5274,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 9ee7b4e16e9bb2745a64af04ee2365f2, type: 3}
   m_Color: {r: 0.098039225, g: 0.050980397, b: 0.03137255, a: 1}
   m_FlipX: 0
@@ -5293,7 +5293,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2493156568874637322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -6671,7 +6671,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionLevel: {fileID: 0}
   selectionStory: {fileID: 0}
-  storyList: {fileID: 0}
+  storyList1: {fileID: 0}
+  storyList2: {fileID: 0}
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
@@ -6683,6 +6684,16 @@ MonoBehaviour:
   story3: {fileID: 0}
   story4Button: {fileID: 0}
   story4: {fileID: 0}
+  story5Button: {fileID: 0}
+  story6Button: {fileID: 0}
+  story7Button: {fileID: 0}
+  story8Button: {fileID: 0}
+  story5: {fileID: 0}
+  story6: {fileID: 0}
+  story7: {fileID: 0}
+  story8: {fileID: 0}
+  credits: {fileID: 0}
+  options: {fileID: 0}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0
@@ -6691,6 +6702,16 @@ MonoBehaviour:
   story3Sprite: {fileID: 0}
   story4Get: 0
   story4Sprite: {fileID: 0}
+  story5Get: 0
+  story5Sprite: {fileID: 0}
+  story6Get: 0
+  story6Sprite: {fileID: 0}
+  story7Get: 0
+  story7Sprite: {fileID: 0}
+  story8Get: 0
+  story8Sprite: {fileID: 0}
+  lettersMenu: {fileID: 0}
+  notebookMenu: {fileID: 0}
   isMainMenu: 0
 --- !u!1001 &5136117255448366058
 PrefabInstance:
@@ -6852,6 +6873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DrawMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542317854173030633, guid: 87efe6d0809a7d24a8136e874e5a54a1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8542317854173030635, guid: 87efe6d0809a7d24a8136e874e5a54a1,
         type: 3}
