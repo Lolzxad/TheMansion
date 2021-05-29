@@ -381,6 +381,7 @@ namespace TheMansion
 
             if (!transform.hasChanged)
             {
+                isRunning = false;
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetBool("isRunning", false);
             }
@@ -397,9 +398,6 @@ namespace TheMansion
                 isRegening = false;
             }
             
-
-            
-
             if (heartBeat < 100f)
             {
                 heartBeat = 100f;   
