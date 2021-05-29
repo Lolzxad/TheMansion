@@ -3844,8 +3844,13 @@ PrefabInstance:
     - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: stamina
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: heartFeedback
+      value: 
+      objectReference: {fileID: 400767822}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8689,6 +8694,12 @@ MonoBehaviour:
   story3: {fileID: 0}
   story4Button: {fileID: 0}
   story4: {fileID: 0}
+  story5Button: {fileID: 0}
+  story6Button: {fileID: 0}
+  story7Button: {fileID: 0}
+  story8Button: {fileID: 0}
+  credits: {fileID: 0}
+  options: {fileID: 0}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0

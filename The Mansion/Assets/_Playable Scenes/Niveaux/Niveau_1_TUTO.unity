@@ -1608,7 +1608,7 @@ PrefabInstance:
     - target: {fileID: 1432733643822260808, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce175685696b9b04bbadf5b05e172c77, type: 3}
@@ -5938,6 +5938,16 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 308585366}
+    - target: {fileID: 4002302044651707972, guid: 2404d19d51252ec489afb3bea8ea440c,
+        type: 3}
+      propertyPath: stamina
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002302044651707972, guid: 2404d19d51252ec489afb3bea8ea440c,
+        type: 3}
+      propertyPath: heartFeedback
+      value: 
+      objectReference: {fileID: 1569650406}
     - target: {fileID: 4002302044651707973, guid: 2404d19d51252ec489afb3bea8ea440c,
         type: 3}
       propertyPath: m_LocalPosition.x
