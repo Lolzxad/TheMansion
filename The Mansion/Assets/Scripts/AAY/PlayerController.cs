@@ -669,9 +669,9 @@ namespace TheMansion
         {           
             if (!isHiding && !isGrabbed)
             {
-                canMove = true;
-                isCalmingHeart = false;
-            }                           
+                canMove = true;                
+            }
+            isCalmingHeart = false;
         }
 
         /*public void HeartFeedback()
