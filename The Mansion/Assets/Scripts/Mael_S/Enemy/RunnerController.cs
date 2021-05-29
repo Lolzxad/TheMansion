@@ -42,8 +42,11 @@ namespace TheMansion
         [SerializeField] bool isRunning;
         public bool isGrabbing;
         public bool isTired;
+        private bool isFacingRight = true;
         [SerializeField] bool isComingBack;
         bool runAgain;
+
+        private Vector3 runnerDirection;
 
 
         private void Awake()
@@ -69,6 +72,23 @@ namespace TheMansion
             float distance2 = Vector3.Distance(limitRight.transform.position, transform.position);
             float distanceIdle = Vector3.Distance(idlePos.transform.position, transform.position);
             float distancePlayer = Vector3.Distance(player.transform.position, transform.position);
+
+            if (runnerDirection.x < transform.position.x && (isRunning || isComingBack))
+            {
+                if (!isFacingRight)
+                {
+                    Flip();
+                }
+            }
+
+            if (runnerDirection.x > transform.position.x && (isRunning || isComingBack))
+            {
+                if (isFacingRight)
+                {
+                    Flip();
+                }
+            }
+            runnerDirection.x = transform.position.x;
 
 
 
@@ -126,11 +146,13 @@ namespace TheMansion
             if (isComingBack)
             {
                 transform.position = Vector2.MoveTowards(transform.position, idlePos.transform.position, walkSpeed * Time.deltaTime);
+                animator.SetBool("isWalking", true);
 
                 if (distanceIdle <= detectZone)
                 {
                     isIdle = true;
                     isComingBack = false;
+                    animator.SetBool("isWalking", false);
                     Debug.Log("COli bien arrivé");
                 }
             }
@@ -284,6 +306,13 @@ namespace TheMansion
             playerScript.heartBeat = playerScript.heartBeat + 20f;
             playerScript.hidingFactor = playerScript.hidingFactor + 20f;
             StartCoroutine(MobCanMove());
+        }
+
+        public void Flip()
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            isFacingRight = !isFacingRight;
+            //transform.Rotate(new Vector3(0, 180, 0));
         }
 
         IEnumerator MobCanMove()
