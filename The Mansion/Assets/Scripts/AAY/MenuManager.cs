@@ -40,6 +40,7 @@ namespace TheMansion
 
         [SerializeField] GameObject credits;
         [SerializeField] GameObject options;
+        
 
         public bool story1Get;
         public Sprite story1Sprite;
@@ -63,6 +64,7 @@ namespace TheMansion
         [SerializeField] GameObject notebookMenu;
 
         [SerializeField] bool isMainMenu;
+        
 
         AudioManagerVEVO audioController;
 
@@ -88,6 +90,8 @@ namespace TheMansion
             Time.timeScale = 1;
         }
 
+
+      
         
 
         public void ChangeLevel(string levelName)
