@@ -786,6 +786,7 @@ MonoBehaviour:
   continueButton: {fileID: 2102709907}
   isTimeToHide: 0
   isTimeToCalmHeart: 0
+  penAnim: {fileID: 0}
 --- !u!1 &668030658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,6 +2250,16 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 915056710}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: heartFeedback
+      value: 
+      objectReference: {fileID: 170441653}
+    - target: {fileID: 9169937839484935352, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: heartOpacity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4848,7 +4859,17 @@ PrefabInstance:
     - target: {fileID: 1432733643822260808, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260808, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_Name
+      value: Heart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260810, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}

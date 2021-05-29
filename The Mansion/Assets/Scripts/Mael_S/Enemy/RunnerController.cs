@@ -244,6 +244,10 @@ namespace TheMansion
 
                 playerScript.isGrabbed = true;
                 playerScript.canMove = false;
+                playerScript.heartBeat += 20f;
+                playerScript.hidingFactor += 20f;
+                playerScript.heartbeatSpeed += 2f;
+                playerScript.heartOpacity += 1f;
                 //playerScript.playerAnimator.SetBool("isGrabbed", true);
                 ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
                 isGrabbing = true;
@@ -302,9 +306,7 @@ namespace TheMansion
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
             playerScript.canMove = true;
-            //playerScript.playerAnimator.SetBool("isGrabbed", false);
-            playerScript.heartBeat = playerScript.heartBeat + 20f;
-            playerScript.hidingFactor = playerScript.hidingFactor + 20f;
+            //playerScript.playerAnimator.SetBool("isGrabbed", false);           
             StartCoroutine(MobCanMove());
         }
 

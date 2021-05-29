@@ -143,8 +143,10 @@ namespace TheMansion
 
             if (playerInVision)
             {
-                playerScript.heartBeat = playerScript.heartBeat + 1 * Time.deltaTime;
-                playerScript.hidingFactor = playerScript.hidingFactor + 1 * Time.deltaTime;
+                playerScript.heartBeat += 1 * Time.deltaTime;
+                playerScript.hidingFactor += 1 * Time.deltaTime;
+                playerScript.heartbeatSpeed += 0.1f * Time.deltaTime;
+                playerScript.heartOpacity += 0.05f * Time.deltaTime;
             }
 
             if (isCalled)
@@ -355,6 +357,10 @@ namespace TheMansion
             ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");           
 
             playerScript.isGrabbed = true;
+            playerScript.heartBeat += 20f;
+            playerScript.hidingFactor += 20f;
+            playerScript.heartbeatSpeed += 2f;
+            playerScript.heartOpacity += 1f;
 
             audioManager.PlayAudio(AudioType.Player_Choke_SFX);
             playerScript.canMove = false;
@@ -396,9 +402,7 @@ namespace TheMansion
             ProCamera2D.Instance.CenterOnTargets();
             playerScript.playerAnimator.SetBool("isGrabbed", false);
             playerScript.isGrabbed = false;         
-            playerScript.canMove = true;            
-            playerScript.heartBeat = playerScript.heartBeat + 20f;
-            playerScript.hidingFactor = playerScript.hidingFactor + 20f;
+            playerScript.canMove = true;                        
             StartCoroutine(MobCanMove());   
         }
         public void HideCheck() 

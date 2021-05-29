@@ -19,9 +19,9 @@ namespace TheMansion
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
         public float defaultGravity;
-        private float heartbeatSpeed = 0.1f;
+        public float heartOpacity = 0f;
+        public float heartbeatSpeed = 0.1f;
         private float lastStamina = 100f;
-        
 
         private bool canHide;
         private bool canUseLadder;
@@ -41,12 +41,10 @@ namespace TheMansion
         public Transform RunRight;
         public Transform RunLeft;
 
-        
+
         public GameObject playerSprite;
         public GameObject hideFeedback;
-        public GameObject heartFeedbackLevel1;
-        public GameObject heartFeedbackLevel2;
-        public GameObject heartFeedbackLevel3;
+        public GameObject heartFeedback;
         public Rigidbody2D playerRb;
         public Vector3 baseSpritePosition;
         public Vector3 basePosition;
@@ -71,6 +69,8 @@ namespace TheMansion
         void Update()
         {
 
+            heartFeedback.GetComponent<Image>().color = new Color(1f, 1f, 1f, heartOpacity);
+
             if (isGrabbed)
             {
                 ProCamera2D.Instance.CenterOnTargets();
@@ -78,7 +78,7 @@ namespace TheMansion
 
             if (usingLadder)
             {
-                ProCamera2D.Instance.CenterOnTargets();              
+                ProCamera2D.Instance.CenterOnTargets();
             }
 
             //Debug.Log(stamina);
@@ -87,19 +87,24 @@ namespace TheMansion
                 heartAnimator.SetFloat("speed", 1 + heartbeatSpeed);
             }
 
+            if (heartOpacity > 1f)
+            {
+                heartOpacity = 1f;
+            }
+
             staminaBarScript.SetStamina(stamina);
 
             if (lastStamina == stamina && staminaBar.activeSelf && !isRunning && !isCalmingHeart && !isRegening)
             {
-                StartCoroutine(StaminaBarDisappearance());                
+                StartCoroutine(StaminaBarDisappearance());
             }
             lastStamina = stamina;
 
-            HeartFeedback();
+            //HeartFeedback();
 
             if (!usingLadder)
             {
-                
+
                 playerAnimator.SetBool("isUsingLadder", false);
             }
 
@@ -179,9 +184,9 @@ namespace TheMansion
                             {
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
-                                
-                                
-                                
+
+
+
 
                                 if (!usingLadder && !isHiding && !isGrabbed && canUseLadder)
                                 {
@@ -201,7 +206,7 @@ namespace TheMansion
                                 ladderBottom = touchedObject.transform.parent.gameObject.transform.Find("BotLadder").transform.position;
                                 ladderTop = touchedObject.transform.parent.gameObject.transform.Find("TopLadder").transform.position;
 
-                                
+
 
                                 if (!usingLadder && !isHiding && !isGrabbed && canUseLadder)
                                 {
@@ -220,7 +225,7 @@ namespace TheMansion
                             {
                                 if (touchedObject.name == "Story 1")
                                 {
-                   
+
                                     //MenuManagerScript.story1Get = true;
                                     PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
                                     audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
@@ -238,7 +243,7 @@ namespace TheMansion
                                 }
 
                                 if (touchedObject.name == "Story 3")
-                                {                                   
+                                {
                                     PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
                                     audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                     MenuManagerScript.story3Get = true;
@@ -304,7 +309,7 @@ namespace TheMansion
                         isRunning = true;
                         StartCoroutine(StaminaLoss());
                     }
-                    
+
 
                     if (touchPosition.x < WalkLeft.position.x && touchPosition.x >= RunLeft.position.x && stamina > 0 && canMove)
                     {
@@ -327,7 +332,7 @@ namespace TheMansion
                             transform.Translate((Vector3.left * Time.deltaTime) * 5f);
                         }
                         StartCoroutine(StaminaLoss());
-                    }                   
+                    }
                 }
             }
 
@@ -336,22 +341,23 @@ namespace TheMansion
                 playerMouse();
             }
 
-          
+
             if (!transform.hasChanged)
             {
-                //Debug.Log("hasn'tChanged");
-                StartCoroutine("StandingRegen");
                 playerAnimator.SetBool("isWalking", false);
-                playerAnimator.SetBool("isRunning", false);               
+                playerAnimator.SetBool("isRunning", false);
             }
-            //transform.hasChanged = false;
+            transform.hasChanged = false;
 
-            if (transform.hasChanged)
+            if (!isRunning && !isGrabbed && !usingLadder)
             {
-                //Debug.Log("hasChanged");
+                StartCoroutine("StandingRegen");
+            }
+            else
+            if (isRunning || isGrabbed || usingLadder)
+            {
                 StopCoroutine("StandingRegen");
                 isRegening = false;
-                transform.hasChanged = false;
             }
             
 
@@ -652,23 +658,23 @@ namespace TheMansion
 
         public void CalmingHeartStart()
         {
-            isCalmingHeart = true;
-            StartCoroutine(CalmingHeart());
+            if (!isGrabbed && !usingLadder)
+            {
+                isCalmingHeart = true;
+                StartCoroutine(CalmingHeart());
+            }           
         }
 
         public void CalmingHeartStop()
-        {
-            canMove = true;
-
-            if (isHiding)
+        {           
+            if (!isHiding && !isGrabbed)
             {
-                canMove = false;
-            }
-            
-            isCalmingHeart = false;      
+                canMove = true;
+                isCalmingHeart = false;
+            }                           
         }
 
-        public void HeartFeedback()
+        /*public void HeartFeedback()
         {
             if (heartBeat <= 110f)
             {
@@ -697,7 +703,7 @@ namespace TheMansion
                 heartFeedbackLevel2.SetActive(false);
                 heartFeedbackLevel3.SetActive(true);
             }
-        }
+        }*/
 
         public IEnumerator StaminaLoss()
         {
@@ -705,6 +711,7 @@ namespace TheMansion
             heartBeat += 1 * Time.deltaTime;
             hidingFactor += 1 * Time.deltaTime;
             heartbeatSpeed += 0.1f * Time.deltaTime;
+            heartOpacity += 0.05f * Time.deltaTime;
             staminaBar.SetActive(true);
 
             yield return new WaitForSeconds(1f);
@@ -722,6 +729,7 @@ namespace TheMansion
                     heartBeat -= 5f * Time.deltaTime;
                     hidingFactor -= 2.5f * Time.deltaTime;
                     heartbeatSpeed -= 0.5f * Time.deltaTime;
+                    heartOpacity -= 0.25f * Time.deltaTime;
                     staminaBar.SetActive(true);
                     yield return null;
                 }
@@ -753,7 +761,8 @@ namespace TheMansion
                 isRegening = true;
                 heartBeat -= 1f * Time.deltaTime;
                 hidingFactor -= 1f * Time.deltaTime;
-                heartbeatSpeed -= 1f * Time.deltaTime;
+                heartbeatSpeed -= 0.1f * Time.deltaTime;
+                heartOpacity -= 0.05f * Time.deltaTime;
             }
         }
 
