@@ -1233,7 +1233,7 @@ GameObject:
   - component: {fileID: 246288314}
   m_Layer: 9
   m_Name: Plateforme
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2203,7 +2203,7 @@ GameObject:
   - component: {fileID: 630937989}
   m_Layer: 9
   m_Name: Plateforme
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2610,7 +2610,7 @@ GameObject:
   - component: {fileID: 716339446}
   m_Layer: 9
   m_Name: Plateforme
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5555,7 +5555,7 @@ GameObject:
   - component: {fileID: 1846966325}
   m_Layer: 9
   m_Name: Plateforme (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7430,7 +7430,7 @@ GameObject:
   - component: {fileID: 2493156568763710973}
   m_Layer: 9
   m_Name: Plateforme
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8682,7 +8682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionLevel: {fileID: 0}
   selectionStory: {fileID: 0}
-  storyList: {fileID: 0}
+  storyList1: {fileID: 0}
+  storyList2: {fileID: 0}
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
@@ -8698,6 +8699,10 @@ MonoBehaviour:
   story6Button: {fileID: 0}
   story7Button: {fileID: 0}
   story8Button: {fileID: 0}
+  story5: {fileID: 0}
+  story6: {fileID: 0}
+  story7: {fileID: 0}
+  story8: {fileID: 0}
   credits: {fileID: 0}
   options: {fileID: 0}
   story1Get: 0
@@ -8708,4 +8713,14 @@ MonoBehaviour:
   story3Sprite: {fileID: 0}
   story4Get: 0
   story4Sprite: {fileID: 0}
+  story5Get: 0
+  story5Sprite: {fileID: 0}
+  story6Get: 0
+  story6Sprite: {fileID: 0}
+  story7Get: 0
+  story7Sprite: {fileID: 0}
+  story8Get: 0
+  story8Sprite: {fileID: 0}
+  lettersMenu: {fileID: 0}
+  notebookMenu: {fileID: 0}
   isMainMenu: 0

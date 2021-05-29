@@ -150,12 +150,12 @@ namespace TheMansion
                 playerScript.heartOpacity += 0.05f * Time.deltaTime;
             }
 
-            if (isCalled)
-            {
-                if (canBeCalled && !isGrabbing)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(crawler.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
-                }
+            if (isCalled)
+            {
+                if (canBeCalled && !isGrabbing && !isRunning)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(crawler.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
+                }
             }
         }
 

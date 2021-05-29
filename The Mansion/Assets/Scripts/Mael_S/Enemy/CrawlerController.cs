@@ -14,6 +14,8 @@ namespace TheMansion
         Transform target;
         VictoryManager victoryManager;
 
+        private bool isScreaming;
+
         public int detectRadius = 10;
 
         bool canPlayMusic;
@@ -35,20 +37,20 @@ namespace TheMansion
 
         private void Update()
         {
-            float distance = Vector3.Distance(target.position, transform.position);
+            float distance = Vector2.Distance(target.position, transform.position);
 
-            if (distance <= detectRadius && playerScript.playerAnimator.GetBool("isRunning"))
+            if (distance <= detectRadius && playerScript.playerAnimator.GetBool("isRunning") && !isScreaming)
             {
                 StartCoroutine(CrawlerIsScreaming());
                 Debug.Log("IS SCREAMING");
                 animator.SetBool("isScreaming", true);
-            }
-
-    
+            }   
         }
 
         IEnumerator CrawlerIsScreaming()
         {
+            isScreaming = true;
+
             if (victoryManager.isLevel3 && canPlayMusic)
             {
                 audioManager.PlayAudio(AudioType.Phonograph);
@@ -71,6 +73,7 @@ namespace TheMansion
             yield return new WaitForSeconds(8);
 
             canPlayMusic = true;
+            isScreaming = false;
             animator.SetBool("isScreaming", false);
         }
       
