@@ -27,6 +27,14 @@ namespace TheMansion
         [SerializeField] GameObject story3;
         [SerializeField] GameObject story4Button;
         [SerializeField] GameObject story4;
+        [SerializeField] GameObject story5Button;
+        [SerializeField] GameObject story6Button;
+        [SerializeField] GameObject story7Button;
+        [SerializeField] GameObject story8Button;
+
+
+        [SerializeField] GameObject credits;
+        [SerializeField] GameObject options;
 
         public bool story1Get;
         public Sprite story1Sprite;
@@ -88,6 +96,8 @@ namespace TheMansion
             audioController.PlayAudio(AudioType.Click_Button_SFX, false);
             Application.Quit();
         }
+
+        #region Level Menu
 
         public void SetLevelSelection()
         {
@@ -208,6 +218,28 @@ namespace TheMansion
                 selectionStory.SetActive(false);
                 storyList.SetActive(true);
             }
+        }
+
+        #endregion
+
+        public void Options()
+        {
+            options.SetActive(true);
+        }
+
+        public void RemoveOptions()
+        {
+            options.SetActive(false);
+        }
+
+        public void Credits()
+        {
+            credits.SetActive(true);
+        }
+
+        public void RemoveCredits()
+        {
+            credits.SetActive(false);
         }
     }
 }

@@ -1835,6 +1835,7 @@ MonoBehaviour:
   continueButton: {fileID: 1631358797}
   isTimeToHide: 0
   isTimeToCalmHeart: 0
+  penAnim: {fileID: 0}
 --- !u!1 &385578139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2539212096410481190, guid: 9a86480ada013b349a56d2cba168445d,
@@ -2374,6 +2375,7 @@ MonoBehaviour:
   continueButton: {fileID: 452740342}
   isTimeToHide: 1
   isTimeToCalmHeart: 0
+  penAnim: {fileID: 0}
 --- !u!1 &602713282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 219899132, guid: 9a86480ada013b349a56d2cba168445d,
@@ -3552,6 +3554,7 @@ MonoBehaviour:
   continueButton: {fileID: 1027761559}
   isTimeToHide: 0
   isTimeToCalmHeart: 1
+  penAnim: {fileID: 0}
 --- !u!1 &1249987125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,6 +3756,7 @@ MonoBehaviour:
   continueButton: {fileID: 1742202822}
   isTimeToHide: 0
   isTimeToCalmHeart: 0
+  penAnim: {fileID: 0}
 --- !u!1 &1359201584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4867428542832603962, guid: 2dd2b5a133b12384092dbb41e1642360,
@@ -7695,6 +7699,7 @@ MonoBehaviour:
   continueButton: {fileID: 1657065865}
   isTimeToHide: 0
   isTimeToCalmHeart: 0
+  penAnim: {fileID: 0}
 --- !u!1001 &197993365883309982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10456,6 +10461,12 @@ MonoBehaviour:
   story3: {fileID: 0}
   story4Button: {fileID: 0}
   story4: {fileID: 0}
+  story5Button: {fileID: 0}
+  story6Button: {fileID: 0}
+  story7Button: {fileID: 0}
+  story8Button: {fileID: 0}
+  credits: {fileID: 0}
+  options: {fileID: 0}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0
