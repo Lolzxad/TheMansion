@@ -303,7 +303,7 @@ namespace TheMansion
                         }
                         playerAnimator.SetBool("isWalking", true);
                         isRunning = false;
-                        transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                     }
 
                     if (touchPosition.x < BasePosition.position.x && touchPosition.x >= WalkLeft.position.x && canMove)
@@ -315,7 +315,7 @@ namespace TheMansion
                         }
                         playerAnimator.SetBool("isWalking", true);
                         isRunning = false;
-                        transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                     }
 
                     if (touchPosition.x > WalkRight.position.x && touchPosition.x <= RunRight.position.x && stamina > 0 && canMove)
@@ -328,13 +328,13 @@ namespace TheMansion
                         if (stamina > 0f)
                         {
                             playerAnimator.SetBool("isRunning", true);
-                            transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                            transform.Translate((Vector2.right * Time.deltaTime) * 10f);
                         }
 
                         else
                         {
                             playerAnimator.SetBool("isWalking", true);
-                            transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                            transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                         }
                         isRunning = true;
                         StartCoroutine(StaminaLoss());
@@ -353,13 +353,13 @@ namespace TheMansion
                         if (stamina > 0f)
                         {
                             playerAnimator.SetBool("isRunning", true);
-                            transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                            transform.Translate((Vector2.left * Time.deltaTime) * 10f);
                         }
 
                         else
                         {
                             playerAnimator.SetBool("isWalking", true);
-                            transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                            transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                         }
                         StartCoroutine(StaminaLoss());
                     }
@@ -653,7 +653,7 @@ namespace TheMansion
                         Flip();
                     }
                     playerAnimator.SetBool("isWalking", true);
-                    transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                    transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                     isRunning = false;
                 }
 
@@ -665,7 +665,7 @@ namespace TheMansion
                         Flip();
                     }
                     playerAnimator.SetBool("isWalking", true);
-                    transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                    transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                     isRunning = false;
                 }
 
@@ -680,12 +680,12 @@ namespace TheMansion
                     if (stamina > 0f)
                     {
                         playerAnimator.SetBool("isRunning", true);
-                        transform.Translate((Vector3.right * Time.deltaTime) * 10f);
+                        transform.Translate((Vector2.right * Time.deltaTime) * 10f);
                     }
                     else
                     {
                         playerAnimator.SetBool("isWalking", true);
-                        transform.Translate((Vector3.right * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.right * Time.deltaTime) * 5f);
                     }
                     isRunning = true;
                     StartCoroutine(StaminaLoss());
@@ -701,13 +701,13 @@ namespace TheMansion
                     if (stamina > 0f)
                     {
                         playerAnimator.SetBool("isRunning", true);
-                        transform.Translate((Vector3.left * Time.deltaTime) * 10f);
+                        transform.Translate((Vector2.left * Time.deltaTime) * 10f);
                     }
 
                     else
                     {
                         playerAnimator.SetBool("isWalking", true);
-                        transform.Translate((Vector3.left * Time.deltaTime) * 5f);
+                        transform.Translate((Vector2.left * Time.deltaTime) * 5f);
                     }
                     isRunning = true;
                     StartCoroutine(StaminaLoss());
@@ -864,7 +864,7 @@ namespace TheMansion
 
             while (transform.position.y != ladderTop.y)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector2(transform.position.x, ladderTop.y), Time.deltaTime * 5f);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, ladderTop.y), Time.deltaTime * 5f);
                 yield return null;
             }
             

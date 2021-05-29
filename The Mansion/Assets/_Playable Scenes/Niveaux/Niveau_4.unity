@@ -3911,7 +3911,7 @@ PrefabInstance:
     - target: {fileID: 713603364730538227, guid: b5480c012f2cf60499bc03e9e33258f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.8
+      value: 36.71
       objectReference: {fileID: 0}
     - target: {fileID: 713603365035203936, guid: b5480c012f2cf60499bc03e9e33258f9,
         type: 3}
@@ -4073,7 +4073,7 @@ PrefabInstance:
     - target: {fileID: 715673820908053800, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -161
+      value: -187
       objectReference: {fileID: 0}
     - target: {fileID: 715673820908053800, guid: d0e16896251e51248803ed66908fce4a,
         type: 3}
@@ -10544,7 +10544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionLevel: {fileID: 0}
   selectionStory: {fileID: 0}
-  storyList: {fileID: 0}
+  storyList1: {fileID: 0}
+  storyList2: {fileID: 0}
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
@@ -10560,6 +10561,10 @@ MonoBehaviour:
   story6Button: {fileID: 0}
   story7Button: {fileID: 0}
   story8Button: {fileID: 0}
+  story5: {fileID: 0}
+  story6: {fileID: 0}
+  story7: {fileID: 0}
+  story8: {fileID: 0}
   credits: {fileID: 0}
   options: {fileID: 0}
   story1Get: 0
@@ -10570,4 +10575,14 @@ MonoBehaviour:
   story3Sprite: {fileID: 0}
   story4Get: 0
   story4Sprite: {fileID: 0}
+  story5Get: 0
+  story5Sprite: {fileID: 0}
+  story6Get: 0
+  story6Sprite: {fileID: 0}
+  story7Get: 0
+  story7Sprite: {fileID: 0}
+  story8Get: 0
+  story8Sprite: {fileID: 0}
+  lettersMenu: {fileID: 0}
+  notebookMenu: {fileID: 0}
   isMainMenu: 0
