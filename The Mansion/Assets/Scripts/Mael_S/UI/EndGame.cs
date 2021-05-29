@@ -1,0 +1,144 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace TheMansion
+{
+    public class EndGame : MonoBehaviour
+    {
+        [SerializeField] Sprite letterRecup;
+        [SerializeField] Sprite notebookRecup;
+
+        [SerializeField] GameObject closeNarraButton;
+        [SerializeField] GameObject narra_1;
+        [SerializeField] GameObject narra_2;
+        [SerializeField] GameObject narra_3;
+
+
+        MenuManager menu;
+        VictoryManager victoryManager;
+
+
+        bool narraRecup_1;
+        bool narraRecup_2;
+        bool narraRecup_3;
+
+
+        private void Start()
+        {
+            Time.timeScale = 0f;
+
+            menu = FindObjectOfType<MenuManager>();
+            victoryManager = FindObjectOfType<VictoryManager>();
+
+            if(victoryManager.isLevel2 && menu.story1Get)
+            {
+                narra_1.GetComponent<Image>().sprite = notebookRecup;
+                narraRecup_1 = true;
+            }  
+            
+            if(victoryManager.isLevel3)
+            {
+
+                if (menu.story2Get)
+                {
+                    narra_1.GetComponent<Image>().sprite = letterRecup;
+                    narraRecup_1 = true;
+                }
+
+                if (menu.story3Get)
+                {
+                    narra_2.GetComponent<Image>().sprite = notebookRecup;
+                    narraRecup_2 = true;
+                }
+                
+            }
+
+            if (victoryManager.isLevel4)
+            {
+                if (menu.story4Get)
+                {
+                    narra_1.GetComponent<Image>().sprite = letterRecup;
+                    narraRecup_1 = true;
+                }
+
+                if (menu.story5Get)
+                {
+                    narra_2.GetComponent<Image>().sprite = notebookRecup;
+                    narraRecup_2 = true;
+                }
+            }
+
+
+            if (victoryManager.isLevel5)
+            {
+                if (menu.story6Get)
+                {
+                    narra_1.GetComponent<Image>().sprite = letterRecup;
+                    narraRecup_1 = true;
+                }
+
+                if (menu.story7Get)
+                {
+                    narra_2.GetComponent<Image>().sprite = notebookRecup;
+                    narraRecup_2 = true;
+                }
+
+                if (menu.story8Get)
+                {
+                    narra_3.GetComponent<Image>().sprite = notebookRecup;
+                    narraRecup_3 = true;
+                }
+            }
+        }
+
+        public void ShowNarra1()
+        {
+            if (narraRecup_1)
+            {
+                narra_1.SetActive(true);
+                closeNarraButton.SetActive(true);
+            }
+        }
+
+        public void ShowNarra2()
+        {
+            if (narraRecup_2)
+            {
+                narra_2.SetActive(true);
+                closeNarraButton.SetActive(true);
+            }
+        }
+
+        public void ShowNarra3()
+        {
+            if (narraRecup_3)
+            {
+                narra_3.SetActive(true);
+                closeNarraButton.SetActive(true);
+            }
+        }
+
+        public void CloseNarra1()
+        {
+            narra_1.SetActive(false);
+            closeNarraButton.SetActive(false);
+        }
+
+        public void CloseNarra2()
+        {
+            narra_2.SetActive(false);
+            closeNarraButton.SetActive(false);
+        }
+
+        public void CloseNarra_3()
+        {
+            narra_3.SetActive(false);
+            closeNarraButton.SetActive(false);
+        }
+
+    }
+}
+
+
