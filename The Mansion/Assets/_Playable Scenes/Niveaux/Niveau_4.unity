@@ -1219,6 +1219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputSpamRunner
       objectReference: {fileID: 0}
+    - target: {fileID: 4054990203193038157, guid: eff6c710049d57e439c50be5d6a2ce3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4054990203193038194, guid: eff6c710049d57e439c50be5d6a2ce3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1277,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 4054990203193038194, guid: eff6c710049d57e439c50be5d6a2ce3e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4054990203193038194, guid: eff6c710049d57e439c50be5d6a2ce3e,
         type: 3}
