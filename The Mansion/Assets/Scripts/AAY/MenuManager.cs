@@ -79,10 +79,10 @@ namespace TheMansion
             story2Get = (PlayerPrefs.GetInt("Story2") != 0);
             story3Get = (PlayerPrefs.GetInt("Story3") != 0);
             story4Get = (PlayerPrefs.GetInt("Story4") != 0);
-            story5Get = (PlayerPrefs.GetInt("Story4") != 0);
-            story6Get = (PlayerPrefs.GetInt("Story4") != 0);
-            story7Get = (PlayerPrefs.GetInt("Story4") != 0);
-            story8Get = (PlayerPrefs.GetInt("Story4") != 0);
+            story5Get = (PlayerPrefs.GetInt("Story5") != 0);
+            story6Get = (PlayerPrefs.GetInt("Story6") != 0);
+            story7Get = (PlayerPrefs.GetInt("Story7") != 0);
+            story8Get = (PlayerPrefs.GetInt("Story8") != 0);
             
 
 
