@@ -302,7 +302,7 @@ namespace TheMansion
                 }
 
                 if (!movingLeft && bBcanMove)
-                    {
+                {
                     transform.position = Vector2.MoveTowards(transform.position, new Vector2(target2.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
                     bigBoyAnimator.SetBool("isWalking", true);           
                 }
@@ -343,6 +343,7 @@ namespace TheMansion
             Debug.Log("Pursuit of happiness");
 
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
+            bigBoyAnimator.SetBool("isWalking", true);
 
             //si le joueur sort de son champ de vision/distance alors il va à sa dernière position
         }
