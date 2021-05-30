@@ -6158,7 +6158,7 @@ PrefabInstance:
     - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
@@ -7352,6 +7352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
@@ -8817,12 +8822,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1965188183}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1965188185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4247093481472977529, guid: 0cc8129074c807b499886faedf511d53,
-    type: 3}
-  m_PrefabInstance: {fileID: 1965188183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1995530923 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1912671114992240059, guid: 687bc98d317c3944d850163707679f8e,
@@ -10253,7 +10252,7 @@ MonoBehaviour:
   isLevel6: 0
   isLevel7: 0
   obj: {fileID: 0}
-  menuWin: {fileID: 1965188185}
+  menuWin: {fileID: 880490967}
   keyTMP: {fileID: 1206172344}
   keyUI: {fileID: 0}
   doorLockedTMP: {fileID: 2114754966}
