@@ -169,10 +169,10 @@ namespace TheMansion
 
             if (isGrabbing)
             {
-
+                Handheld.Vibrate();
                 /*if (spamInputController.spamDone)
                 {
-                    Debug.Log("IsStunned");
+                    Debug.Log("isTired");
 
                     spamInputController.spam = 0;
 
@@ -274,10 +274,12 @@ namespace TheMansion
         {
             Debug.Log("is tired");
             animator.SetBool("isRunning", false);
+            animator.SetBool("isTired", true);
             animator.ResetTrigger("hasAttacked");
             audioManager.StopAudio(AudioType.Runner_Run);
             audioManager.PlayAudio(AudioType.RUnner_Fatigue, false, 0.5f);
             yield return new WaitForSeconds(waitForIdle);
+            animator.SetBool("isTired", false);
             audioManager.StopAudio(AudioType.RUnner_Fatigue, false, 0.5f);
             isComingBack = true;
             isTired = false;
@@ -315,7 +317,7 @@ namespace TheMansion
             Debug.Log("runner is stunned");
 
             audioManager.PlayAudio(AudioType.Runner_Stun);
-            animator.SetBool("isStunned", true);
+            animator.SetBool("isTired", true);
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -338,7 +340,7 @@ namespace TheMansion
         {
 
             yield return new WaitForSeconds(5f);
-            animator.SetBool("isStunned", false);
+            animator.SetBool("isTired", false);
             gameObject.GetComponent<Collider2D>().enabled = true;
             isComingBack = true;
             isGrabbing = false;
