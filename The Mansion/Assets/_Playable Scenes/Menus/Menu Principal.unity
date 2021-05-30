@@ -8362,7 +8362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0aa412f5b88bc6a4cbeb90cb265e5e0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08053ac7fc1f9ae44aace86cd4d29efd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9819,7 +9819,6 @@ MonoBehaviour:
   story8: {fileID: 967323424}
   credits: {fileID: 1830235926}
   options: {fileID: 608856423}
-  fond: {fileID: 702845762}
   story1Get: 0
   story1Sprite: {fileID: 21300000, guid: a8dda011230dc4c4791c25bdc9d294f8, type: 3}
   story2Get: 0

@@ -121,6 +121,101 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &192219778
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1491313935}
+    m_Modifications:
+    - target: {fileID: 9106148498050996100, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_Name
+      value: MainMenuFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498738562678, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498738562678, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498906441436, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106148498906441436, guid: b42be9e8fffb06544a8259bbe2919a92,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b42be9e8fffb06544a8259bbe2919a92, type: 3}
+--- !u!4 &192219779 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9106148498050996103, guid: b42be9e8fffb06544a8259bbe2919a92,
+    type: 3}
+  m_PrefabInstance: {fileID: 192219778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &327688544
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +624,6 @@ MonoBehaviour:
   story8: {fileID: 0}
   credits: {fileID: 0}
   options: {fileID: 0}
-  fond: {fileID: 1972619099}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0
@@ -597,7 +691,7 @@ Canvas:
   m_GameObject: {fileID: 1491313930}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 833680030}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -621,6 +715,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1972619103}
+  - {fileID: 192219779}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
