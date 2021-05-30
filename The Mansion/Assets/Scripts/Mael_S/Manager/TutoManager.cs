@@ -95,6 +95,8 @@ namespace TheMansion
 
         public void Update()
         {
+            
+
             if (playerController.isHiding && playerIsHiding)
             {
                 //hideTrigger.SetActive(false);

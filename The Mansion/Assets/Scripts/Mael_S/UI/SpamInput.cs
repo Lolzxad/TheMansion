@@ -41,6 +41,8 @@ namespace TheMansion
 
         public GameObject menuDefaite;
 
+        [SerializeField] GameObject bigboy;
+
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
@@ -164,6 +166,7 @@ namespace TheMansion
 
                 if (tuto)
                 {
+                    bigboy.SetActive(false);
                     tuto.stunTexte.SetActive(true);
                     tuto.canWinTrigger.SetActive(true);
                     bbController.GetComponent<BigBoyController>().enabled = false;
