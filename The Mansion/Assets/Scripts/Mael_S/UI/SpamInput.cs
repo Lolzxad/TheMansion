@@ -11,8 +11,6 @@ namespace TheMansion
     {
         public int spamL;
         public int spamR;
-
-        public int playerLives = 3;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
@@ -28,6 +26,7 @@ namespace TheMansion
         TutoManager tuto;
         AudioManagerVEVO audioManager;
         SpamInputRunner spamRunner;
+        PlayerController playerScript;
 
 
         [SerializeField] Sprite heart_1;
@@ -57,6 +56,7 @@ namespace TheMansion
             runnerController = FindObjectOfType<RunnerController>();
             tuto = FindObjectOfType<TutoManager>();
             spamRunner = FindObjectOfType<SpamInputRunner>();
+            playerScript = FindObjectOfType<PlayerController>();
 
 
             heart.GetComponent<Image>();
@@ -124,8 +124,6 @@ namespace TheMansion
                     spamDone_R = false;
                     spamDone = false;
                     gameObject.SetActive(false);
-                    playerLives -= 1;
-                    spamRunner.playerLives -= 1;
                 }
 
                
@@ -153,23 +151,7 @@ namespace TheMansion
                 }*/
 
 
-            }
-
-            if(playerLives == 2)
-            {
-                heart.GetComponent<Image>().sprite = heart_2;
-            }
-
-            if (playerLives == 1)
-            {
-                heart.GetComponent<Image>().sprite = heart_1;
-            }
-
-            if (playerLives == 0)
-            {
-                GameOver();
-            }
-
+            }           
         }
 
 

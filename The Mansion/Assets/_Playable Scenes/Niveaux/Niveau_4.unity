@@ -241,23 +241,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 953541068223691653, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
+      propertyPath: heart
+      value: 
+      objectReference: {fileID: 1550890736}
+    - target: {fileID: 953541068223691653, guid: cec5a983bad55e84e85331c88d3c714b,
+        type: 3}
       propertyPath: menuDefaite
       value: 
       objectReference: {fileID: 339885590}
-    - target: {fileID: 953541068223691653, guid: cec5a983bad55e84e85331c88d3c714b,
-        type: 3}
-      propertyPath: playerLives
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4054990203193038157, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
       propertyPath: m_Name
       value: InputSpam
-      objectReference: {fileID: 0}
-    - target: {fileID: 4054990203193038157, guid: cec5a983bad55e84e85331c88d3c714b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4054990203193038194, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
@@ -7348,6 +7343,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1550890736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1912671114992240061, guid: 687bc98d317c3944d850163707679f8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1105534302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1568251472
 PrefabInstance:
   m_ObjectHideFlags: 0

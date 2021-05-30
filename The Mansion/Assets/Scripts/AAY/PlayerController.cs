@@ -11,18 +11,22 @@ namespace TheMansion
     {
         private MenuManager MenuManagerScript;
         AudioManagerVEVO audioManager;
+        SpamInput spamInputScript;
 
         public Animator playerAnimator;
         public Animator heartAnimator;
+ 
 
+        private float lastStamina = 100f;
         public float stamina = 100f;
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
         public float defaultGravity;
         public float heartOpacity = 0f;
         public float heartbeatSpeed = 0.1f;
-        private float lastStamina = 100f;
 
+        public int playerLives = 3;
+        
         private bool canHide;
         private bool canUseLadder;
         public bool isGrounded;
@@ -46,6 +50,7 @@ namespace TheMansion
         public GameObject playerSprite;
         public GameObject hideFeedback;
         public GameObject heartFeedback;
+        public GameObject defeatMenu;
         public Rigidbody2D playerRb;
         public Vector3 baseSpritePosition;
         public Vector3 basePosition;
@@ -61,6 +66,7 @@ namespace TheMansion
         {
             MenuManagerScript = FindObjectOfType<MenuManager>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            spamInputScript = FindObjectOfType<SpamInput>();
             playerRb = GetComponent<Rigidbody2D>();
             playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
             defaultGravity = playerRb.gravityScale;
@@ -72,6 +78,23 @@ namespace TheMansion
         {
 
             heartFeedback.GetComponent<Image>().color = new Color(1f, 1f, 1f, heartOpacity);
+
+            if (playerLives == 2)
+            {
+                //heart.GetComponent<Image>().sprite = heart_2;
+                heartAnimator.GetComponent<Animator>().SetInteger("heartLevel", 2);
+            }
+
+            if (playerLives == 1)
+            {
+                //heart.GetComponent<Image>().sprite = heart_1;
+                heartAnimator.GetComponent<Animator>().SetInteger("heartLevel", 3);
+            }
+
+            if (playerLives == 0)
+            {
+                GameOver();
+            }
 
             if (isGrabbed)
             {
@@ -712,6 +735,12 @@ namespace TheMansion
                 canMove = true;                
             }
             isCalmingHeart = false;
+        }
+
+        public void GameOver()
+        {
+            defeatMenu.SetActive(true);
+            Time.timeScale = 0;
         }
 
         /*public void HeartFeedback()

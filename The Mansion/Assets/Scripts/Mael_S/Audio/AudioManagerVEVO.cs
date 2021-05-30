@@ -67,21 +67,20 @@ namespace TheMansion
             {
                 instance = this;
                 Configure();
-            }
+            }           
         }
 
         private void Start()
         {
             menu = FindObjectOfType<MenuManager>();
+            menu.cannotPlayMusic = (PlayerPrefs.GetInt("CannotPlayMusic") != 0);
 
-            if (isMainMenu && menu.canPlayMusic)
+            if (isMainMenu && !menu.cannotPlayMusic)
             {
                 AudioListener.volume = 0.7f;
                 PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
             }
-        }
-
-        
+        }      
 
         private void OnDisable()
         {
