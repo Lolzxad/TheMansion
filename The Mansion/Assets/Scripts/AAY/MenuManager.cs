@@ -11,6 +11,8 @@ namespace TheMansion
         //  [SerializeField] GameObject fonds;
         //[SerializeField] GameObject levels;
 
+        [Space]
+        [Header("Game Objects")]
         [SerializeField] GameObject selectionLevel;
         [SerializeField] GameObject selectionStory;
         [SerializeField] GameObject storyList1;
@@ -19,7 +21,12 @@ namespace TheMansion
         [SerializeField] GameObject storyButton;
         [SerializeField] GameObject levelsButton;
         [SerializeField] GameObject optionsButton;
+        [SerializeField] GameObject unlockButton;
+        
 
+
+        [Space]
+        [Header ("Lore")]
         [SerializeField] GameObject story1Button;
         [SerializeField] GameObject story1;
         [SerializeField] GameObject story2Button;
@@ -40,8 +47,30 @@ namespace TheMansion
 
         [SerializeField] GameObject credits;
         [SerializeField] GameObject options;
-        
 
+        [Space]
+        [Header("Level Bools")]
+        public bool level2Unlocked;
+        public bool level3Unlocked;
+        public bool level4Unlocked;
+        public bool level5Unlocked;
+
+        [Space]
+        [Header("Level Real")]
+        public GameObject realLevel2;
+        public GameObject realLevel3;
+        public GameObject realLevel4;
+        public GameObject realLevel5;
+
+        [Space]
+        [Header("Level Fakes")]
+        public GameObject fakeLevel2;
+        public GameObject fakeLevel3;
+        public GameObject fakeLevel4;
+        public GameObject fakeLevel5;
+
+        [Space]
+        [Header("Story Bool and Sprites")]
         public bool story1Get;
         public Sprite story1Sprite;
         public bool story2Get;
@@ -58,6 +87,7 @@ namespace TheMansion
         public Sprite story7Sprite;
         public bool story8Get;
         public Sprite story8Sprite;
+        [SerializeField] Sprite unlockSprite;
 
 
         [SerializeField] GameObject lettersMenu;
@@ -83,11 +113,7 @@ namespace TheMansion
 
         private void Awake()
         {
-            audioController = FindObjectOfType<AudioManagerVEVO>();          
-        }
-
-        private void Start()
-        {
+            audioController = FindObjectOfType<AudioManagerVEVO>();
             story1Get = (PlayerPrefs.GetInt("Story1") != 0);
             story2Get = (PlayerPrefs.GetInt("Story2") != 0);
             story3Get = (PlayerPrefs.GetInt("Story3") != 0);
@@ -96,6 +122,15 @@ namespace TheMansion
             story6Get = (PlayerPrefs.GetInt("Story6") != 0);
             story7Get = (PlayerPrefs.GetInt("Story7") != 0);
             story8Get = (PlayerPrefs.GetInt("Story8") != 0);
+
+            level2Unlocked = (PlayerPrefs.GetInt("Level2Unlocked") != 0);
+            level3Unlocked = (PlayerPrefs.GetInt("Level3Unlocked") != 0);
+            level4Unlocked = (PlayerPrefs.GetInt("Level4Unlocked") != 0);
+            level5Unlocked = (PlayerPrefs.GetInt("Level5Unlocked") != 0);
+        }
+
+        private void Start()
+        {
 
             cannotPlayMusic = (PlayerPrefs.GetInt("CannotPlayMusic") != 0);
             cannotPlaySFX = (PlayerPrefs.GetInt("CannotPlaySFX") != 0);
@@ -242,6 +277,30 @@ namespace TheMansion
             storyButton.SetActive(false);
             levelsButton.SetActive(false);
             optionsButton.SetActive(false);
+
+            if (level2Unlocked)
+            {
+                fakeLevel2.SetActive(false);
+                realLevel2.SetActive(true);
+            }
+
+            if (level3Unlocked)
+            {
+                fakeLevel3.SetActive(false);
+                realLevel3.SetActive(true);
+            }
+
+            if (level4Unlocked)
+            {
+                fakeLevel4.SetActive(false);
+                realLevel4.SetActive(true);
+            }
+
+            if (level5Unlocked)
+            {
+                fakeLevel5.SetActive(false);
+                realLevel5.SetActive(true);
+            }
         }
 
         public void RemoveSelectionLevel()
@@ -474,6 +533,19 @@ namespace TheMansion
         public void RemoveCredits()
         {
             credits.SetActive(false);
+        }
+
+        public void UnlockAllLevels()
+        {
+            level2Unlocked = true;
+            level3Unlocked = true;
+            level4Unlocked = true;
+            level5Unlocked = true;
+            PlayerPrefs.SetInt("Level2Unlocked", (level2Unlocked ? 1 : 0));
+            PlayerPrefs.SetInt("Level3Unlocked", (level3Unlocked ? 1 : 0));
+            PlayerPrefs.SetInt("Level4Unlocked", (level4Unlocked ? 1 : 0));
+            PlayerPrefs.SetInt("Level5Unlocked", (level5Unlocked ? 1 : 0));
+            unlockButton.GetComponent<Image>().sprite = unlockSprite;
         }
     }
 }
