@@ -5934,7 +5934,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuDefaite
       value: 
-      objectReference: {fileID: 1267890724}
+      objectReference: {fileID: 1473685199}
     - target: {fileID: 953541068223691653, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
       propertyPath: playerLives
@@ -6382,6 +6382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: StoryLore
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456023913400471385, guid: 2bfdf8ff12f1d4b44ac23a2278df6d9a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfdf8ff12f1d4b44ac23a2278df6d9a, type: 3}
