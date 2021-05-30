@@ -193,7 +193,7 @@ namespace TheMansion
                     //Le big boy a vu le joueur se cacher
                     isRunning = false;
                     playerScript.isHiding = false;
-                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                     playerScript.playerAnimator.SetBool("isHiding", false);
                     playerScript.playerRb.gravityScale = playerScript.defaultGravity;
@@ -430,7 +430,7 @@ namespace TheMansion
             if (playerScript.hidingFactor * Random.Range(1, 6) >= 100)
             {              
                 playerScript.isHiding = false;
-                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                 playerScript.playerAnimator.SetBool("isHiding", false);
                 playerScript.playerRb.gravityScale = playerScript.defaultGravity;
