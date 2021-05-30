@@ -606,6 +606,7 @@ MonoBehaviour:
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
+  unlockButton: {fileID: 0}
   story1Button: {fileID: 0}
   story1: {fileID: 0}
   story2Button: {fileID: 0}
@@ -624,6 +625,18 @@ MonoBehaviour:
   story8: {fileID: 0}
   credits: {fileID: 0}
   options: {fileID: 0}
+  level2Unlocked: 0
+  level3Unlocked: 0
+  level4Unlocked: 0
+  level5Unlocked: 0
+  realLevel2: {fileID: 0}
+  realLevel3: {fileID: 0}
+  realLevel4: {fileID: 0}
+  realLevel5: {fileID: 0}
+  fakeLevel2: {fileID: 0}
+  fakeLevel3: {fileID: 0}
+  fakeLevel4: {fileID: 0}
+  fakeLevel5: {fileID: 0}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0
@@ -640,8 +653,17 @@ MonoBehaviour:
   story7Sprite: {fileID: 0}
   story8Get: 0
   story8Sprite: {fileID: 0}
+  unlockSprite: {fileID: 0}
   lettersMenu: {fileID: 0}
   notebookMenu: {fileID: 0}
+  fullLevels: {fileID: 0}
+  lockedLevels: {fileID: 0}
+  musicButton: {fileID: 0}
+  soundButton: {fileID: 0}
+  noMusicButton: {fileID: 0}
+  noSoundButton: {fileID: 0}
+  cannotPlayMusic: 0
+  cannotPlaySFX: 0
   isMainMenu: 0
 --- !u!114 &1491313932
 MonoBehaviour:
@@ -851,6 +873,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.3204, y: 2.9}
-  m_SizeDelta: {x: 810.8972, y: 456.12976}
+  m_AnchoredPosition: {x: -5.3204, y: -0.16007}
+  m_SizeDelta: {x: 810.8972, y: 450.00964}
   m_Pivot: {x: 0.5, y: 0.5}

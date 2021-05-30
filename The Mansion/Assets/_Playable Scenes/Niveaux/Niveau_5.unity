@@ -812,6 +812,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -951,6 +956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
@@ -2596,7 +2606,17 @@ PrefabInstance:
     - target: {fileID: 1912671114992240039, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CalmingHeart
+      value: CalmingHeartStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912671114992240039, guid: 687bc98d317c3944d850163707679f8e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1153051089}
+    - target: {fileID: 1912671114992240039, guid: 687bc98d317c3944d850163707679f8e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CalmingHeartStop
       objectReference: {fileID: 0}
     - target: {fileID: 1912671114992240060, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
@@ -6159,6 +6179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
@@ -10389,6 +10414,7 @@ MonoBehaviour:
   storyButton: {fileID: 0}
   levelsButton: {fileID: 0}
   optionsButton: {fileID: 0}
+  unlockButton: {fileID: 0}
   story1Button: {fileID: 0}
   story1: {fileID: 0}
   story2Button: {fileID: 0}
@@ -10407,6 +10433,18 @@ MonoBehaviour:
   story8: {fileID: 0}
   credits: {fileID: 0}
   options: {fileID: 0}
+  level2Unlocked: 0
+  level3Unlocked: 0
+  level4Unlocked: 0
+  level5Unlocked: 0
+  realLevel2: {fileID: 0}
+  realLevel3: {fileID: 0}
+  realLevel4: {fileID: 0}
+  realLevel5: {fileID: 0}
+  fakeLevel2: {fileID: 0}
+  fakeLevel3: {fileID: 0}
+  fakeLevel4: {fileID: 0}
+  fakeLevel5: {fileID: 0}
   story1Get: 0
   story1Sprite: {fileID: 0}
   story2Get: 0
@@ -10423,10 +10461,15 @@ MonoBehaviour:
   story7Sprite: {fileID: 0}
   story8Get: 0
   story8Sprite: {fileID: 0}
+  unlockSprite: {fileID: 0}
   lettersMenu: {fileID: 0}
   notebookMenu: {fileID: 0}
   fullLevels: {fileID: 0}
   lockedLevels: {fileID: 0}
-  canPlayMusic: 0
-  canPlaySFX: 0
+  musicButton: {fileID: 0}
+  soundButton: {fileID: 0}
+  noMusicButton: {fileID: 0}
+  noSoundButton: {fileID: 0}
+  cannotPlayMusic: 0
+  cannotPlaySFX: 0
   isMainMenu: 0
