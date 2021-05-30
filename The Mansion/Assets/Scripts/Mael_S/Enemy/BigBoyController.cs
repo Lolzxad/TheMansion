@@ -46,6 +46,7 @@ namespace TheMansion
         public bool canBeCalled;
         public bool isCalled;
         public bool movingLeft = true;
+        public bool hasDetected;
     
         
         
@@ -57,7 +58,8 @@ namespace TheMansion
         [SerializeField] Transform crawler;
         public GameObject playerSprite;
         public GameObject spamInput;
-        public GameObject triggerBB;       
+        public GameObject triggerBB;
+        public GameObject detection;
         public Transform[] moveSpots;
         private GameObject player;
 
@@ -246,6 +248,12 @@ namespace TheMansion
             isRunning = true;
             isPatrolling = false;
             playerInVision = true;
+
+            if (!hasDetected)
+            {
+                StartCoroutine("Detection");
+                hasDetected = true;
+            }           
         }
 
         /*public void OnBecameVisible()
@@ -283,7 +291,7 @@ namespace TheMansion
 
         public void BBMPA()
         {
-
+            hasDetected = false;
 
             //
             //Debug.Log("Big Boy is patrolling");
@@ -461,6 +469,16 @@ namespace TheMansion
             bigBoyAnimator.SetBool("isStunned", false);
             bBcanMove = true;           
             isPatrolling = true;
+        }
+
+        IEnumerator Detection()
+        {
+            detection.SetActive(true);
+            detection.GetComponent<Animator>().SetBool("hasDetected", true);
+            yield return new WaitForSeconds(1f);
+            detection.SetActive(false);
+            detection.GetComponent<Animator>().SetBool("hasDetected", false);
+            yield break;
         }
 
         public void Flip()
