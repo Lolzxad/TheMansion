@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Com.LuisPedroFonseca.ProCamera2D;
 
-
 namespace TheMansion
 {
-
-
-    public class BigBoyController : MonoBehaviour
+    public class SecondBigBoy : MonoBehaviour
     {
         public Animator bigBoyAnimator;
 
@@ -23,7 +20,6 @@ namespace TheMansion
         public float rechercheTime;
         private float playerDistance;
         private float lastPlayerDistance = 100f;
-        [SerializeField] float bbVision;
 
         float defaultSpeed;
         float defaultSpeedPO;
@@ -46,9 +42,8 @@ namespace TheMansion
         public bool canBeCalled;
         public bool isCalled;
         public bool movingLeft = true;
-    
-        
-        
+
+
 
         [Space]
         [Header("GameObjects")]
@@ -57,7 +52,7 @@ namespace TheMansion
         [SerializeField] Transform crawler;
         public GameObject playerSprite;
         public GameObject spamInput;
-        public GameObject triggerBB;       
+        public GameObject triggerBB;
         public Transform[] moveSpots;
         private GameObject player;
 
@@ -65,11 +60,11 @@ namespace TheMansion
         TutoManager tuto;
         AudioManagerVEVO audioManager;
         private Vector2 bigBoyDirection;
-       
 
-    
 
-       
+
+
+
         //[SerializeField] GameObject warning;
 
         private void Awake()
@@ -77,7 +72,7 @@ namespace TheMansion
             playerScript = FindObjectOfType<PlayerController>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-           // tuto = FindObjectOfType<TutoManager>();
+            // tuto = FindObjectOfType<TutoManager>();
         }
 
         private void Start()
@@ -111,7 +106,8 @@ namespace TheMansion
                 if (!isFacingRight)
                 {
                     Flip();
-                }               
+                }
+
             }
 
             if (bigBoyDirection.x > transform.position.x)
@@ -150,9 +146,7 @@ namespace TheMansion
 
             if (isRunning)
             {
-
                 BBMPO();
-                
             }
 
             if (playerInVision)
@@ -168,7 +162,6 @@ namespace TheMansion
                 if (canBeCalled && !isGrabbing && !isRunning)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, new Vector2(crawler.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
-
                 }
             }
         }
@@ -223,7 +216,7 @@ namespace TheMansion
 
         IEnumerator ModeRecherche()
         {
-                      
+
             //lance anim recherche
             Debug.Log("Mode recherche en cours");
             bigBoySpeed = 0;
@@ -242,7 +235,7 @@ namespace TheMansion
 
         public void TriggerPoursuite()
         {
-            
+
             isRunning = true;
             isPatrolling = false;
             playerInVision = true;
@@ -255,13 +248,13 @@ namespace TheMansion
             playerInVision = true;
         }*/
 
-       /* public void OnBecameInvisible()
-        {
-            if (isRunning)
-            {
-                StartCoroutine(ContinueRunning());
-            }
-        }*/
+        /* public void OnBecameInvisible()
+         {
+             if (isRunning)
+             {
+                 StartCoroutine(ContinueRunning());
+             }
+         }*/
 
         public void RunningOutsideCamera()
         {
@@ -287,70 +280,83 @@ namespace TheMansion
 
             //
             //Debug.Log("Big Boy is patrolling");
-                // triggerBB.SetActive(true);
+            // triggerBB.SetActive(true);
 
-                /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
+            /*  transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, bigBoySpeed * Time.deltaTime);
 
-                  if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+              if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+              {
+                  if (waitTime <= 0)
                   {
-                      if (waitTime <= 0)
-                      {
-                          randomSpot = Random.Range(0, moveSpots.Length);
-                          waitTime = startWaitTime;
-                      }
-                      else
-                      {
-                          waitTime -= Time.deltaTime;
-                      }
-                  }*/
+                      randomSpot = Random.Range(0, moveSpots.Length);
+                      waitTime = startWaitTime;
+                  }
+                  else
+                  {
+                      waitTime -= Time.deltaTime;
+                  }
+              }*/
 
-                // distance = Vector3.Distance(target.position, transform.position);
-                float distance1 = Vector3.Distance(target1.position, transform.position);
-                float distance2 = Vector3.Distance(target2.position, transform.position);
-                float crawlerDis = Vector3.Distance(crawler.position, transform.position);
-                //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
+            // distance = Vector3.Distance(target.position, transform.position);
+            float distance1 = Vector3.Distance(target1.position, transform.position);
+            float distance2 = Vector3.Distance(target2.position, transform.position);
 
-                if (movingLeft && bBcanMove)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(target1.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
-                    bigBoyAnimator.SetBool("isWalking", true);                                
-                }
+            float crawlerDis = Vector3.Distance(crawler.position, transform.position);
+            //transform.Translate(Vector2.left * bigBoySpeed * Time.deltaTime);
 
-                if (!movingLeft && bBcanMove)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(target2.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
-                    bigBoyAnimator.SetBool("isWalking", true);           
-                }
+            if (movingLeft && bBcanMove)
+            {
 
-                if (distance1 <= detectZonePatrol)
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target1.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
+
+                bigBoyAnimator.SetBool("isWalking", true);
+            }
+
+            if (!movingLeft && bBcanMove)
+            {
+
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target2.position.x, transform.position.y), bigBoySpeed * Time.deltaTime);
+
+                bigBoyAnimator.SetBool("isWalking", true);
+
+            }
+
+            if (distance1 <= detectZonePatrol)
+            {
+                if (movingLeft == true)
                 {
-                    if (movingLeft == true)
-                    {
-                        Debug.Log("Target 1 detected");
-                        //transform.eulerAngles = new Vector3(0, -180, 0);
-                        Flip();
-                        movingLeft = false;
-                    }
+                    Debug.Log("Target 1 detected");
 
+                    //transform.eulerAngles = new Vector3(0, -180, 0);
+
+                    Flip();
+                    movingLeft = false;
                 }
-                if (distance2 <= detectZonePatrol)
+
+            }
+            if (distance2 <= detectZonePatrol)
+            {
+                if (movingLeft == false)
                 {
-                    if (movingLeft == false)
-                    {
-                        Debug.Log("Target 2 detected");
-                        //transform.eulerAngles = new Vector3(0, 0, 0);
-                        Flip();
-                        movingLeft = true;
-                    }
-                }
+                    Debug.Log("Target 2 detected");
 
-                if(crawlerDis <= detectZonePatrol)
-                {
-                     CrawlerReached();
+                    //transform.eulerAngles = new Vector3(0, 0, 0);
+
+                    Flip();
+                    movingLeft = true;
                 }
-            
-           
-           
+            }
+
+            if (crawlerDis <= detectZonePatrol)
+
+            {
+
+                CrawlerReached();
+
+            }
+
+
+
         }
 
         void BBMPO()
@@ -365,7 +371,6 @@ namespace TheMansion
                 isPatrolling = true;
                 isRunning = false;
             }
-
 
             //si le joueur sort de son champ de vision/distance alors il va à sa dernière position
         }
@@ -389,7 +394,7 @@ namespace TheMansion
             bigBoyAnimator.SetTrigger("hasGrabbed");
             bBcanMove = false;
 
-            ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");           
+            ProCamera2DShake.Instance.ConstantShake("GrabBigBoy");
 
             playerScript.isGrabbed = true;
             playerScript.heartBeat += 20f;
@@ -402,9 +407,9 @@ namespace TheMansion
             /*playerSprite.transform.position = grabSpot.transform.position;
             grabSpot.SetActive(true);*/
 
-            
+
             isRunning = false;
-            
+
             spamInput.SetActive(true);
         }
 
@@ -412,7 +417,7 @@ namespace TheMansion
         {
             Debug.Log("BB is stunned");
 
-            
+
 
             bigBoyAnimator.ResetTrigger("hasGrabbed");
             bigBoyAnimator.SetBool("isStunned", true);
@@ -425,17 +430,17 @@ namespace TheMansion
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             ProCamera2D.Instance.CenterOnTargets();
             playerScript.playerAnimator.SetBool("isGrabbed", false);
-            playerScript.isGrabbed = false;         
+            playerScript.isGrabbed = false;
             playerScript.canMove = true;
             playerScript.playerLives -= 1;
-            StartCoroutine(MobCanMove());   
+            StartCoroutine(MobCanMove());
         }
-        public void HideCheck() 
+        public void HideCheck()
         {
             hideCheck = true;
             //Formule pour calculer la probabilité de se faire chopper
             if (playerScript.hidingFactor * Random.Range(1, 6) >= 100)
-            {              
+            {
                 playerScript.isHiding = false;
                 playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
@@ -455,11 +460,11 @@ namespace TheMansion
 
         IEnumerator MobCanMove()
         {
-            
+
             yield return new WaitForSeconds(5f);
             gameObject.GetComponent<Collider2D>().enabled = true;
             bigBoyAnimator.SetBool("isStunned", false);
-            bBcanMove = true;           
+            bBcanMove = true;
             isPatrolling = true;
         }
 
@@ -471,7 +476,7 @@ namespace TheMansion
         }
 
 
-      
+
 
         public void CrawlerReached()
         {
@@ -485,7 +490,7 @@ namespace TheMansion
             yield return new WaitForSeconds(5);            audioManager.StopAudio(AudioType.Phonograph);
             canBeCalled = true;
         }
-        
+
 
         private void OnDrawGizmosSelected()
         {
@@ -493,7 +498,9 @@ namespace TheMansion
             Gizmos.DrawWireSphere(transform.position, detectZonePatrol);
 
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(transform.position, bbVision);
+            Gizmos.DrawWireSphere(transform.position, 10f);
         }
     }
 }
+
+

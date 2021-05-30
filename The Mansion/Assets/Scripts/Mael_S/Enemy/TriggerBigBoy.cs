@@ -9,7 +9,7 @@ namespace TheMansion
     {
         PlayerController playerScript;
         BigBoyController bigBoyScript;
-       
+        SecondBigBoy seconBb;
 
         Transform target;
   
@@ -20,7 +20,8 @@ namespace TheMansion
         {
             playerScript = FindObjectOfType<PlayerController>();
             bigBoyScript = FindObjectOfType<BigBoyController>();
-            
+            seconBb = FindObjectOfType<SecondBigBoy>();
+
         }
 
         private void Start()
@@ -42,6 +43,17 @@ namespace TheMansion
             {
                 bigBoyScript.playerInVision = false;
                 bigBoyScript.RunningOutsideCamera();
+            }
+
+            if (distance <= detectRadius && seconBb.bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
+            {
+                seconBb.TriggerPoursuite();
+            }
+
+            if (distance >= detectRadius)
+            {
+                seconBb.playerInVision = false;
+                seconBb.RunningOutsideCamera();
             }
         }
 
