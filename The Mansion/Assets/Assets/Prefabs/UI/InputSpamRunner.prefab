@@ -200,7 +200,7 @@ MonoBehaviour:
   spamDone: 0
   isTuto: 0
   menuDefaite: {fileID: 0}
-  speed: 70
+  speed: 90
   spots:
   - {fileID: 1228327712}
   - {fileID: 1168012923}
