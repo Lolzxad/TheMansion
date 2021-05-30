@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3675601599263147101}
   - component: {fileID: 3675601599263147091}
   - component: {fileID: 3675601599263147100}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BigLines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3675601599263147102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.14, y: 2.1, z: 1}
   m_Children: []
   m_Father: {fileID: 3675601599415495496}
   m_RootOrder: 1
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3675601599263147102}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 2.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -880,8 +880,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.37887886
-          value: 0.0035095215
+          time: 0.23363045
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4730,7 +4730,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4763,7 +4763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3675601599415495496}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DustFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4798,7 +4798,7 @@ GameObject:
   - component: {fileID: 3675601599720279032}
   - component: {fileID: 3675601599720279038}
   - component: {fileID: 3675601599720279039}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SmallLines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4814,7 +4814,7 @@ Transform:
   m_GameObject: {fileID: 3675601599720279033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.14, y: 2.1, z: 1}
   m_Children: []
   m_Father: {fileID: 3675601599415495496}
   m_RootOrder: 0
@@ -4827,7 +4827,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3675601599720279033}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 2.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5667,8 +5667,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.37887886
-          value: 0.0035095215
+          time: 0.23363045
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9517,7 +9517,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9552,7 +9552,7 @@ GameObject:
   - component: {fileID: 3675601600354279499}
   - component: {fileID: 3675601600354279497}
   - component: {fileID: 3675601600354279498}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9568,7 +9568,7 @@ Transform:
   m_GameObject: {fileID: 3675601600354279476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.14, y: 2.1, z: 1}
   m_Children: []
   m_Father: {fileID: 3675601599415495496}
   m_RootOrder: 2
@@ -9581,7 +9581,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3675601600354279476}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 2.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -10421,8 +10421,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.37887886
-          value: 0.0035095215
+          time: 0.23363045
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -14271,7 +14271,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

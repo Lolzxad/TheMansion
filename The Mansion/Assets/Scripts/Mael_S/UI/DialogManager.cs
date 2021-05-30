@@ -56,6 +56,7 @@ namespace TheMansion
             {
                 continueButton.SetActive(true);
                 penAnim.SetBool("isWriting", false);
+                
             }
         }
 
@@ -70,6 +71,8 @@ namespace TheMansion
             }
             
         }
+
+       
 
         public void NextSentence()
         {

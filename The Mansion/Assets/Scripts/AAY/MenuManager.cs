@@ -40,6 +40,7 @@ namespace TheMansion
 
         [SerializeField] GameObject credits;
         [SerializeField] GameObject options;
+        
 
         public bool story1Get;
         public Sprite story1Sprite;
@@ -63,6 +64,7 @@ namespace TheMansion
         [SerializeField] GameObject notebookMenu;
 
         [SerializeField] bool isMainMenu;
+        
 
         AudioManagerVEVO audioController;
 
@@ -81,8 +83,10 @@ namespace TheMansion
             story6Get = (PlayerPrefs.GetInt("Story6") != 0);
             story7Get = (PlayerPrefs.GetInt("Story7") != 0);
             story8Get = (PlayerPrefs.GetInt("Story8") != 0);
+            Time.timeScale = 1;
         }
 
+        
 
         public void ChangeLevel(string levelName)
         {
@@ -92,7 +96,7 @@ namespace TheMansion
                 //audioController.StopAudio(AudioType.Main_Music_ST, true, 1f);
             }
             SceneManager.LoadScene(levelName);
-            Time.timeScale = 1;
+            
         }
 
         

@@ -82,8 +82,8 @@ namespace TheMansion
                         Debug.Log("T'as trouvé la clé, bien ouej");
                         audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
-                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+                        
+                        obj.gameObject.SetActive(false);
                         
                         //supp la clé dans la map (fx)
                         keyUI.SetActive(true);                   
@@ -120,12 +120,12 @@ namespace TheMansion
                         Debug.Log("T'as trouvé la clé, bien ouej");
                         audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
-                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+                        
 
                         //supp la clé dans la map (fx)
                         keyUI.SetActive(true);
                         StartCoroutine(TextKeyLooted());
+                        obj.gameObject.SetActive(false);
                     }
 
 
@@ -158,12 +158,11 @@ namespace TheMansion
                         Debug.Log("T'as trouvé la clé, bien ouej");
                         audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
-                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+                        obj.gameObject.SetActive(false);
 
                         //supp la clé dans la map (fx)
                         keyUI.SetActive(true);
-                        StartCoroutine(TextKeyLooted());
+                        //StartCoroutine(TextKeyLooted());
                     }
 
 
@@ -196,12 +195,11 @@ namespace TheMansion
                         Debug.Log("T'as trouvé la clé, bien ouej");
                         audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
-                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+                        obj.gameObject.SetActive(false);
 
                         //supp la clé dans la map (fx)
                         keyUI.SetActive(true);
-                        StartCoroutine(TextKeyLooted());
+                        //StartCoroutine(TextKeyLooted());
                     }
 
 
@@ -234,12 +232,11 @@ namespace TheMansion
                         Debug.Log("T'as trouvé la clé, bien ouej");
                         audioManager.PlayAudio(AudioType.Recup_Cle_SFX);
                         bigWin = true;
-                        obj.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                        obj.gameObject.GetComponent<Collider2D>().enabled = false;
+                        obj.gameObject.SetActive(false);
 
                         //supp la clé dans la map (fx)
                         keyUI.SetActive(true);
-                        StartCoroutine(TextKeyLooted());
+                        //StartCoroutine(TextKeyLooted());
                     }
 
                     if (isKey_O)

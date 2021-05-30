@@ -100,7 +100,7 @@ namespace TheMansion
             {
                 lastPlayerDistance = playerDistance;
             }
-            Debug.Log(lastPlayerDistance);
+            //Debug.Log(lastPlayerDistance);
 
             if (bigBoyDirection.x < transform.position.x)
             {
@@ -354,6 +354,12 @@ namespace TheMansion
 
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
             bigBoyAnimator.SetBool("isWalking", true);
+
+            if (playerScript.usingLadder)
+            {
+                isPatrolling = true;
+                isRunning = false;
+            }
 
             //si le joueur sort de son champ de vision/distance alors il va à sa dernière position
         }

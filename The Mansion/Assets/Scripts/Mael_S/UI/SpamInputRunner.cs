@@ -30,10 +30,13 @@ namespace TheMansion
 
         public GameObject menuDefaite;
 
-        
+        [SerializeField] float speed;
+        public Transform[] spots;
+        int randomSpot;
 
         private void Start()
         {
+            randomSpot = Random.Range(0, spots.Length);
 
             spam = 0;
 
@@ -45,10 +48,19 @@ namespace TheMansion
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             spamBigboy = FindObjectOfType<SpamInput>();
 
+
+
         }
 
         private void Update()
         {
+            transform.position = Vector2.MoveTowards(transform.position, spots[randomSpot].position, speed * Time.deltaTime);
+
+            if(Vector2.Distance(transform.position, spots[randomSpot].position) < 0.2f)
+            {
+                randomSpot = Random.Range(0, spots.Length);
+            }
+
             if (timeIsRunning)
             {
                 if (timeLimit > 0)

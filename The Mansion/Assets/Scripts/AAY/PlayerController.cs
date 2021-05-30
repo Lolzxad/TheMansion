@@ -440,6 +440,96 @@ namespace TheMansion
                 isGrounded = false;
             }
         }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.name == "Story 1")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 1");
+
+            }
+
+            if (other.gameObject.name == "Story 2")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 2");
+
+            }
+
+            if (other.gameObject.name == "Story 3")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 3");
+
+            }
+
+            if (other.gameObject.name == "Story 4")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 4");
+
+            }
+
+            if (other.gameObject.name == "Story 5")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story5", (MenuManagerScript.story5Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 5");
+
+            }
+
+            if (other.gameObject.name == "Story 6")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story6", (MenuManagerScript.story6Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 6");
+
+            }
+
+            if (other.gameObject.name == "Story 7")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story7", (MenuManagerScript.story7Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 7");
+
+            }
+
+            if (other.gameObject.name == "Story 8")
+            {
+
+                //MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story8", (MenuManagerScript.story8Get ? 1 : 0));
+                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 8");
+
+            }
+        }
 
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
