@@ -105,6 +105,17 @@ namespace TheMansion
         public void NoMoreMusic()
         {         
             audioController.StopAudio(AudioType.Main_Music_ST);
+
+            if (!cannotPlayMusic)
+            {
+                cannotPlayMusic = true;
+                PlayerPrefs.SetInt("CannotPlayMusic", (cannotPlayMusic ? 1 : 0));
+            }
+            else
+            {
+                cannotPlayMusic = false;
+                PlayerPrefs.SetInt("CannotPlayMusic", (cannotPlayMusic ? 0 : 1));
+            }
         }
 
 
