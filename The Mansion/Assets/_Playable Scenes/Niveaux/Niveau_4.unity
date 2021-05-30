@@ -5358,12 +5358,12 @@ PrefabInstance:
     - target: {fileID: 1912671114992240060, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -56.25
+      value: -52
       objectReference: {fileID: 0}
     - target: {fileID: 1912671114992240060, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -67.729996
+      value: -48
       objectReference: {fileID: 0}
     - target: {fileID: 1912671114992240060, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
@@ -11511,4 +11511,8 @@ MonoBehaviour:
   story8Sprite: {fileID: 0}
   lettersMenu: {fileID: 0}
   notebookMenu: {fileID: 0}
+  fullLevels: {fileID: 0}
+  lockedLevels: {fileID: 0}
+  canPlayMusic: 0
+  canPlaySFX: 0
   isMainMenu: 0

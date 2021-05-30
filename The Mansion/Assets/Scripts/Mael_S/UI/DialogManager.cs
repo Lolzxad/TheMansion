@@ -91,7 +91,10 @@ namespace TheMansion
             {
                 textDisplayDoorLocked.text = "";
                
-                playerScript.canMove = true;
+                if (!playerScript.isHiding)
+                {
+                    playerScript.canMove = true;
+                }
                 fond.SetActive(false);
 
                 if (isTimeToHide)

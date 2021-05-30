@@ -76,7 +76,7 @@ namespace TheMansion
               frontBbTrigger.SetActive(false);
               backBbTrigger.SetActive(false);
 
-              canWinTrigger.SetActive(false);
+              //canWinTrigger.SetActive(false);
 
               heart.GetComponent<Image>().enabled = false;
               heart.GetComponent<Button>().enabled = false;
@@ -197,6 +197,9 @@ namespace TheMansion
             heartTexte.SetActive(true);
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
+            playerController.heartbeatSpeed = 1;
+            playerController.heartOpacity = 1;
+
            
            
             yield return new WaitForSeconds(8);
