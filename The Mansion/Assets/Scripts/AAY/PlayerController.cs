@@ -11,18 +11,22 @@ namespace TheMansion
     {
         private MenuManager MenuManagerScript;
         AudioManagerVEVO audioManager;
+        SpamInput spamInputScript;
 
         public Animator playerAnimator;
         public Animator heartAnimator;
+ 
 
+        private float lastStamina = 100f;
         public float stamina = 100f;
         public float heartBeat = 100f;
         public float hidingFactor = 1f;
         public float defaultGravity;
         public float heartOpacity = 0f;
         public float heartbeatSpeed = 0.1f;
-        private float lastStamina = 100f;
 
+        public int playerLives = 3;
+        
         private bool canHide;
         private bool canUseLadder;
         public bool isGrounded;
@@ -46,7 +50,7 @@ namespace TheMansion
         public GameObject playerSprite;
         public GameObject hideFeedback;
         public GameObject heartFeedback;
-        public GameObject feet;
+        public GameObject defeatMenu;
         public Rigidbody2D playerRb;
         public Vector3 baseSpritePosition;
         public Vector3 basePosition;
@@ -62,8 +66,9 @@ namespace TheMansion
         {
             MenuManagerScript = FindObjectOfType<MenuManager>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            spamInputScript = FindObjectOfType<SpamInput>();
             playerRb = GetComponent<Rigidbody2D>();
-            playerRb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
             defaultGravity = playerRb.gravityScale;
             Physics2D.IgnoreLayerCollision(2, 9, false);
         }
@@ -73,6 +78,23 @@ namespace TheMansion
         {
 
             heartFeedback.GetComponent<Image>().color = new Color(1f, 1f, 1f, heartOpacity);
+
+            if (playerLives == 2)
+            {
+                //heart.GetComponent<Image>().sprite = heart_2;
+                heartAnimator.GetComponent<Animator>().SetInteger("heartLevel", 2);
+            }
+
+            if (playerLives == 1)
+            {
+                //heart.GetComponent<Image>().sprite = heart_1;
+                heartAnimator.GetComponent<Animator>().SetInteger("heartLevel", 3);
+            }
+
+            if (playerLives == 0)
+            {
+                GameOver();
+            }
 
             if (isGrabbed)
             {
@@ -146,7 +168,7 @@ namespace TheMansion
                                     canMove = true;
                                     hideFeedback.SetActive(false);
                                     playerAnimator.SetBool("isHiding", false);
-                                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                                     playerRb.gravityScale = defaultGravity;
                                     gameObject.GetComponent<Collider2D>().enabled = true;
                                     transform.position = touchedObject.transform.GetChild(0).transform.position;
@@ -159,7 +181,12 @@ namespace TheMansion
                             {
                                 if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled && canHide && !isGrabbed && !usingLadder)
                                 {
-                                    audioManager.PlayAudio(AudioType.Player_Hide);
+
+                                    if (!MenuManagerScript.cannotPlaySFX)
+                                    {
+                                        audioManager.PlayAudio(AudioType.Player_Hide);
+                                    }
+                                    
                                     isHiding = true;
                                     canMove = false;
                                     hideFeedback.SetActive(true);
@@ -227,77 +254,7 @@ namespace TheMansion
                                         StartCoroutine(OffLadder());
                                     }
                                 }
-                            }
-
-                            if (touchedObject.tag == "StoryLore")
-                            {
-                                if (touchedObject.name == "Story 1")
-                                {
-
-                                    //MenuManagerScript.story1Get = true;
-                                    PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                    Debug.Log("STORY 1");
-
-                                }
-
-                                if (touchedObject.name == "Story 2")
-                                {
-                                    //MenuManagerScript.story2Get = true;
-                                    PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                }
-
-                                if (touchedObject.name == "Story 3")
-                                {
-                                    PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    MenuManagerScript.story3Get = true;
-                                    touchedObject.SetActive(false);
-                                }
-
-                                if (touchedObject.name == "Story 4")
-                                {
-                                    //MenuManagerScript.story4Get = true;
-                                    PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                }
-
-                                if (touchedObject.name == "Story 5")
-                                {
-                                    //MenuManagerScript.story4Get = true;
-                                    PlayerPrefs.SetInt("Story5", (MenuManagerScript.story5Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                }
-
-                                if (touchedObject.name == "Story 6")
-                                {
-                                    //MenuManagerScript.story4Get = true;
-                                    PlayerPrefs.SetInt("Story6", (MenuManagerScript.story6Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                }
-
-                                if (touchedObject.name == "Story 7")
-                                {
-                                    //MenuManagerScript.story4Get = true;
-                                    PlayerPrefs.SetInt("Story7", (MenuManagerScript.story7Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                }
-
-                                if (touchedObject.name == "Story 8")
-                                {
-                                    //MenuManagerScript.story4Get = true;
-                                    PlayerPrefs.SetInt("Story8", (MenuManagerScript.story8Get ? 1 : 0));
-                                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    touchedObject.SetActive(false);
-                                }
-                            }
+                            }                       
                         }
                     }
 
@@ -439,6 +396,122 @@ namespace TheMansion
                 isGrounded = false;
             }
         }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.name == "Story 1")
+            {
+
+                MenuManagerScript.story1Get = true;
+                PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
+
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 1");
+
+            }
+
+            if (other.gameObject.name == "Story 2")
+            {
+
+                MenuManagerScript.story2Get = true;
+                PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 2");
+
+            }
+
+            if (other.gameObject.name == "Story 3")
+            {
+
+                MenuManagerScript.story3Get = true;
+                PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 3");
+
+            }
+
+            if (other.gameObject.name == "Story 4")
+            {
+
+                MenuManagerScript.story4Get = true;
+                PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 4");
+
+            }
+
+            if (other.gameObject.name == "Story 5")
+            {
+
+                MenuManagerScript.story5Get = true;
+                PlayerPrefs.SetInt("Story5", (MenuManagerScript.story5Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 5");
+
+            }
+
+            if (other.gameObject.name == "Story 6")
+            {
+
+                MenuManagerScript.story6Get = true;
+                PlayerPrefs.SetInt("Story6", (MenuManagerScript.story6Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 6");
+
+            }
+
+            if (other.gameObject.name == "Story 7")
+            {
+
+                MenuManagerScript.story7Get = true;
+                PlayerPrefs.SetInt("Story7", (MenuManagerScript.story7Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 7");
+
+            }
+
+            if (other.gameObject.name == "Story 8")
+            {
+
+                MenuManagerScript.story8Get = true;
+                PlayerPrefs.SetInt("Story8", (MenuManagerScript.story8Get ? 1 : 0));
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                other.gameObject.SetActive(false);
+                Debug.Log("STORY 8");
+
+            }
+        }
 
         void OnTriggerStay2D(Collider2D InteractableObject)
         {
@@ -522,7 +595,7 @@ namespace TheMansion
                                 canMove = true;
                                 hideFeedback.SetActive(false);
                                 playerAnimator.SetBool("isHiding", false);
-                                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                                 playerRb.gravityScale = defaultGravity;
                                 gameObject.GetComponent<Collider2D>().enabled = true;
                                 transform.position = touchedObject.transform.GetChild(0).transform.position;
@@ -596,76 +669,6 @@ namespace TheMansion
                                 {
                                     StartCoroutine(OffLadder());
                                 }
-                            }
-                        }
-
-                        if (touchedObject.tag == "StoryLore")
-                        {
-                            if (touchedObject.name == "Story 1")
-                            {
-
-                                //MenuManagerScript.story1Get = true;
-                                PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
-                                Debug.Log("STORY 1");
-
-                            }
-
-                            if (touchedObject.name == "Story 2")
-                            {
-                                //MenuManagerScript.story2Get = true;
-                                PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
-                            }
-
-                            if (touchedObject.name == "Story 3")
-                            {
-                                PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                MenuManagerScript.story3Get = true;
-                                touchedObject.SetActive(false);
-                            }
-
-                            if (touchedObject.name == "Story 4")
-                            {
-                                //MenuManagerScript.story4Get = true;
-                                PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
-                            }
-
-                            if (touchedObject.name == "Story 5")
-                            {
-                                //MenuManagerScript.story4Get = true;
-                                PlayerPrefs.SetInt("Story5", (MenuManagerScript.story5Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
-                            }
-
-                            if (touchedObject.name == "Story 6")
-                            {
-                                //MenuManagerScript.story4Get = true;
-                                PlayerPrefs.SetInt("Story6", (MenuManagerScript.story6Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
-                            }
-
-                            if (touchedObject.name == "Story 7")
-                            {
-                                //MenuManagerScript.story4Get = true;
-                                PlayerPrefs.SetInt("Story7", (MenuManagerScript.story7Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
-                            }
-
-                            if (touchedObject.name == "Story 8")
-                            {
-                                //MenuManagerScript.story4Get = true;
-                                PlayerPrefs.SetInt("Story8", (MenuManagerScript.story8Get ? 1 : 0));
-                                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                touchedObject.SetActive(false);
                             }
                         }
                     }
@@ -765,6 +768,12 @@ namespace TheMansion
             isCalmingHeart = false;
         }
 
+        public void GameOver()
+        {
+            defeatMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+
         /*public void HeartFeedback()
         {
             if (heartBeat <= 110f)
@@ -859,7 +868,11 @@ namespace TheMansion
 
         IEnumerator DownLadder()
         {
-            audioManager.PlayAudio(AudioType.Player_Ladder);
+            if (!MenuManagerScript.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Player_Ladder);
+            }
+            
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);
@@ -880,7 +893,10 @@ namespace TheMansion
         }
         IEnumerator UpLadder()
         {
-            audioManager.PlayAudio(AudioType.Player_Ladder);
+            if (!MenuManagerScript.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Player_Ladder);
+            }
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);
@@ -905,6 +921,10 @@ namespace TheMansion
         {
             StopAllCoroutines();
             playerRb.gravityScale = defaultGravity;
+            if (!MenuManagerScript.cannotPlaySFX)
+            {
+                audioManager.StopAudio(AudioType.Player_Ladder);
+            }
             Physics2D.IgnoreLayerCollision(2, 9, false);
             canMove = true;
             usingLadder = false;

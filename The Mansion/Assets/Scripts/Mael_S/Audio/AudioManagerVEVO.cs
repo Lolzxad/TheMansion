@@ -18,6 +18,7 @@ namespace TheMansion
         private Hashtable m_JobTable; //relation entre les types d'audio (key) et les jobs (value) (Coroutine)
 
         [SerializeField] bool isMainMenu;
+        MenuManager menu;
 
         [System.Serializable]
         public class AudioObject
@@ -66,17 +67,20 @@ namespace TheMansion
             {
                 instance = this;
                 Configure();
-            }
+            }           
         }
 
         private void Start()
         {
-            if (isMainMenu)
+            menu = FindObjectOfType<MenuManager>();
+            menu.cannotPlayMusic = (PlayerPrefs.GetInt("CannotPlayMusic") != 0);
+
+            if (isMainMenu && !menu.cannotPlayMusic)
             {
                 AudioListener.volume = 0.7f;
                 PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
             }
-        }
+        }      
 
         private void OnDisable()
         {

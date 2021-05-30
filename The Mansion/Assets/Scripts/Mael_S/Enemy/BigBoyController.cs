@@ -57,7 +57,6 @@ namespace TheMansion
         public GameObject spamInput;
         public GameObject triggerBB;       
         public Transform[] moveSpots;
-        public GameObject grabSpot;
         private GameObject player;
 
         PlayerController playerScript;
@@ -101,7 +100,7 @@ namespace TheMansion
             {
                 lastPlayerDistance = playerDistance;
             }
-            Debug.Log(lastPlayerDistance);
+            //Debug.Log(lastPlayerDistance);
 
             if (bigBoyDirection.x < transform.position.x)
             {
@@ -194,7 +193,7 @@ namespace TheMansion
                     //Le big boy a vu le joueur se cacher
                     isRunning = false;
                     playerScript.isHiding = false;
-                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                    playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                     playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                     playerScript.playerAnimator.SetBool("isHiding", false);
                     playerScript.playerRb.gravityScale = playerScript.defaultGravity;
@@ -356,6 +355,12 @@ namespace TheMansion
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), speedPO * Time.deltaTime);
             bigBoyAnimator.SetBool("isWalking", true);
 
+            if (playerScript.usingLadder)
+            {
+                isPatrolling = true;
+                isRunning = false;
+            }
+
             //si le joueur sort de son champ de vision/distance alors il va à sa dernière position
         }
 
@@ -415,7 +420,8 @@ namespace TheMansion
             ProCamera2D.Instance.CenterOnTargets();
             playerScript.playerAnimator.SetBool("isGrabbed", false);
             playerScript.isGrabbed = false;         
-            playerScript.canMove = true;                        
+            playerScript.canMove = true;
+            playerScript.playerLives -= 1;
             StartCoroutine(MobCanMove());   
         }
         public void HideCheck() 
@@ -425,7 +431,7 @@ namespace TheMansion
             if (playerScript.hidingFactor * Random.Range(1, 6) >= 100)
             {              
                 playerScript.isHiding = false;
-                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 playerScript.gameObject.GetComponent<Collider2D>().enabled = true;
                 playerScript.playerAnimator.SetBool("isHiding", false);
                 playerScript.playerRb.gravityScale = playerScript.defaultGravity;

@@ -56,17 +56,17 @@ namespace TheMansion
         bool canHeart;
         public bool isTuto;
 
-
+        public void Awake()
+        {
+            playerController = FindObjectOfType<PlayerController>();
+            bigBoyController = FindObjectOfType<BigBoyController>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
+        }
 
         public void Start()
         {
             isTuto = true;
             playerIsHiding = true;
-
-            playerController = FindObjectOfType<PlayerController>();
-            bigBoyController = FindObjectOfType<BigBoyController>();
-            audioManager = FindObjectOfType<AudioManagerVEVO>();
-
 
             // player.GetComponent<PlayerController>().enabled = false;
 
@@ -76,7 +76,7 @@ namespace TheMansion
               frontBbTrigger.SetActive(false);
               backBbTrigger.SetActive(false);
 
-              canWinTrigger.SetActive(false);
+              //canWinTrigger.SetActive(false);
 
               heart.GetComponent<Image>().enabled = false;
               heart.GetComponent<Button>().enabled = false;
@@ -189,7 +189,7 @@ namespace TheMansion
 //            player.GetComponent<PlayerController>().enabled = false;
 
             Debug.Log("Heart");
-            //heartInput.SetActive(true);
+            heartInput.SetActive(true);
             playerIsHiding = false;
             heart.GetComponent<Image>().enabled = true;
             heart.GetComponent<Button>().enabled = true;
@@ -197,6 +197,9 @@ namespace TheMansion
             heartTexte.SetActive(true);
             playerController.heartBeat = 300;
             playerController.hidingFactor = 300;
+            playerController.heartbeatSpeed = 1;
+            playerController.heartOpacity = 1;
+
            
            
             yield return new WaitForSeconds(8);

@@ -24,6 +24,8 @@ namespace TheMansion
         GameObject tuto;
         AudioManagerVEVO audioManager;
         TutoManager tutoScript;
+        MenuManager menu;
+
         public Animator penAnim;
 
 
@@ -31,6 +33,7 @@ namespace TheMansion
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             tutoScript = FindObjectOfType<TutoManager>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -56,6 +59,7 @@ namespace TheMansion
             {
                 continueButton.SetActive(true);
                 penAnim.SetBool("isWriting", false);
+                
             }
         }
 
@@ -71,11 +75,17 @@ namespace TheMansion
             
         }
 
+       
+
         public void NextSentence()
         {
             continueButton.SetActive(false);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            }
             
-            audioManager.PlayAudio(AudioType.Click_Button_SFX);
 
 
             if (index < sentences.Length - 1)
@@ -88,7 +98,10 @@ namespace TheMansion
             {
                 textDisplayDoorLocked.text = "";
                
-                playerScript.canMove = true;
+                if (!playerScript.isHiding)
+                {
+                    playerScript.canMove = true;
+                }
                 fond.SetActive(false);
 
                 if (isTimeToHide)

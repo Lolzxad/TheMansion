@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!61 &731421408
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925800489000786858}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27623844, y: -0.6905956}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.624258, y: 2.3811913}
+  m_EdgeRadius: 0
+--- !u!114 &731421407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925800489000786858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ff258d2ad9ad14ab4b24575dd9f087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canWin: 0
+  isDoor_O: 0
+  isDoor_Y: 0
+  isKey_O: 0
+  isKey_Y: 0
+  isCDV: 0
+  isLevel1: 0
+  isLevel2: 1
+  isLevel3: 0
+  isLevel4: 0
+  isLevel5: 0
+  isLevel6: 0
+  isLevel7: 0
+  obj: {fileID: 1925800489000786858}
+  menuWin: {fileID: 0}
+  keyTMP: {fileID: 0}
+  keyUI: {fileID: 0}
+  doorLockedTMP: {fileID: 0}
 --- !u!1001 &7109151637362828922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36,17 +92,17 @@ PrefabInstance:
     - target: {fileID: 8651721548741197264, guid: bd9e13066ad39c64da5db6b4b67da22a,
         type: 3}
       propertyPath: m_Name
-      value: Key
+      value: Key (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8651721548741197265, guid: bd9e13066ad39c64da5db6b4b67da22a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8651721548741197265, guid: bd9e13066ad39c64da5db6b4b67da22a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 8651721548741197265, guid: bd9e13066ad39c64da5db6b4b67da22a,
         type: 3}
@@ -116,3 +172,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e13066ad39c64da5db6b4b67da22a, type: 3}
+--- !u!1 &1925800489000786858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8651721548741197264, guid: bd9e13066ad39c64da5db6b4b67da22a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7109151637362828922}
+  m_PrefabAsset: {fileID: 0}

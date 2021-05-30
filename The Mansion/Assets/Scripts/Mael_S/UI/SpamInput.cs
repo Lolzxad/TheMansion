@@ -11,8 +11,6 @@ namespace TheMansion
     {
         public int spamL;
         public int spamR;
-
-        public int playerLives = 3;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
@@ -28,6 +26,8 @@ namespace TheMansion
         TutoManager tuto;
         AudioManagerVEVO audioManager;
         SpamInputRunner spamRunner;
+        PlayerController playerScript;
+        MenuManager menu;
 
 
         [SerializeField] Sprite heart_1;
@@ -43,6 +43,7 @@ namespace TheMansion
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -57,6 +58,8 @@ namespace TheMansion
             runnerController = FindObjectOfType<RunnerController>();
             tuto = FindObjectOfType<TutoManager>();
             spamRunner = FindObjectOfType<SpamInputRunner>();
+            playerScript = FindObjectOfType<PlayerController>();
+            menu = FindObjectOfType<MenuManager>();
 
 
             heart.GetComponent<Image>();
@@ -114,7 +117,12 @@ namespace TheMansion
                 if (bbController.isGrabbing)
                 {
                     Debug.Log("IsStunned");
-                    audioManager.PlayAudio(AudioType.Bb_Stun_SFX);
+
+                    if (!menu.cannotPlaySFX)
+                    {
+                        udioManager.PlayAudio(AudioType.Bb_Stun_SFX);
+                    }
+                    
                     bbController.Stunned();
 
                     spamL = 0;
@@ -124,8 +132,6 @@ namespace TheMansion
                     spamDone_R = false;
                     spamDone = false;
                     gameObject.SetActive(false);
-                    playerLives -= 1;
-                    spamRunner.playerLives -= 1;
                 }
 
                
@@ -153,36 +159,28 @@ namespace TheMansion
                 }*/
 
 
-            }
-
-            if(playerLives == 2)
-            {
-                heart.GetComponent<Image>().sprite = heart_2;
-            }
-
-            if (playerLives == 1)
-            {
-                heart.GetComponent<Image>().sprite = heart_1;
-            }
-
-            if (playerLives == 0)
-            {
-                GameOver();
-            }
-
+            }           
         }
 
 
         public void AddSpamL()
         {
             spamL += 1;
-            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            }
+            
         }
 
         public void AddSpamR()
         {
             spamR += 1;
-            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            }
         }
 
         public void GameOver()

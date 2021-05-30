@@ -10,8 +10,6 @@ namespace TheMansion
     public class SpamInputRunner : MonoBehaviour
     {
         public int spam;
-
-        public int playerLives = 4;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
@@ -25,15 +23,20 @@ namespace TheMansion
         TutoManager tuto;
         AudioManagerVEVO audioManager;
         SpamInput spamBigboy;
+        PlayerController playerScript;
+        MenuManager menu;
 
         public bool isTuto;
 
         public GameObject menuDefaite;
 
-        
+        [SerializeField] float speed;
+        public Transform[] spots;
+        int randomSpot;
 
         private void Start()
         {
+            randomSpot = Random.Range(0, spots.Length);
 
             spam = 0;
 
@@ -44,11 +47,21 @@ namespace TheMansion
             tuto = FindObjectOfType<TutoManager>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             spamBigboy = FindObjectOfType<SpamInput>();
+            playerScript = FindObjectOfType<PlayerController>();
+            menu = FindObjectOfType<MenuManager>();
+
 
         }
 
         private void Update()
         {
+            transform.position = Vector2.MoveTowards(transform.position, spots[randomSpot].position, speed * Time.deltaTime);
+
+            if(Vector2.Distance(transform.position, spots[randomSpot].position) < 0.2f)
+            {
+                randomSpot = Random.Range(0, spots.Length);
+            }
+
             if (timeIsRunning)
             {
                 if (timeLimit > 0)
@@ -93,9 +106,8 @@ namespace TheMansion
                     spam = 0;
   
                     spamDone = false;
-                    gameObject.SetActive(false);
-                    playerLives -= 1;
-                    spamBigboy.playerLives -= 1;
+                    playerScript.playerLives -= 1;
+                    gameObject.SetActive(false);                   
                 }
                 else if (runnerController.isGrabbing)
                 {
@@ -103,10 +115,8 @@ namespace TheMansion
                     spam = 0;
 
                     spamDone = false;
-                    gameObject.SetActive(false);
-                    playerLives -= 1;
-                    spamBigboy.playerLives -= 1;
-
+                    playerScript.playerLives -= 1;
+                    gameObject.SetActive(false);                 
                 }
 
                
@@ -136,7 +146,7 @@ namespace TheMansion
 
             }
 
-            if (playerLives == 0)
+            if (playerScript.playerLives == 0)
             {
                 GameOver();
             }
@@ -147,7 +157,12 @@ namespace TheMansion
         public void AddSpam()
         {
             spam += 1;
-            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            }
+            
         }
 
         public void GameOver()

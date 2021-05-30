@@ -127,7 +127,7 @@ MonoBehaviour:
   runSpeed: 13
   walkSpeed: 5
   waitForRun: 2
-  waitForIdle: 5
+  waitForIdle: 10
   detectZone: 3
   idlePos: {fileID: 0}
   limitLeft: {fileID: 0}
