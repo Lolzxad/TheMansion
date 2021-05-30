@@ -6,17 +6,21 @@ public class FlickeringLight : MonoBehaviour
 {
 
     public Animator animController;
-    public int indexAnim;
-    public float delayFlicker;
+    private int indexAnim;
+    private int delayFlicker;
 
     void Start()
     {
-        
+        StartCoroutine(WaitTillFlicker());
     }
 
     IEnumerator WaitTillFlicker()
     {
+        delayFlicker = Random.Range(0, 2);
         yield return new WaitForSeconds(delayFlicker);
+        indexAnim = Random.Range(0, 2);
+        animController.SetInteger("LightType", indexAnim);
+        Debug.Log(indexAnim);
     }
 
 }
