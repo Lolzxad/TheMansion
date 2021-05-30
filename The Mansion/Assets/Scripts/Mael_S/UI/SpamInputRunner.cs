@@ -24,6 +24,7 @@ namespace TheMansion
         AudioManagerVEVO audioManager;
         SpamInput spamBigboy;
         PlayerController playerScript;
+        MenuManager menu;
 
         public bool isTuto;
 
@@ -47,7 +48,7 @@ namespace TheMansion
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             spamBigboy = FindObjectOfType<SpamInput>();
             playerScript = FindObjectOfType<PlayerController>();
-
+            menu = FindObjectOfType<MenuManager>();
 
 
         }
@@ -156,7 +157,12 @@ namespace TheMansion
         public void AddSpam()
         {
             spam += 1;
-            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            }
+            
         }
 
         public void GameOver()
