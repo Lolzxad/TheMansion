@@ -1927,6 +1927,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 805.933
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce175685696b9b04bbadf5b05e172c77, type: 3}
 --- !u!224 &300344336 stripped
@@ -9994,6 +10004,11 @@ PrefabInstance:
       propertyPath: heart
       value: 
       objectReference: {fileID: 209571741}
+    - target: {fileID: 953541068223691653, guid: cec5a983bad55e84e85331c88d3c714b,
+        type: 3}
+      propertyPath: bigboy
+      value: 
+      objectReference: {fileID: 385578139}
     - target: {fileID: 4054990203193038157, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
       propertyPath: m_Name
