@@ -72,7 +72,7 @@ namespace TheMansion
         void Update()
         {
 
-            Debug.Log(MenuManagerScript.story1Get);
+            //Debug.Log(MenuManagerScript.story1Get);
 
             heartFeedback.GetComponent<Image>().color = new Color(1f, 1f, 1f, heartOpacity);
 
