@@ -66,6 +66,12 @@ namespace TheMansion
 
         [SerializeField] GameObject fullLevels;
         [SerializeField] GameObject lockedLevels;
+        [SerializeField] GameObject musicButton;
+        [SerializeField] GameObject soundButton;
+        [SerializeField] GameObject noMusicButton;
+        [SerializeField] GameObject noSoundButton;
+
+
 
         public bool cannotPlayMusic;
         public bool cannotPlaySFX;
@@ -105,6 +111,26 @@ namespace TheMansion
         public void NoMoreMusic()
         {         
             audioController.StopAudio(AudioType.Main_Music_ST);
+            musicButton.SetActive(true);
+            noMusicButton.SetActive(false);
+
+            if (!cannotPlayMusic)
+            {
+                cannotPlayMusic = true;
+                PlayerPrefs.SetInt("CannotPlayMusic", (cannotPlayMusic ? 1 : 0));
+            }
+            else
+            {
+                cannotPlayMusic = false;
+                PlayerPrefs.SetInt("CannotPlayMusic", (cannotPlayMusic ? 0 : 1));
+            }
+        }
+
+        public void PutMusic()
+        {
+            audioController.PlayAudio(AudioType.Main_Music_ST);
+            musicButton.SetActive(false);
+            noMusicButton.SetActive(true);
 
             if (!cannotPlayMusic)
             {
@@ -119,9 +145,50 @@ namespace TheMansion
         }
 
 
-        public void ChangeLevel(string levelName)
+        public void NoMoreSFX()
         {
             audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            soundButton.SetActive(true);
+            noSoundButton.SetActive(false);
+
+            if (!cannotPlayMusic)
+            {
+                cannotPlaySFX = true;
+                PlayerPrefs.SetInt("CannotPlaySFX", (cannotPlaySFX ? 1 : 0));
+            }
+            else
+            {
+                cannotPlaySFX = false;
+                PlayerPrefs.SetInt("CannotPlaySFX", (cannotPlaySFX ? 0 : 1));
+            }
+        }
+
+        public void PutSFX()
+        {
+            
+            soundButton.SetActive(false);
+            noSoundButton.SetActive(true);
+
+            if (!cannotPlaySFX)
+            {
+                cannotPlaySFX = true;
+                PlayerPrefs.SetInt("CannotPlaySFX", (cannotPlaySFX ? 1 : 0));
+            }
+            else
+            {
+                cannotPlaySFX = false;
+                PlayerPrefs.SetInt("CannotPlaySFX", (cannotPlaySFX ? 0 : 1));
+            }
+        }
+
+
+        public void ChangeLevel(string levelName)
+        {
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
+            
             if (isMainMenu)
             {
                 //audioController.StopAudio(AudioType.Main_Music_ST, true, 1f);
@@ -134,19 +201,28 @@ namespace TheMansion
 
         public void LoadLevel1()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             SceneManager.LoadScene("Niveau_1_TUTO");
         }
 
         public void ReloadLevel()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void QuitGame()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             Application.Quit();
         }
 
@@ -154,7 +230,10 @@ namespace TheMansion
 
         public void SetLevelSelection()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             Debug.Log("Menu selection");
             // fonds.SetActive(true);
             //levels.SetActive(true);
@@ -167,7 +246,10 @@ namespace TheMansion
 
         public void RemoveSelectionLevel()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             //fonds.SetActive(false);
             //levels.SetActive(false);
             selectionLevel.SetActive(false);
@@ -179,7 +261,10 @@ namespace TheMansion
 
         public void SetStorySelection()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             selectionStory.SetActive(true);
 
             storyButton.SetActive(false);
@@ -231,7 +316,10 @@ namespace TheMansion
 
         public void RemoveStorySelection()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             selectionStory.SetActive(false);
 
             storyButton.SetActive(true);
@@ -241,7 +329,10 @@ namespace TheMansion
 
         public void StoriesClose()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             story1.SetActive(false);
             story2.SetActive(false);
             story3.SetActive(false);
@@ -345,14 +436,20 @@ namespace TheMansion
 
         public void GoToNotebooks()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             lettersMenu.SetActive(false);
             notebookMenu.SetActive(true);
         }
 
         public void GoToLetters()
         {
-            audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            if (!cannotPlayMusic)
+            {
+                audioController.PlayAudio(AudioType.Click_Button_SFX, false);
+            }
             notebookMenu.SetActive(false);
             lettersMenu.SetActive(true);           
         }

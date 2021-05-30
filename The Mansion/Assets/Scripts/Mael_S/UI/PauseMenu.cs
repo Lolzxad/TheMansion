@@ -9,12 +9,14 @@ namespace TheMansion
     {
         GameObject player;
         AudioManagerVEVO audioManager;
+        MenuManager menu;
 
         public GameObject pauseMenuUI;
 
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -25,7 +27,11 @@ namespace TheMansion
 
         public void Resume()
         {
-            audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            }
+            
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1;
 
@@ -34,7 +40,11 @@ namespace TheMansion
 
         public void Pause()
         {
-            audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            }
+            
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0;
 
@@ -43,15 +53,34 @@ namespace TheMansion
 
         public void LoadMenu()
         {
-            audioManager.PlayAudio(AudioType.Click_Button_SFX);
-            audioManager.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            }
+
+            if (!menu.cannotPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
+            }
+            
+            
             SceneManager.LoadScene("Menu Principal");
-            audioManager.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
+
+            if (!menu.cannotPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Main_Music_ST, true, 0.7f);
+            }
+            
         }
 
         public void QuitGame()
         {
-            audioManager.PlayAudio(AudioType.Click_Button_SFX);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            }
+            
             Application.Quit();
         }
     }

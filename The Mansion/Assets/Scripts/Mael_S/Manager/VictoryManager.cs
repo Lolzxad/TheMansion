@@ -41,10 +41,12 @@ namespace TheMansion
         public GameObject doorLockedTMP;
 
         AudioManagerVEVO audioManager;
+        MenuManager menu;
 
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -56,13 +58,14 @@ namespace TheMansion
             {
                 bigWin = true;
             }
-            else
-            {
-                audioManager.PlayAudio(AudioType.Ambience_1_ST, true);
-            }
-            
 
-            player = GameObject.FindGameObjectWithTag("Player");
+            if (!menu.cannotPlayMusic)
+            {
+                audioManager.PlayAudio(AudioType.Ambience_1_ST);
+            }
+
+
+                player = GameObject.FindGameObjectWithTag("Player");
             canWin = false;
             
 

@@ -24,6 +24,8 @@ namespace TheMansion
         GameObject tuto;
         AudioManagerVEVO audioManager;
         TutoManager tutoScript;
+        MenuManager menu;
+
         public Animator penAnim;
 
 
@@ -31,6 +33,7 @@ namespace TheMansion
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             tutoScript = FindObjectOfType<TutoManager>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -77,8 +80,12 @@ namespace TheMansion
         public void NextSentence()
         {
             continueButton.SetActive(false);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Click_Button_SFX);
+            }
             
-            audioManager.PlayAudio(AudioType.Click_Button_SFX);
 
 
             if (index < sentences.Length - 1)

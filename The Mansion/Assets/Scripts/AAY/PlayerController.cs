@@ -181,7 +181,12 @@ namespace TheMansion
                             {
                                 if (touchedObject.tag == "Hard Hiding Spot" && touchedObject.GetComponent<SpriteMask>().enabled && canHide && !isGrabbed && !usingLadder)
                                 {
-                                    audioManager.PlayAudio(AudioType.Player_Hide);
+
+                                    if (!MenuManagerScript.cannotPlaySFX)
+                                    {
+                                        audioManager.PlayAudio(AudioType.Player_Hide);
+                                    }
+                                    
                                     isHiding = true;
                                     canMove = false;
                                     hideFeedback.SetActive(true);
@@ -398,7 +403,12 @@ namespace TheMansion
 
                 MenuManagerScript.story1Get = true;
                 PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
+                
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 1");
 
@@ -409,7 +419,10 @@ namespace TheMansion
 
                 MenuManagerScript.story2Get = true;
                 PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 2");
 
@@ -420,7 +433,10 @@ namespace TheMansion
 
                 MenuManagerScript.story3Get = true;
                 PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 3");
 
@@ -431,7 +447,10 @@ namespace TheMansion
 
                 MenuManagerScript.story4Get = true;
                 PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 4");
 
@@ -442,7 +461,10 @@ namespace TheMansion
 
                 MenuManagerScript.story5Get = true;
                 PlayerPrefs.SetInt("Story5", (MenuManagerScript.story5Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 5");
 
@@ -453,7 +475,10 @@ namespace TheMansion
 
                 MenuManagerScript.story6Get = true;
                 PlayerPrefs.SetInt("Story6", (MenuManagerScript.story6Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 6");
 
@@ -464,7 +489,10 @@ namespace TheMansion
 
                 MenuManagerScript.story7Get = true;
                 PlayerPrefs.SetInt("Story7", (MenuManagerScript.story7Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 7");
 
@@ -475,7 +503,10 @@ namespace TheMansion
 
                 MenuManagerScript.story8Get = true;
                 PlayerPrefs.SetInt("Story8", (MenuManagerScript.story8Get ? 1 : 0));
-                audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                if (!MenuManagerScript.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
+                }
                 other.gameObject.SetActive(false);
                 Debug.Log("STORY 8");
 
@@ -837,7 +868,11 @@ namespace TheMansion
 
         IEnumerator DownLadder()
         {
-            audioManager.PlayAudio(AudioType.Player_Ladder);
+            if (!MenuManagerScript.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Player_Ladder);
+            }
+            
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);
@@ -858,7 +893,10 @@ namespace TheMansion
         }
         IEnumerator UpLadder()
         {
-            audioManager.PlayAudio(AudioType.Player_Ladder);
+            if (!MenuManagerScript.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Player_Ladder);
+            }
             canMove = false;
             usingLadder = true;
             playerAnimator.SetBool("isUsingLadder", true);
@@ -883,6 +921,10 @@ namespace TheMansion
         {
             StopAllCoroutines();
             playerRb.gravityScale = defaultGravity;
+            if (!MenuManagerScript.cannotPlaySFX)
+            {
+                audioManager.StopAudio(AudioType.Player_Ladder);
+            }
             Physics2D.IgnoreLayerCollision(2, 9, false);
             canMove = true;
             usingLadder = false;
