@@ -345,6 +345,7 @@ namespace TheMansion
             }
             
             animator.SetBool("isTired", true);
+            isGrabbing = false;
 
             ProCamera2DShake.Instance.StopConstantShaking();
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -370,8 +371,7 @@ namespace TheMansion
             yield return new WaitForSeconds(5f);
             animator.SetBool("isTired", false);
             gameObject.GetComponent<Collider2D>().enabled = true;
-            isComingBack = true;
-            isGrabbing = false;
+            isComingBack = true;          
             
         }
 

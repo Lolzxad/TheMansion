@@ -110,7 +110,9 @@ namespace TheMansion
                         audioManager.PlayAudio(AudioType.Door_Opened_SFX);
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
-                        menuWin.SetActive(true);                      
+                        menuWin.SetActive(true);
+                        menu.level2Unlocked = true;
+                        PlayerPrefs.SetInt("Level2Unlocked", (menu.level2Unlocked ? 1 : 0));
                     }
                 }
 
@@ -149,6 +151,8 @@ namespace TheMansion
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);
+                        menu.level3Unlocked = true;
+                        PlayerPrefs.SetInt("Level3Unlocked", (menu.level3Unlocked ? 1 : 0));
                     }
                 }
 
@@ -186,6 +190,8 @@ namespace TheMansion
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);
+                        menu.level4Unlocked = true;
+                        PlayerPrefs.SetInt("Level4Unlocked", (menu.level4Unlocked ? 1 : 0));
                     }
                 }
 
@@ -223,6 +229,8 @@ namespace TheMansion
                         Time.timeScale = 0;
                         //anim (on va utiliser une ptite coroutine
                         menuWin.SetActive(true);
+                        menu.level5Unlocked = true;
+                        PlayerPrefs.SetInt("Level5Unlocked", (menu.level5Unlocked ? 1 : 0));
                     }
                 }
 
