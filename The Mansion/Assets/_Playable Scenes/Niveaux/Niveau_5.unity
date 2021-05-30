@@ -3493,6 +3493,11 @@ PrefabInstance:
       propertyPath: detectRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2022712175295646316, guid: 9a86480ada013b349a56d2cba168445d,
+        type: 3}
+      propertyPath: numberOfBigBoys
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2539212096410481190, guid: 9a86480ada013b349a56d2cba168445d,
         type: 3}
       propertyPath: m_Name
@@ -6856,6 +6861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: detectRadius
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022712175295646316, guid: 9a86480ada013b349a56d2cba168445d,
+        type: 3}
+      propertyPath: numberOfBigBoys
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2539212096410481190, guid: 9a86480ada013b349a56d2cba168445d,
         type: 3}

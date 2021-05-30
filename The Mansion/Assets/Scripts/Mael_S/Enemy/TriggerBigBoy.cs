@@ -12,9 +12,12 @@ namespace TheMansion
         SecondBigBoy seconBb;
 
         Transform target;
+
+        
   
 
         public int detectRadius = 10;
+        public int numberOfBigBoys = 1;
 
         private void Awake()
         {
@@ -45,12 +48,12 @@ namespace TheMansion
                 bigBoyScript.RunningOutsideCamera();
             }
 
-            if (distance <= detectRadius && seconBb.bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding)
+            if (distance <= detectRadius && seconBb.bBcanMove && !playerScript.isGrabbed && !playerScript.isHiding && numberOfBigBoys == 2)
             {
                 seconBb.TriggerPoursuite();
             }
 
-            if (distance >= detectRadius)
+            if (distance >= detectRadius && numberOfBigBoys == 2)
             {
                 seconBb.playerInVision = false;
                 seconBb.RunningOutsideCamera();
