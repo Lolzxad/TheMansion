@@ -941,8 +941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 330, y: 118}
-  m_SizeDelta: {x: 316, y: 481}
+  m_AnchoredPosition: {x: 325.1, y: 113.1}
+  m_SizeDelta: {x: 294.765, y: 448.67712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &209571741 stripped
 GameObject:
@@ -1930,12 +1930,22 @@ PrefabInstance:
     - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.4
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 805.933
+      value: 823.1327
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 488.9129
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce175685696b9b04bbadf5b05e172c77, type: 3}
