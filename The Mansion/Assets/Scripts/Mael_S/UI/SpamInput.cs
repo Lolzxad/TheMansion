@@ -28,6 +28,7 @@ namespace TheMansion
         SpamInputRunner spamRunner;
         PlayerController playerScript;
         MenuManager menu;
+        SecondBigBoy bb_2;
 
 
         [SerializeField] Sprite heart_1;
@@ -35,7 +36,7 @@ namespace TheMansion
         [SerializeField] Sprite heart_3;
         [SerializeField] GameObject heart;
 
-
+        [SerializeField] bool isSecondBb;
         public bool isTuto;
 
         public GameObject menuDefaite;
@@ -44,6 +45,7 @@ namespace TheMansion
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             menu = FindObjectOfType<MenuManager>();
+            bb_2 = FindObjectOfType<SecondBigBoy>();
         }
 
         private void Start()
@@ -134,8 +136,29 @@ namespace TheMansion
                     gameObject.SetActive(false);
                 }
 
-               
 
+                if (bb_2)
+                {
+                    if (bb_2.isGrabbing)
+                    {
+                        Debug.Log("IsStunned");
+
+                        if (!menu.cannotPlaySFX)
+                        {
+                            audioManager.PlayAudio(AudioType.Bb_Stun_SFX);
+                        }
+
+                        bb_2.Stunned();
+
+                        spamL = 0;
+                        spamR = 0;
+
+                        spamDone_L = false;
+                        spamDone_R = false;
+                        spamDone = false;
+                        gameObject.SetActive(false);
+                    }
+                }
               
 
 
