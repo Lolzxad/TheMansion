@@ -120,7 +120,7 @@ namespace TheMansion
 
                     if (!menu.cannotPlaySFX)
                     {
-                        udioManager.PlayAudio(AudioType.Bb_Stun_SFX);
+                        audioManager.PlayAudio(AudioType.Bb_Stun_SFX);
                     }
                     
                     bbController.Stunned();
