@@ -33,6 +33,7 @@ namespace TheMansion
         SpamInputRunner spamInputController;
         AudioManagerVEVO audioManager;
         Animator animator;
+        MenuManager menu;
 
 
         [Space]
@@ -59,6 +60,7 @@ namespace TheMansion
             spamInputController = FindObjectOfType<SpamInputRunner>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             animator = GetComponent<Animator>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -113,7 +115,12 @@ namespace TheMansion
                 {
                     transform.Translate((Vector2.right * Time.deltaTime) * runSpeed);
                 }
-                audioManager.PlayAudio(AudioType.Runner_Run);
+
+                if (menu.cannotPlaySFX)
+                {
+                    audioManager.PlayAudio(AudioType.Runner_Run);
+                }
+                
                 
 
                 if(distance1 <= detectZone)
@@ -249,8 +256,13 @@ namespace TheMansion
             {
                 animator.SetBool("isRunning", false);
                 animator.SetTrigger("hasAttacked");
-                audioManager.StopAudio(AudioType.Runner_Run);
-                audioManager.PlayAudio(AudioType.Runner_Attack);
+
+                if (!menu.cannotPlaySFX)
+                {
+                    audioManager.StopAudio(AudioType.Runner_Run);
+                    audioManager.PlayAudio(AudioType.Runner_Attack);
+                }
+
 
                 playerScript.isGrabbed = true;
                 playerScript.canMove = false;
@@ -276,11 +288,21 @@ namespace TheMansion
             animator.SetBool("isRunning", false);
             animator.SetBool("isTired", true);
             animator.ResetTrigger("hasAttacked");
-            audioManager.StopAudio(AudioType.Runner_Run);
-            audioManager.PlayAudio(AudioType.RUnner_Fatigue, false, 0.5f);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.StopAudio(AudioType.Runner_Run);
+                audioManager.PlayAudio(AudioType.RUnner_Fatigue, false, 0.5f);
+            }
+
             yield return new WaitForSeconds(waitForIdle);
             animator.SetBool("isTired", false);
-            audioManager.StopAudio(AudioType.RUnner_Fatigue, false, 0.5f);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.StopAudio(AudioType.RUnner_Fatigue, false, 0.5f);
+            }
+            
             isComingBack = true;
             isTired = false;
         }
@@ -316,7 +338,12 @@ namespace TheMansion
         {
             Debug.Log("runner is stunned");
 
-            audioManager.PlayAudio(AudioType.Runner_Stun);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Runner_Stun);
+            }
+            
             animator.SetBool("isTired", true);
 
             ProCamera2DShake.Instance.StopConstantShaking();
@@ -351,7 +378,12 @@ namespace TheMansion
         IEnumerator RunnerLaugh()
         {
             yield return new WaitForSeconds(3f);
-            audioManager.PlayAudio(AudioType.Runner_Laugh_SFX, false, 0.6f);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Runner_Laugh_SFX, false, 0.6f);
+            }
+
         }
 
         private void OnDrawGizmosSelected()

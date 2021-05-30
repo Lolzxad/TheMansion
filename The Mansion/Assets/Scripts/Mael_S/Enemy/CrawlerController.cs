@@ -9,6 +9,7 @@ namespace TheMansion
         BigBoyController bbScript;
         PlayerController playerScript;
         AudioManagerVEVO audioManager;
+        MenuManager menu;
 
         Animator animator;
         Transform target;
@@ -26,6 +27,7 @@ namespace TheMansion
             bbScript = FindObjectOfType<BigBoyController>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             victoryManager = FindObjectOfType<VictoryManager>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -53,13 +55,21 @@ namespace TheMansion
 
             if (victoryManager.isLevel3 && canPlayMusic)
             {
-                audioManager.PlayAudio(AudioType.Phonograph);
+                if (!menu.cannotPlayMusic)
+                {
+                    audioManager.PlayAudio(AudioType.Phonograph);
+                }
+
                 canPlayMusic = false;
             }
 
             if (victoryManager.isLevel5 && canPlayMusic)
             {
-                audioManager.PlayAudio(AudioType.Phonograph);
+                if (!menu.cannotPlayMusic)
+                {
+                    audioManager.PlayAudio(AudioType.Phonograph);
+                }
+          
                 canPlayMusic = false;
             }
 

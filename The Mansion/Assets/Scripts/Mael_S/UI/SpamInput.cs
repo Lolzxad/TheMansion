@@ -27,6 +27,7 @@ namespace TheMansion
         AudioManagerVEVO audioManager;
         SpamInputRunner spamRunner;
         PlayerController playerScript;
+        MenuManager menu;
 
 
         [SerializeField] Sprite heart_1;
@@ -42,6 +43,7 @@ namespace TheMansion
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManagerVEVO>();
+            menu = FindObjectOfType<MenuManager>();
         }
 
         private void Start()
@@ -57,6 +59,7 @@ namespace TheMansion
             tuto = FindObjectOfType<TutoManager>();
             spamRunner = FindObjectOfType<SpamInputRunner>();
             playerScript = FindObjectOfType<PlayerController>();
+            menu = FindObjectOfType<MenuManager>();
 
 
             heart.GetComponent<Image>();
@@ -114,7 +117,12 @@ namespace TheMansion
                 if (bbController.isGrabbing)
                 {
                     Debug.Log("IsStunned");
-                    audioManager.PlayAudio(AudioType.Bb_Stun_SFX);
+
+                    if (!menu.cannotPlaySFX)
+                    {
+                        udioManager.PlayAudio(AudioType.Bb_Stun_SFX);
+                    }
+                    
                     bbController.Stunned();
 
                     spamL = 0;
@@ -158,13 +166,21 @@ namespace TheMansion
         public void AddSpamL()
         {
             spamL += 1;
-            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            }
+            
         }
 
         public void AddSpamR()
         {
             spamR += 1;
-            audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            if (!menu.cannotPlaySFX)
+            {
+                audioManager.PlayAudio(AudioType.Spam_Hit_SFX);
+            }
         }
 
         public void GameOver()
