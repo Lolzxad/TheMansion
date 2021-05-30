@@ -414,6 +414,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000012398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 834.2405
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000038147
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733643822260811, guid: ce175685696b9b04bbadf5b05e172c77,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 473.11334
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce175685696b9b04bbadf5b05e172c77, type: 3}
 --- !u!224 &41708744 stripped
@@ -6180,10 +6200,15 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5560747165273673742, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.21
+      objectReference: {fileID: 0}
     - target: {fileID: 5560747166249678653, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.69
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 5560747166249678655, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
@@ -7401,7 +7426,7 @@ PrefabInstance:
     - target: {fileID: 5560747166249678653, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.92
+      value: 13.27
       objectReference: {fileID: 0}
     - target: {fileID: 5560747166249678653, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
