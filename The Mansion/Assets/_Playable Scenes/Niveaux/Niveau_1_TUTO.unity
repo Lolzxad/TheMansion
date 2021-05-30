@@ -9823,7 +9823,7 @@ GameObject:
   - component: {fileID: 2493156568874637325}
   - component: {fileID: 2493156568874637324}
   - component: {fileID: 2493156568874637326}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Plateforme (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10147,7 +10147,7 @@ GameObject:
   - component: {fileID: 2493156569142498035}
   - component: {fileID: 2493156569142498034}
   - component: {fileID: 2493156569142498036}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Plateforme (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

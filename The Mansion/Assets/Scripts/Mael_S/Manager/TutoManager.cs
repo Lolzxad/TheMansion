@@ -56,17 +56,17 @@ namespace TheMansion
         bool canHeart;
         public bool isTuto;
 
-
+        public void Awake()
+        {
+            playerController = FindObjectOfType<PlayerController>();
+            bigBoyController = FindObjectOfType<BigBoyController>();
+            audioManager = FindObjectOfType<AudioManagerVEVO>();
+        }
 
         public void Start()
         {
             isTuto = true;
             playerIsHiding = true;
-
-            playerController = FindObjectOfType<PlayerController>();
-            bigBoyController = FindObjectOfType<BigBoyController>();
-            audioManager = FindObjectOfType<AudioManagerVEVO>();
-
 
             // player.GetComponent<PlayerController>().enabled = false;
 

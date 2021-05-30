@@ -57,7 +57,6 @@ namespace TheMansion
         public GameObject spamInput;
         public GameObject triggerBB;       
         public Transform[] moveSpots;
-        public GameObject grabSpot;
         private GameObject player;
 
         PlayerController playerScript;
