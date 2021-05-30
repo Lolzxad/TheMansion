@@ -212,7 +212,7 @@ TextureImporter:
         width: 212
         height: 658
       alignment: 9
-      pivot: {x: -0.57786244, y: 0.11981192}
+      pivot: {x: -0.31842846, y: 0.1984817}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: HERO_GRABBED_5
       rect:
         serializedVersion: 2
-        x: 4154
+        x: 4157
         y: 69
         width: 183
         height: 723
       alignment: 9
-      pivot: {x: -0.84417826, y: 0.19320522}
+      pivot: {x: -0.5789908, y: 0.2558527}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,7 +254,7 @@ TextureImporter:
         width: 142
         height: 724
       alignment: 9
-      pivot: {x: -1.3992524, y: 0.2044809}
+      pivot: {x: -0.8524428, y: 0.29832223}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

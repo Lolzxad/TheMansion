@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 2804488090665838134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.89, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9169937839484935353}
   m_RootOrder: 0
@@ -336,6 +336,10 @@ MonoBehaviour:
   heartBeat: 100
   hidingFactor: 0
   defaultGravity: 0
+  heartOpacity: 0
+  heartbeatSpeed: 0.1
+  playerLives: 3
+  isGrounded: 0
   isCalmingHeart: 0
   isRegening: 0
   canMove: 1
@@ -352,9 +356,8 @@ MonoBehaviour:
   RunLeft: {fileID: 0}
   playerSprite: {fileID: 2804488090665838134}
   hideFeedback: {fileID: 0}
-  heartFeedbackLevel1: {fileID: 0}
-  heartFeedbackLevel2: {fileID: 0}
-  heartFeedbackLevel3: {fileID: 0}
+  heartFeedback: {fileID: 0}
+  defeatMenu: {fileID: 0}
   playerRb: {fileID: 9169937839484935354}
   baseSpritePosition: {x: 0, y: 0, z: 0}
   basePosition: {x: 0, y: 0, z: 0}
