@@ -6383,6 +6383,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: StoryLore
       objectReference: {fileID: 0}
+    - target: {fileID: 6456023913400471385, guid: 2bfdf8ff12f1d4b44ac23a2278df6d9a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfdf8ff12f1d4b44ac23a2278df6d9a, type: 3}
 --- !u!224 &2136332946 stripped
