@@ -189,7 +189,7 @@ namespace TheMansion
 //            player.GetComponent<PlayerController>().enabled = false;
 
             Debug.Log("Heart");
-            //heartInput.SetActive(true);
+            heartInput.SetActive(true);
             playerIsHiding = false;
             heart.GetComponent<Image>().enabled = true;
             heart.GetComponent<Button>().enabled = true;
