@@ -68,9 +68,7 @@ namespace TheMansion
 
         private void Awake()
         {
-            audioController = FindObjectOfType<AudioManagerVEVO>();
-
-            
+            audioController = FindObjectOfType<AudioManagerVEVO>();          
         }
 
         private void Start()
@@ -83,12 +81,8 @@ namespace TheMansion
             story6Get = (PlayerPrefs.GetInt("Story6") != 0);
             story7Get = (PlayerPrefs.GetInt("Story7") != 0);
             story8Get = (PlayerPrefs.GetInt("Story8") != 0);
-            
-
-
         }
 
-        
 
         public void ChangeLevel(string levelName)
         {

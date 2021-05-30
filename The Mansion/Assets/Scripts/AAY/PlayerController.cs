@@ -72,6 +72,8 @@ namespace TheMansion
         void Update()
         {
 
+            Debug.Log(MenuManagerScript.story1Get);
+
             heartFeedback.GetComponent<Image>().color = new Color(1f, 1f, 1f, heartOpacity);
 
             if (isGrabbed)
@@ -254,7 +256,6 @@ namespace TheMansion
                                 {
                                     PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
                                     audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                    MenuManagerScript.story3Get = true;
                                     touchedObject.SetActive(false);
                                 }
 
@@ -604,7 +605,7 @@ namespace TheMansion
                             if (touchedObject.name == "Story 1")
                             {
 
-                                //MenuManagerScript.story1Get = true;
+                                MenuManagerScript.story1Get = true;
                                 PlayerPrefs.SetInt("Story1", (MenuManagerScript.story1Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
@@ -614,7 +615,7 @@ namespace TheMansion
 
                             if (touchedObject.name == "Story 2")
                             {
-                                //MenuManagerScript.story2Get = true;
+                                MenuManagerScript.story2Get = true;
                                 PlayerPrefs.SetInt("Story2", (MenuManagerScript.story2Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
@@ -622,15 +623,15 @@ namespace TheMansion
 
                             if (touchedObject.name == "Story 3")
                             {
+                                MenuManagerScript.story3Get = true;
                                 PlayerPrefs.SetInt("Story3", (MenuManagerScript.story3Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
-                                MenuManagerScript.story3Get = true;
                                 touchedObject.SetActive(false);
                             }
 
                             if (touchedObject.name == "Story 4")
                             {
-                                //MenuManagerScript.story4Get = true;
+                                MenuManagerScript.story4Get = true;
                                 PlayerPrefs.SetInt("Story4", (MenuManagerScript.story4Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
@@ -638,7 +639,7 @@ namespace TheMansion
 
                             if (touchedObject.name == "Story 5")
                             {
-                                //MenuManagerScript.story4Get = true;
+                                MenuManagerScript.story5Get = true;
                                 PlayerPrefs.SetInt("Story5", (MenuManagerScript.story5Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
@@ -646,7 +647,7 @@ namespace TheMansion
 
                             if (touchedObject.name == "Story 6")
                             {
-                                //MenuManagerScript.story4Get = true;
+                                MenuManagerScript.story6Get = true;
                                 PlayerPrefs.SetInt("Story6", (MenuManagerScript.story6Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
@@ -654,7 +655,7 @@ namespace TheMansion
 
                             if (touchedObject.name == "Story 7")
                             {
-                                //MenuManagerScript.story4Get = true;
+                                MenuManagerScript.story7Get = true;
                                 PlayerPrefs.SetInt("Story7", (MenuManagerScript.story7Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
@@ -662,7 +663,7 @@ namespace TheMansion
 
                             if (touchedObject.name == "Story 8")
                             {
-                                //MenuManagerScript.story4Get = true;
+                                MenuManagerScript.story8Get = true;
                                 PlayerPrefs.SetInt("Story8", (MenuManagerScript.story8Get ? 1 : 0));
                                 audioManager.PlayAudio(AudioType.Recup_Narra_SFX);
                                 touchedObject.SetActive(false);
