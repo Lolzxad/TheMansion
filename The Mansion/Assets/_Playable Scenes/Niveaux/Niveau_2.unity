@@ -3004,12 +3004,12 @@ PrefabInstance:
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -75.38
+      value: -74.85
       objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.38
+      value: -24.76
       objectReference: {fileID: 0}
     - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
         type: 3}
@@ -3055,6 +3055,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169937839484935353, guid: cfa00dd28c4de844299a9e4a398f17a9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa00dd28c4de844299a9e4a398f17a9, type: 3}
@@ -3998,7 +4013,7 @@ Transform:
   m_LocalScale: {x: 13.256687, y: 0.72664523, z: 1}
   m_Children: []
   m_Father: {fileID: 2493156568561162619}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1359832783
 BoxCollider2D:
@@ -8228,6 +8243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Menu D\xE9faite"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812383124422381105, guid: 5bea6c99a1a8bc5428382e7b06aadba5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2812383124653990619, guid: 5bea6c99a1a8bc5428382e7b06aadba5,
         type: 3}

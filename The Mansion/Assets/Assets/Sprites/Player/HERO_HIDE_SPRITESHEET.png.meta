@@ -155,7 +155,7 @@ TextureImporter:
         width: 723
         height: 551
       alignment: 9
-      pivot: {x: 1.7286613, y: 0.5195129}
+      pivot: {x: 1.527956, y: 0.5318578}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: HERO_HIDE_SPRITESHEET_1
       rect:
         serializedVersion: 2
-        x: 2610
+        x: 2612
         y: 532
         width: 109
         height: 198
       alignment: 9
-      pivot: {x: 3.6480231, y: 0.4800005}
+      pivot: {x: 3.1357892, y: 0.4800005}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
