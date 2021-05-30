@@ -967,6 +967,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1106,6 +1111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
@@ -3234,7 +3244,17 @@ PrefabInstance:
     - target: {fileID: 1912671114992240039, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CalmingHeart
+      value: CalmingHeartStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912671114992240039, guid: 687bc98d317c3944d850163707679f8e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1153051089}
+    - target: {fileID: 1912671114992240039, guid: 687bc98d317c3944d850163707679f8e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CalmingHeartStop
       objectReference: {fileID: 0}
     - target: {fileID: 1912671114992240060, guid: 687bc98d317c3944d850163707679f8e,
         type: 3}
@@ -7720,6 +7740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339652637274760085, guid: 9808ce7d4cfc14043833038a22459917,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5560747165255047744, guid: 9808ce7d4cfc14043833038a22459917,
         type: 3}
