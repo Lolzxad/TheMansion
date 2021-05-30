@@ -16,7 +16,7 @@ public class FlickeringLight : MonoBehaviour
 
     IEnumerator WaitTillFlicker()
     {
-        delayFlicker = Random.Range(0, 2);
+        delayFlicker = Random.Range(0, 1);
         yield return new WaitForSeconds(delayFlicker);
         indexAnim = Random.Range(0, 2);
         animController.SetInteger("LightType", indexAnim);
