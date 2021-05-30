@@ -10,8 +10,6 @@ namespace TheMansion
     public class SpamInputRunner : MonoBehaviour
     {
         public int spam;
-
-        public int playerLives = 4;
         [SerializeField] int spamNeeded = 15;
 
         [SerializeField] float timeLimit;
@@ -25,6 +23,7 @@ namespace TheMansion
         TutoManager tuto;
         AudioManagerVEVO audioManager;
         SpamInput spamBigboy;
+        PlayerController playerScript;
 
         public bool isTuto;
 
@@ -47,6 +46,7 @@ namespace TheMansion
             tuto = FindObjectOfType<TutoManager>();
             audioManager = FindObjectOfType<AudioManagerVEVO>();
             spamBigboy = FindObjectOfType<SpamInput>();
+            playerScript = FindObjectOfType<PlayerController>();
 
 
 
@@ -105,9 +105,8 @@ namespace TheMansion
                     spam = 0;
   
                     spamDone = false;
-                    gameObject.SetActive(false);
-                    playerLives -= 1;
-                    spamBigboy.playerLives -= 1;
+                    playerScript.playerLives -= 1;
+                    gameObject.SetActive(false);                   
                 }
                 else if (runnerController.isGrabbing)
                 {
@@ -115,10 +114,8 @@ namespace TheMansion
                     spam = 0;
 
                     spamDone = false;
-                    gameObject.SetActive(false);
-                    playerLives -= 1;
-                    spamBigboy.playerLives -= 1;
-
+                    playerScript.playerLives -= 1;
+                    gameObject.SetActive(false);                 
                 }
 
                
@@ -148,7 +145,7 @@ namespace TheMansion
 
             }
 
-            if (playerLives == 0)
+            if (playerScript.playerLives == 0)
             {
                 GameOver();
             }

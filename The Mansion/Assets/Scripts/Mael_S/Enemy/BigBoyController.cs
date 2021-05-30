@@ -420,7 +420,8 @@ namespace TheMansion
             ProCamera2D.Instance.CenterOnTargets();
             playerScript.playerAnimator.SetBool("isGrabbed", false);
             playerScript.isGrabbed = false;         
-            playerScript.canMove = true;                        
+            playerScript.canMove = true;
+            playerScript.playerLives -= 1;
             StartCoroutine(MobCanMove());   
         }
         public void HideCheck() 

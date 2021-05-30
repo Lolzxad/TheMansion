@@ -67,8 +67,8 @@ namespace TheMansion
         [SerializeField] GameObject fullLevels;
         [SerializeField] GameObject lockedLevels;
 
-        public bool canPlayMusic;
-        public bool canPlaySFX;
+        public bool cannotPlayMusic;
+        public bool cannotPlaySFX;
 
         [SerializeField] bool isMainMenu;
         
@@ -91,21 +91,32 @@ namespace TheMansion
             story7Get = (PlayerPrefs.GetInt("Story7") != 0);
             story8Get = (PlayerPrefs.GetInt("Story8") != 0);
 
-            //canPlayMusic = PlayerPrefs.GetInt("CanPlayMusic") != 0;
+            cannotPlayMusic = (PlayerPrefs.GetInt("CannotPlayMusic") != 0);
+            cannotPlaySFX = (PlayerPrefs.GetInt("CannotPlaySFX") != 0);
 
             Time.timeScale = 1;
         }
 
         private void Update()
         {
-            PlayerPrefs.SetInt("CanPlayMusic", (canPlayMusic ? 1 : 0));
-            PlayerPrefs.SetInt("CanPlaySFX", (canPlaySFX ? 1 : 0));
+            //PlayerPrefs.SetInt("CannotPlaySFX", (cannotPlaySFX ? 1 : 0));            
         }
 
         public void NoMoreMusic()
-        {
-            canPlayMusic = false;
+        {         
             audioController.StopAudio(AudioType.Main_Music_ST);
+
+            if (!cannotPlayMusic)
+            {
+                cannotPlayMusic = true;
+                PlayerPrefs.SetInt("CannotPlayMusic", (cannotPlayMusic ? 1 : 0));
+            }
+            else
+            {
+                cannotPlayMusic = false;
+                PlayerPrefs.SetInt("CannotPlayMusic", (cannotPlayMusic ? 0 : 1));
+            }
+            
         }
 
 

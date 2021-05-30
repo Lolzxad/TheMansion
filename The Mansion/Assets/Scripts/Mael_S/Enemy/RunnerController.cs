@@ -325,6 +325,7 @@ namespace TheMansion
             ProCamera2DShake.Instance.Shake("BigBoyStunned");
             playerScript.isGrabbed = false;
             playerScript.canMove = true;
+            playerScript.playerLives -= 1;
             //playerScript.playerAnimator.SetBool("isGrabbed", false);           
             StartCoroutine(MobCanMove());
         }
