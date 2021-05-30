@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4563503598646053025}
   - component: {fileID: 4563503598646053024}
   m_Layer: 0
-  m_Name: fx_light_wall 1
+  m_Name: FX_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ Animation:
   m_GameObject: {fileID: 4563503598646053027}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 91e396f2567fd8540abff48c8a39b80f, type: 2}
+  m_Animation: {fileID: 7400000, guid: 98b1653e6aa18254bb5cb955ed80442f, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
