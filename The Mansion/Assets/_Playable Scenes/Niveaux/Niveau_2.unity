@@ -5934,7 +5934,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuDefaite
       value: 
-      objectReference: {fileID: 1267890724}
+      objectReference: {fileID: 1473685199}
     - target: {fileID: 953541068223691653, guid: cec5a983bad55e84e85331c88d3c714b,
         type: 3}
       propertyPath: playerLives
